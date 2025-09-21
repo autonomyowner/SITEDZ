@@ -9,7 +9,6 @@ const Footer = () => {
             <p className="text-gray-600">الحل الأمثل للتجارة الإلكترونية في الجزائر</p>
           </div>
           <div className="text-center md:text-left">
-            <p className="luxora-text mb-4">الاثنين إلى الجمعة من 9 صباحاً إلى 6 مساءً</p>
             <button 
               className="maroon-button"
               onClick={() => window.open('/contact', '_self')}

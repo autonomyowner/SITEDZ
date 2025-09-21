@@ -376,55 +376,35 @@ const ContactPage = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="luxora-card p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold luxora-text mb-4 sm:mb-6">معلومات الاتصال</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold luxora-text mb-4 sm:mb-6 text-center">معلومات الاتصال</h3>
                 
                 <div className="space-y-6">
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">م</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الموقع</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        الجزائر - نخدم العملاء في جميع أنحاء البلاد
-                      </p>
-                    </div>
+                  <div className="text-center">
+                    <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الموقع</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      الجزائر - نخدم العملاء في جميع أنحاء البلاد
+                    </p>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">س</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">ساعات العمل</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        الاثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً
-                      </p>
-                    </div>
+                  <div className="text-center">
+                    <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">ساعات العمل</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      الاثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً
+                    </p>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">خ</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الخدمات</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        مواقع مخصصة، تجارة إلكترونية، أنظمة حجز
-                      </p>
-                    </div>
+                  <div className="text-center">
+                    <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الخدمات</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      مواقع مخصصة، تجارة إلكترونية، أنظمة حجز
+                    </p>
                   </div>
 
-                  <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">ر</span>
-                    </div>
-                    <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">وقت الاستجابة</h4>
-                      <p className="text-gray-600 text-xs sm:text-sm">
-                        خلال 24 ساعة لجميع الاستفسارات
-                      </p>
-                    </div>
+                  <div className="text-center">
+                    <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">وقت الاستجابة</h4>
+                    <p className="text-gray-600 text-xs sm:text-sm">
+                      خلال 24 ساعة لجميع الاستفسارات
+                    </p>
                   </div>
                 </div>
               </div>

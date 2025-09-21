@@ -197,7 +197,6 @@ const Pricing = () => {
                     if (!amount) return null
                     return (
                       <>
-                        <div className="text-gray-600 text-xs mb-2">ادفع {plan.name} عبر PayPal ({amount} USD):</div>
                         <PayPalCheckout
                           amount={amount}
                           currency="USD"
@@ -270,33 +269,6 @@ const Pricing = () => {
             </div>
           </div>
 
-          {/* Why Choose Us */}
-          <div className="luxora-card p-6 md:p-8 mb-12">
-            <h2 className="text-3xl font-bold luxora-text text-center mb-8">لماذا تختار أسعارنا؟</h2>
-            <div className="grid md:grid-cols-3 gap-6 md:gap-8">
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-600 text-2xl font-bold">ج</span>
-                </div>
-                <h4 className="luxora-text font-semibold mb-2 text-base">جودة عالية</h4>
-                <p className="text-gray-600 text-sm">جميع المواقع مبنية بتقنيات حديثة وأفضل الممارسات</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-600 text-2xl font-bold">ش</span>
-                </div>
-                <h4 className="luxora-text font-semibold mb-2 text-base">أسعار شفافة</h4>
-                <p className="text-gray-600 text-sm">أسعار واضحة مع كل شيء مشمول مقدماً</p>
-              </div>
-              <div className="text-center">
-                <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-green-600 text-2xl font-bold">ن</span>
-                </div>
-                <h4 className="luxora-text font-semibold mb-2 text-base">نتائج مضمونة</h4>
-                <p className="text-gray-600 text-sm">مواقع مصممة لتحويل الزوار إلى عملاء</p>
-              </div>
-            </div>
-          </div>
 
           {/* FAQ Section */}
           <div className="luxora-card p-6 md:p-8 mb-12">
