@@ -2,41 +2,38 @@ const Services = () => {
   const services = [
     {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=300&fit=crop&crop=center",
-      title: "E-commerce Websites",
-      description: "Complete online stores for Algerian businesses. Secure payment integration, inventory management, and mobile-responsive design to boost your sales."
+      title: "ربح الوقت",
+      description: "ليس لديك الوقت الكافي لتجهيز كل الطلبيات؟ تم حل المشكلة! اربح وقتك بفضل نظامنا الذي يسمح لك بتأكيد، متابعة وتوصيل طلبيات زبائنك بكل ارتياحية وفي أسرع وقت ممكن."
     },
     {
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=300&fit=crop&crop=center",
-      title: "Business Websites",
-      description: "Professional websites for clinics, restaurants, and service businesses. Modern design with booking systems and customer management tools."
+      title: "زبون راضي، زبون مخلص",
+      description: "هل تستقبل عدد كبير من الرسائل في مواقع التواصل الاجتماعي لتأكيد طلبيات زبائنك؟ صنف منتجاتك على حسب الفئة، العلامة التجارية والمتغيرات وسهل عملية الشراء لزبائنك."
     },
     {
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop&crop=center",
-      title: "Custom Solutions",
-      description: "Tailored web applications and digital solutions. From CRM systems to booking platforms, we build exactly what your business needs."
+      title: "تتبع المبيعات والإحصائيات",
+      description: "إدارة المخزون وتتبع المبيعات أصبحت تلقائية! SITEDZ Store توفر لكم كل ما يخص إدارة متجرك سواء تتبع المبيعات أو تتبع عدد عمليات الشراء والكثير من التفاصيل الأخرى."
     }
   ]
 
   return (
-    <section id="services" className="py-16 px-4 luxora-bg">
+    <section id="services" className="py-16 px-4 luxora-bg" dir="rtl">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
-            Our Services
+            ما يمكننا القيام به من أجلك
           </h2>
           
           {/* Professional Mission Statement */}
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            It was a pleasure helping you build a professional, working website that will generate quality leads for your business!
+            منصة SITEDZ Store رتبت كل شيء وفقاً لراحة المستخدم فهي توفر لكم موقع إلكتروني يتيح لكم التنقل السهل ويتوافق مع جميع الأجهزة اللوحية، الهاتف والحاسوب.
           </p>
           
           {/* Awards Winners Badge */}
           <div className="inline-flex items-center px-6 py-3 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
             <span className="text-center">
-              🏆 Proud to be part of creation of awards winners startups: 
-              <a href="https://elghella.com" target="_blank" rel="noopener noreferrer" className="luxora-green-text hover:underline mx-1 font-semibold">elghella.com</a>
-              and 
-              <a href="https://reachfood.co" target="_blank" rel="noopener noreferrer" className="luxora-green-text hover:underline mx-1 font-semibold">reachfood.co</a>
+              فخورون بكوننا جزء من إنشاء مواقع ناجحة للشركات الجزائرية
             </span>
           </div>
         </div>
@@ -63,7 +60,7 @@ const Services = () => {
                 className="luxora-green-button"
                 onClick={() => window.open('/services', '_self')}
               >
-                Learn More
+                اعرف المزيد
               </button>
             </div>
           ))}

@@ -6,100 +6,113 @@ const Navbar = () => {
   const location = useLocation()
 
   return (
-    <nav className="fixed w-full z-50 bg-white/90 backdrop-blur-md border-b border-amber-200">
-      <div className="max-w-7xl mx-auto px-4">
+    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-amber-200 shadow-sm" dir="rtl">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <div className="flex items-center space-x-2">
-            <div>
-              <h1 className="luxora-text font-bold text-lg sm:text-xl">SITEDZ Store</h1>
+          <div className="flex items-center">
+            <div className="flex-shrink-0">
+              <h1 className="luxora-text font-bold text-xl sm:text-2xl">SITEDZ Store</h1>
             </div>
           </div>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center space-x-4 lg:space-x-8">
+          <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link 
               to="/" 
-              className={`transition-colors ${location.pathname === '/' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
             >
-              Home
+              الرئيسية
             </Link>
             <Link 
               to="/services" 
-              className={`transition-colors ${location.pathname === '/services' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/services' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
             >
-              Services
+              الخدمات
             </Link>
             <Link 
               to="/pricing" 
-              className={`transition-colors ${location.pathname === '/pricing' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/pricing' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
             >
-              Pricing
+              الأسعار
             </Link>
             <Link 
               to="/contact" 
-              className={`transition-colors ${location.pathname === '/contact' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/contact' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
             >
-              Contact
+              اتصل بنا
             </Link>
             <button 
-              className="maroon-button"
+              className="maroon-button text-sm px-4 py-2"
               onClick={() => window.open('/contact', '_self')}
             >
-              GET QUOTE
+              احصل على عرض سعر
             </button>
           </div>
 
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="md:hidden luxora-text hover:text-amber-600 transition-colors text-lg font-bold"
-          >
-            {isMenuOpen ? '✕' : '☰'}
-          </button>
+          <div className="md:hidden">
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className="luxora-text hover:text-amber-600 transition-colors p-2"
+            >
+              <span className="sr-only">فتح القائمة</span>
+              {isMenuOpen ? (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
+          </div>
         </div>
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-amber-200">
-            <div className="px-2 pt-2 pb-3 space-y-1">
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-amber-200 shadow-lg">
+            <div className="px-4 pt-2 pb-3 space-y-1">
               <Link 
                 to="/" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Home
+                الرئيسية
               </Link>
               <Link 
                 to="/services" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/services' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/services' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                الخدمات
               </Link>
               <Link 
                 to="/pricing" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/pricing' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/pricing' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Pricing
+                الأسعار
               </Link>
               <Link 
                 to="/contact" 
-                className={`block px-3 py-2 transition-colors ${location.pathname === '/contact' ? 'text-amber-600' : 'luxora-text hover:text-amber-600'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/contact' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                اتصل بنا
               </Link>
-              <button 
-                className="block mx-3 my-2 maroon-button w-full text-center"
-                onClick={() => {
-                  window.open('/contact', '_self')
-                  setIsMenuOpen(false)
-                }}
-              >
-                GET QUOTE
-              </button>
+              <div className="pt-2">
+                <button 
+                  className="block w-full maroon-button text-center py-3"
+                  onClick={() => {
+                    window.open('/contact', '_self')
+                    setIsMenuOpen(false)
+                  }}
+                >
+                  احصل على عرض سعر
+                </button>
+              </div>
             </div>
           </div>
         )}

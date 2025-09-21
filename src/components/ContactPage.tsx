@@ -109,50 +109,50 @@ const ContactPage = () => {
   }
   const contactMethods = [
     {
-      title: "Email Us",
+      title: "راسلنا بالبريد",
       value: "autonomy.owner@gmail.com",
-      description: "Send us your project requirements",
+      description: "أرسل لنا متطلبات مشروعك",
       link: "mailto:autonomy.owner@gmail.com"
     },
     {
-      title: "Call Us",
+      title: "اتصل بنا",
       value: "0797339451",
-      description: "Speak directly with our team",
+      description: "تحدث مباشرة مع فريقنا",
       link: "tel:+213797339451"
     },
     {
-      title: "WhatsApp",
+      title: "واتساب",
       value: "0797339451",
-      description: "Quick chat about your project",
+      description: "محادثة سريعة حول مشروعك",
       link: "https://wa.me/+213797339451"
     },
     {
-      title: "Location",
-      value: "Algeria",
-      description: "Serving clients nationwide",
+      title: "الموقع",
+      value: "الجزائر",
+      description: "نخدم العملاء في جميع أنحاء البلاد",
       link: "#"
     }
   ]
 
   return (
-    <section id="contact-page" className="py-16 px-4 luxora-bg">
+    <section id="contact-page" className="py-16 px-4 luxora-bg" dir="rtl">
       <div className="max-w-7xl mx-auto">
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center px-3 sm:px-4 py-2 luxora-card rounded-full luxora-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
-            <span className="text-center">Get In Touch - We're Here to Help</span>
+            <span className="text-center">تواصل معنا - نحن هنا لمساعدتك</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold luxora-text mb-4 sm:mb-6 leading-tight">
-            Contact
-            <span className="block luxora-green-text">Our Agency</span>
+            تواصل مع
+            <span className="block luxora-green-text">وكالتنا</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-            Ready to start your web development project? Get in touch with our agency. 
-            We're here to discuss your needs and bring your vision to life.
+            مستعد لبدء مشروع تطوير المواقع الخاص بك؟ تواصل مع وكالتنا. 
+            نحن هنا لمناقشة احتياجاتك وتحويل رؤيتك إلى واقع.
           </p>
 
           {/* Contact Methods Grid */}
@@ -180,16 +180,16 @@ const ContactPage = () => {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
             <div className="luxora-card p-4 sm:p-6 md:p-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">Send Us a Message</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">أرسل لنا رسالة</h2>
               
               {/* Success Message */}
               {submitStatus === 'success' && (
                 <div className="mb-6 p-4 bg-green-100 border border-green-400 text-green-700 rounded-lg">
                   <div className="flex items-center">
-                    <span className="text-green-600 text-xl mr-2">✅</span>
+                    <span className="text-green-600 text-xl ml-2">✅</span>
                     <div>
-                      <strong>Message sent successfully!</strong>
-                      <p className="text-sm mt-1">We'll get back to you within 24 hours.</p>
+                      <strong>تم إرسال الرسالة بنجاح!</strong>
+                      <p className="text-sm mt-1">سنرد عليك خلال 24 ساعة.</p>
                     </div>
                   </div>
                 </div>
@@ -199,10 +199,10 @@ const ContactPage = () => {
               {submitStatus === 'error' && (
                 <div className="mb-6 p-4 bg-red-100 border border-red-400 text-red-700 rounded-lg">
                   <div className="flex items-center">
-                    <span className="text-red-600 text-xl mr-2">❌</span>
+                    <span className="text-red-600 text-xl ml-2">❌</span>
                     <div>
-                      <strong>Failed to send message</strong>
-                      <p className="text-sm mt-1">Please try again or contact us directly.</p>
+                      <strong>فشل في إرسال الرسالة</strong>
+                      <p className="text-sm mt-1">يرجى المحاولة مرة أخرى أو الاتصال بنا مباشرة.</p>
                     </div>
                   </div>
                 </div>
@@ -211,33 +211,33 @@ const ContactPage = () => {
               <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">First Name</label>
+                    <label className="block luxora-text font-semibold mb-2">الاسم الأول</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Your first name"
+                      placeholder="اسمك الأول"
                       required
                     />
                   </div>
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">Last Name</label>
+                    <label className="block luxora-text font-semibold mb-2">الاسم الأخير</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Your last name"
+                      placeholder="اسمك الأخير"
                       required
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Email Address</label>
+                  <label className="block luxora-text font-semibold mb-2">عنوان البريد الإلكتروني</label>
                   <input
                     type="email"
                     name="email"
@@ -250,20 +250,20 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Phone Number</label>
+                  <label className="block luxora-text font-semibold mb-2">رقم الهاتف</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Your phone number"
+                    placeholder="رقم هاتفك"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Project Type</label>
+                  <label className="block luxora-text font-semibold mb-2">نوع المشروع</label>
                   <select 
                     name="projectType"
                     value={formData.projectType}
@@ -271,18 +271,18 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
                     required
                   >
-                    <option value="">Select project type</option>
-                    <option value="clinic">Clinic Website</option>
-                    <option value="travel">Travel Agency Website</option>
-                    <option value="real-estate">Real Estate Website</option>
-                    <option value="ecommerce">E-commerce Website</option>
-                    <option value="custom">Custom Website</option>
-                    <option value="other">Other</option>
+                    <option value="">اختر نوع المشروع</option>
+                    <option value="clinic">موقع عيادة</option>
+                    <option value="travel">موقع وكالة سفر</option>
+                    <option value="real-estate">موقع عقاري</option>
+                    <option value="ecommerce">موقع تجارة إلكترونية</option>
+                    <option value="custom">موقع مخصص</option>
+                    <option value="other">أخرى</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Budget Range</label>
+                  <label className="block luxora-text font-semibold mb-2">نطاق الميزانية</label>
                   <select 
                     name="budget"
                     value={formData.budget}
@@ -290,24 +290,24 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
                     required
                   >
-                    <option value="">Select budget range</option>
-                    <option value="5k-15k">5,000 - 15,000 DA</option>
-                    <option value="15k-30k">15,000 - 30,000 DA</option>
-                    <option value="30k-100k">30,000 - 100,000 DA</option>
-                    <option value="100k+">100,000+ DA</option>
-                    <option value="discuss">Let's discuss</option>
+                    <option value="">اختر نطاق الميزانية</option>
+                    <option value="5k-15k">5,000 - 15,000 دج</option>
+                    <option value="15k-30k">15,000 - 30,000 دج</option>
+                    <option value="30k-100k">30,000 - 100,000 دج</option>
+                    <option value="100k+">100,000+ دج</option>
+                    <option value="discuss">دعنا نناقش</option>
                   </select>
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Project Description</label>
+                  <label className="block luxora-text font-semibold mb-2">وصف المشروع</label>
                   <textarea
                     name="description"
                     value={formData.description}
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Tell us about your project requirements, goals, and any specific features you need..."
+                    placeholder="أخبرنا عن متطلبات مشروعك وأهدافه وأي ميزات محددة تحتاجها..."
                   ></textarea>
                 </div>
 
@@ -323,12 +323,12 @@ const ContactPage = () => {
                 >
                   {isSubmitting ? (
                     <>
-                      <span className="animate-spin mr-2">⏳</span>
-                      Sending...
+                      <span className="animate-spin ml-2">⏳</span>
+                      جاري الإرسال...
                     </>
                   ) : (
                     <>
-                      🚀 Send Message
+                      أرسل الرسالة
                     </>
                   )}
                 </button>
@@ -376,53 +376,53 @@ const ContactPage = () => {
             {/* Contact Information */}
             <div className="space-y-8">
               <div className="luxora-card p-4 sm:p-6 md:p-8">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold luxora-text mb-4 sm:mb-6">Contact Information</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold luxora-text mb-4 sm:mb-6">معلومات الاتصال</h3>
                 
                 <div className="space-y-6">
                   <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">L</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
+                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">م</span>
                     </div>
                     <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Location</h4>
+                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الموقع</h4>
                       <p className="text-gray-600 text-xs sm:text-sm">
-                        Algeria - Serving clients nationwide
+                        الجزائر - نخدم العملاء في جميع أنحاء البلاد
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl">⏰</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
+                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">س</span>
                     </div>
                     <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Business Hours</h4>
+                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">ساعات العمل</h4>
                       <p className="text-gray-600 text-xs sm:text-sm">
-                        Monday - Friday: 9:00 AM - 6:00 PM
+                        الاثنين - الجمعة: 9:00 صباحاً - 6:00 مساءً
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl">💼</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
+                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">خ</span>
                     </div>
                     <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Services</h4>
+                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">الخدمات</h4>
                       <p className="text-gray-600 text-xs sm:text-sm">
-                        Custom websites, E-commerce, Booking systems
+                        مواقع مخصصة، تجارة إلكترونية، أنظمة حجز
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center mr-3 sm:mr-4 flex-shrink-0 shadow-lg">
-                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">R</span>
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 luxora-green-bg rounded-full flex items-center justify-center ml-3 sm:ml-4 flex-shrink-0 shadow-lg">
+                      <span className="text-white text-base sm:text-lg md:text-xl font-bold">ر</span>
                     </div>
                     <div>
-                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">Response Time</h4>
+                      <h4 className="luxora-text font-semibold mb-1 text-sm sm:text-base">وقت الاستجابة</h4>
                       <p className="text-gray-600 text-xs sm:text-sm">
-                        Within 24 hours for all inquiries
+                        خلال 24 ساعة لجميع الاستفسارات
                       </p>
                     </div>
                   </div>
@@ -430,69 +430,35 @@ const ContactPage = () => {
               </div>
 
               <div className="luxora-green-bg p-4 sm:p-6 md:p-8 rounded-2xl shadow-2xl">
-                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">Why Choose Our Agency?</h3>
+                <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-white mb-3 sm:mb-4">لماذا تختار وكالتنا؟</h3>
                 <ul className="space-y-2 sm:space-y-3 text-white text-sm sm:text-base">
                   <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Expert team of professional developers
+                    <span className="ml-3">•</span>
+                    فريق خبير من المطورين المحترفين
                   </li>
                   <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Modern, responsive design approach
+                    <span className="ml-3">•</span>
+                    نهج تصميم حديث ومتجاوب
                   </li>
                   <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Complete project management
+                    <span className="ml-3">•</span>
+                    إدارة مشاريع كاملة
                   </li>
                   <li className="flex items-center">
-                    <span className="mr-3">•</span>
-                    Ongoing support and maintenance
+                    <span className="ml-3">•</span>
+                    دعم وصيانة مستمرة
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Quick Contact Section */}
-          <div className="luxora-card p-6 md:p-8 mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold luxora-text text-center mb-8">Quick Contact Options</h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <a 
-                href="mailto:autonomy.owner@gmail.com?subject=Project Inquiry" 
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">E</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">Email Us</h3>
-                <p className="text-gray-600 text-sm">Send us your project details</p>
-              </a>
-              
-              <a 
-                href="https://wa.me/+213797339451?text=Hi! I'm interested in your web development services. Can you tell me more?" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">W</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">WhatsApp</h3>
-                <p className="text-gray-600 text-sm">Quick chat with us</p>
-              </a>
-              
-              <a 
-                href="tel:+213797339451" 
-                className="luxora-card p-6 text-center hover:transform hover:scale-105 transition-all duration-300"
-              >
-                <div className="text-3xl mb-4 font-bold">C</div>
-                <h3 className="text-lg md:text-xl font-bold luxora-text mb-2">Call Us</h3>
-                <p className="text-gray-600 text-sm">Speak directly with us</p>
-              </a>
-            </div>
-          </div>
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-2xl md:text-3xl font-bold luxora-text mb-6">Ready to Start Your Project?</h3>
+            <h3 className="text-2xl md:text-3xl font-bold luxora-text mb-6">مستعد لبدء مشروعك؟</h3>
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              Not sure yet? Get a free 30-minute consultation — no obligation.
+              لست متأكداً بعد؟ احصل على استشارة مجانية لمدة 30 دقيقة — بدون التزام.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a 
@@ -503,17 +469,17 @@ const ContactPage = () => {
                   trackButtonClick('Book Free Consultation', 'cta_section')
                 }}
               >
-                🚀 Book Free Consultation
+                احجز استشارة مجانية
               </a>
               <a 
                 href="/pricing" 
                 className="luxora-button text-base px-8 py-3"
               >
-                <span className="mr-2">G</span>
-                Grow My Business
+                <span className="ml-2">ن</span>
+                نمي عملي
               </a>
             </div>
-            <div className="mt-4 text-gray-600 text-sm">Delivered in 5 days · 24/7 WhatsApp Support</div>
+            <div className="mt-4 text-gray-600 text-sm">جاهز في 5 أيام · دعم واتساب 24/7</div>
           </div>
         </div>
       </div>

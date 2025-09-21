@@ -113,13 +113,13 @@ const Popular = () => {
   return (
     <section id="popular" className="py-16 px-4 md:px-0 luxora-bg overflow-hidden">
       {/* Title section with container */}
-      <div className="max-w-7xl mx-auto mb-16">
+      <div className="max-w-7xl mx-auto mb-16" dir="rtl">
         <div className="text-center">
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
-            Our most popular
+            الأكثر شعبية
           </h2>
           <p className="text-gray-400 text-sm md:hidden">
-            Swipe left or right to browse • Tap and drag to scroll
+            اسحب يساراً أو يميناً للتصفح • اضغط واسحب للتمرير
           </p>
         </div>
       </div>
