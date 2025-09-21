@@ -58,7 +58,7 @@ const Services = () => {
               {/* Button */}
               <button 
                 className="luxora-green-button"
-                onClick={() => window.open('/services', '_self')}
+                onClick={() => window.open('/contact', '_self')}
               >
                 اعرف المزيد
               </button>
