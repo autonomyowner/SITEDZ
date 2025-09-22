@@ -31,7 +31,7 @@ const Portfolio = () => {
     {
       name: "Elite Dental Clinic",
       description: "Site web premium pour un cabinet dentaire d'exception à Ouled Fayet, avec système de réservation intégré et augmentation des rendez-vous de 200%",
-      image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=600&h=400&fit=crop&crop=center",
       features: [
         "Système de réservation Google Calendar intégré",
         "Présentation des spécialités dentaires premium",
@@ -45,7 +45,7 @@ const Portfolio = () => {
     {
       name: "24 Clinic Ben Aknoun",
       description: "Plateforme médicale moderne pour une clinique dentaire à Ben Aknoun, optimisant la prise de rendez-vous et améliorant l'expérience patient de 180%",
-      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1559757148-5c350d0d3c56?w=600&h=400&fit=crop&crop=center",
       features: [
         "Interface de réservation 24/7",
         "Présentation des services dentaires",
@@ -59,7 +59,7 @@ const Portfolio = () => {
     {
       name: "Perfect Events",
       description: "Site événementiel élégant pour une entreprise de décoration à Tlemcen, créant une expérience immersive et augmentant les réservations de 220%",
-      image: "https://images.unsplash.com/photo-1519167758481-83f142b8fb9e?w=600&h=400&fit=crop&crop=center",
+      image: "https://images.unsplash.com/photo-1464207687429-7505649dae38?w=600&h=400&fit=crop&crop=center",
       features: [
         "Galerie d'événements avec filtres par type",
         "Système de réservation personnalisé",
