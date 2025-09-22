@@ -18,21 +18,24 @@ const Newsletter = () => {
     setMessage('')
 
     try {
-      // Use the existing form submission endpoint
-      const response = await fetch('/api/submit-form', {
+      // Use the same Google Apps Script endpoint as contact page
+      const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
+      
+      // Create form data to avoid CORS issues
+      const formDataToSend = new FormData()
+      formDataToSend.append('firstName', 'Newsletter')
+      formDataToSend.append('lastName', 'Subscriber')
+      formDataToSend.append('email', email)
+      formDataToSend.append('phone', 'N/A')
+      formDataToSend.append('projectType', 'newsletter')
+      formDataToSend.append('budget', 'N/A')
+      formDataToSend.append('description', 'Newsletter subscription request')
+      formDataToSend.append('timestamp', new Date().toISOString())
+      formDataToSend.append('source', 'newsletter_signup')
+
+      const response = await fetch(GOOGLE_SCRIPT_URL, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          firstName: 'Newsletter',
-          lastName: 'Subscriber',
-          email: email,
-          phone: 'N/A',
-          projectType: 'newsletter',
-          budget: 'N/A',
-          description: 'Newsletter subscription request'
-        })
+        body: formDataToSend
       })
 
       if (response.ok) {
