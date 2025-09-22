@@ -2,11 +2,11 @@ import Typewriter from './Typewriter'
 
 const Hero = () => {
   const typewriterWords = [
-    "متاجر إلكترونية",
-    "مواقع تجارية", 
-    "صفحات هبوط",
-    "حلول رقمية",
-    "منصات بيع"
+    "sites vitrine",
+    "boutiques en ligne", 
+    "applications web",
+    "solutions digitales",
+    "plateformes e-commerce"
   ]
 
   return (
@@ -19,7 +19,6 @@ const Hero = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat'
       }}
-      dir="rtl"
     >
       {/* Overlay for better text readability */}
       <div className="absolute inset-0 bg-black/40"></div>
@@ -28,12 +27,12 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-medium mb-8 shadow-lg">
-            الحل الأمثل للتجارة الإلكترونية في الجزائر
+            Solutions digitales modernes pour les entreprises algériennes
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            هل تريد الاحتراف في التجارة الإلكترونية
+            Solutions digitales modernes pour les entreprises algériennes
             <span className="block text-green-400">
               <Typewriter 
                 words={typewriterWords}
@@ -47,28 +46,37 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            منصة SITEDZ Store توفر لكم كل الوسائل التي تحتاج إليها لتسهيل بيع منتجاتك وتعزيز مصداقيتك أون لاين وإنشاء متجر إلكتروني احترافي. 
-            بدون أي معرفة في البرمجة - إيميل، كلمة مرور، وانطلق!
+            SITEDZ Store est votre agence web de confiance en Algérie. Nous créons des sites web modernes, 
+            rapides et professionnels pour faire grandir votre entreprise en ligne. 
+            Spécialisés dans le marché algérien avec des solutions adaptées à vos besoins locaux.
           </p>
-
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/pricing', '_self')}
             >
-              عرض الأسعار
+              Voir nos tarifs
+            </button>
+            <button 
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              onClick={() => window.open('/contact', '_self')}
+            >
+              Devis gratuit
             </button>
           </div>
 
           {/* Speed & Support Promises */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
-              جاهز في 5 أيام
+              Livré en 5 jours
             </div>
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
-              دعم واتساب 24/7
+              Support WhatsApp 24/7
+            </div>
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
+              Paiement local accepté
             </div>
           </div>
         </div>

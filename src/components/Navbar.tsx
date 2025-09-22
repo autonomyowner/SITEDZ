@@ -6,7 +6,7 @@ const Navbar = () => {
   const location = useLocation()
 
   return (
-    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-amber-200 shadow-sm" dir="rtl">
+    <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -20,33 +20,33 @@ const Navbar = () => {
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             <Link 
               to="/" 
-              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              الرئيسية
+              Accueil
             </Link>
             <Link 
               to="/services" 
-              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/services' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/services' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              الخدمات
+              Services
             </Link>
             <Link 
               to="/pricing" 
-              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/pricing' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/pricing' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              الأسعار
+              Tarifs
             </Link>
             <Link 
               to="/contact" 
-              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/contact' ? 'text-amber-600 border-b-2 border-amber-600' : 'luxora-text hover:text-amber-600'}`}
+              className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/contact' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              اتصل بنا
+              Contact
             </Link>
             <button 
               className="maroon-button text-sm px-4 py-2"
               onClick={() => window.open('/contact', '_self')}
             >
-              احصل على عرض سعر
+              Devis gratuit
             </button>
           </div>
 
@@ -54,9 +54,9 @@ const Navbar = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="luxora-text hover:text-amber-600 transition-colors p-2"
+              className="luxora-text hover:text-green-600 transition-colors p-2"
             >
-              <span className="sr-only">فتح القائمة</span>
+              <span className="sr-only">Ouvrir le menu</span>
               {isMenuOpen ? (
                 <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -72,35 +72,35 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         {isMenuOpen && (
-          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-amber-200 shadow-lg">
+          <div className="md:hidden bg-white/95 backdrop-blur-md border-t border-green-200 shadow-lg">
             <div className="px-4 pt-2 pb-3 space-y-1">
               <Link 
                 to="/" 
-                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                الرئيسية
+                Accueil
               </Link>
               <Link 
                 to="/services" 
-                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/services' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/services' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                الخدمات
+                Services
               </Link>
               <Link 
                 to="/pricing" 
-                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/pricing' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/pricing' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                الأسعار
+                Tarifs
               </Link>
               <Link 
                 to="/contact" 
-                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/contact' ? 'text-amber-600 bg-amber-50' : 'luxora-text hover:text-amber-600 hover:bg-amber-50'}`}
+                className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/contact' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                اتصل بنا
+                Contact
               </Link>
               <div className="pt-2">
                 <button 
@@ -110,7 +110,7 @@ const Navbar = () => {
                     setIsMenuOpen(false)
                   }}
                 >
-                  احصل على عرض سعر
+                  Devis gratuit
                 </button>
               </div>
             </div>

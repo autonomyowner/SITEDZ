@@ -25,7 +25,7 @@ function App() {
       <FacebookPixelTest />
       <ScrollTracker />
       <TimeTracker />
-      <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-amber-100" dir="rtl">
+      <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-green-100">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

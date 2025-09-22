@@ -47,6 +47,21 @@ const Services = () => {
           ))}
         </div>
 
+        {/* Background Image Section */}
+        <div 
+          className="w-full h-96 bg-cover bg-center bg-no-repeat rounded-2xl mb-8 sm:mb-12 md:mb-16"
+          style={{
+            backgroundImage: `url('/pics/templates/safar-safarov-LKsHwgzyk7c-unsplash.jpg')`
+          }}
+        >
+          <div className="w-full h-full bg-black bg-opacity-40 rounded-2xl flex items-center justify-center">
+            <div className="text-center text-white">
+              <h3 className="text-2xl md:text-3xl font-bold mb-4">Join Our Community</h3>
+              <p className="text-lg md:text-xl">Connect, Learn, and Grow Together</p>
+            </div>
+          </div>
+        </div>
+
         {/* Pricing Section */}
         <div className="premium-card p-8">
           <div className="text-center mb-8">

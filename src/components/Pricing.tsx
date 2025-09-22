@@ -20,136 +20,138 @@ const Pricing = () => {
   }
   const plans = [
     {
-      name: "المتجر الأساسي",
-      price: "6,000",
+      name: "Site Vitrine",
+      price: "15,000",
       currency: "DA",
-      period: "دفعة واحدة",
-      description: "للمبتدئين في التجارة الإلكترونية",
+      period: "Paiement unique",
+      description: "Parfait pour les petites entreprises",
       features: [
-        "متجر إلكتروني كامل",
-        "تصميم احترافي ومتجاوب",
-        "اسم دومين لمدة 3 سنوات",
-        "ربط مع وسائل التواصل الاجتماعي",
-        "دعم فني باللغة العربية",
-        "تحديثات أمنية مستمرة",
-        "دعم لمدة شهر واحد"
+        "Site web professionnel et responsive",
+        "Design moderne et personnalisé",
+        "Nom de domaine .com inclus (1 an)",
+        "Hébergement rapide et sécurisé",
+        "Optimisation SEO de base",
+        "Intégration réseaux sociaux",
+        "Support WhatsApp 24/7",
+        "Formation à l'utilisation",
+        "Garantie 30 jours"
       ],
       popular: false,
-      cta: "ابدأ الآن",
+      cta: "Commencer",
       color: "border-blue-500"
     },
     {
-      name: "المتجر المتقدم",
-      price: "25,000",
+      name: "Boutique en Ligne",
+      price: "35,000",
       currency: "DA",
-      period: "دفعة واحدة",
-      description: "الأفضل للشركات النامية",
+      period: "Paiement unique",
+      description: "Idéal pour l'e-commerce en Algérie",
       features: [
-        "كل ما في المتجر الأساسي",
-        "اسم دومين مخصص",
-        "ربط مع Facebook Pixel و Instagram",
-        "تحليلات متقدمة للمبيعات",
-        "نظام دفع آمن ومتعدد",
-        "إدارة المخزون التلقائية",
-        "تسويق بالعمولة",
-        "دعم لمدة 3 أشهر"
+        "Tout du Site Vitrine",
+        "Boutique en ligne complète",
+        "Gestion des commandes",
+        "Paiements locaux (CIB, EDAHABIA, CCP)",
+        "Paiements internationaux (PayPal, Stripe)",
+        "Gestion des stocks",
+        "Analytics et rapports",
+        "Mode sombre inclus",
+        "Sauvegardes automatiques",
+        "Support 3 mois inclus"
       ],
       popular: true,
-      cta: "طور متجري",
-      color: "border-yellow-500"
+      cta: "Lancer ma boutique",
+      color: "border-green-500"
     },
     {
-      name: "المتجر الاحترافي",
-      price: "50,000",
+      name: "Solution Entreprise",
+      price: "75,000",
       currency: "DA",
-      period: "دفعة واحدة",
-      description: "الحل الكامل للشركات الكبيرة",
+      period: "Paiement unique",
+      description: "Solution complète pour grandes entreprises",
       features: [
-        "كل ما في المتجر المتقدم",
-        "صفحات هبوط مخصصة",
-        "ربط مع Google Analytics و Tag Manager",
-        "نظام حجز متقدم",
-        "دعم متعدد اللغات",
-        "أمان متقدم لحماية البيانات",
-        "تكامل مع أدواتك الحالية",
-        "مراقبة الأداء والتحسين",
-        "نسخ احتياطية تلقائية",
-        "دعم أولوية - مساعدة سريعة",
-        "دعم لمدة 6 أشهر"
+        "Tout de la Boutique en Ligne",
+        "Application web sur mesure",
+        "Multi-utilisateurs et rôles",
+        "Intégrations avancées",
+        "API personnalisées",
+        "Sécurité renforcée",
+        "Performance optimisée",
+        "Support prioritaire",
+        "Formation équipe complète",
+        "Maintenance 6 mois incluse"
       ],
       popular: false,
-      cta: "هيمن على السوق",
+      cta: "Solution complète",
       color: "border-purple-500"
     }
   ]
 
   const addons = [
     {
-      name: "حزمة التسويق الرقمي",
-      price: "5,000",
-      description: "ربط مع Facebook Pixel و Instagram و Google Analytics",
-      features: ["ربط Facebook Pixel", "ربط Instagram", "Google Tag Manager", "تحليلات متقدمة"]
-    },
-    {
-      name: "اسم دومين مخصص",
-      price: "3,000",
-      description: "احصل على اسم دومين احترافي لموقعك",
-      features: ["اسم دومين .com", "ربط تلقائي", "شهادة SSL", "دعم فني"]
-    },
-    {
-      name: "صفحة هبوط مخصصة",
+      name: "Pack Marketing Digital",
       price: "8,000",
-      description: "صفحة هبوط لزيادة المبيعات والتحويلات",
-      features: ["تصميم مخصص", "تحسين التحويل", "اختبار A/B", "تحليلات مفصلة"]
+      description: "Optimisation complète pour Google et réseaux sociaux",
+      features: ["Google Business optimisé", "Facebook Pixel", "Instagram Shopping", "Analytics avancées"]
     },
     {
-      name: "خطة الصيانة الشهرية",
-      price: "2,500",
-      description: "حافظ على موقعك سريعاً وآمناً ومحدثاً",
-      features: ["تحديثات أمنية", "مراقبة الأداء", "نسخ احتياطية", "دعم 24/7"]
+      name: "Nom de Domaine Premium",
+      price: "5,000",
+      description: "Nom de domaine personnalisé pour votre marque",
+      features: ["Domaine .com personnalisé", "Configuration automatique", "Certificat SSL", "Support technique"]
+    },
+    {
+      name: "Page d'Accueil Premium",
+      price: "12,000",
+      description: "Page d'accueil optimisée pour maximiser les conversions",
+      features: ["Design sur mesure", "Optimisation conversion", "Tests A/B", "Analytics détaillées"]
+    },
+    {
+      name: "Maintenance Mensuelle",
+      price: "4,000",
+      description: "Maintenance continue pour garder votre site performant",
+      features: ["Mises à jour sécurité", "Monitoring performance", "Sauvegardes quotidiennes", "Support 24/7"]
     }
   ]
 
   return (
-    <section id="pricing" className="py-16 px-4 luxora-bg pt-24 md:pt-28" dir="rtl">
+    <section id="pricing" className="py-16 px-4 luxora-bg pt-24 md:pt-28">
       <div className="max-w-7xl mx-auto text-center">
         <div className="max-w-7xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
-            <span className="ml-2">أسعار شفافة - بدون رسوم مخفية</span>
+            <span className="ml-2">Tarifs transparents - Aucun frais caché</span>
           </div>
-
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold luxora-text mb-6 leading-tight">
-            اختر
-            <span className="block luxora-green-text">خطتك المثالية</span>
+            Choisissez
+            <span className="block luxora-green-text">votre solution idéale</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            أسعار شفافة مع كل ما تحتاجه للنجاح أون لاين. 
-            جميع الخطط تشمل الاستضافة والدومين والدعم المستمر.
+            Tarifs transparents avec tout ce dont vous avez besoin pour réussir en ligne. 
+            Tous les plans incluent l'hébergement, le domaine et le support continu.
           </p>
 
           {/* Special Offers */}
           <div className="grid md:grid-cols-2 gap-6 mb-12">
             <div className="luxora-card p-6 text-center">
-              <div className="text-2xl font-bold luxora-green-text mb-3">نوفر تصميم أولي مجاني</div>
+              <div className="text-2xl font-bold luxora-green-text mb-3">Maquette gratuite</div>
               <p className="text-gray-600 text-sm mb-4">
-                احصل على تصميم أولي لموقعك مجاناً قبل الالتزام بأي خطة
+                Obtenez une maquette de votre site gratuitement avant de vous engager
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
-                عرض مجاني
+                Offre gratuite
               </div>
             </div>
             <div className="luxora-card p-6 text-center">
-              <div className="text-2xl font-bold luxora-green-text mb-3">الدفع بعد الرضا</div>
+              <div className="text-2xl font-bold luxora-green-text mb-3">Paiement après satisfaction</div>
               <p className="text-gray-600 text-sm mb-4">
-                ادفع فقط بعد أن تكون راضياً تماماً عن النتيجة النهائية
+                Payez seulement après être entièrement satisfait du résultat final
               </p>
               <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
-                ضمان الرضا
+                Garantie satisfaction
               </div>
             </div>
           </div>
@@ -161,13 +163,6 @@ const Pricing = () => {
                 key={index} 
                 className={`luxora-card p-6 md:p-8 relative ${plan.popular ? 'ring-2 ring-green-500 md:scale-105' : ''}`}
               >
-                {plan.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-green-600 text-white px-4 py-2 rounded-full text-sm font-bold">
-                      الأفضل قيمة
-                    </span>
-                  </div>
-                )}
                 
                 <div className="text-center mb-6 md:mb-8">
                   <h3 className="text-xl md:text-2xl font-bold luxora-text mb-2">{plan.name}</h3>
@@ -178,14 +173,14 @@ const Pricing = () => {
                     <span className="text-gray-600 text-lg ml-2">{plan.currency}</span>
                   </div>
                   <p className="text-gray-500 text-sm">{plan.period}</p>
-                  {plan.name === 'المتجر المتقدم' && (
+                  {plan.name === 'Boutique en Ligne' && (
                     <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
-                      <span className="ml-1">وفر 25,000 دج مقابل الاحترافي</span>
+                      <span className="ml-1">Économisez 40,000 DA vs Solution Entreprise</span>
                     </div>
                   )}
                   <div className="mt-3 grid grid-cols-1 gap-1">
-                    <div className="text-green-600 text-xs sm:text-sm">جاهز في 5 أيام</div>
-                    <div className="text-green-600 text-xs sm:text-sm">دعم واتساب 24/7</div>
+                    <div className="text-green-600 text-xs sm:text-sm">Livré en 5 jours</div>
+                    <div className="text-green-600 text-xs sm:text-sm">Support WhatsApp 24/7</div>
                   </div>
                 </div>
 
@@ -210,7 +205,7 @@ const Pricing = () => {
                 {/* PayPal checkout - fixed USD per plan */}
                 <div className="mt-3">
                   {(() => {
-                    const amountMap = { 'المتجر الأساسي': '0.60', 'المتجر المتقدم': '2.50', 'المتجر الاحترافي': '5.00' } as const
+                    const amountMap = { 'Site Vitrine': '1.50', 'Boutique en Ligne': '3.50', 'Solution Entreprise': '7.50' } as const
                     const amount = amountMap[plan.name as keyof typeof amountMap]
                     if (!amount) return null
                     return (
@@ -218,7 +213,7 @@ const Pricing = () => {
                         <PayPalCheckout
                           amount={amount}
                           currency="USD"
-                          description={`${plan.name} - الدفع الكامل`}
+                          description={`${plan.name} - Paiement complet`}
                           className="flex justify-center"
                           onSuccess={() => handlePayPalClick(plan.name, amount)}
                         />
@@ -231,13 +226,13 @@ const Pricing = () => {
                     className="luxora-button w-full text-center text-sm"
                     onClick={() => window.open('/contact', '_self')}
                   >
-                    احجز عرض مجاني
+                    Réserver un devis gratuit
                   </button>
                 </div>
 
                 <div className="mt-4 text-gray-500 text-xs sm:text-sm">
-                  <div>ادفع مرة واحدة. ملكية مدى الحياة. بدون رسوم مخفية.</div>
-                  <div>لست متأكداً؟ احصل على استشارة مجانية لمدة 30 دقيقة قبل الالتزام.</div>
+                  <div>Paiement unique. Propriété à vie. Aucun frais caché.</div>
+                  <div>Pas sûr ? Obtenez une consultation gratuite de 30 minutes avant de vous engager.</div>
                 </div>
               </div>
             ))}
@@ -245,13 +240,13 @@ const Pricing = () => {
 
           {/* Add-ons Section */}
           <div className="luxora-card p-6 md:p-8 mb-12">
-            <h2 className="text-3xl font-bold luxora-text text-center mb-8">خدمات إضافية</h2>
+            <h2 className="text-3xl font-bold luxora-text text-center mb-8">Services Additionnels</h2>
             <p className="text-gray-600 mb-8 max-w-3xl mx-auto text-base">
-              عزز موقعك بهذه الخدمات القوية. مثالية للشركات التي تحتاج وظائف إضافية.
+              Renforcez votre site avec ces services puissants. Idéal pour les entreprises qui ont besoin de fonctionnalités supplémentaires.
             </p>
             <div className="text-center mb-6">
               <div className="inline-flex items-center px-4 py-2 bg-orange-100 text-orange-700 rounded-full text-sm font-medium">
-                <span className="ml-2">أقفل أسعار 2025 - الأسعار ترتفع في 2026</span>
+                <span className="ml-2">Tarifs 2025 bloqués - Les prix augmentent en 2026</span>
               </div>
             </div>
             
@@ -280,7 +275,7 @@ const Pricing = () => {
                     className="luxora-button w-full text-center text-sm"
                     onClick={() => window.open('/contact', '_self')}
                   >
-                    أقفل سعر 2025
+                    Bloquer prix 2025
                   </button>
                 </div>
               ))}
@@ -290,34 +285,34 @@ const Pricing = () => {
 
           {/* FAQ Section */}
           <div className="luxora-card p-6 md:p-8 mb-12">
-            <h2 className="text-3xl font-bold luxora-text text-center mb-8">الأسئلة الشائعة</h2>
-            <div className="grid md:grid-cols-2 gap-6 md:gap-8 text-right">
+            <h2 className="text-3xl font-bold luxora-text text-center mb-8">Questions Fréquentes</h2>
+            <div className="grid md:grid-cols-2 gap-6 md:gap-8">
               <div className="space-y-6">
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">كم من الوقت يستغرق بناء موقعي؟</h4>
-                  <p className="text-gray-600 text-sm">عادة 2-4 أسابيع حسب التعقيد والخطة المختارة.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Combien de temps faut-il pour créer mon site ?</h4>
+                  <p className="text-gray-600 text-sm">Généralement 5-7 jours selon la complexité et le plan choisi.</p>
                 </div>
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">هل توفرون الاستضافة والدومين؟</h4>
-                  <p className="text-gray-600 text-sm">نعم! جميع الخطط تشمل سنة واحدة من الاستضافة وتسجيل الدومين.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Incluez-vous l'hébergement et le domaine ?</h4>
+                  <p className="text-gray-600 text-sm">Oui ! Tous les plans incluent un an d'hébergement et l'enregistrement du domaine.</p>
                 </div>
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">هل يمكنني إجراء تغييرات بعد الإطلاق؟</h4>
-                  <p className="text-gray-600 text-sm">بالطبع! نوفر الدعم ويمكننا إجراء التحديثات حسب الحاجة.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Puis-je faire des modifications après le lancement ?</h4>
+                  <p className="text-gray-600 text-sm">Bien sûr ! Nous fournissons le support et pouvons effectuer les mises à jour selon vos besoins.</p>
                 </div>
               </div>
               <div className="space-y-6">
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">ما هي طرق الدفع التي تقبلونها؟</h4>
-                  <p className="text-gray-600 text-sm">نقبل التحويلات البنكية والدفع النقدي والدفع الإلكتروني.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Quels modes de paiement acceptez-vous ?</h4>
+                  <p className="text-gray-600 text-sm">Nous acceptons les virements bancaires, paiement en espèces, et les paiements électroniques locaux (CIB, EDAHABIA, CCP).</p>
                 </div>
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">هل توفرون التدريب؟</h4>
-                  <p className="text-gray-600 text-sm">نعم! نوفر التدريب على كيفية إدارة محتوى موقعك.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Proposez-vous de la formation ?</h4>
+                  <p className="text-gray-600 text-sm">Oui ! Nous fournissons une formation complète sur la gestion du contenu de votre site.</p>
                 </div>
                 <div>
-                  <h4 className="luxora-text font-semibold mb-2">هل هناك رسوم صيانة؟</h4>
-                  <p className="text-gray-600 text-sm">الصيانة الأساسية مشمولة. الصيانة المتقدمة متاحة كخدمة إضافية.</p>
+                  <h4 className="luxora-text font-semibold mb-2">Y a-t-il des frais de maintenance ?</h4>
+                  <p className="text-gray-600 text-sm">La maintenance de base est incluse. La maintenance avancée est disponible comme service additionnel.</p>
                 </div>
               </div>
             </div>
@@ -325,10 +320,10 @@ const Pricing = () => {
 
           {/* CTA Section */}
           <div className="text-center">
-            <h3 className="text-3xl font-bold luxora-text mb-6">مستعد لبدء مشروعك؟</h3>
+            <h3 className="text-3xl font-bold luxora-text mb-6">Prêt à lancer votre projet ?</h3>
             <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-              احصل على استشارة مجانية وعرض سعر مخصص لاحتياجاتك الخاصة. 
-              بدون التزام، فقط نصيحة خبيرة.
+              Obtenez une consultation gratuite et un devis personnalisé selon vos besoins spécifiques. 
+              Sans engagement, juste des conseils d'experts.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <button 
@@ -339,15 +334,15 @@ const Pricing = () => {
                   window.open('/contact', '_self')
                 }}
               >
-                احصل على استشارة مجانية
+                Consultation gratuite
               </button>
               <a 
-                href="https://wa.me/213797339451?text=مرحباً! أنا مهتم بخدمات تطوير المواقع. هل يمكنك إخباري بالمزيد عن أسعاركم؟" 
+                href="https://wa.me/213797339451?text=Bonjour! Je suis intéressé par vos services de développement web. Pouvez-vous me donner plus d'informations sur vos tarifs?" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="luxora-button text-base px-8 py-3"
               >
-                <span className="ml-2">واتساب</span>
+                <span className="ml-2">WhatsApp</span>
               </a>
             </div>
           </div>
