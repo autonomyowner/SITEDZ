@@ -25,10 +25,13 @@ const Newsletter = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          name: 'Newsletter Subscription',
+          firstName: 'Newsletter',
+          lastName: 'Subscriber',
           email: email,
-          message: 'Newsletter subscription request',
-          type: 'newsletter'
+          phone: 'N/A',
+          projectType: 'newsletter',
+          budget: 'N/A',
+          description: 'Newsletter subscription request'
         })
       })
 
