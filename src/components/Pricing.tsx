@@ -20,7 +20,7 @@ const Pricing = () => {
   }
   const plans = [
     {
-      name: "المتجر المجاني",
+      name: "المتجر الأساسي",
       price: "6,000",
       currency: "DA",
       period: "دفعة واحدة",
@@ -45,7 +45,7 @@ const Pricing = () => {
       period: "دفعة واحدة",
       description: "الأفضل للشركات النامية",
       features: [
-        "كل ما في المتجر المجاني",
+        "كل ما في المتجر الأساسي",
         "اسم دومين مخصص",
         "ربط مع Facebook Pixel و Instagram",
         "تحليلات متقدمة للمبيعات",
@@ -119,10 +119,6 @@ const Pricing = () => {
             <span className="ml-2">أسعار شفافة - بدون رسوم مخفية</span>
           </div>
 
-          {/* Free Store Badge */}
-          <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium mb-8">
-            <span className="ml-2">متجرك المجاني على الإنترنت ببضع نقرات</span>
-          </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold luxora-text mb-6 leading-tight">
@@ -131,10 +127,32 @@ const Pricing = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
             أسعار شفافة مع كل ما تحتاجه للنجاح أون لاين. 
             جميع الخطط تشمل الاستضافة والدومين والدعم المستمر.
           </p>
+
+          {/* Special Offers */}
+          <div className="grid md:grid-cols-2 gap-6 mb-12">
+            <div className="luxora-card p-6 text-center">
+              <div className="text-2xl font-bold luxora-green-text mb-3">نوفر تصميم أولي مجاني</div>
+              <p className="text-gray-600 text-sm mb-4">
+                احصل على تصميم أولي لموقعك مجاناً قبل الالتزام بأي خطة
+              </p>
+              <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm font-medium">
+                عرض مجاني
+              </div>
+            </div>
+            <div className="luxora-card p-6 text-center">
+              <div className="text-2xl font-bold luxora-green-text mb-3">الدفع بعد الرضا</div>
+              <p className="text-gray-600 text-sm mb-4">
+                ادفع فقط بعد أن تكون راضياً تماماً عن النتيجة النهائية
+              </p>
+              <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium">
+                ضمان الرضا
+              </div>
+            </div>
+          </div>
 
           {/* Pricing Plans */}
           <div className="grid sm:grid-cols-1 md:grid-cols-3 gap-4 sm:gap-6 md:gap-8 mb-8 sm:mb-12 md:mb-16">
@@ -192,7 +210,7 @@ const Pricing = () => {
                 {/* PayPal checkout - fixed USD per plan */}
                 <div className="mt-3">
                   {(() => {
-                    const amountMap = { 'المتجر المجاني': '0.60', 'المتجر المتقدم': '2.50', 'المتجر الاحترافي': '5.00' } as const
+                    const amountMap = { 'المتجر الأساسي': '0.60', 'المتجر المتقدم': '2.50', 'المتجر الاحترافي': '5.00' } as const
                     const amount = amountMap[plan.name as keyof typeof amountMap]
                     if (!amount) return null
                     return (

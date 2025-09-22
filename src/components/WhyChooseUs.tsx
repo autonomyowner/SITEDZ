@@ -40,19 +40,6 @@ const WhyChooseUs = () => {
           ))}
         </div>
 
-        {/* Free Store CTA */}
-        <div className="text-center luxora-card p-8">
-          <h3 className="text-3xl font-bold luxora-text mb-4">0% عمولة</h3>
-          <h4 className="text-2xl font-bold luxora-green-text mb-6">
-            متجرك المجاني على الإنترنت ببضع نقرات.
-          </h4>
-          <button 
-            className="luxora-green-button text-lg px-8 py-4"
-            onClick={() => window.open('/contact', '_self')}
-          >
-            Free Design
-          </button>
-        </div>
       </div>
     </section>
   )

@@ -85,13 +85,26 @@ export const trackContact = (data?: any) => {
   });
 };
 
-export const trackPurchase = (value?: number, currency = 'USD', planName?: string) => {
+export const trackPurchase = (value?: number, currency = 'USD', planName?: string, userData?: any) => {
   trackEvent('Purchase', {
     value: value,
     currency: currency,
     content_name: planName || 'Website Package',
     content_category: 'purchase',
-    content_type: 'product'
+    content_type: 'product',
+    // Enhanced matching data
+    em: userData?.email ? btoa(userData.email.toLowerCase().trim()) : undefined,
+    ph: userData?.phone ? btoa(userData.phone.replace(/\D/g, '')) : undefined,
+    fn: userData?.firstName ? btoa(userData.firstName.toLowerCase().trim()) : undefined,
+    ln: userData?.lastName ? btoa(userData.lastName.toLowerCase().trim()) : undefined,
+    // Additional purchase data
+    num_items: 1,
+    content_ids: [planName || 'template'],
+    custom_data: {
+      template_type: 'ecommerce',
+      business_type: 'web_development',
+      delivery_method: 'digital'
+    }
   });
 };
 
@@ -165,5 +178,84 @@ export const trackButtonClick = (buttonName: string, location: string) => {
     content_name: buttonName,
     content_category: 'button_click',
     button_location: location
+  });
+};
+
+// Advanced conversion tracking for better optimization
+export const trackAdvancedPurchase = (purchaseData: {
+  value: number;
+  currency: string;
+  productName: string;
+  userData: {
+    email?: string;
+    phone?: string;
+    firstName?: string;
+    lastName?: string;
+  };
+  templateType?: string;
+  businessType?: string;
+}) => {
+  trackEvent('Purchase', {
+    value: purchaseData.value,
+    currency: purchaseData.currency,
+    content_name: purchaseData.productName,
+    content_category: 'template_purchase',
+    content_type: 'digital_product',
+    // Enhanced matching for better attribution
+    em: purchaseData.userData.email ? btoa(purchaseData.userData.email.toLowerCase().trim()) : undefined,
+    ph: purchaseData.userData.phone ? btoa(purchaseData.userData.phone.replace(/\D/g, '')) : undefined,
+    fn: purchaseData.userData.firstName ? btoa(purchaseData.userData.firstName.toLowerCase().trim()) : undefined,
+    ln: purchaseData.userData.lastName ? btoa(purchaseData.userData.lastName.toLowerCase().trim()) : undefined,
+    // Product details
+    num_items: 1,
+    content_ids: [purchaseData.productName],
+    custom_data: {
+      template_type: purchaseData.templateType || 'ecommerce',
+      business_type: purchaseData.businessType || 'web_development',
+      delivery_method: 'digital',
+      purchase_source: 'website',
+      conversion_type: 'template_purchase'
+    }
+  });
+};
+
+// Track high-value actions for better optimization
+export const trackHighValueAction = (actionType: string, value: number, currency: string, details?: any) => {
+  trackEvent('Lead', {
+    content_name: actionType,
+    content_category: 'high_value_action',
+    value: value,
+    currency: currency,
+    ...details
+  });
+};
+
+// Track conversion value for better optimization
+export const trackConversionValue = (conversionType: string, value: number, currency: string, customerLifetimeValue?: number) => {
+  trackEvent('Lead', {
+    content_name: conversionType,
+    content_category: 'conversion_value',
+    value: value,
+    currency: currency,
+    // Add lifetime value if available
+    custom_data: {
+      conversion_type: conversionType,
+      customer_lifetime_value: customerLifetimeValue || value,
+      conversion_source: 'website'
+    }
+  });
+};
+
+// Track template-specific events for better targeting
+export const trackTemplateInterest = (templateType: string, interestLevel: string) => {
+  trackEvent('ViewContent', {
+    content_name: `Template Interest - ${templateType}`,
+    content_category: 'template_interest',
+    content_type: 'template',
+    custom_data: {
+      template_type: templateType,
+      interest_level: interestLevel,
+      interest_source: 'website_browse'
+    }
   });
 };

@@ -8,7 +8,7 @@ const PixelInitializer = () => {
         // Re-initialize if needed
         if (!window._fbq || !window._fbq.loaded) {
           console.log('Facebook Pixel: Re-initializing pixel');
-          window.fbq('init', '2483890865321907');
+          window.fbq('init', '752192693921476');
         }
         
         // Track initial page view

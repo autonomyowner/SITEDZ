@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { API_CONFIG } from '../config/api'
+import { trackAddToCart, trackInitiateCheckout, trackButtonClick, trackAdvancedPurchase, trackHighValueAction } from '../utils/facebookPixel'
 
 const EcommerceTemplate = () => {
   const [selectedImage, setSelectedImage] = useState(0)
@@ -55,12 +56,34 @@ const EcommerceTemplate = () => {
     }))
   }
 
+  const handlePackageSelect = (packageId: string) => {
+    setSelectedPackage(packageId)
+    const selectedPkg = packages.find(pkg => pkg.id === packageId)
+    if (selectedPkg) {
+      // Track AddToCart event when package is selected
+      trackAddToCart(
+        `E-commerce Template - ${selectedPkg.name}`, 
+        selectedPkg.price, 
+        'DZD'
+      )
+      trackButtonClick(`Select Package - ${selectedPkg.name}`, 'template_packages')
+    }
+  }
+
   const handleOrder = async () => {
     // Validate required fields
     if (!customerInfo.name || !customerInfo.phone || !customerInfo.email) {
       alert('يرجى ملء جميع الحقول المطلوبة')
       return
     }
+
+    // Track InitiateCheckout event before processing
+    trackInitiateCheckout(
+      `E-commerce Template - ${selectedPackageData.name}`, 
+      selectedPackageData.price, 
+      'DZD'
+    )
+    trackButtonClick('Buy Now - Template Purchase', 'template_purchase')
 
     setIsSubmitting(true)
     try {
@@ -98,6 +121,33 @@ Phone: ${customerInfo.phone}`
       })
 
       if (response.ok) {
+        // Track successful purchase with enhanced data
+        trackAdvancedPurchase({
+          value: selectedPackageData.price,
+          currency: 'DZD',
+          productName: `E-commerce Template - ${selectedPackageData.name}`,
+          userData: {
+            email: customerInfo.email,
+            phone: customerInfo.phone,
+            firstName: customerInfo.name.split(' ')[0] || customerInfo.name,
+            lastName: customerInfo.name.split(' ').slice(1).join(' ') || ''
+          },
+          templateType: 'ecommerce',
+          businessType: 'web_development'
+        })
+        
+        // Track high-value action for optimization
+        trackHighValueAction(
+          'Template Purchase Completed',
+          selectedPackageData.price,
+          'DZD',
+          {
+            template_package: selectedPackageData.name,
+            customer_email: customerInfo.email,
+            purchase_method: 'form_submission'
+          }
+        )
+        
         alert('تم إرسال طلبك بنجاح! سنتواصل معك قريباً لتأكيد الطلب.')
         // Reset form
         setCustomerInfo({
@@ -237,7 +287,7 @@ Phone: ${customerInfo.phone}`
                 {packages.map((pkg) => (
                   <button
                     key={pkg.id}
-                    onClick={() => setSelectedPackage(pkg.id)}
+                    onClick={() => handlePackageSelect(pkg.id)}
                     className={`p-4 rounded-xl border-2 transition-all duration-300 ${
                       selectedPackage === pkg.id
                         ? 'border-amber-500 bg-amber-50 shadow-lg'

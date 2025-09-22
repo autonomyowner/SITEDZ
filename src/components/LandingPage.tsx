@@ -32,12 +32,6 @@ const LandingPage = () => {
               </div>
             </div>
 
-            <button 
-              className="luxora-green-button"
-              onClick={() => window.open('/contact', '_self')}
-            >
-              سجل مجاناً
-            </button>
           </div>
 
           {/* Right Content - Image */}

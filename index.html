@@ -37,9 +37,17 @@
     'https://connect.facebook.net/en_US/fbevents.js');
     
     // Initialize pixel with enhanced configuration
-    fbq('init', '2483890865321907', {
+    fbq('init', '752192693921476', {
       em: 'hashed_email', // Enable enhanced matching
-      external_id: 'hashed_external_id'
+      external_id: 'hashed_external_id',
+      // Advanced matching parameters
+      fn: 'hashed_first_name',
+      ln: 'hashed_last_name',
+      ph: 'hashed_phone',
+      ct: 'hashed_city',
+      st: 'hashed_state',
+      zp: 'hashed_zip_code',
+      country: 'hashed_country'
     });
     
     // Track initial page view with enhanced data
@@ -62,7 +70,7 @@
   <body>
     <!-- Meta Pixel noscript fallback -->
     <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=2483890865321907&ev=PageView&noscript=1"
+    src="https://www.facebook.com/tr?id=752192693921476&ev=PageView&noscript=1"
     /></noscript>
     
     <div id="root"></div>

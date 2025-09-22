@@ -10,18 +10,31 @@ const Hero = () => {
   ]
 
   return (
-    <section id="home" className="py-16 px-4 luxora-bg" dir="rtl">
-      <div className="max-w-7xl mx-auto text-center">
+    <section 
+      id="home" 
+      className="relative py-16 px-4 min-h-screen flex items-center" 
+      style={{
+        backgroundImage: 'url(/pics/templates/safar-safarov-LKsHwgzyk7c-unsplash.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+      dir="rtl"
+    >
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-black/40"></div>
+      
+      <div className="relative z-10 max-w-7xl mx-auto text-center">
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
-          <div className="inline-flex items-center px-4 py-2 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
+          <div className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-medium mb-8 shadow-lg">
             الحل الأمثل للتجارة الإلكترونية في الجزائر
           </div>
 
           {/* Main Heading */}
-          <h1 className="text-4xl md:text-6xl font-bold luxora-text mb-6 leading-tight">
+          <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             هل تريد الاحتراف في التجارة الإلكترونية
-            <span className="block luxora-green-text">
+            <span className="block text-green-400">
               <Typewriter 
                 words={typewriterWords}
                 typeSpeed={150}
@@ -33,37 +46,16 @@ const Hero = () => {
           </h1>
 
           {/* Subtitle */}
-          <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
             منصة SITEDZ Store توفر لكم كل الوسائل التي تحتاج إليها لتسهيل بيع منتجاتك وتعزيز مصداقيتك أون لاين وإنشاء متجر إلكتروني احترافي. 
             بدون أي معرفة في البرمجة - إيميل، كلمة مرور، وانطلق!
           </p>
 
-          {/* Features */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">سهولة الاستعمال</div>
-              <div className="text-gray-600 text-sm md:text-base">موقعك جاهز في 5 أيام بدون برمجة</div>
-            </div>
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">ربح الوقت</div>
-              <div className="text-gray-600 text-sm md:text-base">إدارة تلقائية للطلبات والمخزون</div>
-            </div>
-            <div className="text-center luxora-card p-6">
-              <div className="text-2xl md:text-3xl font-bold luxora-green-text mb-2">دعم محلي</div>
-              <div className="text-gray-600 text-sm md:text-base">فريق جزائري، دعم بالعربية والفرنسية</div>
-            </div>
-          </div>
 
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="luxora-green-button"
-              onClick={() => window.open('/contact', '_self')}
-            >
-              سجل مجاناً
-            </button>
-            <button 
-              className="luxora-button"
+              className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/pricing', '_self')}
             >
               عرض الأسعار
@@ -72,10 +64,10 @@ const Hero = () => {
 
           {/* Speed & Support Promises */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-            <div className="inline-flex items-center px-4 py-2 bg-green-100 text-green-700 rounded-full text-sm">
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
               جاهز في 5 أيام
             </div>
-            <div className="inline-flex items-center px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm">
+            <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
               دعم واتساب 24/7
             </div>
           </div>
