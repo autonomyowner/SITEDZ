@@ -27,6 +27,62 @@ const Portfolio = () => {
       url: "https://triomphe-lite-design.vercel.app/",
       category: "Décoration & Design",
       story: "Triomphe Design, spécialisé dans la décoration moderne, avait besoin d'une plateforme qui capture l'essence de leur esthétique. Nous avons développé un site qui met en valeur leurs créations uniques, avec une navigation intuitive et des visuels époustouflants qui convertissent les visiteurs en clients."
+    },
+    {
+      name: "Elite Dental Clinic",
+      description: "Site web premium pour un cabinet dentaire d'exception à Ouled Fayet, avec système de réservation intégré et augmentation des rendez-vous de 200%",
+      image: "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Système de réservation Google Calendar intégré",
+        "Présentation des spécialités dentaires premium",
+        "Tarifs transparents et devis en ligne",
+        "Interface patient intuitive et moderne"
+      ],
+      url: "https://eliteclinicouledfayet.vercel.app/",
+      category: "Santé & Médical",
+      story: "Elite Dental Clinic, cabinet dentaire d'exception à Ouled Fayet, souhaitait moderniser sa prise de rendez-vous et améliorer sa communication avec les patients. Nous avons créé une plateforme élégante qui reflète leur excellence médicale, avec un système de réservation fluide qui a transformé leur gestion des rendez-vous."
+    },
+    {
+      name: "24 Clinic Ben Aknoun",
+      description: "Plateforme médicale moderne pour une clinique dentaire à Ben Aknoun, optimisant la prise de rendez-vous et améliorant l'expérience patient de 180%",
+      image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Interface de réservation 24/7",
+        "Présentation des services dentaires",
+        "Système de notifications automatiques",
+        "Design responsive pour tous appareils"
+      ],
+      url: "https://24clinic.vercel.app/",
+      category: "Santé & Médical",
+      story: "24 Clinic Ben Aknoun, clinique dentaire moderne, avait besoin d'une présence digitale forte pour faciliter la prise de rendez-vous de ses patients. Notre solution a créé une expérience fluide qui permet aux patients de réserver facilement, améliorant significativement leur satisfaction."
+    },
+    {
+      name: "Perfect Events",
+      description: "Site événementiel élégant pour une entreprise de décoration à Tlemcen, créant une expérience immersive et augmentant les réservations de 220%",
+      image: "https://images.unsplash.com/photo-1519167758481-83f142b8fb9e?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Galerie d'événements avec filtres par type",
+        "Système de réservation personnalisé",
+        "Témoignages clients intégrés",
+        "Design élégant reflétant l'art événementiel"
+      ],
+      url: "https://perfe-dun.vercel.app/",
+      category: "Événementiel & Décoration",
+      story: "Perfect Events, spécialiste de la décoration événementielle à Tlemcen, cherchait à digitaliser ses services et attirer de nouveaux clients. Nous avons créé une plateforme qui capture la magie de leurs créations, avec une galerie immersive et un système de réservation qui facilite la prise de contact."
+    },
+    {
+      name: "SPEA Cup",
+      description: "Plateforme éducative innovante pour l'apprentissage de l'anglais à Alger, créant une communauté d'apprenants et augmentant les inscriptions de 150%",
+      image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Système d'inscription aux sessions",
+        "Présentation des méthodes d'apprentissage",
+        "Interface communautaire pour les apprenants",
+        "Design chaleureux et accueillant"
+      ],
+      url: "https://spea-cup.vercel.app/",
+      category: "Éducation & Formation",
+      story: "SPEA Cup, initiative d'apprentissage de l'anglais à Alger, voulait créer une communauté d'apprenants autour de sessions conviviales. Notre plateforme facilite l'inscription aux sessions 'Learn English Over Coffee', créant une expérience d'apprentissage unique et engageante dans l'atmosphère chaleureuse des cafés algérois."
     }
   ]
 
@@ -51,7 +107,7 @@ const Portfolio = () => {
         </div>
 
         {/* Projects Grid */}
-        <div className="grid md:grid-cols-2 gap-8 mb-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => (
             <div key={index} className="luxora-card overflow-hidden hover:shadow-lg transition-shadow">
               {/* Project Image */}
