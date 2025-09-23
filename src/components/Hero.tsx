@@ -33,7 +33,7 @@ const Hero = () => {
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
             Solutions digitales modernes pour les entreprises algériennes
-            <span className="block text-green-400">
+            <span className="block" style={{ color: 'var(--luxora-luxury-green)' }}>
               <Typewriter 
                 words={typewriterWords}
                 typeSpeed={150}
@@ -54,7 +54,7 @@ const Hero = () => {
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
-              className="bg-green-600 hover:bg-green-700 text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
+              className="luxora-green-button text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/pricing', '_self')}
             >
               Voir nos tarifs
