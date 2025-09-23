@@ -5,7 +5,14 @@ const Footer = () => {
         {/* Top Footer */}
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="text-center md:text-left mb-6 md:mb-0">
-            <h3 className="text-3xl font-bold luxora-text mb-2">SITEDZ Store</h3>
+            <div className="flex items-center justify-center md:justify-start mb-2">
+              <img 
+                src="/pics/templates/logo.png" 
+                alt="SITEDZ Store Logo" 
+                className="h-10 w-10 mr-3"
+              />
+              <h3 className="text-3xl font-bold luxora-text">SITEDZ Store</h3>
+            </div>
             <p className="text-gray-600">Solutions digitales modernes pour les entreprises algériennes</p>
           </div>
           <div className="text-center md:text-right">
