@@ -10,7 +10,7 @@ const Portfolio = () => {
         "Gestion des stocks en temps réel",
         "Interface mobile optimisée pour l'Algérie"
       ],
-      url: "https://parfumerie-allouani.vercel.app/",
+      url: "https://www.allouani.com/",
       category: "E-commerce Premium",
       story: "Parfumerie Allouani, une institution de 20 ans à Alger, cherchait à moderniser sa présence en ligne. Nous avons créé une boutique e-commerce sophistiquée qui reflète l'élégance de leurs parfums de luxe, avec une expérience utilisateur fluide adaptée au marché algérien."
     },
