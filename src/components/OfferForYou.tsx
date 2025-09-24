@@ -82,47 +82,6 @@ const Services = () => {
           ))}
         </div>
 
-        {/* Premium Features Section */}
-        <div className="luxora-card p-8 mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold luxora-text mb-4">Fonctionnalités Premium 2025</h3>
-            <p className="text-gray-600">Toutes nos solutions incluent les dernières technologies</p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🔍</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">SEO Avancé</h4>
-              <p className="text-sm text-gray-600">Optimisation Google & Google Business</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🌙</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">Mode Sombre</h4>
-              <p className="text-sm text-gray-600">Interface moderne et élégante</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-purple-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">🔒</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">Sécurité</h4>
-              <p className="text-sm text-gray-600">Sauvegardes automatiques & SSL</p>
-            </div>
-            
-            <div className="text-center">
-              <div className="w-16 h-16 mx-auto mb-4 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-2xl">💬</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">Support 24/7</h4>
-              <p className="text-sm text-gray-600">WhatsApp & assistance continue</p>
-            </div>
-          </div>
-        </div>
 
         {/* CTA Section */}
         <div className="text-center">

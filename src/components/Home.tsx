@@ -1,5 +1,4 @@
 import Hero from './Hero'
-import Services from './OfferForYou'
 import Portfolio from './Portfolio'
 import Blog from './Blog'
 import FAQ from './FAQ'
@@ -10,7 +9,6 @@ const Home = () => {
   return (
     <>
       <Hero />
-      <Services />
       <Portfolio />
       <Blog />
       <FAQ />
