@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { API_CONFIG } from '../config/api'
 import { trackAddToCart, trackInitiateCheckout, trackButtonClick, trackAdvancedPurchase, trackHighValueAction } from '../utils/facebookPixel'
+import { logger } from '../utils/logger'
 
 const EcommerceTemplate = () => {
   const [selectedImage, setSelectedImage] = useState(0)
@@ -160,7 +161,7 @@ Phone: ${customerInfo.phone}`
         throw new Error('Failed to submit order')
       }
     } catch (error) {
-      console.error('Order submission error:', error)
+      logger.error('Order submission error:', error)
       alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.')
     } finally {
       setIsSubmitting(false)

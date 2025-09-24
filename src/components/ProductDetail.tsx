@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { getTemplateById } from '../data/templates'
 import { API_CONFIG } from '../config/api'
+import { logger } from '../utils/logger'
 
 const ProductDetail = () => {
   const { id } = useParams<{ id: string }>()
@@ -116,7 +117,7 @@ Phone: ${customerInfo.phone}`
         throw new Error('Failed to submit order')
       }
     } catch (error) {
-      console.error('Order submission error:', error)
+      logger.error('Order submission error:', error)
       alert('حدث خطأ في إرسال الطلب. يرجى المحاولة مرة أخرى أو التواصل معنا مباشرة.')
     } finally {
       setIsSubmitting(false)

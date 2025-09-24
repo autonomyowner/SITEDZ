@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { trackPurchase } from '../utils/facebookPixel'
+import { logger } from '../utils/logger'
 
 type PayPalCheckoutProps = {
   amount: string
@@ -57,7 +58,7 @@ const PayPalCheckout = ({ amount, currency = 'USD', description, onSuccess, onEr
         setReady(true)
       })
       .catch((err) => {
-        console.error(err)
+        logger.error(err)
         onError?.(err)
       })
     return () => {

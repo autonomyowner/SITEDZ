@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react'
 import { trackContact, trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
+import { logger } from '../utils/logger'
 
 const ContactPage = () => {
   const [formData, setFormData] = useState({
@@ -30,9 +31,9 @@ const ContactPage = () => {
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    console.log('=== FORM SUBMISSION STARTED ===')
-    console.log('Form data:', formData)
-    console.log('All required fields filled:', {
+    logger.log('=== FORM SUBMISSION STARTED ===')
+    logger.log('Form data:', formData)
+    logger.log('All required fields filled:', {
       firstName: !!formData.firstName,
       lastName: !!formData.lastName,
       email: !!formData.email,
@@ -61,7 +62,7 @@ const ContactPage = () => {
       // Submit directly to Google Apps Script using form data (avoids CORS)
       const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbxcTJsZzOps9jtqm-fcQS0sEIeofbTht101LwWYhGjtmorVt1a4tQpv-QmhEdHfLiVotg/exec'
       
-      console.log('Sending request to:', GOOGLE_SCRIPT_URL)
+      logger.log('Sending request to:', GOOGLE_SCRIPT_URL)
       
       // Create form data to avoid CORS issues
       const formDataToSend = new FormData()
@@ -80,11 +81,11 @@ const ContactPage = () => {
         body: formDataToSend
       })
 
-      console.log('Response status:', response.status)
-      console.log('Response ok:', response.ok)
+      logger.log('Response status:', response.status)
+      logger.log('Response ok:', response.ok)
       
       if (response.ok) {
-        console.log('Form submitted successfully!')
+        logger.log('Form submitted successfully!')
         setSubmitStatus('success')
         // Reset form
         setFormData({
@@ -97,11 +98,11 @@ const ContactPage = () => {
           description: ''
         })
       } else {
-        console.log('Form submission failed with status:', response.status)
+        logger.log('Form submission failed with status:', response.status)
         throw new Error('Failed to submit form')
       }
     } catch (error) {
-      console.error('Form submission error:', error)
+      logger.error('Form submission error:', error)
       setSubmitStatus('error')
     } finally {
       setIsSubmitting(false)
@@ -317,8 +318,8 @@ const ContactPage = () => {
                   disabled={isSubmitting}
                   className={`luxora-green-button w-full text-base sm:text-lg py-3 sm:py-4 ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
                   onClick={() => {
-                    console.log('Button clicked!')
-                    console.log('Form data before submit:', formData)
+                    logger.log('Button clicked!')
+                    logger.log('Form data before submit:', formData)
                     trackButtonClick('Send Message', 'contact_form')
                   }}
                 >
@@ -340,9 +341,9 @@ const ContactPage = () => {
                     <button
                       type="button"
                       onClick={() => {
-                        console.log('Debug: Form data:', formData)
-                        console.log('Debug: Is submitting:', isSubmitting)
-                        console.log('Debug: Submit status:', submitStatus)
+                        logger.log('Debug: Form data:', formData)
+                        logger.log('Debug: Is submitting:', isSubmitting)
+                        logger.log('Debug: Submit status:', submitStatus)
                       }}
                       className="w-full bg-gray-500 text-white py-2 px-4 rounded text-sm"
                     >
@@ -352,7 +353,7 @@ const ContactPage = () => {
                     <button
                       type="button"
                       onClick={() => {
-                        console.log('=== TEST SUBMISSION ===')
+                        logger.log('=== TEST SUBMISSION ===')
                         // Fill form with test data
                         setFormData({
                           firstName: 'Test',
@@ -363,7 +364,7 @@ const ContactPage = () => {
                           budget: '200k-400k',
                           description: 'Test submission'
                         })
-                        console.log('Form filled with test data')
+                        logger.log('Form filled with test data')
                       }}
                       className="w-full bg-blue-500 text-white py-2 px-4 rounded text-sm"
                     >

@@ -1,4 +1,6 @@
 // Facebook Pixel utility functions
+import { logger } from './logger';
+
 declare global {
   interface Window {
     fbq: (action: string, event: string, data?: any) => void;
@@ -41,10 +43,10 @@ export const trackPageView = async (url?: string) => {
         content_name: url || window.location.pathname,
         content_category: 'page_view'
       });
-      console.log('Facebook Pixel: PageView tracked', url ? `for ${url}` : '');
+      logger.log('Facebook Pixel: PageView tracked', url ? `for ${url}` : '');
     }
   } catch (error) {
-    console.warn('Facebook Pixel: Failed to track PageView', error);
+    logger.warn('Facebook Pixel: Failed to track PageView', error);
   }
 };
 
@@ -59,10 +61,10 @@ export const trackEvent = async (eventName: string, data?: any) => {
         content_category: 'website_interaction',
         timestamp: new Date().toISOString()
       });
-      console.log('Facebook Pixel: Event tracked', eventName, data);
+      logger.log('Facebook Pixel: Event tracked', eventName, data);
     }
   } catch (error) {
-    console.warn('Facebook Pixel: Failed to track event', eventName, error);
+    logger.warn('Facebook Pixel: Failed to track event', eventName, error);
   }
 };
 
