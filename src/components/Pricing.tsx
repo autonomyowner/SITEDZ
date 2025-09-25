@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
-import PayPalCheckout from './PayPalCheckout'
-import { trackViewContent, trackAddToCart, trackInitiateCheckout, trackButtonClick, trackSchedule } from '../utils/facebookPixel'
+import { trackViewContent, trackAddToCart, trackButtonClick, trackSchedule } from '../utils/facebookPixel'
 
 const Pricing = () => {
   useEffect(() => {
@@ -14,10 +13,6 @@ const Pricing = () => {
     trackButtonClick(`Select ${planName} Plan`, 'pricing_plans')
   }
 
-  const handlePayPalClick = (planName: string, amount: string) => {
-    trackInitiateCheckout(planName, parseFloat(amount), 'USD')
-    trackButtonClick(`PayPal Checkout ${planName}`, 'pricing_plans')
-  }
   const plans = [
     {
       name: "Site web de Présentation, VITRINE",
