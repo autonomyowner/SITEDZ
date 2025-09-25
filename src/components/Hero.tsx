@@ -57,7 +57,7 @@ const Hero = () => {
               className="luxora-green-button text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/pricing', '_self')}
             >
-              Voir nos tarifs
+              Découvrir nos services
             </button>
             <button 
               className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"

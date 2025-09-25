@@ -15,7 +15,7 @@ const Navbar = () => {
               <img 
                 src="/pics/templates/logo.png" 
                 alt="SITEDZ Store Logo" 
-                className="h-8 w-8 sm:h-10 sm:w-10 mr-3 rounded-full"
+                className="h-8 w-8 sm:h-10 sm:w-10 mr-3 rounded-full object-cover"
               />
               <h1 className="luxora-text font-bold text-xl sm:text-2xl">SITEDZ Store</h1>
             </div>
