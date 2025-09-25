@@ -281,6 +281,49 @@ Phone: ${customerInfo.phone}`
               </ul>
             </div>
 
+            {/* E-commerce Features */}
+            <div className="bg-white/70 backdrop-blur-sm rounded-xl p-6 shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-3">مميزات المتجر الإلكتروني</h3>
+              <div className="grid md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">إدارة المنتجات</h4>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    <li>• إضافة وتعديل المنتجات بسهولة</li>
+                    <li>• إدارة الفئات والعلامات التجارية</li>
+                    <li>• تتبع المخزون تلقائياً</li>
+                    <li>• صور عالية الجودة للمنتجات</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">نظام الطلبات</h4>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    <li>• تتبع الطلبات في الوقت الفعلي</li>
+                    <li>• إشعارات تلقائية للعملاء</li>
+                    <li>• إدارة حالات الطلبات</li>
+                    <li>• تقارير مبيعات مفصلة</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">طرق الدفع</h4>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    <li>• PayPal للدفع الدولي</li>
+                    <li>• بطاقات الائتمان المحلية</li>
+                    <li>• الدفع عند الاستلام</li>
+                    <li>• تحويل بنكي آمن</li>
+                  </ul>
+                </div>
+                <div>
+                  <h4 className="font-semibold text-gray-800 mb-2">التسويق والتحسين</h4>
+                  <ul className="space-y-1 text-sm text-gray-700">
+                    <li>• SEO محسن لمحركات البحث</li>
+                    <li>• تكامل مع وسائل التواصل الاجتماعي</li>
+                    <li>• نظام نقاط الولاء</li>
+                    <li>• كوبونات الخصم</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
             {/* Package Selection */}
             <div className="space-y-4">
               <h3 className="text-xl font-bold text-gray-900">اختر الباقة</h3>

@@ -20,68 +20,66 @@ const Pricing = () => {
   }
   const plans = [
     {
-      name: "Site Vitrine",
-      price: "15,000",
-      currency: "DA",
-      period: "Paiement unique",
+      name: "Site web de Présentation, VITRINE",
+      price: "",
+      currency: "",
+      period: "",
       description: "Parfait pour les petites entreprises",
       features: [
-        "Site web professionnel et responsive",
-        "Design moderne et personnalisé",
-        "Nom de domaine .com inclus (1 an)",
-        "Hébergement rapide et sécurisé",
-        "Optimisation SEO de base",
-        "Intégration réseaux sociaux",
-        "Support WhatsApp 24/7",
-        "Formation à l'utilisation",
-        "Garantie 30 jours"
+        "Nom de domaine et hébergement pendant 12 mois INCLUS",
+        "Accès rapide et facile",
+        "Tableau de bord facile à manipuler",
+        "Certificat SSL",
+        "Hébergement puissant",
+        "Design élégant et professionnel",
+        "Optimisation SEO",
+        "Compatibilité mobile",
+        "Livraison du projet 3 à 5 jours après choix du nom de domaine"
       ],
       popular: false,
-      cta: "Commencer",
+      cta: "Contactez nous",
       color: "border-blue-500"
     },
     {
-      name: "Boutique en Ligne",
-      price: "35,000",
-      currency: "DA",
-      period: "Paiement unique",
-      description: "Idéal pour l'e-commerce en Algérie",
+      name: "Site E-Commerce, Réservation",
+      price: "",
+      currency: "",
+      period: "",
+      description: "Idéal pour l'e-commerce et les réservations",
       features: [
-        "Tout du Site Vitrine",
-        "Boutique en ligne complète",
-        "Gestion des commandes",
-        "Paiements locaux (CIB, EDAHABIA, CCP)",
-        "Paiements internationaux (PayPal, Stripe)",
-        "Gestion des stocks",
-        "Analytics et rapports",
-        "Mode sombre inclus",
-        "Sauvegardes automatiques",
-        "Support 3 mois inclus"
+        "Nom de domaine et hébergement pendant 12 mois INCLUS",
+        "Accès rapide et facile",
+        "Tableau de bord facile à manipuler",
+        "Certificat SSL",
+        "Hébergement puissant",
+        "Panier d'achat intuitif",
+        "Système de paiement intégré (Optionnel)",
+        "Gestion des stocks et des réservations en temps réel",
+        "Livraison du projet 5 à 7 jours après choix du nom de domaine"
       ],
       popular: true,
-      cta: "Lancer ma boutique",
+      cta: "Contactez nous",
       color: "border-green-500"
     },
     {
-      name: "Solution Entreprise",
-      price: "75,000",
-      currency: "DA",
-      period: "Paiement unique",
-      description: "Solution complète pour grandes entreprises",
+      name: "Application mobile androide & IOS",
+      price: "",
+      currency: "",
+      period: "",
+      description: "Solution complète pour applications mobiles",
       features: [
-        "Tout de la Boutique en Ligne",
-        "Application web sur mesure",
-        "Multi-utilisateurs et rôles",
-        "Intégrations avancées",
-        "API personnalisées",
-        "Sécurité renforcée",
-        "Performance optimisée",
-        "Support prioritaire",
-        "Formation équipe complète",
-        "Maintenance 6 mois incluse"
+        "Nom de domaine et hébergement pendant 12 mois INCLUS",
+        "Accès rapide et facile",
+        "Tableau de bord facile à manipuler",
+        "Certificat SSL",
+        "Hébergement puissant",
+        "Compatibilité multiplateforme",
+        "Notifications push",
+        "Fonctionnalités personnalisées",
+        "Délai de réalisation selon le projet"
       ],
       popular: false,
-      cta: "Solution complète",
+      cta: "Contactez nous",
       color: "border-purple-500"
     }
   ]
@@ -168,20 +166,11 @@ const Pricing = () => {
                   <h3 className="text-xl md:text-2xl font-bold luxora-text mb-2">{plan.name}</h3>
                   <p className="text-gray-600 text-sm mb-4 md:mb-6">{plan.description}</p>
                   
-                  <div className="mb-2 md:mb-4">
-                    <span className="text-3xl md:text-4xl font-bold luxora-green-text">{plan.price}</span>
-                    <span className="text-gray-600 text-lg ml-2">{plan.currency}</span>
-                  </div>
-                  <p className="text-gray-500 text-sm">{plan.period}</p>
-                  {plan.name === 'Boutique en Ligne' && (
+                  {plan.name === 'Site E-Commerce, Réservation' && (
                     <div className="mt-2 inline-flex items-center px-3 py-1 rounded-full bg-green-100 text-green-700 text-xs font-medium">
-                      <span className="ml-1">Économisez 40,000 DA vs Solution Entreprise</span>
+                      <span className="ml-1">Le plus utilisé</span>
                     </div>
                   )}
-                  <div className="mt-3 grid grid-cols-1 gap-1">
-                    <div className="text-green-600 text-xs sm:text-sm">Livré en 5 jours</div>
-                    <div className="text-green-600 text-xs sm:text-sm">Support WhatsApp 24/7</div>
-                  </div>
                 </div>
 
                 <ul className="space-y-3 md:space-y-4 mb-6 md:mb-8">
@@ -202,38 +191,6 @@ const Pricing = () => {
                 >
                   {plan.cta}
                 </button>
-                {/* PayPal checkout - fixed USD per plan */}
-                <div className="mt-3">
-                  {(() => {
-                    const amountMap = { 'Site Vitrine': '1.50', 'Boutique en Ligne': '3.50', 'Solution Entreprise': '7.50' } as const
-                    const amount = amountMap[plan.name as keyof typeof amountMap]
-                    if (!amount) return null
-                    return (
-                      <>
-                        <PayPalCheckout
-                          amount={amount}
-                          currency="USD"
-                          description={`${plan.name} - Paiement complet`}
-                          className="flex justify-center"
-                          onSuccess={() => handlePayPalClick(plan.name, amount)}
-                        />
-                      </>
-                    )
-                  })()}
-                </div>
-                <div className="mt-3">
-                  <button 
-                    className="luxora-button w-full text-center text-sm"
-                    onClick={() => window.open('/contact', '_self')}
-                  >
-                    Réserver un devis gratuit
-                  </button>
-                </div>
-
-                <div className="mt-4 text-gray-500 text-xs sm:text-sm">
-                  <div>Paiement unique. Propriété à vie. Aucun frais caché.</div>
-                  <div>Pas sûr ? Obtenez une consultation gratuite de 30 minutes avant de vous engager.</div>
-                </div>
               </div>
             ))}
           </div>

@@ -9,7 +9,7 @@ const Footer = () => {
               <img 
                 src="/pics/templates/logo.png" 
                 alt="SITEDZ Store Logo" 
-                className="h-10 w-10 mr-3"
+                className="h-10 w-10 mr-3 rounded-full"
               />
               <h3 className="text-3xl font-bold luxora-text">SITEDZ Store</h3>
             </div>
