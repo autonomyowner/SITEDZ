@@ -86,6 +86,36 @@ const Portfolio = () => {
       url: "https://spea-cup.vercel.app/",
       category: "Éducation & Formation",
       story: "SPEA Cup, initiative d'apprentissage de l'anglais à Alger, voulait créer une communauté d'apprenants autour de sessions conviviales. Notre plateforme facilite l'inscription aux sessions 'Learn English Over Coffee', créant une expérience d'apprentissage unique et engageante dans l'atmosphère chaleureuse des cafés algérois."
+    },
+    {
+      name: "Elghella - الغلة",
+      description: "Plateforme agricole complète pour les agriculteurs algériens, créant un marché numérique intégré et augmentant les ventes agricoles de 400%",
+      image: "https://images.unsplash.com/photo-1574943320219-553eb213f72d?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Marché numérique pour produits agricoles",
+        "Système de location d'équipements agricoles",
+        "Plateforme de vente et location de terres",
+        "Services de main-d'œuvre agricole",
+        "Intégration des pépinières et analyses"
+      ],
+      url: "https://elghella.com/",
+      category: "Agriculture & Innovation",
+      story: "Elghella (الغلة) est une plateforme révolutionnaire qui transforme l'agriculture algérienne en créant un écosystème numérique complet. Nous avons développé une solution qui connecte les agriculteurs, facilite l'achat/vente de produits frais, la location d'équipements, et l'accès aux services agricoles spécialisés, créant ainsi le premier marché agricole numérique d'Algérie."
+    },
+    {
+      name: "ReachFood",
+      description: "Technologie révolutionnaire d'auto-chauffage pour repas nutritifs, créant une solution innovante pour l'alimentation d'urgence et augmentant l'accessibilité alimentaire de 300%",
+      image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=600&h=400&fit=crop&crop=center",
+      features: [
+        "Technologie d'auto-chauffage en 5 minutes",
+        "Emballages plantables et biodégradables",
+        "Repas chauds sans électricité",
+        "Certification Halal et FDA",
+        "Solutions pour urgences et aventures"
+      ],
+      url: "https://reachfood.co/",
+      category: "Innovation Alimentaire",
+      story: "ReachFood révolutionne l'alimentation avec sa technologie d'auto-chauffage innovante. Nous avons développé une plateforme qui permet d'avoir des repas chauds et nutritifs en 5 minutes sans électricité, avec des emballages plantables qui deviennent des fleurs sauvages. Cette solution transforme l'expérience alimentaire pour les secours d'urgence, les aventures en plein air et les professionnels occupés."
     }
   ]
 

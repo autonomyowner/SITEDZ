@@ -2,7 +2,6 @@ import Hero from './Hero'
 import Portfolio from './Portfolio'
 import Blog from './Blog'
 import FAQ from './FAQ'
-import Newsletter from './Newsletter'
 import Contact from './Contact'
 
 const Home = () => {
@@ -12,7 +11,6 @@ const Home = () => {
       <Portfolio />
       <Blog />
       <FAQ />
-      <Newsletter />
       <Contact />
     </>
   )
