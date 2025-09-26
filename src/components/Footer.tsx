@@ -1,8 +1,6 @@
-import { useTranslation } from 'react-i18next'
 import { useState } from 'react'
 
 const Footer = () => {
-  const { t } = useTranslation()
   const [isChatOpen, setIsChatOpen] = useState(false)
   const [email, setEmail] = useState('')
 
