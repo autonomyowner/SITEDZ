@@ -186,7 +186,7 @@ const Portfolio = () => {
           
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
-              <div className="text-4xl font-bold luxora-green-text mb-2">50+</div>
+              <div className="text-4xl font-bold luxora-green-text mb-2">13+</div>
               <div className="text-gray-600 text-sm">{t('portfolio.stats.sitesCreated')}</div>
             </div>
             <div className="text-center">
