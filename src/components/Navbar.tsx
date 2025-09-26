@@ -1,9 +1,12 @@
 import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
+import LanguageSwitcher from './LanguageSwitcher'
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const location = useLocation()
+  const { t } = useTranslation()
 
   return (
     <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-green-200 shadow-sm">
@@ -27,31 +30,32 @@ const Navbar = () => {
               to="/" 
               className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              Accueil
+              {t('nav.home')}
             </Link>
             <Link 
               to="/services" 
               className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/services' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              Services
+              {t('nav.services')}
             </Link>
             <Link 
               to="/pricing" 
               className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/pricing' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              Tarifs
+              {t('nav.pricing')}
             </Link>
             <Link 
               to="/contact" 
               className={`px-3 py-2 text-sm font-medium transition-colors ${location.pathname === '/contact' ? 'text-green-600 border-b-2 border-green-600' : 'luxora-text hover:text-green-600'}`}
             >
-              Contact
+              {t('nav.contact')}
             </Link>
+            <LanguageSwitcher />
             <button 
               className="maroon-button text-sm px-4 py-2"
               onClick={() => window.open('/contact', '_self')}
             >
-              Devis gratuit
+              {t('nav.freeQuote')}
             </button>
           </div>
 
@@ -84,29 +88,32 @@ const Navbar = () => {
                 className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Accueil
+                {t('nav.home')}
               </Link>
               <Link 
                 to="/services" 
                 className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/services' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Services
+                {t('nav.services')}
               </Link>
               <Link 
                 to="/pricing" 
                 className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/pricing' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Tarifs
+                {t('nav.pricing')}
               </Link>
               <Link 
                 to="/contact" 
                 className={`block px-3 py-2 text-base font-medium transition-colors rounded-md ${location.pathname === '/contact' ? 'text-green-600 bg-green-50' : 'luxora-text hover:text-green-600 hover:bg-green-50'}`}
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
+                {t('nav.contact')}
               </Link>
+              <div className="pt-2 px-3">
+                <LanguageSwitcher />
+              </div>
               <div className="pt-2">
                 <button 
                   className="block w-full maroon-button text-center py-3"
@@ -115,7 +122,7 @@ const Navbar = () => {
                     setIsMenuOpen(false)
                   }}
                 >
-                  Devis gratuit
+                  {t('nav.freeQuote')}
                 </button>
               </div>
             </div>

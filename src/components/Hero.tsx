@@ -1,12 +1,14 @@
 import Typewriter from './Typewriter'
+import { useTranslation } from 'react-i18next'
 
 const Hero = () => {
+  const { t } = useTranslation()
   const typewriterWords = [
-    "sites vitrine",
-    "boutiques en ligne", 
-    "applications web",
-    "solutions digitales",
-    "plateformes e-commerce"
+    t('hero.typewriter.showcase'),
+    t('hero.typewriter.onlineStores'),
+    t('hero.typewriter.webApps'),
+    t('hero.typewriter.digitalSolutions'),
+    t('hero.typewriter.ecommercePlatforms')
   ]
 
   return (
@@ -27,12 +29,12 @@ const Hero = () => {
         <div className="max-w-4xl mx-auto">
           {/* Badge */}
           <div className="inline-flex items-center px-4 py-2 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 text-sm font-medium mb-8 shadow-lg">
-            Solutions digitales modernes pour les entreprises algériennes
+            {t('hero.badge')}
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight drop-shadow-lg">
-            Solutions digitales modernes pour les entreprises algériennes
+            {t('hero.title')}
             <span className="block" style={{ color: 'var(--luxora-luxury-green)' }}>
               <Typewriter 
                 words={typewriterWords}
@@ -46,9 +48,7 @@ const Hero = () => {
 
           {/* Subtitle */}
           <p className="text-lg text-gray-200 mb-8 max-w-3xl mx-auto leading-relaxed drop-shadow-md">
-            SITEDZ Store est votre agence web de confiance en Algérie. Nous créons des sites web modernes, 
-            rapides et professionnels pour faire grandir votre entreprise en ligne. 
-            Spécialisés dans le marché algérien avec des solutions adaptées à vos besoins locaux.
+            {t('hero.subtitle')}
           </p>
 
           {/* CTA Buttons */}
@@ -57,26 +57,26 @@ const Hero = () => {
               className="luxora-green-button text-white font-semibold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/pricing', '_self')}
             >
-              Découvrir nos services
+              {t('hero.discoverServices')}
             </button>
             <button 
               className="bg-white/20 hover:bg-white/30 backdrop-blur-sm text-white font-semibold px-8 py-4 rounded-lg border border-white/30 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
               onClick={() => window.open('/contact', '_self')}
             >
-              Devis gratuit
+              {t('hero.freeQuote')}
             </button>
           </div>
 
           {/* Speed & Support Promises */}
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
-              Livré en 5 jours
+              {t('hero.deliveredIn5Days')}
             </div>
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
-              Support WhatsApp 24/7
+              {t('hero.whatsappSupport')}
             </div>
             <div className="inline-flex items-center px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm border border-white/30 shadow-lg">
-              Paiement local accepté
+              {t('hero.localPayment')}
             </div>
           </div>
         </div>

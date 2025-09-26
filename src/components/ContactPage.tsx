@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { trackContact, trackViewContent, trackFormSubmission, trackSchedule, trackButtonClick } from '../utils/facebookPixel'
 import { logger } from '../utils/logger'
 
 const ContactPage = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -110,27 +112,27 @@ const ContactPage = () => {
   }
   const contactMethods = [
     {
-      title: "Email",
-      value: "contact@sitedz.store",
-      description: "Envoyez-nous vos exigences de projet",
+      title: t('contact.methods.email.title'),
+      value: t('contact.methods.email.value'),
+      description: t('contact.methods.email.description'),
       link: "mailto:contact@sitedz.store"
     },
     {
-      title: "Téléphone",
-      value: "0797339451",
-      description: "Parlez directement avec notre équipe",
+      title: t('contact.methods.phone.title'),
+      value: t('contact.methods.phone.value'),
+      description: t('contact.methods.phone.description'),
       link: "tel:+213797339451"
     },
     {
-      title: "WhatsApp",
-      value: "0797339451",
-      description: "Discussion rapide sur votre projet",
+      title: t('contact.methods.whatsapp.title'),
+      value: t('contact.methods.whatsapp.value'),
+      description: t('contact.methods.whatsapp.description'),
       link: "https://wa.me/+213797339451"
     },
     {
-      title: "Localisation",
-      value: "Algérie",
-      description: "Nous servons les clients dans tout le pays",
+      title: t('contact.methods.location.title'),
+      value: t('contact.methods.location.value'),
+      description: t('contact.methods.location.description'),
       link: "#"
     }
   ]
@@ -141,19 +143,18 @@ const ContactPage = () => {
         <div className="text-center">
           {/* Badge */}
           <div className="inline-flex items-center px-3 sm:px-4 py-2 luxora-card rounded-full luxora-text text-xs sm:text-sm font-medium mb-6 sm:mb-8">
-            <span className="text-center">Contactez-nous - Nous sommes là pour vous aider</span>
+            <span className="text-center">{t('contact.hero.title')}</span>
           </div>
 
           {/* Main Heading */}
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold luxora-text mb-4 sm:mb-6 leading-tight">
-            Contactez
-            <span className="block luxora-green-text">notre agence</span>
+            {t('contact.title')}
+            <span className="block luxora-green-text">{t('contact.subtitle')}</span>
           </h1>
 
           {/* Subtitle */}
           <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-gray-600 mb-8 sm:mb-12 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0">
-            Prêt à lancer votre projet de développement web ? Contactez notre agence. 
-            Nous sommes là pour discuter de vos besoins et transformer votre vision en réalité.
+            {t('contact.hero.subtitle')}
           </p>
 
           {/* Contact Methods Grid */}
@@ -181,7 +182,7 @@ const ContactPage = () => {
           <div className="grid md:grid-cols-2 gap-6 sm:gap-8 md:gap-12 mb-8 sm:mb-12 md:mb-16">
             {/* Contact Form */}
             <div className="luxora-card p-4 sm:p-6 md:p-8">
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">Envoyez-nous un message</h2>
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-bold luxora-text mb-4 sm:mb-6 text-center">{t('contact.form.submit')}</h2>
               
               {/* Success Message */}
               {submitStatus === 'success' && (
@@ -212,59 +213,59 @@ const ContactPage = () => {
               <form className="space-y-6" onSubmit={handleFormSubmit}>
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">Prénom</label>
+                    <label className="block luxora-text font-semibold mb-2">{t('contact.form.firstName')}</label>
                     <input
                       type="text"
                       name="firstName"
                       value={formData.firstName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Votre prénom"
+                      placeholder={t('contact.form.firstName')}
                       required
                     />
                   </div>
                   <div>
-                    <label className="block luxora-text font-semibold mb-2">Nom</label>
+                    <label className="block luxora-text font-semibold mb-2">{t('contact.form.lastName')}</label>
                     <input
                       type="text"
                       name="lastName"
                       value={formData.lastName}
                       onChange={handleInputChange}
                       className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                      placeholder="Votre nom"
+                      placeholder={t('contact.form.lastName')}
                       required
                     />
                   </div>
                 </div>
                 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Adresse email</label>
+                  <label className="block luxora-text font-semibold mb-2">{t('contact.form.email')}</label>
                   <input
                     type="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="votre.email@exemple.com"
+                    placeholder={t('contact.form.email')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Numéro de téléphone</label>
+                  <label className="block luxora-text font-semibold mb-2">{t('contact.form.phone')}</label>
                   <input
                     type="tel"
                     name="phone"
                     value={formData.phone}
                     onChange={handleInputChange}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Votre numéro de téléphone"
+                    placeholder={t('contact.form.phone')}
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Type de projet</label>
+                  <label className="block luxora-text font-semibold mb-2">{t('contact.form.projectType')}</label>
                   <select 
                     name="projectType"
                     value={formData.projectType}
@@ -272,14 +273,14 @@ const ContactPage = () => {
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:border-gray-400"
                     required
                   >
-                    <option value="">Choisissez le type de projet</option>
-                    <option value="site-vitrine">Site vitrine</option>
-                    <option value="ecommerce">Boutique en ligne</option>
-                    <option value="application">Application web</option>
+                    <option value="">{t('contact.form.projectTypePlaceholder')}</option>
+                    <option value="site-vitrine">{t('contact.form.projectTypes.showcase')}</option>
+                    <option value="ecommerce">{t('contact.form.projectTypes.ecommerce')}</option>
+                    <option value="application">{t('contact.form.projectTypes.webapp')}</option>
                     <option value="branding">Branding & Design</option>
                     <option value="seo">SEO & Marketing</option>
                     <option value="maintenance">Maintenance</option>
-                    <option value="other">Autre</option>
+                    <option value="other">{t('contact.form.projectTypes.other')}</option>
                   </select>
                 </div>
 
@@ -302,14 +303,14 @@ const ContactPage = () => {
                 </div>
 
                 <div>
-                  <label className="block luxora-text font-semibold mb-2">Description du projet</label>
+                  <label className="block luxora-text font-semibold mb-2">{t('contact.form.description')}</label>
                   <textarea
                     name="description"
                     value={formData.description}
                     onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 bg-white border border-gray-300 rounded-lg text-gray-900 placeholder-gray-400 focus:outline-none focus:border-gray-400"
-                    placeholder="Décrivez-nous vos exigences de projet, vos objectifs et toute fonctionnalité spécifique dont vous avez besoin..."
+                    placeholder={t('contact.form.description')}
                   ></textarea>
                 </div>
 
@@ -330,7 +331,7 @@ const ContactPage = () => {
                     </>
                   ) : (
                     <>
-                      Envoyer le message
+                      {t('contact.form.submit')}
                     </>
                   )}
                 </button>

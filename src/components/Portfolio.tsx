@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 const Portfolio = () => {
+  const { t } = useTranslation()
   const projects = [
     {
       name: "Parfumerie Allouani",
@@ -91,17 +94,16 @@ const Portfolio = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
-            Nos Réalisations
+            {t('portfolio.title')}
           </h2>
           
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            Découvrez nos projets réussis pour des entreprises algériennes. 
-            Des solutions web modernes qui transforment les entreprises.
+            {t('portfolio.subtitle')}
           </p>
           
           <div className="inline-flex items-center px-6 py-3 luxora-card rounded-full luxora-text text-sm font-medium mb-8">
             <span className="text-center">
-              Solutions éprouvées pour le marché algérien
+              {t('portfolio.badge')}
             </span>
           </div>
         </div>
@@ -134,7 +136,7 @@ const Portfolio = () => {
 
                 {/* Story Section */}
                 <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold luxora-text mb-2 text-sm">Notre approche :</h4>
+                  <h4 className="font-semibold luxora-text mb-2 text-sm">{t('portfolio.story')}:</h4>
                   <p className="text-gray-600 text-sm leading-relaxed">
                     {project.story}
                   </p>
@@ -142,7 +144,7 @@ const Portfolio = () => {
                 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="font-semibold luxora-text mb-3">Fonctionnalités clés :</h4>
+                  <h4 className="font-semibold luxora-text mb-3">{t('portfolio.features')}:</h4>
                   <ul className="space-y-2">
                     {project.features.map((feature, featureIndex) => (
                       <li key={featureIndex} className="flex items-center text-gray-600 text-sm">
@@ -161,13 +163,13 @@ const Portfolio = () => {
                     rel="noopener noreferrer"
                     className="luxora-green-button text-center text-sm flex-1"
                   >
-                    Visiter le site
+                    {t('portfolio.viewProject')}
                   </a>
                   <button 
                     className="luxora-button text-center text-sm flex-1"
                     onClick={() => window.open('/contact', '_self')}
                   >
-                    Projet similaire
+                    {t('portfolio.viewProject')}
                   </button>
                 </div>
               </div>
@@ -178,48 +180,48 @@ const Portfolio = () => {
         {/* Stats Section */}
         <div className="luxora-card p-8 mb-16">
           <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold luxora-text mb-4">Nos Chiffres</h3>
-            <p className="text-gray-600">Des résultats concrets pour nos clients</p>
+            <h3 className="text-3xl font-bold luxora-text mb-4">{t('portfolio.stats.title')}</h3>
+            <p className="text-gray-600">{t('portfolio.stats.subtitle')}</p>
           </div>
           
           <div className="grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="text-4xl font-bold luxora-green-text mb-2">50+</div>
-              <div className="text-gray-600 text-sm">Sites créés</div>
+              <div className="text-gray-600 text-sm">{t('portfolio.stats.sitesCreated')}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold luxora-green-text mb-2">100%</div>
-              <div className="text-gray-600 text-sm">Clients satisfaits</div>
+              <div className="text-gray-600 text-sm">{t('portfolio.stats.satisfiedClients')}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold luxora-green-text mb-2">5</div>
-              <div className="text-gray-600 text-sm">Jours de livraison</div>
+              <div className="text-gray-600 text-sm">{t('portfolio.stats.deliveryDays')}</div>
             </div>
             <div className="text-center">
               <div className="text-4xl font-bold luxora-green-text mb-2">24/7</div>
-              <div className="text-gray-600 text-sm">Support disponible</div>
+              <div className="text-gray-600 text-sm">{t('portfolio.stats.supportAvailable')}</div>
             </div>
           </div>
         </div>
 
         {/* CTA Section */}
         <div className="text-center">
-          <h3 className="text-3xl font-bold luxora-text mb-6">Votre projet sera le prochain</h3>
+          <h3 className="text-3xl font-bold luxora-text mb-6">{t('portfolio.cta.title')}</h3>
           <p className="text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
-            Rejoignez nos clients satisfaits et transformez votre entreprise avec une solution web moderne.
+            {t('portfolio.cta.subtitle')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button 
               className="luxora-green-button text-base px-8 py-3"
               onClick={() => window.open('/contact', '_self')}
             >
-              Démarrer mon projet
+              {t('portfolio.cta.startProject')}
             </button>
             <button 
               className="luxora-button text-base px-8 py-3"
               onClick={() => window.open('/pricing', '_self')}
             >
-              Voir nos tarifs
+              {t('portfolio.cta.viewPricing')}
             </button>
           </div>
         </div>

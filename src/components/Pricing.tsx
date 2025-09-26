@@ -1,7 +1,10 @@
 import { useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 import { trackViewContent, trackAddToCart, trackButtonClick, trackSchedule } from '../utils/facebookPixel'
 
 const Pricing = () => {
+  const { t } = useTranslation()
+  
   useEffect(() => {
     // Track that user viewed the pricing page
     trackViewContent('Pricing Page', 'pricing_page')
@@ -117,8 +120,8 @@ const Pricing = () => {
 
           {/* Main Heading */}
           <h1 className="text-4xl md:text-6xl font-bold luxora-text mb-6 leading-tight">
-            Choisissez
-            <span className="block luxora-green-text">votre solution idéale</span>
+            {t('pricing.title')}
+            <span className="block luxora-green-text">{t('pricing.subtitle')}</span>
           </h1>
 
           {/* Subtitle */}

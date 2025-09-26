@@ -1,20 +1,23 @@
+import { useTranslation } from 'react-i18next'
+
 const WhyChooseUs = () => {
+  const { t } = useTranslation()
   const features = [
     {
-      title: "الخصوصية وسرية المعلومات",
-      description: "يضمن لكم فريق SITEDZ Store سرية وخصوصية الأشخاص الذين وضعوا بين أيدينا بياناتهم الشخصية وبيانات زبائنهم. كما تحمي عمليات اتصال المستخدمين بموقعك الإلكتروني وتعزيز سلامته باستخدام بروتوكول Https."
+      title: t('whyChooseUs.privacy.title'),
+      description: t('whyChooseUs.privacy.description')
     },
     {
-      title: "السرعة",
-      description: "حوالي 73% ممن يتسوقون أونلاين يقولون أن عنصر سرعة التحميل مهم جداً في إتمام عملية الشراء لذلك حرصت منصة SITEDZ Store على توفير نظام LAZYLOAD الذي يعمل على سرعة تحميل موقعك الإلكتروني بالإضافة إلى معالجة صورك بتقليص الحجم مع المحافظة على الجودة."
+      title: t('whyChooseUs.speed.title'),
+      description: t('whyChooseUs.speed.description')
     },
     {
-      title: "التصميم",
-      description: "هل تريد أن تجعل من زوار موقعك زبائن، وتجعلهم يقضون المزيد من الوقت على موقعك؟ نوفر لكم نوعية مميزة من التصاميم المرنة والحديثة التي تتلاءم مع مجال عملك والتي تجعلك زبائنك يستمتعون أثناء تصفحهم لموقعك."
+      title: t('whyChooseUs.design.title'),
+      description: t('whyChooseUs.design.description')
     },
     {
-      title: "خدمة الزبائن",
-      description: "تعتبر SITEDZ Store خدمة الزبائن العمود الفقري لها، ولهذا السبب وفرنا لخدمتكم فريقاً يمتلك الخبرة والقدرة اللازمتين لتلبية توقعاتكم بالكامل."
+      title: t('whyChooseUs.support.title'),
+      description: t('whyChooseUs.support.description')
     }
   ]
 
@@ -23,10 +26,10 @@ const WhyChooseUs = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
-            لماذا الاختيار
+            {t('whyChooseUs.title')}
           </h2>
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            SITEDZ Store - الحل الأمثل لجميع احتياجاتك في التجارة الإلكترونية
+            {t('whyChooseUs.subtitle')}
           </p>
         </div>
 

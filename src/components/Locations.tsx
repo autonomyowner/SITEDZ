@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 const Locations = () => {
+  const { t } = useTranslation()
   const locations = [
     {
       city: "Algiers Centre",
@@ -27,10 +30,10 @@ const Locations = () => {
       <div className="container-custom">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Our <span className="premium-text">Locations</span>
+            {t('locations.title')}
           </h2>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-            Join us at our convenient locations across Algeria. More locations coming soon!
+            {t('locations.subtitle')}
           </p>
         </div>
 

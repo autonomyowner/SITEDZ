@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Contact = () => {
+  const { t } = useTranslation()
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
@@ -83,12 +85,10 @@ const Contact = () => {
           {/* Left Content - Text */}
           <div className="text-center md:text-left px-8 py-12">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-              Parlons de votre projet
+              {t('contact.hero.title')}
             </h2>
             <p className="text-gray-700 text-lg leading-relaxed mb-8">
-              Prêt à transformer votre entreprise avec un site web professionnel ? 
-              Nous aimons discuter de votre projet et vous aider à créer une présence digitale forte. 
-              Contactez-nous aujourd'hui et commençons à construire votre succès ensemble.
+              {t('contact.hero.subtitle')}
             </p>
             
             {/* Contact Methods */}
@@ -112,7 +112,7 @@ const Contact = () => {
                 className="maroon-button"
                 onClick={() => window.open('/contact', '_self')}
               >
-                Devis gratuit
+                {t('contact.hero.freeQuote')}
               </button>
               <a 
                 href="https://wa.me/213797339451?text=Bonjour! Je suis intéressé par vos services de développement web."
@@ -120,14 +120,14 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="luxora-button text-center"
               >
-                WhatsApp
+                {t('contact.hero.whatsappLink')}
               </a>
             </div>
           </div>
 
           {/* Right Content - Contact Form */}
           <div className="luxora-card p-8">
-            <h3 className="text-2xl font-bold luxora-text mb-6 text-center">Contactez-nous</h3>
+            <h3 className="text-2xl font-bold luxora-text mb-6 text-center">{t('contact.form.title')}</h3>
             
             {/* Success Message */}
             {submitStatus === 'success' && (
@@ -157,55 +157,55 @@ const Contact = () => {
 
             <form onSubmit={handleFormSubmit} className="space-y-4">
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Nom complet</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.firstName')}</label>
                 <input 
                   type="text" 
                   name="firstName"
                   value={formData.firstName}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
-                  placeholder="Votre prénom" 
+                  placeholder={t('contact.form.firstName')} 
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Nom</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.lastName')}</label>
                 <input 
                   type="text" 
                   name="lastName"
                   value={formData.lastName}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
-                  placeholder="Votre nom" 
+                  placeholder={t('contact.form.lastName')} 
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Email</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.email')}</label>
                 <input 
                   type="email" 
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
-                  placeholder="votre@email.com" 
+                  placeholder={t('contact.form.email')} 
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Téléphone</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.phone')}</label>
                 <input 
                   type="tel" 
                   name="phone"
                   value={formData.phone}
                   onChange={handleInputChange}
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
-                  placeholder="Votre numéro" 
+                  placeholder={t('contact.form.phone')} 
                   required
                 />
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Type de projet</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.projectType')}</label>
                 <select 
                   name="projectType"
                   value={formData.projectType}
@@ -213,22 +213,22 @@ const Contact = () => {
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                   required
                 >
-                  <option value="">Choisissez le type</option>
-                  <option value="site-vitrine">Site vitrine</option>
-                  <option value="boutique-en-ligne">Boutique en ligne</option>
-                  <option value="application-web">Application web</option>
-                  <option value="autre">Autre</option>
+                  <option value="">{t('contact.form.projectTypePlaceholder')}</option>
+                  <option value="site-vitrine">{t('contact.form.projectTypes.showcase')}</option>
+                  <option value="boutique-en-ligne">{t('contact.form.projectTypes.ecommerce')}</option>
+                  <option value="application-web">{t('contact.form.projectTypes.webapp')}</option>
+                  <option value="autre">{t('contact.form.projectTypes.other')}</option>
                 </select>
               </div>
               <div>
-                <label className="block text-sm font-medium text-gray-700 mb-2">Message</label>
+                <label className="block text-sm font-medium text-gray-700 mb-2">{t('contact.form.description')}</label>
                 <textarea 
                   name="message"
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4} 
                   className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500" 
-                  placeholder="Décrivez votre projet..."
+                  placeholder={t('contact.form.description')}
                 ></textarea>
               </div>
               <button 
@@ -236,7 +236,7 @@ const Contact = () => {
                 disabled={isSubmitting}
                 className={`w-full luxora-green-button ${isSubmitting ? 'opacity-50 cursor-not-allowed' : ''}`}
               >
-                {isSubmitting ? 'Envoi en cours...' : 'Envoyer le message'}
+                {isSubmitting ? t('contact.form.submitting') : t('contact.form.submit')}
               </button>
             </form>
           </div>

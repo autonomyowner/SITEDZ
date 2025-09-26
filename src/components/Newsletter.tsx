@@ -1,6 +1,8 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 const Newsletter = () => {
+  const { t } = useTranslation()
   const [email, setEmail] = useState('')
   const [consent, setConsent] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -10,7 +12,7 @@ const Newsletter = () => {
     e.preventDefault()
     
     if (!email || !consent) {
-      setMessage('Veuillez remplir tous les champs et accepter les conditions.')
+      setMessage(t('newsletter.required'))
       return
     }
 
@@ -39,14 +41,14 @@ const Newsletter = () => {
       })
 
       if (response.ok) {
-        setMessage('Merci ! Vous êtes maintenant abonné à notre newsletter.')
+        setMessage(t('newsletter.success'))
         setEmail('')
         setConsent(false)
       } else {
-        setMessage('Une erreur est survenue. Veuillez réessayer.')
+        setMessage(t('newsletter.error'))
       }
     } catch (error) {
-      setMessage('Une erreur est survenue. Veuillez réessayer.')
+      setMessage(t('newsletter.error'))
     } finally {
       setIsSubmitting(false)
     }
@@ -61,11 +63,10 @@ const Newsletter = () => {
               <span className="text-2xl">📧</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold luxora-text mb-4">
-              Restez informé
+              {t('newsletter.title')}
             </h2>
             <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-              Recevez nos conseils exclusifs pour développer votre entreprise en ligne en Algérie. 
-              Tendances digitales, conseils SEO, et nouveautés technologiques.
+              {t('newsletter.subtitle')}
             </p>
           </div>
 
@@ -74,7 +75,7 @@ const Newsletter = () => {
             <div className="flex flex-col sm:flex-row gap-4 mb-6">
               <input 
                 type="email" 
-                placeholder="Votre adresse email"
+                placeholder={t('newsletter.placeholder')}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="flex-1 px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500 focus:border-transparent"
@@ -85,7 +86,7 @@ const Newsletter = () => {
                 disabled={isSubmitting}
                 className="luxora-green-button px-6 py-3 whitespace-nowrap disabled:opacity-50"
               >
-                {isSubmitting ? 'Envoi...' : 'S\'abonner'}
+                {isSubmitting ? t('newsletter.subscribing') : t('newsletter.subscribe')}
               </button>
             </div>
             
@@ -99,7 +100,7 @@ const Newsletter = () => {
                 required
               />
               <label htmlFor="newsletter-consent" className="text-sm text-gray-600">
-                J'accepte de recevoir des emails marketing et des offres spéciales
+                {t('newsletter.consent')}
               </label>
             </div>
 
@@ -121,36 +122,36 @@ const Newsletter = () => {
               <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
                 <span className="text-xl">💡</span>
               </div>
-              <h4 className="font-semibold luxora-text mb-2">Conseils exclusifs</h4>
-              <p className="text-sm text-gray-600">Stratégies digitales pour l'Algérie</p>
+              <h4 className="font-semibold luxora-text mb-2">{t('newsletter.features.exclusive.title')}</h4>
+              <p className="text-sm text-gray-600">{t('newsletter.features.exclusive.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
                 <span className="text-xl">🚀</span>
               </div>
-              <h4 className="font-semibold luxora-text mb-2">Tendances 2025</h4>
-              <p className="text-sm text-gray-600">Dernières innovations web</p>
+              <h4 className="font-semibold luxora-text mb-2">{t('newsletter.features.trends.title')}</h4>
+              <p className="text-sm text-gray-600">{t('newsletter.features.trends.description')}</p>
             </div>
             
             <div className="text-center">
               <div className="w-12 h-12 mx-auto mb-3 bg-purple-100 rounded-full flex items-center justify-center">
                 <span className="text-xl">🎯</span>
               </div>
-              <h4 className="font-semibold luxora-text mb-2">Offres spéciales</h4>
-              <p className="text-sm text-gray-600">Tarifs préférentiels réservés</p>
+              <h4 className="font-semibold luxora-text mb-2">{t('newsletter.features.offers.title')}</h4>
+              <p className="text-sm text-gray-600">{t('newsletter.features.offers.description')}</p>
             </div>
           </div>
 
           {/* Trust Indicators */}
           <div className="mt-8 pt-6 border-t border-gray-200">
             <p className="text-sm text-gray-500 mb-4">
-              Rejoignez plus de 500 entrepreneurs algériens qui nous font confiance
+              {t('newsletter.trust.text')}
             </p>
             <div className="flex items-center justify-center space-x-6 text-sm text-gray-400">
-              <span>✓ Pas de spam</span>
-              <span>✓ Désabonnement facile</span>
-              <span>✓ Données protégées</span>
+              <span>✓ {t('newsletter.trust.noSpam')}</span>
+              <span>✓ {t('newsletter.trust.easyUnsubscribe')}</span>
+              <span>✓ {t('newsletter.trust.dataProtected')}</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,374 @@
+{
+  "nav": {
+    "home": "Home",
+    "services": "Services", 
+    "pricing": "Pricing",
+    "contact": "Contact",
+    "freeQuote": "Free Quote"
+  },
+  "hero": {
+    "badge": "Modern digital solutions for Algerian businesses",
+    "title": "Modern digital solutions for Algerian businesses",
+    "typewriter": {
+      "showcase": "showcase websites",
+      "onlineStores": "online stores",
+      "webApps": "web applications", 
+      "digitalSolutions": "digital solutions",
+      "ecommercePlatforms": "e-commerce platforms"
+    },
+    "subtitle": "SITEDZ Store is your trusted web agency in Algeria. We create modern, fast and professional websites to grow your business online. Specialized in the Algerian market with solutions adapted to your local needs.",
+    "discoverServices": "Discover our services",
+    "freeQuote": "Free Quote",
+    "deliveredIn5Days": "Delivered in 5 days",
+    "whatsappSupport": "WhatsApp Support 24/7",
+    "localPayment": "Local payment accepted"
+  },
+  "footer": {
+    "tagline": "Modern digital solutions for Algerian businesses",
+    "freeQuote": "Free Quote",
+    "whatsapp": "WhatsApp: +213 797 339 451"
+  },
+  "portfolio": {
+    "title": "Our Success Stories",
+    "subtitle": "Real projects, real results for Algerian businesses",
+    "badge": "Proven solutions for the Algerian market",
+    "viewProject": "View Project",
+    "category": "Category",
+    "features": "Key Features",
+    "story": "Success Story",
+    "stats": {
+      "title": "Our Numbers",
+      "subtitle": "Concrete results for our clients",
+      "sitesCreated": "Sites created",
+      "satisfiedClients": "Satisfied clients",
+      "deliveryDays": "Delivery days",
+      "supportAvailable": "Support available"
+    },
+    "cta": {
+      "title": "Your project will be next",
+      "subtitle": "Join our satisfied clients and transform your business with a modern web solution.",
+      "startProject": "Start my project",
+      "viewPricing": "View our pricing"
+    }
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our services",
+    "badge": "Local expertise for the Algerian market",
+    "questions": {
+      "timing": "How long does it take to create my website?",
+      "payment": "What payment methods do you accept in Algeria?",
+      "hosting": "Do you include hosting and domain name?",
+      "modifications": "Can I modify my site after delivery?",
+      "google": "Will my site be visible on Google in Algeria?",
+      "support": "Do you offer technical support?",
+      "satisfaction": "What happens if I'm not satisfied?",
+      "mobile": "Will my site be mobile-friendly?",
+      "features": "Can I add features later?",
+      "performance": "How can I track my site's performance?"
+    },
+    "answers": {
+      "timing": "Generally, we deliver your site in 5-7 days depending on project complexity. For a simple showcase site, count 5 days. For a complete online store, 7 days. We keep you informed of progress daily.",
+      "payment": "We accept all local payment methods: bank transfers, cash payment, CIB, EDAHABIA, CCP, and international payments via PayPal. We adapt to your payment preference.",
+      "hosting": "Yes! All our plans include one year of fast and secure hosting, plus .com domain registration. No hidden fees, everything is included in the displayed price.",
+      "modifications": "Absolutely! We provide complete training so you can manage your content. For important technical modifications, we offer ongoing support and updates according to your needs.",
+      "google": "Yes! We optimize all our sites for local SEO in Algeria. Your site will be optimized to appear in Google searches for Algerian users, with special attention to keywords in French and Arabic.",
+      "support": "Yes, we offer 24/7 WhatsApp support. You can contact us anytime for any technical questions. We usually respond within an hour.",
+      "satisfaction": "We offer a 30-day satisfaction guarantee. If you're not completely satisfied with the result, we fully refund your investment. Your satisfaction is our priority.",
+      "mobile": "Of course! All our sites are 100% responsive and optimized for all devices: computers, tablets and smartphones. The user experience is perfect on all screens.",
+      "features": "Yes, we offer extension and maintenance services. You can add new features, integrate additional payment systems, or expand your site according to your business evolution.",
+      "performance": "We integrate Google Analytics and Google Business into all our sites. You'll receive monthly reports on performance, traffic, and conversions. We explain how to interpret this data."
+    },
+    "cta": {
+      "title": "Have other questions?",
+      "subtitle": "Our team is here to help you. Contact us for a free consultation.",
+      "askQuestion": "Ask a question",
+      "whatsapp": "WhatsApp"
+    }
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "SITEDZ Store is your trusted digital partner in Algeria. We create modern, fast web solutions adapted to the Algerian market to grow your business online.",
+    "badge": "Award-winning solutions for Algerian businesses",
+    "showcase": {
+      "title": "Showcase Websites",
+      "description": "Create a professional online presence with our modern showcase websites. Perfect for presenting your business, your services and attracting new clients in Algeria."
+    },
+    "ecommerce": {
+      "title": "Online Stores",
+      "description": "Launch your e-commerce with our optimized online stores. Order management, local payments (CIB, EDAHABIA, CCP) and international, all integrated for the Algerian market."
+    },
+    "webapps": {
+      "title": "Web Applications",
+      "description": "We develop custom web applications to automate your business processes. Solutions adapted to the specific needs of Algerian businesses."
+    },
+    "branding": {
+      "title": "Branding & Design",
+      "description": "Complete visual identity: logo, graphic charter, marketing materials. Give a professional and consistent image to your business."
+    },
+    "seo": {
+      "title": "SEO & Marketing",
+      "description": "Google optimization, Google Business, social networks. Increase your online visibility and attract more local clients."
+    },
+    "maintenance": {
+      "title": "Maintenance & Support",
+      "description": "Continuous maintenance, security updates, automatic backups. 24/7 WhatsApp support for complete peace of mind."
+    },
+    "cta": "Discover Our Services",
+    "contact": "Get a Quote"
+  },
+  "pricing": {
+    "title": "Our Pricing",
+    "subtitle": "Transparent pricing, no hidden fees. All plans include hosting and domain for 12 months.",
+    "showcase": {
+      "title": "Showcase Website",
+      "description": "Perfect for small businesses",
+      "cta": "Contact Us"
+    },
+    "ecommerce": {
+      "title": "E-Commerce & Booking",
+      "description": "Ideal for e-commerce and bookings",
+      "cta": "Contact Us"
+    },
+    "features": {
+      "domain": "Domain name and hosting for 12 months INCLUDED",
+      "access": "Fast and easy access",
+      "dashboard": "Easy-to-use dashboard",
+      "ssl": "SSL Certificate",
+      "hosting": "Powerful hosting",
+      "design": "Elegant and professional design",
+      "seo": "SEO optimization",
+      "mobile": "Mobile compatibility",
+      "delivery": "Project delivery 3 to 5 days after domain name choice"
+    },
+    "contact": "Contact Us",
+    "whatsapp": "WhatsApp: +213 797 339 451"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Ready to start your project? Get in touch with us for a free consultation.",
+    "hero": {
+      "title": "Let's talk about your project",
+      "subtitle": "Ready to transform your business with a professional website? We love discussing your project and helping you create a strong digital presence. Contact us today and let's start building your success together.",
+      "phone": "+213 797 339 451",
+      "email": "contact@sitedz.store",
+      "whatsapp": "WhatsApp 24/7",
+      "freeQuote": "Free Quote",
+      "whatsappLink": "WhatsApp"
+    },
+    "form": {
+      "title": "Contact Us",
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email",
+      "phone": "Phone",
+      "projectType": "Project Type",
+      "projectTypePlaceholder": "Choose type",
+      "projectTypes": {
+        "showcase": "Showcase website",
+        "ecommerce": "Online store",
+        "webapp": "Web application",
+        "other": "Other"
+      },
+      "description": "Project Description",
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Message sent successfully!",
+      "error": "Error sending message. Please try again."
+    },
+    "info": {
+      "title": "Get in Touch",
+      "subtitle": "We're here to help you succeed online",
+      "whatsapp": "WhatsApp: +213 797 339 451",
+      "email": "Email: contact@sitedz.store",
+      "address": "Algiers, Algeria"
+    },
+    "methods": {
+      "email": {
+        "title": "Email",
+        "value": "contact@sitedz.store",
+        "description": "Send us your project requirements"
+      },
+      "phone": {
+        "title": "Phone",
+        "value": "0797339451",
+        "description": "Speak directly with our team"
+      },
+      "whatsapp": {
+        "title": "WhatsApp",
+        "value": "0797339451",
+        "description": "Quick discussion about your project"
+      },
+      "location": {
+        "title": "Location",
+        "value": "Algeria",
+        "description": "We serve clients throughout the country"
+      }
+    }
+  },
+  "ecommerceTemplate": {
+    "title": "Professional E-commerce Template",
+    "description": "Professional and responsive e-commerce website template for all devices. Features modern and attractive design with complete functionality for online stores.",
+    "features": {
+      "title": "E-commerce Features",
+      "responsive": "Fully responsive design",
+      "payment": "Multiple payment methods",
+      "inventory": "Inventory management",
+      "orders": "Order tracking",
+      "seo": "SEO optimization",
+      "mobile": "Mobile optimization"
+    },
+    "package": {
+      "title": "Choose Package",
+      "single": "Single Template",
+      "double": "Two Templates",
+      "triple": "Three Templates",
+      "discount": "Discount"
+    },
+    "customer": {
+      "title": "Customer Information",
+      "name": "Full Name",
+      "phone": "Phone Number",
+      "email": "Email Address"
+    },
+    "order": {
+      "title": "Order Summary",
+      "total": "Total",
+      "checkout": "Proceed to Checkout"
+    }
+  },
+  "blog": {
+    "title": "News & Tips",
+    "subtitle": "Stay updated with the latest digital trends in Algeria. Practical advice to grow your business online.",
+    "badge": "Local expertise for the Algerian market",
+    "readMore": "Read More",
+    "readTime": "min read",
+    "category": "Category",
+    "posts": {
+      "seoTitle": "How to optimize your website for the Algerian market in 2025",
+      "seoExcerpt": "Discover SEO strategies specific to the Algerian market and how to adapt your content to attract more local customers.",
+      "ecommerceTitle": "E-commerce trends in Algeria: what works in 2025",
+      "ecommerceExcerpt": "Analysis of online shopping behaviors of Algerian consumers and best practices for your store.",
+      "googleTitle": "Complete guide: Creating a Google Business presence in Algeria",
+      "googleExcerpt": "Everything you need to know to optimize your Google Business profile and attract more customers in your area."
+    },
+    "categories": {
+      "title": "Popular categories",
+      "seo": {
+        "title": "SEO & Marketing",
+        "description": "Optimization and visibility"
+      },
+      "ecommerce": {
+        "title": "E-commerce",
+        "description": "Online stores"
+      },
+      "apps": {
+        "title": "Applications",
+        "description": "Mobile development"
+      },
+      "business": {
+        "title": "Business",
+        "description": "Business strategies"
+      }
+    },
+    "cta": {
+      "title": "Need help with your project?",
+      "subtitle": "Our experts are here to help you with your digital transformation. Free consultation and personalized advice.",
+      "consultation": "Free consultation",
+      "services": "Our services"
+    }
+  },
+  "newsletter": {
+    "title": "Stay Updated",
+    "subtitle": "Get the latest tips and trends in digital marketing delivered to your inbox.",
+    "placeholder": "Enter your email address",
+    "subscribe": "Subscribe",
+    "subscribing": "Subscribing...",
+    "success": "Thank you! You are now subscribed to our newsletter.",
+    "error": "An error occurred. Please try again.",
+    "consent": "I agree to receive marketing emails",
+    "required": "Please fill in all fields and accept the conditions.",
+    "features": {
+      "exclusive": {
+        "title": "Exclusive tips",
+        "description": "Digital strategies for Algeria"
+      },
+      "trends": {
+        "title": "2025 Trends",
+        "description": "Latest web innovations"
+      },
+      "offers": {
+        "title": "Special offers",
+        "description": "Reserved preferential rates"
+      }
+    },
+    "trust": {
+      "text": "Join more than 500 Algerian entrepreneurs who trust us",
+      "noSpam": "No spam",
+      "easyUnsubscribe": "Easy unsubscribe",
+      "dataProtected": "Data protected"
+    }
+  },
+  "whyChooseUs": {
+    "title": "Why Choose Us",
+    "subtitle": "SITEDZ Store - The perfect solution for all your e-commerce needs",
+    "privacy": {
+      "title": "Privacy and Data Confidentiality",
+      "description": "SITEDZ Store team ensures the confidentiality and privacy of those who have entrusted us with their personal data and customer data. We also protect user connections to your website and enhance its security using HTTPS protocol."
+    },
+    "speed": {
+      "title": "Speed",
+      "description": "About 73% of online shoppers say that loading speed is very important in completing the purchase process, so SITEDZ Store platform has been keen to provide a LAZYLOAD system that works on speeding up your website loading in addition to processing your images by reducing size while maintaining quality."
+    },
+    "design": {
+      "title": "Design",
+      "description": "Do you want to turn your website visitors into customers and make them spend more time on your site? We provide you with a distinctive type of flexible and modern designs that suit your business field and make your customers enjoy browsing your site."
+    },
+    "support": {
+      "title": "Customer Service",
+      "description": "SITEDZ Store considers customer service as its backbone, and for this reason, we have provided you with a team that has the necessary experience and ability to fully meet your expectations."
+    }
+  },
+  "about": {
+    "title": "Get Your Own Website",
+    "subtitle": "Did you know that you can own an e-commerce website without any programming knowledge? Email, password, and go! Start using your site with SITEDZ Store with just a few clicks without any technical skills or computer science or design expertise.",
+    "cta": "Start Free"
+  },
+  "locations": {
+    "title": "Our Locations",
+    "subtitle": "Join us at our convenient locations across Algeria. More locations coming soon!",
+    "active": "Active",
+    "comingSoon": "Coming Soon",
+    "viewMap": "View on Map",
+    "bookAppointment": "Book Appointment"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "close": "Close",
+    "open": "Open",
+    "menu": "Menu",
+    "learnMore": "Learn More",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us",
+    "viewMore": "View More",
+    "readMore": "Read More",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "edit": "Edit",
+    "delete": "Delete",
+    "search": "Search",
+    "filter": "Filter",
+    "sort": "Sort",
+    "reset": "Reset",
+    "apply": "Apply",
+    "confirm": "Confirm",
+    "yes": "Yes",
+    "no": "No"
+  }
+}

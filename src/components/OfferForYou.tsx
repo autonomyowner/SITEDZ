@@ -1,34 +1,37 @@
+import { useTranslation } from 'react-i18next'
+
 const Services = () => {
+  const { t } = useTranslation()
   const services = [
     {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=300&fit=crop&crop=center",
-      title: "Sites Vitrine",
-      description: "Créez une présence en ligne professionnelle avec nos sites vitrine modernes. Parfait pour présenter votre entreprise, vos services et attirer de nouveaux clients en Algérie."
+      title: t('services.showcase.title'),
+      description: t('services.showcase.description')
     },
     {
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=300&fit=crop&crop=center",
-      title: "Boutiques en Ligne",
-      description: "Lancez votre e-commerce avec nos boutiques en ligne optimisées. Gestion des commandes, paiements locaux (CIB, EDAHABIA, CCP) et international, tout intégré pour le marché algérien."
+      title: t('services.ecommerce.title'),
+      description: t('services.ecommerce.description')
     },
     {
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop&crop=center",
-      title: "Applications Web",
-      description: "Développons des applications web sur mesure pour automatiser vos processus métier. Solutions adaptées aux besoins spécifiques des entreprises algériennes."
+      title: t('services.webapps.title'),
+      description: t('services.webapps.description')
     },
     {
       image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=300&h=300&fit=crop&crop=center",
-      title: "Branding & Design",
-      description: "Identité visuelle complète : logo, charte graphique, supports marketing. Donnez une image professionnelle et cohérente à votre entreprise."
+      title: t('services.branding.title'),
+      description: t('services.branding.description')
     },
     {
       image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=300&h=300&fit=crop&crop=center",
-      title: "SEO & Marketing",
-      description: "Optimisation pour Google, Google Business, réseaux sociaux. Augmentez votre visibilité en ligne et attirez plus de clients locaux."
+      title: t('services.seo.title'),
+      description: t('services.seo.description')
     },
     {
       image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=300&h=300&fit=crop&crop=center",
-      title: "Maintenance & Support",
-      description: "Maintenance continue, mises à jour de sécurité, sauvegardes automatiques. Support WhatsApp 24/7 pour une tranquillité d'esprit totale."
+      title: t('services.maintenance.title'),
+      description: t('services.maintenance.description')
     }
   ]
 
@@ -37,13 +40,12 @@ const Services = () => {
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold luxora-text mb-6">
-            Nos Services
+            {t('services.title')}
           </h2>
           
           {/* Professional Mission Statement */}
           <p className="text-lg md:text-xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
-            SITEDZ Store est votre partenaire digital de confiance en Algérie. Nous créons des solutions web modernes, 
-            rapides et adaptées au marché algérien pour faire grandir votre entreprise en ligne.
+            {t('services.subtitle')}
           </p>
           
           {/* Awards Winners Badge */}

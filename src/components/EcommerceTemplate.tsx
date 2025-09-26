@@ -1,9 +1,11 @@
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import { API_CONFIG } from '../config/api'
 import { trackAddToCart, trackInitiateCheckout, trackButtonClick, trackAdvancedPurchase, trackHighValueAction } from '../utils/facebookPixel'
 import { logger } from '../utils/logger'
 
 const EcommerceTemplate = () => {
+  const { t } = useTranslation()
   const [selectedImage, setSelectedImage] = useState(0)
   const [selectedPackage, setSelectedPackage] = useState('single')
   const [customerInfo, setCustomerInfo] = useState({
@@ -219,10 +221,10 @@ Phone: ${customerInfo.phone}`
             {/* Product Title */}
             <div>
               <h1 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-2">
-                قالب متجر إلكتروني احترافي
+                {t('ecommerceTemplate.title')}
               </h1>
               <p className="text-lg text-gray-600">
-                Professional E-commerce Website Template
+                {t('ecommerceTemplate.description')}
               </p>
             </div>
 

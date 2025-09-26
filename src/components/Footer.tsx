@@ -1,4 +1,7 @@
+import { useTranslation } from 'react-i18next'
+
 const Footer = () => {
+  const { t } = useTranslation()
   return (
     <footer className="luxora-bg border-t border-green-200">
       <div className="max-w-7xl mx-auto py-12 px-4">
@@ -13,14 +16,14 @@ const Footer = () => {
               />
               <h3 className="text-3xl font-bold luxora-text">SITEDZ Store</h3>
             </div>
-            <p className="text-gray-600">Solutions digitales modernes pour les entreprises algériennes</p>
+            <p className="text-gray-600">{t('footer.tagline')}</p>
           </div>
           <div className="text-center md:text-right">
             <button 
               className="maroon-button"
               onClick={() => window.open('/contact', '_self')}
             >
-              Devis gratuit
+              {t('footer.freeQuote')}
             </button>
           </div>
         </div>
@@ -47,7 +50,7 @@ const Footer = () => {
               </a>
             </div>
             <div className="text-gray-600 text-sm text-center md:text-right">
-              WhatsApp: +213 797 339 451
+              {t('footer.whatsapp')}
             </div>
           </div>
         </div>
