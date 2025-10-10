@@ -227,7 +227,7 @@ const Portfolio = () => {
                     className="luxora-button text-center text-sm flex-1"
                     onClick={() => window.open('/contact', '_self')}
                   >
-                    {t('portfolio.viewProject')}
+                    {t('common.contactUs')}
                   </button>
                 </div>
               </div>
