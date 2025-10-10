@@ -4,6 +4,34 @@ const Portfolio = () => {
   const { t } = useTranslation()
   const projects = [
     {
+      name: "Planete Nutrition",
+      description: "Specialised in premium nutrition supplements and sports nutrition for health conscious customers in Algeria, delivering trusted brands that support fitness and wellness goals.",
+      image: "/pics/templates/planetnutristion.jpg",
+      features: [
+        "Catalogue of premium supplements with goal based filtering",
+        "Detailed product sheets with usage recommendations",
+        "Secure mobile first checkout optimised for Algerian customers",
+        "Integrated wellness blog and advice hub"
+      ],
+      url: "https://planete-nutrition-dz.vercel.app/",
+      category: "Nutrition & Fitness",
+      story: "Planete Nutrition wanted a digital flagship that reflects its leadership in premium supplements. We crafted an experience that builds trust, highlights certified brands, and simplifies purchases for athletes and wellness enthusiasts across Algeria."
+    },
+    {
+      name: "IMMOBILIER DE LUXE",
+      description: "Agence immobiliere de prestige basee a Alger, specialiste de la vente, location et gestion de biens d'exception avec un service premium et confidentiel.",
+      image: "/pics/templates/elwakilagency.jpg",
+      features: [
+        "Catalogues de biens d'exception avec visites virtuelles",
+        "Formulaires qualifies pour acheteurs et investisseurs",
+        "Espace proprietaires pour la gestion des mandats",
+        "Positionnement haut de gamme et confiance renforcee"
+      ],
+      url: "https://elwakil-zeta.vercel.app/",
+      category: "Immobilier Premium",
+      story: "IMMOBILIER DE LUXE recherchait une vitrine digitale a la hauteur de ses biens et de son niveau d'accompagnement. Nous avons realise une plateforme raffinee qui valorise chaque residence, fluidifie les prises de contact et renforce la confiance des clients haut de gamme."
+    },
+    {
       name: "Parfumerie Allouani",
       description: "Site e-commerce premium pour une parfumerie algérienne établie, transformant leur présence digitale et augmentant leurs ventes en ligne de 300%",
       image: "https://images.unsplash.com/photo-1541643600914-78b084683601?w=600&h=400&fit=crop&crop=center",
