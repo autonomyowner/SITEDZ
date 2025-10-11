@@ -188,30 +188,9 @@ const Portfolio = () => {
                   </span>
                 </div>
                 
-                <p className="text-gray-600 mb-4 leading-relaxed">
+                <p className="text-gray-600 mb-6 leading-relaxed">
                   {project.description}
                 </p>
-
-                {/* Story Section */}
-                <div className="mb-6 p-4 bg-gray-50 rounded-lg">
-                  <h4 className="font-semibold luxora-text mb-2 text-sm">{t('portfolio.story')}:</h4>
-                  <p className="text-gray-600 text-sm leading-relaxed">
-                    {project.story}
-                  </p>
-                </div>
-                
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-semibold luxora-text mb-3">{t('portfolio.features')}:</h4>
-                  <ul className="space-y-2">
-                    {project.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center text-gray-600 text-sm">
-                        <span className="text-green-600 mr-2">✓</span>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
                 
                 {/* CTA Buttons */}
                 <div className="flex flex-col sm:flex-row gap-3">
@@ -233,33 +212,6 @@ const Portfolio = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        {/* Stats Section */}
-        <div className="luxora-card p-8 mb-16">
-          <div className="text-center mb-8">
-            <h3 className="text-3xl font-bold luxora-text mb-4">{t('portfolio.stats.title')}</h3>
-            <p className="text-gray-600">{t('portfolio.stats.subtitle')}</p>
-          </div>
-          
-          <div className="grid md:grid-cols-4 gap-6">
-            <div className="text-center">
-              <div className="text-4xl font-bold luxora-green-text mb-2">13+</div>
-              <div className="text-gray-600 text-sm">{t('portfolio.stats.sitesCreated')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold luxora-green-text mb-2">100%</div>
-              <div className="text-gray-600 text-sm">{t('portfolio.stats.satisfiedClients')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold luxora-green-text mb-2">5</div>
-              <div className="text-gray-600 text-sm">{t('portfolio.stats.deliveryDays')}</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold luxora-green-text mb-2">24/7</div>
-              <div className="text-gray-600 text-sm">{t('portfolio.stats.supportAvailable')}</div>
-            </div>
-          </div>
         </div>
 
         {/* CTA Section */}

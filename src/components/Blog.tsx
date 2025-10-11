@@ -89,45 +89,6 @@ const Blog = () => {
           ))}
         </div>
 
-        {/* Categories */}
-        <div className="luxora-card p-8 mb-16">
-          <h3 className="text-2xl font-bold luxora-text text-center mb-8">{t('blog.categories.title')}</h3>
-          
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="text-center p-4 hover:bg-green-50 rounded-lg transition-colors">
-              <div className="w-12 h-12 mx-auto mb-3 bg-blue-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">🔍</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">{t('blog.categories.seo.title')}</h4>
-              <p className="text-sm text-gray-600">{t('blog.categories.seo.description')}</p>
-            </div>
-            
-            <div className="text-center p-4 hover:bg-green-50 rounded-lg transition-colors">
-              <div className="w-12 h-12 mx-auto mb-3 bg-green-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">🛒</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">{t('blog.categories.ecommerce.title')}</h4>
-              <p className="text-sm text-gray-600">{t('blog.categories.ecommerce.description')}</p>
-            </div>
-            
-            <div className="text-center p-4 hover:bg-green-50 rounded-lg transition-colors">
-              <div className="w-12 h-12 mx-auto mb-3 bg-purple-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">📱</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">{t('blog.categories.apps.title')}</h4>
-              <p className="text-sm text-gray-600">{t('blog.categories.apps.description')}</p>
-            </div>
-            
-            <div className="text-center p-4 hover:bg-green-50 rounded-lg transition-colors">
-              <div className="w-12 h-12 mx-auto mb-3 bg-orange-100 rounded-full flex items-center justify-center">
-                <span className="text-xl">💼</span>
-              </div>
-              <h4 className="font-semibold luxora-text mb-2">{t('blog.categories.business.title')}</h4>
-              <p className="text-sm text-gray-600">{t('blog.categories.business.description')}</p>
-            </div>
-          </div>
-        </div>
-
         {/* CTA Section */}
         <div className="text-center">
           <h3 className="text-3xl font-bold luxora-text mb-6">{t('blog.cta.title')}</h3>
