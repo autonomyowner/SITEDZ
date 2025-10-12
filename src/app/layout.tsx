@@ -17,35 +17,35 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: 'Perfect Events - Decoration evennementielle a Tlemcen',
+  title: 'SiteDZ Store - Agence Web en Algerie',
   description:
-    'Decoration evennementielle et organisation d evenements a Tlemcen. Services personnalises et elegants pour vos moments speciaux.',
+    'SITEDZ Store est votre agence web de confiance en Algerie. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne. Specialises dans le marche algerien avec des solutions adaptees a vos besoins locaux.',
   keywords:
-    'decoration evennementielle, Tlemcen, evenements, mariage, anniversaire, ceremonie, organisation',
-  authors: [{ name: 'Perfect Events' }],
-  creator: 'Perfect Events',
-  publisher: 'Perfect Events',
+    'agence web algerie, creation site web, developpement web, site internet algerie, web design, ecommerce algerie, sites professionnels',
+  authors: [{ name: 'SiteDZ Store' }],
+  creator: 'SiteDZ Store',
+  publisher: 'SiteDZ Store',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://perfect-events-tlemcen.com'),
+  metadataBase: new URL('https://www.sitedz.store'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
-    title: 'Perfect Events - Decoration evennementielle a Tlemcen',
+    title: 'SiteDZ Store - Agence Web en Algerie',
     description:
-      'Decoration evennementielle et organisation d evenements a Tlemcen. Services personnalises et elegants pour vos moments speciaux.',
-    url: 'https://perfect-events-tlemcen.com',
-    siteName: 'Perfect Events',
+      'SITEDZ Store est votre agence web de confiance en Algerie. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne.',
+    url: 'https://www.sitedz.store',
+    siteName: 'SiteDZ Store',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Perfect Events - Decoration evennementielle a Tlemcen',
+        alt: 'SiteDZ Store - Agence Web en Algerie',
       },
     ],
     locale: 'fr_DZ',
@@ -53,9 +53,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Perfect Events - Decoration evennementielle a Tlemcen',
+    title: 'SiteDZ Store - Agence Web en Algerie',
     description:
-      'Decoration evennementielle et organisation d evenements a Tlemcen. Services personnalises et elegants pour vos moments speciaux.',
+      'SITEDZ Store est votre agence web de confiance en Algerie. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne.',
     images: ['/og-image.jpg'],
   },
   robots: {
@@ -86,19 +86,41 @@ export default function RootLayout({
       >
         <Navbar />
         <main className="pt-20 md:pt-24 pb-20">{children}</main>
-        <footer className="bg-slate-900 text-white py-4">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-sm">
-              Made by{' '}
-              <a
-                href="https://www.sitedz.store"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary-400 hover:text-primary-300 transition-colors underline"
-              >
-                www.sitedz.store
-              </a>
-            </p>
+        <footer className="bg-slate-900 text-white py-8">
+          <div className="container mx-auto px-4">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+              <p className="text-sm">
+                © 2025 SiteDZ Store - Agence Web en Algerie
+              </p>
+              <div className="flex items-center gap-6">
+                <a
+                  href="https://www.instagram.com/site.dz.store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                  aria-label="Instagram"
+                >
+                  Instagram
+                </a>
+                <a
+                  href="https://www.facebook.com/sitedz.store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                  aria-label="Facebook"
+                >
+                  Facebook
+                </a>
+                <a
+                  href="https://www.sitedz.store/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                >
+                  www.sitedz.store
+                </a>
+              </div>
+            </div>
           </div>
         </footer>
         <WhatsAppButton />

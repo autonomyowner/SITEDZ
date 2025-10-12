@@ -13,9 +13,9 @@ export const HeroSection = (): JSX.Element => {
   }, [])
 
   const handleContactClick = (): void => {
-    const phoneNumber = '+213123456789'
+    const phoneNumber = '+213797339451'
     const message =
-      'Bonjour! Je suis interesse(e) par vos services de decoration evennementielle.'
+      'Bonjour! Je suis interesse(e) par vos services de creation de sites web.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
@@ -44,18 +44,15 @@ export const HeroSection = (): JSX.Element => {
           }`}
         >
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
-            Maison de decoration evenementielle
+            Agence Web Professionnelle
           </p>
 
           <h1 className="text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl lg:text-6xl">
-            Des experiences sur mesure pour vos evenements a Tlemcen
+            Sites web modernes et performants pour votre entreprise en Algerie
           </h1>
 
           <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            Perfect Events imagine et realise des ambiances contemporaines et
-            raffinees pour vos mariages, celebrations familiales et rencontres
-            professionnelles. Chaque detail est pense pour refleter votre style
-            et laisser un souvenir durable.
+            SITEDZ Store est votre agence web de confiance en Algerie. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne. Specialises dans le marche algerien avec des solutions adaptees a vos besoins locaux.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -77,12 +74,12 @@ export const HeroSection = (): JSX.Element => {
 
           <div className="flex flex-col gap-4 border-t border-neutral-300 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Tlemcen et region
+              Partout en Algerie
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-600">
-              <span className="whitespace-nowrap">Conseil et design</span>
-              <span className="whitespace-nowrap">Installation complete</span>
-              <span className="whitespace-nowrap">Accompagnement dedie</span>
+              <span className="whitespace-nowrap">Design moderne</span>
+              <span className="whitespace-nowrap">SEO optimise</span>
+              <span className="whitespace-nowrap">Support dedie</span>
             </div>
           </div>
         </div>

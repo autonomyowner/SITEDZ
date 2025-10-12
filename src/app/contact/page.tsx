@@ -13,8 +13,8 @@ export default function ContactPage(): JSX.Element {
             Discutons de votre projet
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-neutral-600">
-            Partagez vos envies, contraintes et inspirations. Nous reviendrons
-            vers vous rapidement avec des pistes creatives et un planning
+            Partagez vos besoins, objectifs et inspirations. Nous reviendrons
+            vers vous rapidement avec une proposition detaillee et un devis
             personnalise.
           </p>
         </div>

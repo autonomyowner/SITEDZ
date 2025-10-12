@@ -12,34 +12,34 @@ type ServiceCard = {
 
 const services: ServiceCard[] = [
   {
-    id: 'weddings',
-    title: 'Mariages',
+    id: 'websites',
+    title: 'Sites Vitrine',
     description:
-      'Ambiances romantiques, arches florales et design de table pour sublimer votre journee.',
-    highlight: 'Signature romance',
+      'Sites web professionnels et elegants pour presenter votre entreprise avec impact et credibilite.',
+    highlight: 'Presence professionnelle',
     image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    href: '/services#weddings',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    href: '/services#websites',
   },
   {
-    id: 'birthdays',
-    title: 'Anniversaires',
+    id: 'ecommerce',
+    title: 'E-commerce',
     description:
-      'Scenographies festives et personnalisees pour célébrer chaque nouvel age avec style.',
-    highlight: 'Atmosphere festive',
+      'Boutiques en ligne optimisees pour vendre vos produits 24/7 avec paiement securise.',
+    highlight: 'Vente en ligne',
     image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
-    href: '/services#birthdays',
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
+    href: '/services#ecommerce',
   },
   {
-    id: 'ceremonies',
-    title: 'Ceremonies',
+    id: 'custom',
+    title: 'Sur Mesure',
     description:
-      'Decor epure et solennel pour vos ceremonies religieuses et evenements officiels.',
-    highlight: 'Elegance intemporelle',
+      'Solutions web personnalisees adaptees a vos besoins specifiques et votre secteur d activite.',
+    highlight: 'Solution unique',
     image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-    href: '/services#ceremonies',
+      'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+    href: '/services#custom',
   },
 ]
 
@@ -49,14 +49,14 @@ export const ServicesPreview = (): JSX.Element => {
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
-            Savoir faire
+            Nos Services
           </p>
           <h2 className="mt-5 text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
-            Des ambiances soignees pour chaque occasion
+            Des solutions web adaptees a chaque entreprise
           </h2>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600">
-            Nous composons des espaces sur mesure qui donnent le ton de votre evennement
-            et assurent une experience fluide pour vos invites.
+            Nous creons des sites web performants et modernes qui donnent vie a votre presence en ligne
+            et assurent une experience optimale pour vos visiteurs.
           </p>
         </div>
 

@@ -2,9 +2,9 @@
 
 export const PricingSection = (): JSX.Element => {
   const handleContactClick = (): void => {
-    const phoneNumber = '+213123456789'
+    const phoneNumber = '+213797339451'
     const message =
-      'Bonjour! Je souhaite obtenir un devis pour vos services de decoration evennementielle.'
+      'Bonjour! Je souhaite obtenir un devis pour mon projet de site web.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
@@ -22,38 +22,38 @@ export const PricingSection = (): JSX.Element => {
         </h2>
         <p className="mt-6 text-base leading-relaxed text-neutral-600">
           Chaque projet est unique. Nous construisons des offres modulables en
-          fonction de l ampleur du decor, du lieu et de vos contraintes
-          logistiques.
+          fonction de vos besoins, des fonctionnalites requises et de votre
+          budget.
         </p>
       </div>
 
       <div className="mt-14 grid grid-cols-1 gap-6 md:grid-cols-3">
         {[
           {
-            title: 'Mariages',
-            description: 'Scenographie complete et coordination le jour J.',
+            title: 'Site Vitrine',
+            description: 'Presence professionnelle pour votre entreprise en ligne.',
             points: [
-              'Etude et proposition creative',
-              'Installation equipee le jour J',
-              'Demontage planifie',
+              'Design moderne et responsive',
+              'Optimisation SEO incluse',
+              'Hebergement et domaine 1 an',
             ],
           },
           {
-            title: 'Anniversaires',
-            description: 'Decor festif adapte a votre theme et votre budget.',
+            title: 'E-commerce',
+            description: 'Boutique en ligne complete pour vendre vos produits.',
             points: [
-              'Design personnalise',
-              'Selection des accessoires',
-              'Installation rapide',
+              'Gestion produits et stocks',
+              'Paiement en ligne securise',
+              'Tableau de bord complet',
             ],
           },
           {
-            title: 'Ceremonies',
-            description: 'Ambiance sobre et elegante pour les moments forts.',
+            title: 'Sur Mesure',
+            description: 'Solution personnalisee adaptee a vos besoins specifiques.',
             points: [
-              'Respect des codes et symboles',
-              'Coordination logistique discrete',
-              'Presence technique sur site',
+              'Fonctionnalites personnalisees',
+              'Integration systemes existants',
+              'Formation et support continu',
             ],
           },
         ].map((offer) => (
@@ -84,9 +84,9 @@ export const PricingSection = (): JSX.Element => {
           Parlons de votre projet
         </h3>
         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-          Nous ecoutons vos attentes, selectionnons les meilleurs prestataires
-          et composons une proposition detaillee pour garantir un rendu
-          harmonieux.
+          Nous ecoutons vos besoins, analysons vos objectifs et composons une
+          proposition detaillee pour garantir un site web qui depasse vos
+          attentes.
         </p>
         <button
           onClick={handleContactClick}

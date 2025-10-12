@@ -2,9 +2,9 @@
 
 export const ContactInfo = (): JSX.Element => {
   const handleWhatsAppClick = (): void => {
-    const phoneNumber = '+213123456789'
+    const phoneNumber = '+213797339451'
     const message =
-      'Bonjour! Je souhaite discuter de mon projet de decoration evennementielle.'
+      'Bonjour! Je souhaite discuter de mon projet de site web.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
@@ -12,11 +12,11 @@ export const ContactInfo = (): JSX.Element => {
   }
 
   const handlePhoneClick = (): void => {
-    window.open('tel:+213123456789', '_self')
+    window.open('tel:+213797339451', '_self')
   }
 
   const handleEmailClick = (): void => {
-    window.open('mailto:contact@perfect-events-tlemcen.com', '_self')
+    window.open('mailto:contact@sitedz.store', '_self')
   }
 
   return (
@@ -26,11 +26,11 @@ export const ContactInfo = (): JSX.Element => {
           Coordonnees
         </p>
         <h2 className="mt-4 text-3xl font-elegant font-semibold text-neutral-900">
-          Echanger avec notre equipe
+          Discutons de votre projet web
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
           Nous sommes disponibles pour discuter de votre projet, definir un
-          budget et planifier les prochaines etapes.
+          devis personnalise et planifier les prochaines etapes.
         </p>
       </div>
 
@@ -39,10 +39,10 @@ export const ContactInfo = (): JSX.Element => {
           WhatsApp
         </h3>
         <p className="mt-2 text-lg font-semibold text-neutral-900">
-          +213 123 456 789
+          +213 797 339 451
         </p>
         <p className="mt-2 text-sm text-neutral-600">
-          Reponse rapide et partage de moodboards.
+          Reponse rapide et partage de maquettes.
         </p>
         <button
           onClick={handleWhatsAppClick}
@@ -59,10 +59,10 @@ export const ContactInfo = (): JSX.Element => {
             Telephone
           </h3>
           <p className="mt-2 text-lg font-semibold text-neutral-900">
-            +213 123 456 789
+            +213 797 339 451
           </p>
           <p className="mt-2 text-sm text-neutral-600">
-            Pour un briefing rapide ou un suivi d installation.
+            Pour un briefing rapide ou un suivi de projet.
           </p>
           <button
             onClick={handlePhoneClick}
@@ -77,10 +77,10 @@ export const ContactInfo = (): JSX.Element => {
             Email
           </h3>
           <p className="mt-2 text-lg font-semibold text-neutral-900">
-            contact@perfect-events-tlemcen.com
+            contact@sitedz.store
           </p>
           <p className="mt-2 text-sm text-neutral-600">
-            Pour partager vos inspirations et documents.
+            Pour partager vos idees et documents.
           </p>
           <button
             onClick={handleEmailClick}
@@ -93,7 +93,7 @@ export const ContactInfo = (): JSX.Element => {
       </div>
 
       <div className="rounded-3xl border border-neutral-200 bg-white/80 px-6 py-8 text-sm uppercase tracking-[0.3em] text-neutral-500 shadow-sm">
-        Horaires : lundi a samedi 9h - 18h • Dimanche sur rendez-vous
+        Disponible 7j/7 • Support technique et assistance
       </div>
     </div>
   )

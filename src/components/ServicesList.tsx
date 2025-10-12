@@ -11,100 +11,100 @@ type Service = {
 
 const services: Service[] = [
   {
-    id: 'weddings',
-    title: 'Decoration de mariages',
+    id: 'websites',
+    title: 'Sites Vitrine Professionnels',
     description:
-      'Ambiances poetiques, arches florales, design de table et scenographie generale pour une celebration elegante et harmonieuse.',
+      'Sites web elegants et modernes pour presenter votre entreprise, vos services et renforcer votre credibilite en ligne.',
     features: [
-      'Direction artistique et moodboards',
-      'Amenagement de la ceremonie et de la reception',
-      'Centres de table, lumieres et textiles coordonnes',
-      'Espaces photos dedies aux invites',
-      'Installation, suivi sur site et demontage',
+      'Design moderne et responsive adapte a tous les ecrans',
+      'Optimisation SEO pour etre visible sur Google',
+      'Formulaires de contact et integration WhatsApp',
+      'Galerie photos et videos pour vos realisations',
+      'Hebergement securise et nom de domaine inclus',
     ],
     image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    signature: 'Romance sur mesure',
+      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
+    signature: 'Presence professionnelle',
   },
   {
-    id: 'birthdays',
-    title: 'Decoration d anniversaires',
+    id: 'ecommerce',
+    title: 'Boutiques E-commerce',
     description:
-      'Des univers festifs et personnalises pour celebrer chaque age avec originalite, que ce soit en famille ou entre amis.',
+      'Solutions de vente en ligne completes pour transformer votre entreprise et vendre vos produits 24h/24 et 7j/7.',
     features: [
-      'Concept et palette chromatique personnalises',
-      'Structures decoratives, arches et fonds photo',
-      'Table de reception ou buffet coordonne',
-      'Accessoires, papeterie et signaletique',
-      'Assistance logistique le jour J',
+      'Catalogue produits avec gestion des stocks',
+      'Panier et processus de commande optimise',
+      'Integration paiement en ligne securise (CCP, Baridi Mob)',
+      'Tableau de bord pour gerer vos commandes',
+      'Options de livraison et suivi des expeditions',
     ],
     image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
-    signature: 'Celebration taillee a vos envies',
+      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
+    signature: 'Vente en ligne',
   },
   {
-    id: 'ceremonies',
-    title: 'Decoration de ceremonies',
+    id: 'landing',
+    title: 'Pages de Destination (Landing Pages)',
     description:
-      'Un decor respectueux et soigne pour vos ceremonies religieuses ou officielles, avec une attention particuliere portee aux symboles.',
+      'Pages web optimisees pour convertir vos visiteurs en clients, ideales pour vos campagnes marketing et publicites.',
     features: [
-      'Amenagement de l espace principal',
-      'Traits de lumiere et textiles sobres',
-      'Espaces d accueil et de recueillement',
-      'Coordination des elements floraux et accessoires',
-      'Presence discrete de l equipe pendant l installation',
+      'Design attractif centre sur la conversion',
+      'Appels a l action strategiquement places',
+      'Formulaires optimises pour capturer des leads',
+      'Integration avec vos outils marketing',
+      'Chargement ultra-rapide pour maximiser les conversions',
     ],
     image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-    signature: 'Sobriete elegante',
+      'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
+    signature: 'Performance marketing',
   },
   {
-    id: 'corporate',
-    title: 'Evenements d entreprise',
+    id: 'portfolio',
+    title: 'Sites Portfolio',
     description:
-      'Des espaces a l image de votre marque pour vos conferences, lancements de produits et rencontres clients ou collaborateurs.',
+      'Mettez en valeur votre travail et vos competences avec un portfolio professionnel qui impressionne vos clients potentiels.',
     features: [
-      'Scenographie globale et zoning des espaces',
-      'Mise en avant de votre identite visuelle',
-      'Mobilier, fleurs et eclairages coordonnes',
-      'Accompagnement technique et logistique',
-      'Pilotage des fournisseurs partenaires',
+      'Galeries photos et videos haute qualite',
+      'Presentation de vos projets et realisations',
+      'Section a propos et competences',
+      'Formulaire de contact et devis en ligne',
+      'Design unique qui reflete votre style',
     ],
     image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-    signature: 'Impact professionnel',
+      'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80',
+    signature: 'Mise en valeur',
   },
   {
-    id: 'graduations',
-    title: 'Ceremonies de remise de diplomes',
+    id: 'restaurant',
+    title: 'Sites pour Restaurants',
     description:
-      'Mise en scene ceremonielle et festive pour honorer les parcours academiques et offrir un cadre photo ideal.',
+      'Sites web specialises pour restaurants, cafes et services alimentaires avec menu en ligne et systeme de reservation.',
     features: [
-      'Espace scene et podium',
-      'Arriere-plans et signaletique personnalises',
-      'Zones photos pour les diplomes',
-      'Decor des espaces de reception',
-      'Coordination logistique sur place',
+      'Menu interactif avec photos appetissantes',
+      'Systeme de reservation de tables en ligne',
+      'Integration commande et livraison',
+      'Galerie photos de votre etablissement',
+      'Avis clients et reseaux sociaux integres',
     ],
     image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    signature: 'Celebration academique',
+      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
+    signature: 'Gastronomie digitale',
   },
   {
     id: 'custom',
-    title: 'Evenements sur mesure',
+    title: 'Solutions Sur Mesure',
     description:
-      'Pour toute demande unique ou hors format, nous construisons un decor integre qui repond a vos attentes et contraintes.',
+      'Projets web personnalises adaptes a vos besoins specifiques, quelle que soit la complexite de votre demande.',
     features: [
-      'Atelier d idees et curation sur mesure',
-      'Propositions graphiques et maquettes',
-      'Selection de materiaux et accessoires',
-      'Coordination integrale avec vos prestataires',
-      'Pilotage complet jusqu au demontage',
+      'Analyse detaillee de vos besoins et objectifs',
+      'Architecture et fonctionnalites personnalisees',
+      'Integration avec vos systemes existants',
+      'Formation complete a l utilisation',
+      'Support technique et maintenance continues',
     ],
     image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
-    signature: 'Signature exclusive',
+      'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&w=800&q=80',
+    signature: 'Solution unique',
   },
 ]
 
@@ -138,7 +138,7 @@ export const ServicesList = (): JSX.Element => {
                 {service.signature}
               </span>
               <span className="text-xs uppercase tracking-[0.35em] text-neutral-400">
-                Perfect Events
+                SiteDZ Store
               </span>
             </div>
             </div>

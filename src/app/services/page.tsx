@@ -13,8 +13,8 @@ export default function ServicesPage(): JSX.Element {
             Nos services
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-neutral-600">
-            Explorez notre accompagnement pour concevoir, installer et sublimer
-            vos evenements avec une approche soigneuse et personnalisee.
+            Explorez nos solutions web pour concevoir, developper et lancer votre
+            site internet avec une approche professionnelle et personnalisee.
           </p>
         </div>
 

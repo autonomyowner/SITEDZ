@@ -54,10 +54,10 @@ export const Navbar = (): JSX.Element => {
             className="flex flex-col leading-tight text-neutral-900 transition-colors duration-200 hover:text-amber-700"
           >
             <span className="text-xl font-semibold tracking-wide uppercase">
-              Perfect Events
+              SiteDZ Store
             </span>
             <span className="text-xs font-light text-neutral-500">
-              Decoration evennementielle
+              Agence Web en Algerie
             </span>
           </Link>
 

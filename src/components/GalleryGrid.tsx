@@ -14,84 +14,51 @@ type GalleryItem = {
 const galleryItems: GalleryItem[] = [
   {
     id: '1',
-    title: 'Mariage elegant',
-    category: 'Mariage',
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
+    title: 'Gran Turismo',
+    category: 'Transport de luxe',
+    image: '/projects/gran-turismo.webp',
     description:
-      'Decor romantique avec compositions florales suspendues et mise en lumiere douce.',
+      'Chauffeur prive haut de gamme. Discretion, confort et excellence pour vos trajets sur la Cote d Azur et en Italie du Nord.',
   },
   {
     id: '2',
-    title: 'Anniversaire 50 ans',
-    category: 'Anniversaire',
-    image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
+    title: 'El Ghella',
+    category: 'Agriculture',
+    image: '/projects/elghella.webp',
     description:
-      'Atmosphere chaleureuse aux tons caramel avec bar a douceurs personnalise.',
+      'Produits agricoles et services. Alliance d innovation et de nature pour un avenir agricole durable.',
   },
   {
     id: '3',
-    title: 'Ceremonie religieuse',
-    category: 'Ceremonie',
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
+    title: 'Parfumerie Allouani',
+    category: 'Luxe & Beaute',
+    image: '/projects/allouani.webp',
     description:
-      'Espace solennel et epure, respect des traditions et mise en avant des symboles.',
+      'Parfums de luxe. Elegance, raffinement et senteurs exclusives venues du monde entier.',
   },
   {
     id: '4',
-    title: 'Mariage traditionnel',
-    category: 'Mariage',
-    image:
-      'https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=800&q=80',
+    title: 'Planete Nutrition',
+    category: 'Sante & Bien-etre',
+    image: '/projects/nutrition.webp',
     description:
-      'Alliance de touches traditionnelles et contemporaines pour une ambiance chaleureuse.',
+      'Sante & bien-etre. Supplements de qualite pour performance, equilibre et vitalite au quotidien.',
   },
   {
     id: '5',
-    title: 'Anniversaire enfant',
-    category: 'Anniversaire',
-    image:
-      'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=800&q=80',
+    title: 'Triomphe',
+    category: 'Decoration',
+    image: '/projects/triomphe.webp',
     description:
-      'Univers ludique et colore avec zones de jeux et buffet personalise.',
+      'Decoration interieure. Pieces raffinees et modernes pour sublimer vos espaces de vie.',
   },
   {
     id: '6',
-    title: 'Ceremonie officielle',
-    category: 'Ceremonie',
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
+    title: 'El Wakil Immobilier',
+    category: 'Immobilier',
+    image: '/projects/elwakil.png',
     description:
-      'Mise en scene precise pour un evenement institutionnel avec accueil des invites.',
-  },
-  {
-    id: '7',
-    title: 'Mariage moderne',
-    category: 'Mariage',
-    image:
-      'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=800&q=80',
-    description:
-      'Design contemporain, melange de structures metalliques et de fleurs delicates.',
-  },
-  {
-    id: '8',
-    title: 'Anniversaire adulte',
-    category: 'Anniversaire',
-    image:
-      'https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?auto=format&fit=crop&w=800&q=80',
-    description:
-      'Reception chic avec bar signature et scenographie lumineuse.',
-  },
-  {
-    id: '9',
-    title: 'Ceremonie familiale',
-    category: 'Ceremonie',
-    image:
-      'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
-    description:
-      'Decor intime pour une reunion familiale avec espaces lounges accueillants.',
+      'Immobilier de prestige. Expertise locale et service premium pour des biens d exception en Algerie.',
   },
 ]
 
@@ -169,7 +136,9 @@ export const GalleryGrid = (): JSX.Element => {
                 src={item.image}
                 alt={item.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                 className="object-cover transition-transform duration-500 group-hover:scale-105"
+                quality={85}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/30 via-transparent to-transparent" />
               <div className="absolute inset-x-0 bottom-0 flex flex-col gap-2 p-6">
@@ -222,8 +191,10 @@ export const GalleryGrid = (): JSX.Element => {
                 src={selectedImage.image}
                 alt={selectedImage.title}
                 width={1200}
-                height={800}
+                height={1200}
+                sizes="(max-width: 1200px) 100vw, 1200px"
                 className="w-full object-cover"
+                quality={90}
               />
             </div>
             <div className="mt-6 rounded-2xl bg-neutral-900/70 px-6 py-5 text-neutral-100">

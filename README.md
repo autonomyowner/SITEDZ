@@ -1,6 +1,6 @@
-# Perfect Events ❤️ - Website
+# SiteDZ Store - Website
 
-Un site web moderne et élégant pour Perfect Events, une entreprise de décoration événementielle basée à Tlemcen, Algérie.
+Un site web moderne et élégant pour SiteDZ Store, une agence web professionnelle basée en Algérie.
 
 ## 🚀 Technologies Utilisées
 
@@ -19,11 +19,11 @@ Un site web moderne et élégant pour Perfect Events, une entreprise de décorat
 - Animations fluides et transitions élégantes
 
 ### 📱 Pages
-- **Accueil** - Hero section avec CTA, aperçu des services, témoignages
-- **Galerie** - Grille de photos avec lightbox interactif
-- **Services** - Détails complets des services offerts
-- **À Propos** - Histoire, valeurs, équipe
-- **Contact** - Informations de contact et zone de service
+- **Accueil** - Hero section avec CTA, aperçu des services web, témoignages clients
+- **Galerie** - Grille de projets web réalisés
+- **Services** - Détails complets des services web (sites vitrine, e-commerce, sur mesure)
+- **À Propos** - Histoire, valeurs, expertise
+- **Contact** - Informations de contact et couverture nationale
 
 ### 🔧 Fonctionnalités Techniques
 - Navigation sticky avec effets de scroll
@@ -96,31 +96,34 @@ Le thème utilise un gradient élégant :
 ## 📞 Contact
 
 ### Informations de Contact
-- **WhatsApp** : +213 123 456 789
-- **Téléphone** : +213 123 456 789
-- **Email** : contact@perfect-events-tlemcen.com
-- **Localisation** : Tlemcen, Algérie
+- **WhatsApp** : +213 797 339 451
+- **Téléphone** : +213 797 339 451
+- **Email** : contact@sitedz.store
+- **Localisation** : Algérie
+- **Instagram** : https://www.instagram.com/site.dz.store/
+- **Facebook** : https://www.facebook.com/sitedz.store/
+- **Site Web** : https://www.sitedz.store/
 
 ### Zone de Service
-- Tlemcen Centre
-- Tlemcen Ouest
-- Tlemcen Est
-- Aïn Témouchent
-- Oran (sur demande)
-- Mostaganem (sur demande)
+- Alger
+- Oran
+- Constantine
+- Tlemcen
+- Annaba
+- Partout en Algérie (services à distance)
 
 ## 🔧 Configuration
 
 ### Variables d'Environnement
 Créez un fichier `.env.local` :
 ```env
-NEXT_PUBLIC_SITE_URL=https://perfect-events-tlemcen.com
-NEXT_PUBLIC_PHONE_NUMBER=+213123456789
-NEXT_PUBLIC_EMAIL=contact@perfect-events-tlemcen.com
+NEXT_PUBLIC_SITE_URL=https://www.sitedz.store
+NEXT_PUBLIC_PHONE_NUMBER=+213797339451
+NEXT_PUBLIC_EMAIL=contact@sitedz.store
 ```
 
 ### SEO
-- Métadonnées optimisées pour "Décoration événementielle à Tlemcen"
+- Métadonnées optimisées pour "Agence web en Algérie"
 - OpenGraph tags pour les réseaux sociaux
 - Structure de données pour Google
 
@@ -164,4 +167,4 @@ Ce projet est sous licence MIT. Voir le fichier `LICENSE` pour plus de détails.
 
 ---
 
-**Perfect Events ❤️** - Transformez vos événements en moments inoubliables 
+**SiteDZ Store** - Votre agence web de confiance en Algérie 

@@ -12,8 +12,9 @@ export default function GalleryPage(): JSX.Element {
             Nos realisations
           </h1>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-neutral-600">
-            Un apercu de nos scenographies : mariages, anniversaires, ceremonies
-            officielles et projets sur mesure concus pour marquer les esprits.
+            Un apercu de nos projets web : sites vitrine, boutiques e-commerce,
+            portfolios et solutions sur mesure concus pour repondre aux besoins
+            de nos clients.
           </p>
         </div>
 

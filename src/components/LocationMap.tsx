@@ -1,10 +1,10 @@
 const serviceAreas = [
-  'Tlemcen centre',
-  'Tlemcen ouest',
-  'Tlemcen est',
-  'Ain Temouchent',
-  'Oran (sur demande)',
-  'Mostaganem (sur demande)',
+  'Alger',
+  'Oran',
+  'Constantine',
+  'Tlemcen',
+  'Annaba',
+  'Partout en Algerie',
 ]
 
 export const LocationMap = (): JSX.Element => {
@@ -15,9 +15,9 @@ export const LocationMap = (): JSX.Element => {
           Zone de service
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-          Nous intervenons principalement a Tlemcen et sur demande dans les
-          villes voisines. Pour tout projet hors zone, contactez-nous afin
-          d evaluer la faisabilite et les frais eventuels.
+          Nous travaillons avec des clients partout en Algerie. Nos services
+          sont accessibles a distance, avec possibilite de rendez-vous en ligne
+          pour discuter de votre projet.
         </p>
         <div className="mt-6 grid grid-cols-1 gap-3 text-sm text-neutral-600 sm:grid-cols-2">
           {serviceAreas.map((area) => (
@@ -30,7 +30,7 @@ export const LocationMap = (): JSX.Element => {
           ))}
         </div>
         <p className="mt-6 text-xs uppercase tracking-[0.3em] text-neutral-500">
-          Deplacements longs sur devis supplementaire
+          Services disponibles partout en Algerie
         </p>
       </div>
 
@@ -45,24 +45,24 @@ export const LocationMap = (): JSX.Element => {
         </div>
         <div className="mt-6 grid gap-4 text-sm text-neutral-600">
           <div>
-            <p className="font-semibold text-neutral-900">Adresse</p>
+            <p className="font-semibold text-neutral-900">Localisation</p>
             <p className="mt-1">
-              Tlemcen, Wilaya de Tlemcen
-              <br />
               Algerie
+              <br />
+              Services disponibles a distance
             </p>
           </div>
           <div>
             <p className="font-semibold text-neutral-900">Accessibilite</p>
             <p className="mt-1">
-              Acces facile en voiture, possibilite de parking sur demande.
+              Consultation en ligne via WhatsApp, appel ou visioconference.
             </p>
           </div>
           <div>
             <p className="font-semibold text-neutral-900">Couverture</p>
             <p className="mt-1">
-              Intervention dans un rayon de 50 km, extensions possibles avec
-              frais de deplacement.
+              Services web disponibles dans toute l Algerie, sans limitation
+              geographique.
             </p>
           </div>
         </div>
@@ -74,24 +74,24 @@ export const LocationMap = (): JSX.Element => {
         </h3>
         <div className="mt-4 grid gap-4 text-sm text-neutral-600">
           <div>
-            <p className="font-semibold text-neutral-900">Rendez-vous</p>
+            <p className="font-semibold text-neutral-900">Consultation</p>
             <p className="mt-1">
-              Possibilite de rendez-vous sur site pour comprendre vos besoins et
-              prendre les mesures necessaires.
+              Consultation gratuite en ligne pour discuter de votre projet et
+              definir vos besoins.
             </p>
           </div>
           <div>
-            <p className="font-semibold text-neutral-900">Installation</p>
+            <p className="font-semibold text-neutral-900">Livraison</p>
             <p className="mt-1">
-              Equipe dediee pour installer et demonter les elements de decor,
-              avec respect des contraintes horaires.
+              Livraison rapide de votre site web avec formation complete a
+              l utilisation.
             </p>
           </div>
           <div>
-            <p className="font-semibold text-neutral-900">Urgences</p>
+            <p className="font-semibold text-neutral-900">Support</p>
             <p className="mt-1">
-              Pour les demandes de derniere minute, privilégiez WhatsApp pour
-              obtenir une reponse rapide.
+              Pour toute assistance technique, contactez-nous via WhatsApp pour
+              une reponse rapide.
             </p>
           </div>
         </div>

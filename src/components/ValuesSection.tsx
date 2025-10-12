@@ -7,32 +7,32 @@ const values: ValueItem[] = [
   {
     title: 'Excellence',
     description:
-      'Une exigence constante dans le choix des materiaux, des finitions et des partenaires.',
+      'Une exigence constante dans le choix des technologies, du design et des fonctionnalites.',
   },
   {
-    title: 'Creativite',
+    title: 'Innovation',
     description:
-      'Des propositions singulieres qui respectent votre identite et l esprit du lieu.',
+      'Des solutions modernes qui respectent votre identite et l esprit de votre entreprise.',
   },
   {
-    title: 'Confiance',
+    title: 'Transparence',
     description:
-      'Un dialogue transparent a chaque etape pour avancer sereinement ensemble.',
+      'Un dialogue clair a chaque etape pour avancer sereinement ensemble.',
   },
   {
-    title: 'Ponctualite',
+    title: 'Reactivite',
     description:
-      'Une organisation precise pour garantir des installations maitrisees et ponctuelles.',
+      'Une organisation precise pour garantir des livraisons rapides et un support immediat.',
   },
   {
     title: 'Personnalisation',
     description:
-      'Chaque scenographie est concue sur mesure a partir de vos envies et contraintes.',
+      'Chaque site web est concu sur mesure a partir de vos besoins et objectifs.',
   },
   {
-    title: 'Passion',
+    title: 'Expertise',
     description:
-      'Une equipe impliquee qui veille a ce que chaque moment soit soigneusement sublime.',
+      'Une equipe qualifiee qui veille a ce que votre projet web soit parfaitement realise.',
   },
 ]
 
@@ -48,8 +48,8 @@ export const ValuesSection = (): JSX.Element => {
             Des valeurs qui guident chaque projet
           </h2>
           <p className="mx-auto mt-6 max-w-3xl text-base leading-relaxed text-neutral-600">
-            Collaboration, precision et sens du service structurent notre facon
-            d accompagner les evenements. Nous cultivons des relations solides
+            Innovation, qualite et sens du service structurent notre facon
+            de creer des sites web. Nous cultivons des relations solides
             et durables avec nos clients.
           </p>
         </div>
@@ -76,8 +76,8 @@ export const ValuesSection = (): JSX.Element => {
           </h3>
           <p className="mx-auto mt-4 max-w-3xl text-sm leading-relaxed text-neutral-600">
             Assurer une experience fluide et respectueuse de vos delais. Nous
-            orchestrons la logistique, la coordination fournisseurs et les
-            installations avec la meme attention que pour la phase creative.
+            orchestrons le developpement, le design et le deploiement avec la
+            meme attention que pour la phase de conception.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-6 text-sm uppercase tracking-[0.3em] text-neutral-500 sm:grid-cols-3">
             <div className="rounded-2xl border border-neutral-200 bg-white/80 px-6 py-6">

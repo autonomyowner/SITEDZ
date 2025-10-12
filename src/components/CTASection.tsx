@@ -2,9 +2,9 @@
 
 export const CTASection = (): JSX.Element => {
   const handleWhatsAppClick = (): void => {
-    const phoneNumber = '+213123456789'
+    const phoneNumber = '+213797339451'
     const message =
-      'Bonjour! Je souhaite reserver vos services de decoration evennementielle.'
+      'Bonjour! Je souhaite obtenir un devis pour mon projet de site web.'
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
@@ -12,11 +12,11 @@ export const CTASection = (): JSX.Element => {
   }
 
   const handlePhoneClick = (): void => {
-    window.open('tel:+213123456789', '_self')
+    window.open('tel:+213797339451', '_self')
   }
 
   const handleEmailClick = (): void => {
-    window.open('mailto:contact@perfect-events-tlemcen.com', '_self')
+    window.open('mailto:contact@sitedz.store', '_self')
   }
 
   return (
@@ -24,14 +24,14 @@ export const CTASection = (): JSX.Element => {
       <div className="mx-auto max-w-5xl rounded-3xl border border-neutral-200 bg-white/85 px-6 py-16 shadow-sm sm:px-10">
         <div className="mx-auto max-w-3xl text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
-            Pret a planifier
+            Pret a demarrer
           </p>
           <h2 className="mt-4 text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
-            Imaginons ensemble votre prochain evennement
+            Creons ensemble votre site web professionnel
           </h2>
           <p className="mt-6 text-base leading-relaxed text-neutral-600">
-            Partagez vos envies et contraintes, nous nous chargeons de concevoir
-            une experience soigneuse, harmonieuse et parfaitement coordonnee.
+            Partagez votre vision et vos objectifs, nous nous chargeons de concevoir
+            un site web moderne, performant et parfaitement adapte a vos besoins.
           </p>
         </div>
 
@@ -41,7 +41,7 @@ export const CTASection = (): JSX.Element => {
             className="rounded-full bg-neutral-900 px-10 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-white transition-colors duration-200 hover:bg-neutral-700"
             type="button"
           >
-            Reserver un appel
+            Demander un devis
           </button>
         </div>
 
@@ -51,7 +51,7 @@ export const CTASection = (): JSX.Element => {
               WhatsApp
             </p>
             <p className="mt-4 text-lg font-semibold text-neutral-900">
-              +213 123 456 789
+              +213 797 339 451
             </p>
             <button
               onClick={handleWhatsAppClick}
@@ -67,7 +67,7 @@ export const CTASection = (): JSX.Element => {
               Telephone
             </p>
             <p className="mt-4 text-lg font-semibold text-neutral-900">
-              +213 123 456 789
+              +213 797 339 451
             </p>
             <button
               onClick={handlePhoneClick}
@@ -83,7 +83,7 @@ export const CTASection = (): JSX.Element => {
               Email
             </p>
             <p className="mt-4 text-lg font-semibold text-neutral-900">
-              contact@perfect-events-tlemcen.com
+              contact@sitedz.store
             </p>
             <button
               onClick={handleEmailClick}
@@ -96,7 +96,7 @@ export const CTASection = (): JSX.Element => {
         </div>
 
         <div className="mt-10 border-t border-neutral-200 pt-8 text-center text-xs uppercase tracking-[0.35em] text-neutral-500">
-          Disponibles 7j/7 selon vos evennements
+          Disponibles 7j/7 pour vous accompagner
         </div>
       </div>
     </section>
