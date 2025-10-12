@@ -159,13 +159,14 @@ export const GalleryGrid = (): JSX.Element => {
       </div>
 
       {selectedImage && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 px-4 py-10">
-          <div className="relative w-full max-w-4xl rounded-3xl border border-neutral-700 bg-neutral-900/80 p-6 backdrop-blur">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 overflow-y-auto">
+          <div className="relative w-full max-w-4xl my-8 rounded-3xl border border-neutral-700 bg-neutral-900/80 p-4 sm:p-6 backdrop-blur">
             <div className="flex justify-between gap-4 text-xs uppercase tracking-[0.3em] text-neutral-300">
               <button
                 type="button"
                 onClick={() => setSelectedImage(null)}
-                className="underline underline-offset-4"
+                className="underline underline-offset-4 hover:text-white transition-colors"
+                aria-label="Fermer"
               >
                 Fermer
               </button>
@@ -173,38 +174,42 @@ export const GalleryGrid = (): JSX.Element => {
                 <button
                   type="button"
                   onClick={handlePrevious}
-                  className="underline underline-offset-4"
+                  className="underline underline-offset-4 hover:text-white transition-colors"
+                  aria-label="Image precedente"
                 >
                   Precedent
                 </button>
                 <button
                   type="button"
                   onClick={handleNext}
-                  className="underline underline-offset-4"
+                  className="underline underline-offset-4 hover:text-white transition-colors"
+                  aria-label="Image suivante"
                 >
                   Suivant
                 </button>
               </div>
             </div>
-            <div className="mt-6 overflow-hidden rounded-2xl">
-              <Image
-                src={selectedImage.image}
-                alt={selectedImage.title}
-                width={1200}
-                height={1200}
-                sizes="(max-width: 1200px) 100vw, 1200px"
-                className="w-full object-cover"
-                quality={90}
-              />
+            <div className="mt-4 sm:mt-6 overflow-hidden rounded-2xl">
+              <div className="relative w-full max-h-[50vh] sm:max-h-[60vh]">
+                <Image
+                  src={selectedImage.image}
+                  alt={selectedImage.title}
+                  width={1200}
+                  height={1200}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 90vw, 896px"
+                  className="w-full h-full object-contain"
+                  quality={90}
+                />
+              </div>
             </div>
-            <div className="mt-6 rounded-2xl bg-neutral-900/70 px-6 py-5 text-neutral-100">
+            <div className="mt-4 sm:mt-6 rounded-2xl bg-neutral-900/70 px-4 sm:px-6 py-4 sm:py-5 text-neutral-100">
               <p className="text-xs uppercase tracking-[0.3em] text-neutral-300">
                 {selectedImage.category}
               </p>
-              <p className="mt-3 text-2xl font-elegant font-semibold">
+              <p className="mt-2 sm:mt-3 text-xl sm:text-2xl font-elegant font-semibold">
                 {selectedImage.title}
               </p>
-              <p className="mt-3 text-sm leading-relaxed text-neutral-200">
+              <p className="mt-2 sm:mt-3 text-sm leading-relaxed text-neutral-200">
                 {selectedImage.description}
               </p>
             </div>
