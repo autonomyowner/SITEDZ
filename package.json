@@ -1,7 +1,7 @@
 {
-  "name": "perfect-events",
+  "name": "sitedz-store",
   "version": "1.0.0",
-  "description": "Perfect Events - Décoration événementielle à Tlemcen",
+  "description": "SiteDZ Store - Agence Web en Algérie",
   "private": true,
   "scripts": {
     "dev": "next dev",
