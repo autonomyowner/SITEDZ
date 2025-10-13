@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import Image from 'next/image'
+import ImagePreview from './ui/ImagePreview'
 
 type Testimonial = {
   id: string
@@ -135,12 +135,13 @@ export const TestimonialsSection = (): JSX.Element => {
               className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white/90 p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="flex items-center gap-4">
-                <div className="relative h-14 w-14 overflow-hidden rounded-full border border-neutral-200">
-                  <Image
+                <div className="overflow-hidden rounded-full border border-neutral-200">
+                  <ImagePreview
                     src={testimonial.image}
                     alt={testimonial.name}
-                    fill
-                    className="object-cover"
+                    width={56}
+                    height={56}
+                    className="object-cover cursor-pointer hover:opacity-80 transition-opacity rounded-full"
                   />
                 </div>
                 <div>
