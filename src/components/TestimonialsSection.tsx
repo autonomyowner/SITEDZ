@@ -26,7 +26,7 @@ const testimonials: Testimonial[] = [
   {
     id: '2',
     name: 'elghella startup',
-    event: 'Site Vitrine',
+    event: 'STARTUP',
     content:
       "Votre confiance, votre engagement et votre excellente collaboration ont été des facteurs déterminants dans la réussite de cette étape. Nous apprécions grandement votre sens des responsabilités et votre dévouement exemplaire tout au long du processus de développement.\n\nRecevez toute notre reconnaissance et nos remerciements les plus sincères, accompagnés de nos vœux de succès et de réussite continue dans votre parcours professionnel.\n\nAvec nos salutations les plus distinguées,\nL'équipe El Ghella",
     rating: '5/5 satisfaction',
