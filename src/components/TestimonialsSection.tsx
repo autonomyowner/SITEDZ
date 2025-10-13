@@ -15,20 +15,20 @@ type Testimonial = {
 const testimonials: Testimonial[] = [
   {
     id: '1',
-    name: 'Ahmed Benali',
+    name: 'Allouani Parfumerie',
     event: 'Site E-commerce',
     content:
-      "SiteDZ Store a cree notre boutique en ligne avec un design moderne et professionnel. Les ventes ont augmente de 300% depuis le lancement!",
+      "Notre collaboration avec vous a été une expérience réussie à tous les égards. Nous sommes fiers de ce partenariat et nous vous souhaitons encore plus de succès, de prospérité et de leadership dans le domaine de la création de sites web.\n\nAvec nos salutations distinguées,\nSociété Allouani",
     rating: '5/5 satisfaction',
     image:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=400&q=80',
   },
   {
     id: '2',
-    name: 'Yasmine Meziane',
+    name: 'elghella startup',
     event: 'Site Vitrine',
     content:
-      "Un site web elegant et rapide qui represente parfaitement notre entreprise. L equipe est professionnelle et a l ecoute.",
+      "Votre confiance, votre engagement et votre excellente collaboration ont été des facteurs déterminants dans la réussite de cette étape. Nous apprécions grandement votre sens des responsabilités et votre dévouement exemplaire tout au long du processus de développement.\n\nRecevez toute notre reconnaissance et nos remerciements les plus sincères, accompagnés de nos vœux de succès et de réussite continue dans votre parcours professionnel.\n\nAvec nos salutations les plus distinguées,\nL'équipe El Ghella",
     rating: '5/5 satisfaction',
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',

@@ -1,3 +1,5 @@
+'use client'
+
 import Image from 'next/image'
 
 type Service = {
@@ -7,6 +9,7 @@ type Service = {
   features: string[]
   image: string
   signature: string
+  whatsappMessage: string
 }
 
 const services: Service[] = [
@@ -25,6 +28,8 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
     signature: 'Presence professionnelle',
+    whatsappMessage:
+      'Bonjour! Je suis intéressé(e) par un Site Vitrine Professionnel. J\'aimerais avoir plus d\'informations et un devis personnalisé.',
   },
   {
     id: 'ecommerce',
@@ -41,6 +46,8 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
     signature: 'Vente en ligne',
+    whatsappMessage:
+      'Bonjour! Je souhaite créer une Boutique E-commerce pour vendre mes produits en ligne. Pourriez-vous me fournir plus de détails et un devis?',
   },
   {
     id: 'landing',
@@ -57,6 +64,8 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
     signature: 'Performance marketing',
+    whatsappMessage:
+      'Bonjour! Je suis intéressé(e) par la création d\'une Landing Page pour ma campagne marketing. Pouvez-vous me donner plus d\'informations?',
   },
   {
     id: 'portfolio',
@@ -73,6 +82,8 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?auto=format&fit=crop&w=800&q=80',
     signature: 'Mise en valeur',
+    whatsappMessage:
+      'Bonjour! J\'aimerais créer un Site Portfolio professionnel pour mettre en valeur mon travail. Pouvez-vous m\'aider avec un devis?',
   },
   {
     id: 'restaurant',
@@ -89,6 +100,8 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80',
     signature: 'Gastronomie digitale',
+    whatsappMessage:
+      'Bonjour! Je cherche à créer un Site Web pour mon restaurant/café avec menu en ligne et système de réservation. J\'aimerais discuter des options disponibles.',
   },
   {
     id: 'custom',
@@ -105,10 +118,18 @@ const services: Service[] = [
     image:
       'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&w=800&q=80',
     signature: 'Solution unique',
+    whatsappMessage:
+      'Bonjour! J\'ai un projet web personnalisé avec des besoins spécifiques. J\'aimerais discuter de mes exigences et obtenir un devis sur mesure.',
   },
 ]
 
 export const ServicesList = (): JSX.Element => {
+  const handleWhatsAppClick = (message: string): void => {
+    const phoneNumber = '+213797339451'
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    window.open(whatsappUrl, '_blank')
+  }
+
   return (
     <div className="space-y-20">
       {services.map((service, index) => {
@@ -129,7 +150,9 @@ export const ServicesList = (): JSX.Element => {
                 src={service.image}
                 alt={service.title}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 600px"
                 className="object-cover"
+                priority={index === 0}
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-white/10" />
             </div>
@@ -167,6 +190,7 @@ export const ServicesList = (): JSX.Element => {
             <div>
               <button
                 type="button"
+                onClick={() => handleWhatsAppClick(service.whatsappMessage)}
                 className="rounded-full border border-neutral-400 px-8 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-700 transition-colors duration-200 hover:border-neutral-700 hover:text-neutral-900"
               >
                 Demander un devis

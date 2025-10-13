@@ -6,11 +6,29 @@ import Image from 'next/image'
 
 export const HeroSection = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [typedText, setTypedText] = useState<string>('')
+  const fullText = 'Sites web modernes et performants pour votre entreprise en Algerie'
 
   useEffect(() => {
     const timeout = window.setTimeout(() => setIsVisible(true), 100)
     return () => window.clearTimeout(timeout)
   }, [])
+
+  useEffect(() => {
+    if (!isVisible) return
+
+    let currentIndex = 0
+    const typingInterval = setInterval(() => {
+      if (currentIndex <= fullText.length) {
+        setTypedText(fullText.slice(0, currentIndex))
+        currentIndex++
+      } else {
+        clearInterval(typingInterval)
+      }
+    }, 50)
+
+    return () => clearInterval(typingInterval)
+  }, [isVisible])
 
   const handleContactClick = (): void => {
     const phoneNumber = '+213797339451'
@@ -48,7 +66,8 @@ export const HeroSection = (): JSX.Element => {
           </p>
 
           <h1 className="text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl lg:text-6xl">
-            Sites web modernes et performants pour votre entreprise en Algerie
+            {typedText}
+            <span className="inline-block w-1 h-[1em] ml-1 bg-neutral-900 animate-pulse" />
           </h1>
 
           <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl">
