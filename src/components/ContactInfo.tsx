@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMetaEvent } from '@/lib/metaPixel'
+
 export const ContactInfo = (): JSX.Element => {
   const handleWhatsAppClick = (): void => {
     const phoneNumber = '+213797339451'
@@ -8,14 +10,17 @@ export const ContactInfo = (): JSX.Element => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
+    trackMetaEvent('Contact', { source: 'contact_whatsapp' })
     window.open(whatsappUrl, '_blank')
   }
 
   const handlePhoneClick = (): void => {
+    trackMetaEvent('Contact', { source: 'contact_phone' })
     window.open('tel:+213797339451', '_self')
   }
 
   const handleEmailClick = (): void => {
+    trackMetaEvent('Contact', { source: 'contact_email' })
     window.open('mailto:contact@sitedz.store', '_self')
   }
 
@@ -93,7 +98,7 @@ export const ContactInfo = (): JSX.Element => {
       </div>
 
       <div className="rounded-3xl border border-neutral-200 bg-white/80 px-6 py-8 text-sm uppercase tracking-[0.3em] text-neutral-500 shadow-sm">
-        Disponible 7j/7 • Support technique et assistance
+        Disponible 7j/7 - Support technique et assistance
       </div>
     </div>
   )

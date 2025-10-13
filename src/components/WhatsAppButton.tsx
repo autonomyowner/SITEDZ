@@ -1,6 +1,7 @@
 'use client'
 
 import { useState, useEffect } from 'react'
+import { trackMetaEvent } from '@/lib/metaPixel'
 
 export const WhatsAppButton = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -16,8 +17,12 @@ export const WhatsAppButton = (): JSX.Element => {
 
   const handleWhatsAppClick = (): void => {
     const phoneNumber = '+213797339451'
-    const message = 'Bonjour! Je suis intéressé(e) par vos services de création de sites web.'
-    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+    const message =
+      'Bonjour! Je suis interesse(e) par vos services de creation de sites web.'
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
+      message,
+    )}`
+    trackMetaEvent('Contact', { source: 'floating_whatsapp' })
     window.open(whatsappUrl, '_blank')
   }
 
@@ -37,4 +42,4 @@ export const WhatsAppButton = (): JSX.Element => {
       </button>
     </div>
   )
-} 
+}

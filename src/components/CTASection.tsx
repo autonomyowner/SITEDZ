@@ -1,5 +1,7 @@
 'use client'
 
+import { trackMetaEvent } from '@/lib/metaPixel'
+
 export const CTASection = (): JSX.Element => {
   const handleWhatsAppClick = (): void => {
     const phoneNumber = '+213797339451'
@@ -8,14 +10,17 @@ export const CTASection = (): JSX.Element => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
+    trackMetaEvent('Contact', { source: 'cta_whatsapp' })
     window.open(whatsappUrl, '_blank')
   }
 
   const handlePhoneClick = (): void => {
+    trackMetaEvent('Contact', { source: 'cta_phone' })
     window.open('tel:+213797339451', '_self')
   }
 
   const handleEmailClick = (): void => {
+    trackMetaEvent('Contact', { source: 'cta_email' })
     window.open('mailto:contact@sitedz.store', '_self')
   }
 

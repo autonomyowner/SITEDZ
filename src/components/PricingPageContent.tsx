@@ -1,0 +1,262 @@
+'use client'
+
+import { useEffect } from 'react'
+import { trackMetaEvent } from '@/lib/metaPixel'
+
+const phoneNumber = '213797339451'
+const displayPhoneNumber = '+213 797 339 451'
+
+const createWhatsAppLink = (subject: string): string => {
+  const message = `Bonjour! Je souhaite reserver l'offre ${subject} de SiteDZ Store. Pouvez-vous me guider pour finaliser ma commande ?`
+  return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
+}
+
+type Plan = {
+  name: string
+  tagline: string
+  price: string
+  delivery: string
+  idealFor: string
+  highlights: string[]
+  whatsappUrl: string
+}
+
+const plans: Plan[] = [
+  {
+    name: 'Site vitrine moderne',
+    tagline: 'FR/AR + RTL',
+    price: '12 500 DA',
+    delivery: 'Livraison 72h',
+    idealFor: 'PME, professions liberales et artisans',
+    highlights: [
+      'Design bilingue FR/AR 100 % responsive et experience RTL',
+      '5 pages essentielles + landing Offre a fort taux de conversion',
+      '.com gratuit pendant 1 an + certificat SSL inclus',
+      'Maintenance continue + 5 mises a jour/mois',
+      'Optimisation pour les reseaux sociaux et Google My Business',
+    ],
+  },
+  {
+    name: 'E-commerce propulse',
+    tagline: 'Pret pour la croissance',
+    price: '45 000 DA',
+    delivery: 'Livraison 10 jours ouvres',
+    idealFor: 'Boutiques en ligne, franchises et retail',
+    highlights: [
+      'Catalogue produits illimite + fiches optimisees SEO',
+      'Dashboard admin complet pour gerer stocks et commandes',
+      'Tunnel de commande oriente conversions + upsells integres',
+      'Meta Pixel configure pour reciblage et campagnes Meta Ads',
+      'Maintenance proactive + 15 mises a jour/mois',
+    ],
+  },
+  {
+    name: 'SaaS sur-mesure',
+    tagline: 'Abonnement & automation',
+    price: '95 000 DA',
+    delivery: 'Livraison 21 jours',
+    idealFor: 'Startups, edtech, plateformes B2B',
+    highlights: [
+      'Interface utilisateur premium adaptee a votre secteur',
+      'Gestion abonnements, paiements locaux & internationaux',
+      'Workflows automatisee (emails, WhatsApp, notifications)',
+      'Tableau de bord analytics + export reporting',
+      'Maintenance evolutive + 25 mises a jour/mois',
+    ],
+  },
+].map((plan) => ({
+  ...plan,
+  whatsappUrl: createWhatsAppLink(plan.name),
+}))
+
+const headerWhatsAppUrl = createWhatsAppLink('Tarifs')
+
+export const PricingPageContent = (): JSX.Element => {
+  useEffect(() => {
+    trackMetaEvent('ViewContent', {
+      content_name: 'pricing_page',
+      content_category: 'services',
+    })
+  }, [])
+
+  return (
+    <div className="relative isolate bg-white/90">
+      <div className="absolute inset-0 -z-10 opacity-70">
+        <div className="pointer-events-none h-full w-full bg-[radial-gradient(circle_at_top,_rgba(17,24,39,0.12),_transparent_70%)]" />
+      </div>
+
+      <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
+        <div className="max-w-3xl space-y-6">
+          <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
+            Tarifs 2025
+          </p>
+          <h1 className="text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
+            Des offres web concues pour convertir et livrees en un temps record
+          </h1>
+          <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
+            Vous avez besoin d&apos;un site qui genere des ventes maintenant. Chaque
+            offre inclut votre Meta Pixel, une experience utilisateur optimisee
+            pour la conversion et un accompagnement direct via WhatsApp afin de
+            lancer sans friction les discussions commerciales.
+          </p>
+          <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+            <a
+              href={headerWhatsAppUrl}
+              onClick={() =>
+                trackMetaEvent('Contact', {
+                  source: 'pricing_header_whatsapp',
+                })
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-neutral-700"
+            >
+              Parler ventes sur WhatsApp
+            </a>
+            <div className="text-xs uppercase tracking-[0.3em] text-neutral-500">
+              Hotline WhatsApp {displayPhoneNumber}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+        <div className="grid gap-8 lg:grid-cols-3">
+          {plans.map((plan) => (
+            <div
+              key={plan.name}
+              className="relative flex h-full flex-col justify-between rounded-3xl border border-neutral-200 bg-white/95 p-8 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+            >
+              <div className="space-y-5">
+                <div className="flex items-center justify-between">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-amber-700">
+                      {plan.tagline}
+                    </p>
+                    <h2 className="mt-3 text-2xl font-elegant font-semibold text-neutral-900">
+                      {plan.name}
+                    </h2>
+                  </div>
+                  <div className="rounded-full border border-amber-200 bg-amber-50 px-3 py-1 text-[11px] uppercase tracking-[0.3em] text-amber-700">
+                    {plan.delivery}
+                  </div>
+                </div>
+                <div className="text-4xl font-semibold text-neutral-900">
+                  {plan.price}
+                </div>
+                <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                  {plan.idealFor}
+                </p>
+                <ul className="space-y-3 pt-2">
+                  {plan.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex items-start gap-3 text-sm leading-relaxed text-neutral-600"
+                    >
+                      <span className="mt-[3px] inline-flex h-5 w-5 items-center justify-center rounded-full bg-neutral-900 text-[10px] font-semibold uppercase tracking-[0.2em] text-white">
+                        +
+                      </span>
+                      <span>{highlight}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="mt-8 flex flex-col gap-3">
+                <a
+                  href={plan.whatsappUrl}
+                  onClick={() =>
+                    trackMetaEvent('Lead', {
+                      source: 'pricing_plan_whatsapp',
+                      content_name: plan.name,
+                    })
+                  }
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
+                >
+                  Reserver sur WhatsApp
+                </a>
+                <p className="text-xs text-neutral-500">
+                  Nous repondons en quelques minutes pour securiser votre
+                  projet et partager les prochaines etapes.
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-neutral-200 bg-white/70 p-10 text-center shadow-sm">
+          <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
+            Pourquoi nous choisir
+          </p>
+          <h2 className="mt-4 text-3xl font-elegant font-semibold text-neutral-900">
+            Chaque projet est pilote pour la conversion et le suivi client
+          </h2>
+          <div className="mt-8 grid gap-6 md:grid-cols-3">
+            <div className="space-y-3">
+              <div className="text-lg font-semibold text-neutral-900">
+                Meta Pixel inclus
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                Campagnes Meta pretes a l&apos;emploi: audiences de remarketing et
+                suivi des conversions sans perdre les visiteurs.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="text-lg font-semibold text-neutral-900">
+                Parcours WhatsApp
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                Chaque appel a l&apos;action dirige vos prospects vers WhatsApp pour
+                finaliser la vente meme sans passerelle de paiement locale.
+              </p>
+            </div>
+            <div className="space-y-3">
+              <div className="text-lg font-semibold text-neutral-900">
+                Support continu
+              </div>
+              <p className="text-sm leading-relaxed text-neutral-600">
+                Maintenance mensuelle incluse, ajustements rapides et accompagnement
+                marketing pour optimiser vos campagnes.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-28 sm:px-6 lg:px-8">
+        <div className="flex flex-col items-center gap-6 rounded-3xl border border-neutral-800 bg-neutral-900 px-8 py-12 text-center text-white sm:px-12">
+          <p className="text-xs uppercase tracking-[0.4em] text-white/70">
+            Pret a lancer ?
+          </p>
+          <h2 className="text-3xl font-elegant font-semibold sm:text-4xl">
+            Transformons vos visiteurs en clients en moins de 7 jours
+          </h2>
+          <p className="max-w-2xl text-sm leading-relaxed text-white/70">
+            Envoyez-nous un message sur WhatsApp et nous livrons un plan
+            d&apos;action detaille: calendrier, maquettes, integration du Pixel et
+            scripts de vente pour votre equipe.
+          </p>
+          <a
+            href={headerWhatsAppUrl}
+            onClick={() =>
+              trackMetaEvent('Contact', {
+                source: 'pricing_footer_whatsapp',
+              })
+            }
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-amber-200"
+          >
+            Ouvrir WhatsApp maintenant
+          </a>
+          <p className="text-[12px] uppercase tracking-[0.3em] text-white/60">
+            Disponible 7j/7 - Support {displayPhoneNumber}
+          </p>
+        </div>
+      </section>
+    </div>
+  )
+}

@@ -3,6 +3,7 @@ import { Inter, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
+import { MetaPixel } from '@/components/MetaPixel'
 
 const inter = Inter({
   subsets: ['latin'],
@@ -84,13 +85,14 @@ export default function RootLayout({
       <body
         className={`${inter.className} bg-gradient-elegant min-h-screen text-slate-900`}
       >
+        <MetaPixel />
         <Navbar />
         <main className="pt-20 md:pt-24 pb-20">{children}</main>
         <footer className="bg-slate-900 text-white py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
               <p className="text-sm">
-                © 2025 SiteDZ Store - Agence Web en Algerie
+                Copyright 2025 SiteDZ Store - Agence Web en Algerie
               </p>
               <div className="flex items-center gap-6">
                 <a

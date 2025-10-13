@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import { trackMetaEvent } from '@/lib/metaPixel'
 
 export const HeroSection = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
@@ -37,6 +38,7 @@ export const HeroSection = (): JSX.Element => {
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(
       message,
     )}`
+    trackMetaEvent('Contact', { source: 'hero_primary_whatsapp' })
     window.open(whatsappUrl, '_blank')
   }
 
