@@ -1,5 +1,6 @@
 import { ContactInfo } from '@/components/ContactInfo'
 import { LocationMap } from '@/components/LocationMap'
+import { BudgetSlider } from '@/components/BudgetSlider'
 
 export default function ContactPage(): JSX.Element {
   return (
@@ -17,6 +18,10 @@ export default function ContactPage(): JSX.Element {
             vers vous rapidement avec une proposition detaillee et un devis
             personnalise.
           </p>
+        </div>
+
+        <div className="mt-16">
+          <BudgetSlider />
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-12 lg:grid-cols-2">

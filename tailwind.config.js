@@ -19,7 +19,15 @@ module.exports = {
           700: '#b91c1c',
           800: '#991b1b',
           900: '#7f1d1d',
+          DEFAULT: '#dc2626',
         },
+        secondary: {
+          DEFAULT: '#e2e8f0',
+          foreground: '#1e293b',
+        },
+        background: '#ffffff',
+        foreground: '#0f172a',
+        ring: '#dc2626',
         slate: {
           50: '#f8fafc',
           100: '#f1f5f9',
