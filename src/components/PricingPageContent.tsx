@@ -72,6 +72,34 @@ const plans: Plan[] = [
   whatsappUrl: createWhatsAppLink(plan.name),
 }))
 
+const processSteps = [
+  {
+    title: 'Choisissez votre offre',
+    description:
+      'Selectionnez la formule qui correspond a votre objectif (site vitrine, e-commerce ou SaaS).',
+  },
+  {
+    title: 'Envoyez votre validation',
+    description:
+      'Confirmez par WhatsApp ou email et partagez vos contenus, inspirations et contraintes.',
+  },
+  {
+    title: 'Regler l acompte design (2 000 DA)',
+    description:
+      'Des reception de l acompte, nous reservons votre planning et envoyons la check-list projet.',
+  },
+  {
+    title: 'Recevez maquette et logo',
+    description:
+      'Nous livrons un mockup sur-mesure + une proposition de logo adaptee a votre activite.',
+  },
+  {
+    title: 'Build et ajustements',
+    description:
+      'Apres votre validation, nous developpons le site complet, testons et corrigeons les derniers details.',
+  },
+]
+
 const headerWhatsAppUrl = createWhatsAppLink('Tarifs')
 
 export const PricingPageContent = (): JSX.Element => {
@@ -186,6 +214,62 @@ export const PricingPageContent = (): JSX.Element => {
               </div>
             </div>
           ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-neutral-200 bg-white/80 p-10 shadow-sm">
+          <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
+            Processus client
+          </p>
+          <h2 className="mt-4 text-3xl font-elegant font-semibold text-neutral-900">
+            De la reservation au lancement sans friction
+          </h2>
+          <div className="mt-10 overflow-x-auto pb-4">
+            <div className="flex min-w-full snap-x snap-mandatory gap-6 lg:grid lg:grid-cols-5 lg:gap-5">
+              {processSteps.map((step, index) => (
+                <div
+                  key={step.title}
+                  className="group relative min-w-[240px] flex-1 snap-center rounded-2xl border border-neutral-200 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-lg lg:min-w-0"
+                >
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-sm font-semibold uppercase tracking-[0.2em] text-white">
+                      {String(index + 1).padStart(2, '0')}
+                    </div>
+                    <div className="text-sm font-semibold uppercase tracking-[0.25em] text-neutral-500">
+                      Etape {index + 1}
+                    </div>
+                  </div>
+                  <div className="mt-6 text-lg font-semibold text-neutral-900">
+                    {step.title}
+                  </div>
+                  <p className="mt-3 text-sm leading-relaxed text-neutral-600">
+                    {step.description}
+                  </p>
+                  {index < processSteps.length - 1 && (
+                    <div className="absolute right-[-20px] top-1/2 hidden -translate-y-1/2 lg:flex">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        className="text-neutral-300 transition-colors duration-300 group-hover:text-neutral-900"
+                      >
+                        <path
+                          d="M5 12h14M13 6l6 6-6 6"
+                          stroke="currentColor"
+                          strokeWidth="1.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </div>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
