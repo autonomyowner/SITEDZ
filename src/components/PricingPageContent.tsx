@@ -29,11 +29,12 @@ const plans: Plan[] = [
     delivery: 'Livraison 72h',
     idealFor: 'PME, professions liberales et artisans',
     highlights: [
-      'Design bilingue FR/AR 100 % responsive et experience RTL',
-      '5 pages essentielles + landing Offre a fort taux de conversion',
-      '.com gratuit pendant 1 an + certificat SSL inclus',
-      'Maintenance continue + 5 mises a jour/mois',
-      'Optimisation pour les reseaux sociaux et Google My Business',
+      'Site vitrine (1 à 3 pages) avec design personnalisé et responsive',
+      'Intégration de contenu de base (textes, images, logos)',
+      'Formulaire de contact simple avec boîte mail automatique',
+      'Hébergement 1 an inclus + nom de domaine gratuit',
+      'SSL gratuit + support technique 1 mois après livraison',
+      'Processus de vente automatisé: client commande → notification email',
     ],
   },
   {
@@ -43,11 +44,12 @@ const plans: Plan[] = [
     delivery: 'Livraison 10 jours ouvres',
     idealFor: 'Boutiques en ligne, franchises et retail',
     highlights: [
-      'Catalogue produits illimite + fiches optimisees SEO',
-      'Dashboard admin complet pour gerer stocks et commandes',
-      'Tunnel de commande oriente conversions + upsells integres',
-      'Meta Pixel configure pour reciblage et campagnes Meta Ads',
-      'Maintenance proactive + 15 mises a jour/mois',
+      'Site vitrine (1 à 3 pages) + fonctionnalités e-commerce complètes',
+      'Design personnalisé et responsive + intégration contenu de base',
+      'Formulaire de contact + système de commande automatisé',
+      'Hébergement 3 ans inclus + nom de domaine .com 3 ans gratuit',
+      'SSL gratuit + support technique 1 mois après livraison',
+      'Processus de vente automatisé: client commande → notification email',
     ],
   },
   {
@@ -62,6 +64,7 @@ const plans: Plan[] = [
       'Workflows automatisee (emails, WhatsApp, notifications)',
       'Tableau de bord analytics + export reporting',
       'Maintenance evolutive + 25 mises a jour/mois',
+      'Processus de vente automatisé: client commande → notification email',
     ],
   },
 ].map((plan) => ({
@@ -91,7 +94,7 @@ export const PricingPageContent = (): JSX.Element => {
             Tarifs 2025
           </p>
           <h1 className="text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
-            Des offres web concues pour convertir et livrees en un temps record
+            Boostez Votre Présence sociale, engagez votre audience.    Votre transformation Digitale, étape par étape.
           </h1>
           <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
             Vous avez besoin d&apos;un site qui genere des ventes maintenant. Chaque
