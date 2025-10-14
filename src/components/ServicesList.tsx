@@ -115,8 +115,7 @@ const services: Service[] = [
       'Formation complete a l utilisation',
       'Support technique et maintenance continues',
     ],
-    image:
-      'https://images.unsplash.com/photo-1432888622747-4eb9a8f2c293?auto=format&fit=crop&w=800&q=80',
+    image: '/sulittions.png',
     signature: 'Solution unique',
     whatsappMessage:
       'Bonjour! J\'ai un projet web personnalisé avec des besoins spécifiques. J\'aimerais discuter de mes exigences et obtenir un devis sur mesure.',
