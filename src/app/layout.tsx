@@ -91,9 +91,17 @@ export default function RootLayout({
         <footer className="bg-slate-900 text-white py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-              <p className="text-sm">
-                Copyright 2025 SiteDZ Store - Agence Web en Algerie
-              </p>
+              <div className="flex flex-col items-center md:items-start gap-2">
+                <p className="text-sm">
+                  Copyright 2025 SiteDZ Store - Agence Web en Algerie
+                </p>
+                <a
+                  href="/privacy"
+                  className="text-sm text-gray-400 hover:text-white transition-colors underline"
+                >
+                  Privacy Policy
+                </a>
+              </div>
               <div className="flex items-center gap-6">
                 <a
                   href="https://www.instagram.com/site.dz.store/"
