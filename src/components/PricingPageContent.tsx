@@ -101,6 +101,7 @@ const processSteps = [
 ]
 
 const headerWhatsAppUrl = createWhatsAppLink('Tarifs')
+const depositWhatsAppUrl = createWhatsAppLink('Acompte design 2000 DA')
 
 export const PricingPageContent = (): JSX.Element => {
   useEffect(() => {
@@ -269,6 +270,42 @@ export const PricingPageContent = (): JSX.Element => {
                 </div>
               ))}
             </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-4xl px-4 pb-24 sm:px-6 lg:px-8">
+        <div className="rounded-3xl border border-amber-200 bg-amber-50 p-8 text-center shadow-sm">
+          <p className="text-xs uppercase tracking-[0.35em] text-amber-600">
+            Valider votre projet
+          </p>
+          <h3 className="mt-3 text-2xl font-elegant font-semibold text-neutral-900">
+            Reglez l&apos;acompte design de 2 000 DA pour lancer la maquette
+          </h3>
+          <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-700">
+            Cet acompte couvre la creation de votre mockup + une proposition de
+            logo. Il est deduit du montant final et declenche directement la
+            production de votre design.
+          </p>
+          <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <a
+              href={depositWhatsAppUrl}
+              onClick={() =>
+                trackMetaEvent('Purchase', {
+                  value: 2000,
+                  currency: 'DZD',
+                  source: 'pricing_deposit',
+                })
+              }
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-neutral-700"
+            >
+              Confirmer sur WhatsApp
+            </a>
+            <span className="text-[11px] uppercase tracking-[0.3em] text-neutral-500">
+              Appelez-nous {displayPhoneNumber}
+            </span>
           </div>
         </div>
       </section>
