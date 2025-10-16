@@ -33,16 +33,6 @@ const testimonials: Testimonial[] = [
     image:
       'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=400&q=80',
   },
-  {
-    id: '3',
-    name: 'Karim Hadj',
-    event: 'Site Restaurant',
-    content:
-      "Notre nouveau site web a transforme notre activite. Les reservations en ligne fonctionnent parfaitement. Service excellent!",
-    rating: '5/5 satisfaction',
-    image:
-      'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=400&q=80',
-  },
 ]
 
 const useCountUpAnimation = (
