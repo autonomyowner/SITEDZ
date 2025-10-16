@@ -21,7 +21,7 @@ export const ContactInfo = (): JSX.Element => {
 
   const handleEmailClick = (): void => {
     trackMetaEvent('Contact', { source: 'contact_email' })
-    window.open('mailto:contact@sitedz.store', '_self')
+    window.open('mailto:autonomy.owner@gmail.com', '_self')
   }
 
   return (
@@ -82,7 +82,7 @@ export const ContactInfo = (): JSX.Element => {
             Email
           </h3>
           <p className="mt-2 text-lg font-semibold text-neutral-900">
-            contact@sitedz.store
+            autonomy.owner@gmail.com
           </p>
           <p className="mt-2 text-sm text-neutral-600">
             Pour partager vos idees et documents.

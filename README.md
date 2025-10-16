@@ -98,7 +98,7 @@ Le thème utilise un gradient élégant :
 ### Informations de Contact
 - **WhatsApp** : +213 797 339 451
 - **Téléphone** : +213 797 339 451
-- **Email** : contact@sitedz.store
+- **Email** : autonomy.owner@gmail.com
 - **Localisation** : Algérie
 - **Instagram** : https://www.instagram.com/site.dz.store/
 - **Facebook** : https://www.facebook.com/sitedz.store/
@@ -119,7 +119,7 @@ Créez un fichier `.env.local` :
 ```env
 NEXT_PUBLIC_SITE_URL=https://www.sitedz.store
 NEXT_PUBLIC_PHONE_NUMBER=+213797339451
-NEXT_PUBLIC_EMAIL=contact@sitedz.store
+NEXT_PUBLIC_EMAIL=autonomy.owner@gmail.com
 ```
 
 ### SEO
