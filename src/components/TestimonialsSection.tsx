@@ -73,7 +73,11 @@ const useCountUpAnimation = (
 
 export const TestimonialsSection = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
+  const [visibleTestimonials, setVisibleTestimonials] = useState<Set<string>>(
+    new Set(),
+  )
   const statsRef = useRef<HTMLDivElement>(null)
+  const testimonialRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
 
   const projectsCount = useCountUpAnimation(50, 2000, isVisible)
   const satisfactionCount = useCountUpAnimation(100, 2000, isVisible)
@@ -102,6 +106,59 @@ export const TestimonialsSection = (): JSX.Element => {
     }
   }, [isVisible])
 
+  useEffect(() => {
+    const testimonialObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const testimonialId = entry.target.getAttribute('data-testimonial-id')
+            if (testimonialId) {
+              setVisibleTestimonials((prev) => new Set(prev).add(testimonialId))
+            }
+          }
+        })
+      },
+      { threshold: 0.2 },
+    )
+
+    Object.values(testimonialRefs.current).forEach((ref) => {
+      if (ref) {
+        testimonialObserver.observe(ref)
+      }
+    })
+
+    return () => {
+      testimonialObserver.disconnect()
+    }
+  }, [])
+
+  const getAnimationClasses = (testimonialId: string): string => {
+    const isTestimonialVisible = visibleTestimonials.has(testimonialId)
+
+    if (testimonialId === '1') {
+      // Allouani - from left to right
+      return `transition-all duration-[1200ms] ease-out ${
+        isTestimonialVisible
+          ? 'opacity-100 translate-x-0'
+          : 'opacity-0 -translate-x-16'
+      }`
+    }
+
+    if (testimonialId === '2') {
+      // elghella - from bottom to top
+      return `transition-all duration-[1200ms] ease-out ${
+        isTestimonialVisible
+          ? 'opacity-100 translate-y-0'
+          : 'opacity-0 translate-y-16'
+      }`
+    }
+
+    // Default animation for other testimonials
+    return `transition-all duration-[1200ms] ease-out ${
+      isTestimonialVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
+    }`
+  }
+
   return (
     <section className="border-y border-neutral-200 bg-white/80 px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -122,7 +179,11 @@ export const TestimonialsSection = (): JSX.Element => {
           {testimonials.map((testimonial) => (
             <article
               key={testimonial.id}
-              className="flex h-full flex-col rounded-3xl border border-neutral-200 bg-white/90 p-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              ref={(el) => {
+                testimonialRefs.current[testimonial.id] = el
+              }}
+              data-testimonial-id={testimonial.id}
+              className={`flex h-full flex-col rounded-3xl border border-neutral-200 bg-white/90 p-8 shadow-sm hover:-translate-y-1 hover:shadow-md ${getAnimationClasses(testimonial.id)}`}
             >
               <div className="flex items-center gap-4">
                 <div className="overflow-hidden rounded-full border border-neutral-200">
