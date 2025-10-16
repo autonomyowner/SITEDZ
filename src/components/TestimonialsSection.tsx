@@ -77,7 +77,7 @@ export const TestimonialsSection = (): JSX.Element => {
     new Set(),
   )
   const statsRef = useRef<HTMLDivElement>(null)
-  const testimonialRefs = useRef<{ [key: string]: HTMLDivElement | null }>({})
+  const testimonialRefs = useRef<{ [key: string]: HTMLElement | null }>({})
 
   const projectsCount = useCountUpAnimation(50, 2000, isVisible)
   const satisfactionCount = useCountUpAnimation(100, 2000, isVisible)
