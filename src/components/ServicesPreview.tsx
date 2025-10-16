@@ -1,6 +1,3 @@
-'use client'
-
-import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
 
@@ -47,52 +44,6 @@ const services: ServiceCard[] = [
 ]
 
 export const ServicesPreview = (): JSX.Element => {
-  const [visibleCards, setVisibleCards] = useState<Set<string>>(new Set())
-  const cardRefs = useRef<{ [key: string]: HTMLElement | null }>({})
-
-  useEffect(() => {
-    const cardObserver = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const cardId = entry.target.getAttribute('data-card-id')
-            if (cardId) {
-              setVisibleCards((prev) => new Set(prev).add(cardId))
-            }
-          }
-        })
-      },
-      { threshold: 0.15 },
-    )
-
-    Object.values(cardRefs.current).forEach((ref) => {
-      if (ref) {
-        cardObserver.observe(ref)
-      }
-    })
-
-    return () => {
-      cardObserver.disconnect()
-    }
-  }, [])
-
-  const getCardAnimation = (serviceId: string, index: number): string => {
-    const isVisible = visibleCards.has(serviceId)
-    const delay = index * 150 // Stagger delay
-
-    return `transition-all duration-[800ms] ease-out ${
-      isVisible
-        ? 'opacity-100 translate-y-0'
-        : 'opacity-0 translate-y-12'
-    }`
-  }
-
-  const getCardStyle = (index: number): React.CSSProperties => {
-    return {
-      transitionDelay: `${index * 150}ms`,
-    }
-  }
-
   return (
     <section className="px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
@@ -110,16 +61,11 @@ export const ServicesPreview = (): JSX.Element => {
         </div>
 
         <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service, index) => (
+          {services.map((service) => (
             <Link
               key={service.id}
               href={service.href}
-              ref={(el) => {
-                cardRefs.current[service.id] = el
-              }}
-              data-card-id={service.id}
-              style={getCardStyle(index)}
-              className={`group relative block overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 shadow-sm hover:-translate-y-2 hover:shadow-xl ${getCardAnimation(service.id, index)}`}
+              className="group relative block overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image
