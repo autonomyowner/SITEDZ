@@ -8,7 +8,7 @@ import { trackMetaEvent } from '@/lib/metaPixel'
 export const HeroSection = (): JSX.Element => {
   const [isVisible, setIsVisible] = useState<boolean>(false)
   const [typedText, setTypedText] = useState<string>('')
-  const fullText = 'Sites web modernes et performants pour votre entreprise en Algerie'
+  const fullText = 'Sites web modernes et performants pour votre entreprise'
 
   useEffect(() => {
     const timeout = window.setTimeout(() => setIsVisible(true), 100)
@@ -73,7 +73,7 @@ export const HeroSection = (): JSX.Element => {
           </h1>
 
           <p className="text-lg leading-relaxed text-neutral-600 sm:text-xl">
-            SITEDZ Store est votre agence web de confiance en Algerie. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne. Specialises dans le marche algerien avec des solutions adaptees a vos besoins locaux.
+            SITEDZ Store est votre agence web de confiance. Nous creons des sites web modernes, rapides et professionnels pour developper votre entreprise en ligne. Des solutions adaptees a vos besoins, partout dans le monde.
           </p>
 
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
@@ -95,7 +95,7 @@ export const HeroSection = (): JSX.Element => {
 
           <div className="flex flex-col gap-4 border-t border-neutral-300 pt-6 sm:flex-row sm:items-center sm:justify-between">
             <div className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-              Partout en Algerie
+              Service International
             </div>
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-neutral-600">
               <span className="whitespace-nowrap">Design moderne</span>

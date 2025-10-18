@@ -58,7 +58,7 @@ export const Navbar = (): JSX.Element => {
               SiteDZ Store
             </span>
             <span className="text-xs font-light text-neutral-500">
-              Agence Web en Algerie
+              Agence Web Internationale
             </span>
           </Link>
 

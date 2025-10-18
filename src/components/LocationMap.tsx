@@ -1,10 +1,9 @@
 const serviceAreas = [
-  'Alger',
-  'Oran',
-  'Constantine',
-  'Tlemcen',
-  'Annaba',
-  'Partout en Algerie',
+  'France',
+  'England',
+  'Algeria',
+  'Middle East',
+  'Everywhere',
 ]
 
 export const LocationMap = (): JSX.Element => {
@@ -15,7 +14,7 @@ export const LocationMap = (): JSX.Element => {
           Zone de service
         </h2>
         <p className="mt-4 text-sm leading-relaxed text-neutral-600">
-          Nous travaillons avec des clients partout en Algerie. Nos services
+          Nous travaillons avec des clients partout dans le monde. Nos services
           sont accessibles a distance, avec possibilite de rendez-vous en ligne
           pour discuter de votre projet.
         </p>
@@ -30,7 +29,7 @@ export const LocationMap = (): JSX.Element => {
           ))}
         </div>
         <p className="mt-6 text-xs uppercase tracking-[0.3em] text-neutral-500">
-          Services disponibles partout en Algerie
+          Services disponibles dans le monde entier
         </p>
       </div>
 
@@ -47,9 +46,9 @@ export const LocationMap = (): JSX.Element => {
           <div>
             <p className="font-semibold text-neutral-900">Localisation</p>
             <p className="mt-1">
-              Algerie
+              Services Internationaux
               <br />
-              Services disponibles a distance
+              Disponibles a distance partout dans le monde
             </p>
           </div>
           <div>
@@ -61,7 +60,7 @@ export const LocationMap = (): JSX.Element => {
           <div>
             <p className="font-semibold text-neutral-900">Couverture</p>
             <p className="mt-1">
-              Services web disponibles dans toute l Algerie, sans limitation
+              Services web disponibles dans le monde entier, sans limitation
               geographique.
             </p>
           </div>
