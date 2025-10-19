@@ -7,7 +7,7 @@ const phoneNumber = '213797339451'
 const displayPhoneNumber = '+213 797 339 451'
 
 const createWhatsAppLink = (subject: string): string => {
-  const message = `Bonjour! Je souhaite reserver l'offre ${subject} de SiteDZ Store. Pouvez-vous me guider pour finaliser ma commande ?`
+  const message = `Bonjour! Je suis interesse par l'offre ${subject} de SiteDZ Store. Pourriez-vous me fournir un devis personnalise pour mon projet ?`
   return `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 }
 
@@ -84,9 +84,9 @@ const processSteps = [
       'Confirmez par WhatsApp ou email et partagez vos contenus, inspirations et contraintes.',
   },
   {
-    title: 'Regler l acompte design (2 000 DA)',
+    title: 'Valider le devis et regler l acompte',
     description:
-      'Des reception de l acompte, nous reservons votre planning et envoyons la check-list projet.',
+      'Des reception de votre accord sur le devis, nous reservons votre planning et envoyons la check-list projet.',
   },
   {
     title: 'Recevez maquette et logo',
@@ -101,7 +101,7 @@ const processSteps = [
 ]
 
 const headerWhatsAppUrl = createWhatsAppLink('Tarifs')
-const depositWhatsAppUrl = createWhatsAppLink('Acompte design 2000 DA')
+const depositWhatsAppUrl = createWhatsAppLink('Consultation projet')
 
 export const PricingPageContent = (): JSX.Element => {
   useEffect(() => {
@@ -120,16 +120,16 @@ export const PricingPageContent = (): JSX.Element => {
       <section className="mx-auto max-w-6xl px-4 py-24 sm:px-6 lg:px-8">
         <div className="max-w-3xl space-y-6">
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
-            Tarifs 2025
+            Nos Offres 2025
           </p>
           <h1 className="text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
-            Boostez Votre Présence sociale, engagez votre audience.    Votre transformation Digitale, étape par étape.
+            Boostez Votre Présence sociale, engagez votre audience. Votre transformation Digitale, étape par étape.
           </h1>
           <p className="text-base leading-relaxed text-neutral-600 sm:text-lg">
-            Vous avez besoin d&apos;un site qui genere des ventes maintenant. Chaque
-            offre inclut votre Meta Pixel, une experience utilisateur optimisee
-            pour la conversion et un accompagnement direct via WhatsApp afin de
-            lancer sans friction les discussions commerciales.
+            Chaque projet est unique. Nous proposons des solutions personnalisees
+            adaptees a vos besoins specifiques. Contactez-nous pour obtenir un devis
+            sur mesure incluant votre Meta Pixel, une experience utilisateur optimisee
+            pour la conversion et un accompagnement direct via WhatsApp.
           </p>
           <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
             <a
@@ -143,7 +143,7 @@ export const PricingPageContent = (): JSX.Element => {
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-neutral-700"
             >
-              Parler ventes sur WhatsApp
+              Demander un devis sur WhatsApp
             </a>
             <div className="text-xs uppercase tracking-[0.3em] text-neutral-500">
               Hotline WhatsApp {displayPhoneNumber}
@@ -173,8 +173,13 @@ export const PricingPageContent = (): JSX.Element => {
                     {plan.delivery}
                   </div>
                 </div>
-                <div className="text-4xl font-semibold text-neutral-900">
-                  {plan.price}
+                <div className="space-y-2">
+                  <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                    Tarif sur devis
+                  </p>
+                  <p className="text-sm text-neutral-600">
+                    Prix personnalise selon votre projet
+                  </p>
                 </div>
                 <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
                   {plan.idealFor}
@@ -206,11 +211,11 @@ export const PricingPageContent = (): JSX.Element => {
                   rel="noopener noreferrer"
                   className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
                 >
-                  Reserver sur WhatsApp
+                  Demander un devis
                 </a>
                 <p className="text-xs text-neutral-500">
-                  Nous repondons en quelques minutes pour securiser votre
-                  projet et partager les prochaines etapes.
+                  Nous repondons en quelques minutes avec un devis personnalise
+                  adapte a votre projet et vos besoins specifiques.
                 </p>
               </div>
             </div>
@@ -277,31 +282,29 @@ export const PricingPageContent = (): JSX.Element => {
       <section className="mx-auto max-w-4xl px-4 pb-24 sm:px-6 lg:px-8">
         <div className="rounded-3xl border border-amber-200 bg-amber-50 p-8 text-center shadow-sm">
           <p className="text-xs uppercase tracking-[0.35em] text-amber-600">
-            Valider votre projet
+            Demarrer votre projet
           </p>
           <h3 className="mt-3 text-2xl font-elegant font-semibold text-neutral-900">
-            Reglez l&apos;acompte design de 2 000 DA pour lancer la maquette
+            Discutons de votre projet et obtenez un devis personnalise
           </h3>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-neutral-700">
-            Cet acompte couvre la creation de votre mockup + une proposition de
-            logo. Il est deduit du montant final et declenche directement la
-            production de votre design.
+            Partagez-nous vos besoins, vos objectifs et votre budget. Nous vous
+            proposerons un devis detaille incluant la maquette, le logo et toutes
+            les fonctionnalites adaptees a votre activite.
           </p>
           <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href={depositWhatsAppUrl}
               onClick={() =>
-                trackMetaEvent('Purchase', {
-                  value: 2000,
-                  currency: 'DZD',
-                  source: 'pricing_deposit',
+                trackMetaEvent('Contact', {
+                  source: 'pricing_consultation',
                 })
               }
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center rounded-full bg-neutral-900 px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-neutral-700"
             >
-              Confirmer sur WhatsApp
+              Discuter sur WhatsApp
             </a>
             <span className="text-[11px] uppercase tracking-[0.3em] text-neutral-500">
               Appelez-nous {displayPhoneNumber}
