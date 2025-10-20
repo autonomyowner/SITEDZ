@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Suspense } from 'react'
 import { PaymentPageContent } from '@/components/PaymentPageContent'
 
 export const metadata: Metadata = {
@@ -8,6 +9,10 @@ export const metadata: Metadata = {
 }
 
 export default function PaymentPage(): JSX.Element {
-  return <PaymentPageContent />
+  return (
+    <Suspense fallback={<div className="min-h-screen" />}>
+      <PaymentPageContent />
+    </Suspense>
+  )
 }
 

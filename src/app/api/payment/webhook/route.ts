@@ -25,8 +25,8 @@ export async function POST(request: NextRequest) {
       )
     }
     
-    // Use 'total' field for signature verification as per documentation
-    const totalAmount = body.epay_amount || body.total || '0'
+    // Use 'epay_amount' for signature verification
+    const totalAmount = body.epay_amount || '0'
     const isValid = verifySignature(
       signature,
       body.invoice_id,

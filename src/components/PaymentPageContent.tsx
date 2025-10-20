@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react'
 import { useSearchParams, useRouter } from 'next/navigation'
 import { trackMetaEvent } from '@/lib/metaPixel'
+import Image from 'next/image'
 
 export const PaymentPageContent = (): JSX.Element => {
   const searchParams = useSearchParams()
@@ -249,20 +250,24 @@ export const PaymentPageContent = (): JSX.Element => {
               <div className="flex items-center gap-3">
                 {/* Real brand icons from public/cards */}
                 <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 flex items-center">
-                  <img
+                  <Image
                     src="/unnamed.png"
                     alt="BaridiMob"
+                    width={120}
+                    height={32}
                     className="h-8 w-auto"
-                    loading="lazy"
+                    priority={false}
                   />
                 </div>
                 <span className="text-neutral-300">&</span>
                 <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 flex items-center">
-                  <img
+                  <Image
                     src="/image.png"
                     alt="CIB"
+                    width={120}
+                    height={32}
                     className="h-8 w-auto"
-                    loading="lazy"
+                    priority={false}
                   />
                 </div>
               </div>
