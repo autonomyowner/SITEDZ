@@ -32,6 +32,8 @@ Un site web moderne et élégant pour SiteDZ Store, une agence web professionnel
 - Images optimisées avec Next.js Image
 - Accessibilité (ARIA, navigation clavier)
 - Performance optimisée
+- **Paiement en ligne** - Intégration TAMAYYUZ ePay (cartes EDAHABIA et CIB)
+- **Meta Pixel** - Suivi des conversions et remarketing Facebook/Instagram
 
 ## 🛠️ Installation et Démarrage
 
@@ -93,6 +95,34 @@ Le thème utilise un gradient élégant :
 - Format recommandé : JPG/WebP
 - Taille optimale : 1200x800px
 
+## 💳 Paiement en Ligne
+
+Ce site intègre **TAMAYYUZ ePay**, la passerelle de paiement algérienne officielle qui permet d'accepter:
+- Cartes EDAHABIA
+- Cartes CIB (Centre Interbancaire)
+
+### Configuration du Paiement
+
+1. Les identifiants de test sont déjà configurés dans `.env.local`
+2. Consultez `TAMAYYUZ_EPAY_SETUP.md` pour:
+   - Instructions de test complètes
+   - Cartes de test disponibles
+   - Détails du workflow de paiement
+   - Liste des conformités SATIM
+
+### Test du Paiement
+
+1. Démarrez le serveur: `npm run dev`
+2. Allez sur `/pricing`
+3. Cliquez sur "Payer maintenant"
+4. Utilisez les cartes de test fournies dans `TAMAYYUZ_EPAY_SETUP.md`
+
+### Pages de Paiement
+
+- `/payment` - Formulaire de paiement sécurisé
+- `/payment/confirmation` - Page de confirmation de paiement réussi
+- `/payment/failed` - Page d'échec de paiement
+
 ## 📞 Contact
 
 ### Informations de Contact
@@ -117,10 +147,19 @@ Le thème utilise un gradient élégant :
 ### Variables d'Environnement
 Créez un fichier `.env.local` :
 ```env
+# Site Configuration
 NEXT_PUBLIC_SITE_URL=https://www.sitedz.store
 NEXT_PUBLIC_PHONE_NUMBER=+213797339451
 NEXT_PUBLIC_EMAIL=autonomy.owner@gmail.com
+NEXT_PUBLIC_BASE_URL=http://localhost:3000
+
+# TAMAYYUZ ePay Configuration (Test Environment)
+NEXT_PUBLIC_EPAY_API_KEY=your_api_key_here
+EPAY_SECRET_KEY=your_secret_key_here
+NEXT_PUBLIC_EPAY_API_URL=https://apiv2.tamayyuz-tijari.com/api
 ```
+
+**Note**: Pour les détails complets sur l'intégration TAMAYYUZ ePay, consultez le fichier `TAMAYYUZ_EPAY_SETUP.md`
 
 ### SEO
 - Métadonnées optimisées pour "Agence web en Algérie"

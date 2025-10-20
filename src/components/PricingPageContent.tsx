@@ -25,7 +25,7 @@ const plans: Plan[] = [
   {
     name: 'Site vitrine moderne',
     tagline: 'FR/AR + RTL',
-    price: '12 500 DA',
+    price: '25 000 DA',
     delivery: 'Livraison 72h',
     idealFor: 'PME, professions liberales et artisans',
     highlights: [
@@ -40,7 +40,7 @@ const plans: Plan[] = [
   {
     name: 'E-commerce propulse',
     tagline: 'Pret pour la croissance',
-    price: '45 000 DA',
+    price: '67 000 DA',
     delivery: 'Livraison 10 jours ouvres',
     idealFor: 'Boutiques en ligne, franchises et retail',
     highlights: [
@@ -55,7 +55,7 @@ const plans: Plan[] = [
   {
     name: 'SaaS sur-mesure',
     tagline: 'Abonnement & automation',
-    price: '95 000 DA',
+    price: 'Sur devis',
     delivery: 'Livraison 21 jours',
     idealFor: 'Startups, edtech, plateformes B2B',
     highlights: [
@@ -174,12 +174,25 @@ export const PricingPageContent = (): JSX.Element => {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
-                    Tarif sur devis
-                  </p>
-                  <p className="text-sm text-neutral-600">
-                    Prix personnalise selon votre projet
-                  </p>
+                  {plan.price === 'Sur devis' ? (
+                    <>
+                      <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                        Tarif sur devis
+                      </p>
+                      <p className="text-sm text-neutral-600">
+                        Prix personnalise selon votre projet
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
+                        A partir de
+                      </p>
+                      <p className="text-2xl font-semibold text-amber-600">
+                        {plan.price}
+                      </p>
+                    </>
+                  )}
                 </div>
                 <p className="text-sm uppercase tracking-[0.3em] text-neutral-500">
                   {plan.idealFor}
@@ -199,24 +212,60 @@ export const PricingPageContent = (): JSX.Element => {
                 </ul>
               </div>
               <div className="mt-8 flex flex-col gap-3">
-                <a
-                  href={plan.whatsappUrl}
-                  onClick={() =>
-                    trackMetaEvent('Lead', {
-                      source: 'pricing_plan_whatsapp',
-                      content_name: plan.name,
-                    })
-                  }
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
-                >
-                  Demander un devis
-                </a>
-                <p className="text-xs text-neutral-500">
-                  Nous repondons en quelques minutes avec un devis personnalise
-                  adapte a votre projet et vos besoins specifiques.
-                </p>
+                {plan.price !== 'Sur devis' ? (
+                  <>
+                    <a
+                      href={`/payment?plan=${encodeURIComponent(plan.name)}&amount=${plan.price.replace(/\D/g, '')}`}
+                      onClick={() =>
+                        trackMetaEvent('InitiateCheckout', {
+                          source: 'pricing_plan_payment',
+                          content_name: plan.name,
+                        })
+                      }
+                      className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
+                    >
+                      Payer maintenant
+                    </a>
+                    <a
+                      href={plan.whatsappUrl}
+                      onClick={() =>
+                        trackMetaEvent('Lead', {
+                          source: 'pricing_plan_whatsapp',
+                          content_name: plan.name,
+                        })
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-neutral-50"
+                    >
+                      Demander un devis
+                    </a>
+                    <p className="text-xs text-neutral-500">
+                      Payez directement en ligne ou demandez un devis personnalise
+                      adapte a votre projet.
+                    </p>
+                  </>
+                ) : (
+                  <>
+                    <a
+                      href={plan.whatsappUrl}
+                      onClick={() =>
+                        trackMetaEvent('Lead', {
+                          source: 'pricing_plan_whatsapp',
+                          content_name: plan.name,
+                        })
+                      }
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
+                    >
+                      Demander un devis personnalise
+                    </a>
+                    <p className="text-xs text-neutral-500">
+                      Contactez-nous sur WhatsApp pour obtenir un devis adapte a vos besoins specifiques.
+                    </p>
+                  </>
+                )}
               </div>
             </div>
           ))}
