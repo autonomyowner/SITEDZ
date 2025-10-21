@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { initiatePayment } from '@/lib/epay'
+import { initiatePayment, calculateSignature } from '@/lib/epay'
+import crypto from 'crypto'
 
 export async function POST(request: NextRequest) {
   try {
@@ -39,11 +40,18 @@ export async function POST(request: NextRequest) {
     // Get the base URL for return/fail URLs
     const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || request.headers.get('origin') || 'http://localhost:3000'
     
+    // Generate secure hash for confirmation page access
+    const secretKey = process.env.EPAY_SECRET_KEY || 'default-secret-key'
+    const hash = crypto
+      .createHmac('sha256', secretKey)
+      .update(`${invoice_id}:${amount}:${client_email}`)
+      .digest('hex')
+    
     // Prepare payment data according to TAMAYYUZ API specs
     const paymentData = {
       invoice_id,
       amount: amount.toString(),
-      returnUrl: `${baseUrl}/payment/confirmation?id=${invoice_id}&plan=${encodeURIComponent(plan_name)}`,
+      returnUrl: `${baseUrl}/payment/confirmation?id=${invoice_id}&hash=${hash}&plan=${encodeURIComponent(plan_name)}&email=${encodeURIComponent(client_email)}`,
       failUrl: `${baseUrl}/payment/failed?id=${invoice_id}`,
       webhook_url: `${baseUrl}/api/payment/webhook`,
       language: 'fr', // Default language

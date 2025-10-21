@@ -112,9 +112,14 @@ export const PaymentPageContent = (): JSX.Element => {
         return
       }
       
-      // Redirect to SATIM payment page
-      console.log('Redirecting to payment URL:', data.payment_url)
-      window.location.href = data.payment_url
+      // Open SATIM payment page in new tab
+      console.log('Opening payment URL in new tab:', data.payment_url)
+      const paymentWindow = window.open(data.payment_url, '_blank', 'noopener,noreferrer')
+      
+      if (!paymentWindow) {
+        setError('Veuillez autoriser les pop-ups pour continuer vers le paiement')
+        setIsProcessing(false)
+      }
     } catch (err) {
       console.error('Payment error:', err)
       setError(err instanceof Error ? err.message : 'Une erreur est survenue. Veuillez reessayer.')
@@ -138,7 +143,7 @@ export const PaymentPageContent = (): JSX.Element => {
               Finaliser votre commande
             </h1>
             <p className="mt-4 text-sm text-neutral-600">
-              Paiement securise par SATIM - Cartes EDAHABIA et CIB acceptees
+              Paiement avec SATIM - Cartes EDAHABIA et CIB acceptees
             </p>
           </div>
 
@@ -273,33 +278,39 @@ export const PaymentPageContent = (): JSX.Element => {
                 className="mt-1 h-4 w-4 rounded border-neutral-300 text-amber-600 focus:ring-2 focus:ring-amber-600/20"
               />
               <label htmlFor="acceptTerms" className="text-sm text-neutral-600">
-                J&apos;accepte les conditions generales de paiement en ligne et
-                j&apos;autorise le traitement de mes informations de paiement de
+                J&apos;accepte les{' '}
+                <a 
+                  href="/privacy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-600 hover:text-amber-700 underline"
+                >
+                  conditions generales de paiement
+                </a>
+                {' '}et la{' '}
+                <a 
+                  href="/privacy#refund-policy" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="text-amber-600 hover:text-amber-700 underline"
+                >
+                  politique de remboursement
+                </a>
+                {' '}et j&apos;autorise le traitement de mes informations de paiement de
                 maniere securisee via SATIM
               </label>
             </div>
 
             <div className="flex items-center justify-center gap-4 py-4">
-              <div className="text-sm text-neutral-500">Paiement securise par</div>
+              <div className="text-sm text-neutral-500">Paiement avec</div>
               <div className="flex items-center gap-3">
-                {/* Real brand icons from public/cards */}
+                {/* SATIM accepted payment methods: CIB & Edahabia */}
                 <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 flex items-center">
                   <Image
-                    src="/unnamed.png"
-                    alt="BaridiMob"
+                    src="/cibdahabia.jpg"
+                    alt="CIB & Edahabia"
                     width={120}
-                    height={32}
-                    className="h-8 w-auto"
-                    priority={false}
-                  />
-                </div>
-                <span className="text-neutral-300">&</span>
-                <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 flex items-center">
-                  <Image
-                    src="/image.png"
-                    alt="CIB"
-                    width={120}
-                    height={32}
+                    height={40}
                     className="h-8 w-auto"
                     priority={false}
                   />

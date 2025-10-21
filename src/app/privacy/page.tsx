@@ -271,9 +271,63 @@ export default function PrivacyPage(): JSX.Element {
             </div>
           </section>
 
+          <section id="refund-policy" className="mb-8 bg-amber-50 p-6 rounded-lg border-l-4 border-amber-500">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">
+              11. Politique de Remboursement (Refund Policy)
+            </h2>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-3">
+              11.1 Conditions Generales de Paiement
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Les paiements effectues via SATIM pour nos services de creation de sites web sont traites de maniere securisee. En effectuant un paiement, vous acceptez les conditions suivantes:
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
+              11.2 Politique de Remboursement
+            </h3>
+            <ul className="list-disc pl-6 mb-4 text-gray-700">
+              <li><strong>Annulation avant le debut du projet:</strong> Remboursement integral possible dans les 48h suivant le paiement si le projet n&apos;a pas encore commence.</li>
+              <li><strong>Annulation apres le debut du projet:</strong> Remboursement partiel calcule en fonction du travail deja effectue.</li>
+              <li><strong>Projet termine:</strong> Aucun remboursement n&apos;est possible une fois le projet livre et accepte par le client.</li>
+              <li><strong>Problemes techniques de paiement:</strong> En cas de double paiement ou d&apos;erreur technique, contactez-nous immediatement pour un remboursement complet du montant en trop.</li>
+            </ul>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
+              11.3 Delais de Remboursement
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Les remboursements approuves seront traites dans un delai de 7 a 14 jours ouvrables. Le delai peut varier selon votre banque et le mode de paiement utilise.
+            </p>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
+              11.4 Comment Demander un Remboursement
+            </h3>
+            <p className="text-gray-700 mb-4">
+              Pour demander un remboursement, veuillez nous contacter:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700">
+              <li>Par email: autonomy.owner@gmail.com</li>
+              <li>Par telephone/WhatsApp: +213 797 339 451</li>
+              <li>En fournissant votre ID de facture et la raison de la demande</li>
+            </ul>
+            
+            <h3 className="text-xl font-semibold text-gray-900 mb-3 mt-6">
+              11.5 Litiges de Paiement
+            </h3>
+            <p className="text-gray-700 mb-4">
+              En cas de probleme avec votre paiement SATIM, vous pouvez:
+            </p>
+            <ul className="list-disc pl-6 mb-4 text-gray-700">
+              <li>Contacter le service client SATIM au numero vert: <strong>3020</strong></li>
+              <li>Nous contacter directement pour assistance</li>
+              <li>Contacter votre banque pour signaler un probleme de transaction</li>
+            </ul>
+          </section>
+
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              11. Changes to This Privacy Policy
+              12. Changes to This Privacy Policy
             </h2>
             <p className="text-gray-700 mb-4">
               We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. We will notify you of any material changes by posting the updated policy on this page and updating the &quot;Last Updated&quot; date. We encourage you to review this Privacy Policy periodically.
@@ -282,7 +336,7 @@ export default function PrivacyPage(): JSX.Element {
 
           <section className="mb-8">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              12. International Data Transfers
+              13. International Data Transfers
             </h2>
             <p className="text-gray-700 mb-4">
               Your information may be transferred to and processed in countries other than your country of residence. These countries may have data protection laws that are different from the laws of your country. By using our website and services, you consent to the transfer of your information to these countries. We take steps to ensure that your information receives an adequate level of protection in accordance with applicable data protection laws.
@@ -291,7 +345,7 @@ export default function PrivacyPage(): JSX.Element {
 
           <section className="mb-8 bg-gray-50 p-6 rounded-lg">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">
-              13. Legal Basis for Processing (GDPR)
+              14. Legal Basis for Processing (GDPR)
             </h2>
             <p className="text-gray-700 mb-4">
               If you are located in the European Economic Area (EEA) or United Kingdom, we process your personal information based on the following legal grounds:
