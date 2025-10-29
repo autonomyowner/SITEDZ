@@ -60,6 +60,22 @@ const galleryItems: GalleryItem[] = [
     description:
       'Immobilier de prestige. Expertise locale et service premium pour des biens d exception en Algerie.',
   },
+  {
+    id: '7',
+    title: 'Cuisine Alger',
+    category: 'Premium Vitrine Design',
+    image: '/projects/www.cuisinealger.com (1).png',
+    description:
+      'Design de cuisine sur mesure. Tradition et qualite pour des cuisines classiques et modernes adaptees a votre style de vie.',
+  },
+  {
+    id: '8',
+    title: 'Allouani Premium',
+    category: 'Premium Vitrine Design',
+    image: '/projects/new allouani.png',
+    description:
+      'Site vitrine premium pour parfumerie de luxe. Design sophistique et experience utilisateur optimisee pour une marque d exception.',
+  },
 ]
 
 export const GalleryGrid = (): JSX.Element => {
