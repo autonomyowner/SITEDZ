@@ -38,7 +38,7 @@ const values: ValueItem[] = [
 
 export const ValuesSection = (): JSX.Element => {
   return (
-    <section className="border-t border-neutral-200 bg-white/70 px-4 py-24 sm:px-6 lg:px-8">
+    <section className="border-t border-neutral-200 bg-lightOrange-500/70 px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
@@ -58,7 +58,7 @@ export const ValuesSection = (): JSX.Element => {
           {values.map((value) => (
             <div
               key={value.title}
-              className="rounded-3xl border border-neutral-200 bg-white/90 px-6 py-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="rounded-3xl border border-neutral-200 bg-lightOrange-500/90 px-6 py-8 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <h3 className="text-xl font-semibold text-neutral-900">
                 {value.title}
@@ -70,7 +70,7 @@ export const ValuesSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="mt-20 rounded-3xl border border-neutral-200 bg-white/85 px-6 py-12 text-center shadow-sm sm:px-12">
+        <div className="mt-20 rounded-3xl border border-neutral-200 bg-lightOrange-500/85 px-6 py-12 text-center shadow-sm sm:px-12">
           <h3 className="text-2xl font-elegant font-semibold text-neutral-900">
             Notre engagement
           </h3>
@@ -80,13 +80,13 @@ export const ValuesSection = (): JSX.Element => {
             meme attention que pour la phase de conception.
           </p>
           <div className="mt-10 grid grid-cols-1 gap-6 text-sm uppercase tracking-[0.3em] text-neutral-500 sm:grid-cols-3">
-            <div className="rounded-2xl border border-neutral-200 bg-white/80 px-6 py-6">
+            <div className="rounded-2xl border border-neutral-200 bg-lightOrange-500/80 px-6 py-6">
               Qualite
             </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white/80 px-6 py-6">
+            <div className="rounded-2xl border border-neutral-200 bg-lightOrange-500/80 px-6 py-6">
               Service
             </div>
-            <div className="rounded-2xl border border-neutral-200 bg-white/80 px-6 py-6">
+            <div className="rounded-2xl border border-neutral-200 bg-lightOrange-500/80 px-6 py-6">
               Satisfaction
             </div>
           </div>

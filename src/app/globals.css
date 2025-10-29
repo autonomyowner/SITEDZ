@@ -6,8 +6,8 @@
 
 :root {
   color-scheme: light;
-  --page-bg-start: #f9f7f2;
-  --page-bg-end: #f1ebe4;
+  --page-bg-start: #f5f1e8;
+  --page-bg-end: #ece4d7;
   --page-foreground: 28, 27, 30;
 }
 
@@ -38,7 +38,7 @@ a {
 
 /* Custom gradient utility */
 .bg-gradient-elegant {
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.82), rgba(239, 233, 226, 0.82));
+  background: linear-gradient(145deg, rgba(236, 228, 215, 0.92), rgba(240, 212, 168, 0.92));
 }
 
 /* Smooth scrolling */
@@ -52,14 +52,14 @@ html {
 }
 
 ::-webkit-scrollbar-track {
-  background: #e5ded5;
+  background: #e0d0b8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #b58f66;
+  background: #c8a87a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a5794b;
+  background: #bc945b;
 } 

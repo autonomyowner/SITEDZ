@@ -145,7 +145,7 @@ export const GalleryGrid = (): JSX.Element => {
             key={item.id}
             type="button"
             onClick={() => handleImageClick(item)}
-            className="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-white/80 text-left shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+            className="group relative overflow-hidden rounded-3xl border border-neutral-200 bg-lightOrange-500/80 text-left shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
           >
             <div className="relative aspect-square">
               <Image

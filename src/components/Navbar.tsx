@@ -44,7 +44,7 @@ export const Navbar = (): JSX.Element => {
     <nav
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
         isScrolled
-          ? 'bg-white/92 backdrop-blur border-b border-neutral-200 shadow-sm'
+          ? 'bg-lightOrange-500/92 backdrop-blur border-b border-neutral-200 shadow-sm'
           : 'bg-transparent'
       }`}
     >
@@ -97,7 +97,7 @@ export const Navbar = (): JSX.Element => {
             isMobileMenuOpen ? 'max-h-80 opacity-100' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="mb-4 rounded-2xl border border-neutral-200 bg-white/95 px-3 pb-4 pt-2 backdrop-blur">
+          <div className="mb-4 rounded-2xl border border-neutral-200 bg-lightOrange-500/95 px-3 pb-4 pt-2 backdrop-blur">
             <div className="grid gap-2">
               {navItems.map((item) => {
                 const isActive = pathname === item.href

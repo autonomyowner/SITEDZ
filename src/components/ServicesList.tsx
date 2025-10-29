@@ -140,7 +140,7 @@ export const ServicesList = (): JSX.Element => {
             className="grid grid-cols-1 items-center gap-10 lg:grid-cols-2"
           >
             <div
-              className={`relative overflow-hidden rounded-[32px] border border-neutral-200 bg-white/85 shadow-lg ${
+              className={`relative overflow-hidden rounded-[32px] border border-neutral-200 bg-lightOrange-500/85 shadow-lg ${
                 isReversed ? 'lg:order-2' : ''
               }`}
             >
@@ -153,7 +153,7 @@ export const ServicesList = (): JSX.Element => {
                 className="object-cover"
                 priority={index === 0}
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-white/35 via-transparent to-white/10" />
+              <div className="absolute inset-0 bg-gradient-to-t from-lightOrange-500/35 via-transparent to-lightOrange-500/10" />
             </div>
             <div className="flex items-center justify-between px-6 py-5">
               <span className="text-xs uppercase tracking-[0.35em] text-neutral-500">

@@ -160,7 +160,7 @@ export const TestimonialsSection = (): JSX.Element => {
   }
 
   return (
-    <section className="border-y border-neutral-200 bg-white/80 px-4 py-24 sm:px-6 lg:px-8">
+    <section className="border-y border-neutral-200 bg-lightOrange-500/80 px-4 py-24 sm:px-6 lg:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="text-center">
           <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
@@ -183,7 +183,7 @@ export const TestimonialsSection = (): JSX.Element => {
                 testimonialRefs.current[testimonial.id] = el
               }}
               data-testimonial-id={testimonial.id}
-              className={`flex h-full flex-col rounded-3xl border border-neutral-200 bg-white/90 p-8 shadow-sm hover:-translate-y-1 hover:shadow-md ${getAnimationClasses(testimonial.id)}`}
+              className={`flex h-full flex-col rounded-3xl border border-neutral-200 bg-lightOrange-500/90 p-8 shadow-sm hover:-translate-y-1 hover:shadow-md ${getAnimationClasses(testimonial.id)}`}
             >
               <div className="flex items-center gap-4">
                 <div className="overflow-hidden rounded-full border border-neutral-200">
@@ -217,7 +217,7 @@ export const TestimonialsSection = (): JSX.Element => {
           ref={statsRef}
           className="mt-16 grid grid-cols-1 gap-6 text-center sm:grid-cols-3"
         >
-          <div className="rounded-3xl border border-neutral-200 bg-white/70 px-6 py-8">
+          <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/70 px-6 py-8">
             <p className="text-4xl font-elegant font-semibold text-neutral-900">
               {projectsCount}+
             </p>
@@ -225,7 +225,7 @@ export const TestimonialsSection = (): JSX.Element => {
               Projets web realises
             </p>
           </div>
-          <div className="rounded-3xl border border-neutral-200 bg-white/70 px-6 py-8">
+          <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/70 px-6 py-8">
             <p className="text-4xl font-elegant font-semibold text-neutral-900">
               {satisfactionCount}%
             </p>
@@ -233,7 +233,7 @@ export const TestimonialsSection = (): JSX.Element => {
               Clients satisfaits
             </p>
           </div>
-          <div className="rounded-3xl border border-neutral-200 bg-white/70 px-6 py-8">
+          <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/70 px-6 py-8">
             <p className="text-4xl font-elegant font-semibold text-neutral-900">
               {supportCount}/7
             </p>

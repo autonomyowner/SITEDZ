@@ -34,7 +34,7 @@ export const WhatsAppButton = (): JSX.Element => {
     >
       <button
         onClick={handleWhatsAppClick}
-        className="rounded-full border border-neutral-300 bg-white/95 px-6 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-800 shadow-lg backdrop-blur transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
+        className="rounded-full border border-neutral-300 bg-lightOrange-500/95 px-6 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-800 shadow-lg backdrop-blur transition-all duration-200 hover:-translate-y-1 hover:shadow-xl"
         type="button"
         aria-label="Discuter sur WhatsApp"
       >

@@ -85,7 +85,7 @@ export const PaymentFailedContent = (): JSX.Element => {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white">
+      <div className="flex min-h-screen items-center justify-center bg-lightOrange-500">
         <div className="text-center">
           <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-200 border-t-red-600" />
           <p className="mt-4 text-sm text-neutral-600">
@@ -97,13 +97,13 @@ export const PaymentFailedContent = (): JSX.Element => {
   }
 
   return (
-    <div className="relative isolate flex min-h-screen items-center justify-center bg-white/90 py-12">
+    <div className="relative isolate flex min-h-screen items-center justify-center bg-lightOrange-500/90 py-12">
       <div className="absolute inset-0 -z-10 opacity-70">
         <div className="pointer-events-none h-full w-full bg-[radial-gradient(circle_at_top,_rgba(17,24,39,0.12),_transparent_70%)]" />
       </div>
 
       <section className="mx-auto max-w-2xl px-4 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-red-200 bg-white/95 p-8 shadow-lg sm:p-12">
+        <div className="rounded-3xl border border-red-200 bg-lightOrange-500/95 p-8 shadow-lg sm:p-12">
           {/* Company header */}
           <div className="mb-6 text-center border-b border-neutral-200 pb-6">
             <div className="text-2xl font-bold text-neutral-900">SiteDZ</div>
@@ -216,7 +216,7 @@ export const PaymentFailedContent = (): JSX.Element => {
               href="https://wa.me/213797339451?text=Bonjour!%20J%27ai%20eu%20un%20probleme%20avec%20mon%20paiement"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-white px-7 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-neutral-50"
+              className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-lightOrange-500 px-7 py-3 text-sm font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-lightOrange-400"
             >
               Contacter le support
             </a>

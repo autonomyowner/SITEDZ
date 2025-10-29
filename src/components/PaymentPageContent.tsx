@@ -128,13 +128,13 @@ export const PaymentPageContent = (): JSX.Element => {
   }
 
   return (
-    <div className="relative isolate min-h-screen bg-white/90">
+    <div className="relative isolate min-h-screen bg-lightOrange-500/90">
       <div className="absolute inset-0 -z-10 opacity-70">
         <div className="pointer-events-none h-full w-full bg-[radial-gradient(circle_at_top,_rgba(17,24,39,0.12),_transparent_70%)]" />
       </div>
 
       <section className="mx-auto max-w-3xl px-4 py-24 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-neutral-200 bg-white/95 p-8 shadow-lg sm:p-12">
+        <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/95 p-8 shadow-lg sm:p-12">
           <div className="mb-8 text-center">
             <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
               Paiement securise
@@ -215,7 +215,7 @@ export const PaymentPageContent = (): JSX.Element => {
                 value={clientName}
                 onChange={(e) => setClientName(e.target.value)}
                 required
-                className="mt-2 w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
+                className="mt-2 w-full rounded-lg border border-neutral-300 bg-lightOrange-500 px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
                 placeholder="Votre nom complet"
               />
             </div>
@@ -233,7 +233,7 @@ export const PaymentPageContent = (): JSX.Element => {
                 value={clientEmail}
                 onChange={(e) => setClientEmail(e.target.value)}
                 required
-                className="mt-2 w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
+                className="mt-2 w-full rounded-lg border border-neutral-300 bg-lightOrange-500 px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
                 placeholder="votre@email.com"
               />
             </div>
@@ -250,7 +250,7 @@ export const PaymentPageContent = (): JSX.Element => {
                 id="clientPhone"
                 value={clientPhone}
                 onChange={(e) => setClientPhone(e.target.value)}
-                className="mt-2 w-full rounded-lg border border-neutral-300 bg-white px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
+                className="mt-2 w-full rounded-lg border border-neutral-300 bg-lightOrange-500 px-4 py-3 text-neutral-900 transition-colors focus:border-amber-600 focus:outline-none focus:ring-2 focus:ring-amber-600/20"
                 placeholder="+213 XXX XXX XXX"
               />
             </div>
@@ -262,7 +262,7 @@ export const PaymentPageContent = (): JSX.Element => {
                 className={`w-full rounded-lg border px-4 py-3 text-sm font-medium transition-colors ${
                   captchaVerified
                     ? 'border-green-600 bg-green-50 text-green-700'
-                    : 'border-neutral-300 bg-white text-neutral-700 hover:border-amber-600'
+                    : 'border-neutral-300 bg-lightOrange-500 text-neutral-700 hover:border-amber-600'
                 }`}
               >
                 {captchaVerified ? 'Captcha verifie ✓' : 'Verifier le captcha'}
@@ -305,7 +305,7 @@ export const PaymentPageContent = (): JSX.Element => {
               <div className="text-sm text-neutral-500">Paiement avec</div>
               <div className="flex items-center gap-3">
                 {/* SATIM accepted payment methods: CIB & Edahabia */}
-                <div className="rounded-lg border border-neutral-200 bg-white px-3 py-2 flex items-center">
+                <div className="rounded-lg border border-neutral-200 bg-lightOrange-500 px-3 py-2 flex items-center">
                   <Image
                     src="/cibdahabia.jpg"
                     alt="CIB & Edahabia"

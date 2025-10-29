@@ -112,7 +112,7 @@ export const PricingPageContent = (): JSX.Element => {
   }, [])
 
   return (
-    <div className="relative isolate bg-white/90">
+    <div className="relative isolate bg-lightOrange-500/90">
       <div className="absolute inset-0 -z-10 opacity-70">
         <div className="pointer-events-none h-full w-full bg-[radial-gradient(circle_at_top,_rgba(17,24,39,0.12),_transparent_70%)]" />
       </div>
@@ -157,7 +157,7 @@ export const PricingPageContent = (): JSX.Element => {
           {plans.map((plan) => (
             <div
               key={plan.name}
-              className="relative flex h-full flex-col justify-between rounded-3xl border border-neutral-200 bg-white/95 p-8 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
+              className="relative flex h-full flex-col justify-between rounded-3xl border border-neutral-200 bg-lightOrange-500/95 p-8 shadow-lg transition-transform duration-300 hover:-translate-y-1 hover:shadow-xl"
             >
               <div className="space-y-5">
                 <div className="flex items-center justify-between">
@@ -236,7 +236,7 @@ export const PricingPageContent = (): JSX.Element => {
                       }
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-white px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-neutral-50"
+                      className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-lightOrange-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-lightOrange-400"
                     >
                       Demander un devis
                     </a>
@@ -273,7 +273,7 @@ export const PricingPageContent = (): JSX.Element => {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-neutral-200 bg-white/80 p-10 shadow-sm">
+        <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/80 p-10 shadow-sm">
           <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
             Processus client
           </p>
@@ -285,7 +285,7 @@ export const PricingPageContent = (): JSX.Element => {
               {processSteps.map((step, index) => (
                 <div
                   key={step.title}
-                  className="group relative min-w-[240px] flex-1 snap-center rounded-2xl border border-neutral-200 bg-white/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-lg lg:min-w-0"
+                  className="group relative min-w-[240px] flex-1 snap-center rounded-2xl border border-neutral-200 bg-lightOrange-500/90 p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-neutral-900 hover:shadow-lg lg:min-w-0"
                 >
                   <div className="flex items-center gap-3">
                     <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-900 text-sm font-semibold uppercase tracking-[0.2em] text-white">
@@ -363,7 +363,7 @@ export const PricingPageContent = (): JSX.Element => {
       </section>
 
       <section className="mx-auto max-w-5xl px-4 pb-24 sm:px-6 lg:px-8">
-        <div className="rounded-3xl border border-neutral-200 bg-white/70 p-10 text-center shadow-sm">
+        <div className="rounded-3xl border border-neutral-200 bg-lightOrange-500/70 p-10 text-center shadow-sm">
           <p className="text-xs uppercase tracking-[0.35em] text-neutral-500">
             Pourquoi nous choisir
           </p>
@@ -424,7 +424,7 @@ export const PricingPageContent = (): JSX.Element => {
             }
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center justify-center rounded-full bg-white px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-amber-200"
+            className="inline-flex items-center justify-center rounded-full bg-lightOrange-500 px-7 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-amber-200"
           >
             Ouvrir WhatsApp maintenant
           </a>

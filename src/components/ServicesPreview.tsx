@@ -65,7 +65,7 @@ export const ServicesPreview = (): JSX.Element => {
             <Link
               key={service.id}
               href={service.href}
-              className="group relative block overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+              className="group relative block overflow-hidden rounded-3xl border border-neutral-200 bg-lightOrange-500/90 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
             >
               <div className="relative aspect-[4/3] overflow-hidden">
                 <Image

@@ -52,7 +52,7 @@ export const HeroSection = (): JSX.Element => {
           priority
           className="object-cover"
         />
-        <div className="absolute inset-0 bg-white/72 backdrop-blur-xl" />
+        <div className="absolute inset-0 bg-lightOrange-500/72 backdrop-blur-xl" />
       </div>
 
       <div className="mx-auto flex min-h-[80vh] max-w-6xl flex-col justify-center px-4 py-28 sm:px-6 lg:px-8 lg:py-36">

@@ -60,7 +60,7 @@ export const TeamSection = (): JSX.Element => {
           {teamMembers.map((member) => (
             <div
               key={member.name}
-              className="overflow-hidden rounded-3xl border border-neutral-200 bg-white/90 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
+              className="overflow-hidden rounded-3xl border border-neutral-200 bg-lightOrange-500/90 shadow-sm transition-transform duration-300 hover:-translate-y-1 hover:shadow-md"
             >
               <div className="relative h-72">
                 <Image
@@ -89,7 +89,7 @@ export const TeamSection = (): JSX.Element => {
           ))}
         </div>
 
-        <div className="mt-20 rounded-3xl border border-neutral-200 bg-white/85 px-6 py-12 text-center shadow-sm sm:px-12">
+        <div className="mt-20 rounded-3xl border border-neutral-200 bg-lightOrange-500/85 px-6 py-12 text-center shadow-sm sm:px-12">
           <h3 className="text-2xl font-elegant font-semibold text-neutral-900">
             Notre philosophie
           </h3>

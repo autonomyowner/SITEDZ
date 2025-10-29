@@ -12,7 +12,7 @@ export const PricingSection = (): JSX.Element => {
   }
 
   return (
-    <section className="mt-24 rounded-3xl border border-neutral-200 bg-white/85 px-6 py-16 shadow-sm sm:px-10">
+    <section className="mt-24 rounded-3xl border border-neutral-200 bg-lightOrange-500/85 px-6 py-16 shadow-sm sm:px-10">
       <div className="mx-auto max-w-4xl text-center">
         <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
           Tarification
@@ -59,7 +59,7 @@ export const PricingSection = (): JSX.Element => {
         ].map((offer) => (
           <div
             key={offer.title}
-            className="flex flex-col rounded-3xl border border-neutral-200 bg-white/90 px-6 py-8 text-left shadow-sm"
+            className="flex flex-col rounded-3xl border border-neutral-200 bg-lightOrange-500/90 px-6 py-8 text-left shadow-sm"
           >
             <h3 className="text-xl font-semibold text-neutral-900">
               {offer.title}

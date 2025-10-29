@@ -307,7 +307,7 @@ export const PaymentConfirmationContent = (): JSX.Element => {
 
   if (isLoading) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white">
+      <div className="flex min-h-screen items-center justify-center bg-lightOrange-500">
         <div className="text-center">
           <div className="mx-auto h-12 w-12 animate-spin rounded-full border-4 border-neutral-200 border-t-amber-600" />
           <p className="mt-4 text-sm text-neutral-600">
@@ -320,8 +320,8 @@ export const PaymentConfirmationContent = (): JSX.Element => {
 
   if (error || !paymentDetails) {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-white">
-        <div className="max-w-md rounded-3xl border border-red-200 bg-white p-8 text-center shadow-lg">
+      <div className="flex min-h-screen items-center justify-center bg-lightOrange-500">
+        <div className="max-w-md rounded-3xl border border-red-200 bg-lightOrange-500 p-8 text-center shadow-lg">
           <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-red-100">
             <span className="text-3xl">✗</span>
           </div>
