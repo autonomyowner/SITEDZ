@@ -1,7 +1,8 @@
 'use client'
 
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { trackMetaEvent } from '@/lib/metaPixel'
+import { LeadCaptureModal } from './LeadCaptureModal'
 
 const phoneNumber = '213797339451'
 const displayPhoneNumber = '+213 797 339 451'
@@ -104,12 +105,25 @@ const headerWhatsAppUrl = createWhatsAppLink('Tarifs')
 const depositWhatsAppUrl = createWhatsAppLink('Consultation projet')
 
 export const PricingPageContent = (): JSX.Element => {
+  const [isModalOpen, setIsModalOpen] = useState<boolean>(false)
+  const [selectedPlan, setSelectedPlan] = useState<{ name: string; price: string } | null>(null)
+
   useEffect(() => {
     trackMetaEvent('ViewContent', {
       content_name: 'pricing_page',
       content_category: 'services',
     })
   }, [])
+
+  const handleOpenModal = (planName: string, planPrice: string): void => {
+    setSelectedPlan({ name: planName, price: planPrice })
+    setIsModalOpen(true)
+  }
+
+  const handleCloseModal = (): void => {
+    setIsModalOpen(false)
+    setSelectedPlan(null)
+  }
 
   return (
     <div className="relative isolate bg-lightOrange-500/90">
@@ -214,35 +228,14 @@ export const PricingPageContent = (): JSX.Element => {
               <div className="mt-8 flex flex-col gap-3">
                 {plan.price !== 'Sur devis' ? (
                   <>
-                    <a
-                      href={`/payment?plan=${encodeURIComponent(plan.name)}&amount=${plan.price.replace(/\D/g, '')}`}
-                      onClick={() =>
-                        trackMetaEvent('InitiateCheckout', {
-                          source: 'pricing_plan_payment',
-                          content_name: plan.name,
-                        })
-                      }
+                    <button
+                      onClick={() => handleOpenModal(plan.name, plan.price)}
                       className="inline-flex items-center justify-center rounded-full bg-amber-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition-colors duration-200 hover:bg-amber-500"
                     >
-                      Payer maintenant
-                    </a>
-                    <a
-                      href={plan.whatsappUrl}
-                      onClick={() =>
-                        trackMetaEvent('Lead', {
-                          source: 'pricing_plan_whatsapp',
-                          content_name: plan.name,
-                        })
-                      }
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center rounded-full border border-neutral-900 bg-lightOrange-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-neutral-900 transition-colors duration-200 hover:bg-lightOrange-400"
-                    >
-                      Demander un devis
-                    </a>
+                      Commander maintenant
+                    </button>
                     <p className="text-xs text-neutral-500">
-                      Payez directement en ligne ou demandez un devis personnalise
-                      adapte a votre projet.
+                      Remplissez vos informations et finalisez votre commande sur WhatsApp
                     </p>
                   </>
                 ) : (
@@ -433,6 +426,15 @@ export const PricingPageContent = (): JSX.Element => {
           </p>
         </div>
       </section>
+
+      {selectedPlan && (
+        <LeadCaptureModal
+          isOpen={isModalOpen}
+          onClose={handleCloseModal}
+          planName={selectedPlan.name}
+          planPrice={selectedPlan.price}
+        />
+      )}
     </div>
   )
 }
