@@ -96,6 +96,8 @@ export const LeadCaptureModal = ({
       source: 'lead_capture_modal',
       content_name: planName,
       content_category: businessType,
+      value: parseFloat(planPrice.replace(/\D/g, '')),
+      currency: 'DZD',
     })
 
     const message = `Bonjour SiteDZ Store! 👋

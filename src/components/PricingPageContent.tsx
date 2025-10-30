@@ -116,6 +116,15 @@ export const PricingPageContent = (): JSX.Element => {
   }, [])
 
   const handleOpenModal = (planName: string, planPrice: string): void => {
+    // Track InitiateCheckout when user shows interest by clicking
+    const priceNumber = planPrice.replace(/\D/g, '')
+    trackMetaEvent('InitiateCheckout', {
+      source: 'pricing_plan_modal',
+      content_name: planName,
+      value: priceNumber ? parseFloat(priceNumber) : undefined,
+      currency: 'DZD',
+    })
+    
     setSelectedPlan({ name: planName, price: planPrice })
     setIsModalOpen(true)
   }
