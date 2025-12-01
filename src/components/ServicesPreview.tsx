@@ -1,107 +1,238 @@
+'use client'
+
+import { useState, useEffect, useRef } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
+import { trackMetaEvent } from '@/lib/metaPixel'
 
 type ServiceCard = {
   id: string
   title: string
   description: string
   highlight: string
-  image: string
+  price: string
+  delivery: string
+  features: string[]
   href: string
+  popular?: boolean
 }
 
 const services: ServiceCard[] = [
   {
     id: 'websites',
-    title: 'Sites Vitrine',
+    title: 'Site Vitrine',
     description:
-      'Sites web professionnels et elegants pour presenter votre entreprise avec impact et credibilite.',
-    highlight: 'Presence professionnelle',
-    image:
-      'https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=800&q=80',
-    href: '/services#websites',
+      'Site web professionnel et elegant pour presenter votre entreprise avec impact.',
+    highlight: 'Ideal pour debuter',
+    price: '25 000 DA',
+    delivery: '72h',
+    features: ['Design personnalise', 'Responsive mobile', 'Hebergement 1 an', 'Support 1 mois'],
+    href: '/pricing',
   },
   {
     id: 'ecommerce',
     title: 'E-commerce',
     description:
-      'Boutiques en ligne optimisees pour vendre vos produits 24/7 avec paiement securise.',
-    highlight: 'Vente en ligne',
-    image:
-      'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=800&q=80',
-    href: '/services#ecommerce',
+      'Boutique en ligne complete pour vendre vos produits 24/7 avec paiement securise.',
+    highlight: 'Le plus populaire',
+    price: '67 000 DA',
+    delivery: '10 jours',
+    features: ['Catalogue produits', 'Panier & checkout', 'Hebergement 3 ans', 'Notifications auto'],
+    href: '/pricing',
+    popular: true,
   },
   {
     id: 'custom',
-    title: 'Sur Mesure',
+    title: 'SaaS Sur Mesure',
     description:
-      'Solutions web personnalisees adaptees a vos besoins specifiques et votre secteur d activite.',
-    highlight: 'Solution unique',
-    image:
-      'https://images.unsplash.com/photo-1551434678-e076c223a692?auto=format&fit=crop&w=800&q=80',
-    href: '/services#custom',
+      'Application web personnalisee avec fonctionnalites avancees pour votre business.',
+    highlight: 'Solutions enterprise',
+    price: 'Sur devis',
+    delivery: '21 jours',
+    features: ['Interface premium', 'Gestion abonnements', 'Dashboard analytics', 'Support continu'],
+    href: '/pricing',
   },
 ]
 
 export const ServicesPreview = (): JSX.Element => {
+  const [isVisible, setIsVisible] = useState<boolean>(false)
+  const sectionRef = useRef<HTMLDivElement>(null)
+
+  useEffect(() => {
+    const currentRef = sectionRef.current
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true)
+          }
+        })
+      },
+      { threshold: 0.1 },
+    )
+
+    if (currentRef) {
+      observer.observe(currentRef)
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef)
+      }
+    }
+  }, [])
+
+  const handleServiceClick = (serviceId: string): void => {
+    trackMetaEvent('ViewContent', {
+      content_name: serviceId,
+      content_category: 'services',
+    })
+  }
+
   return (
-    <section className="px-4 py-24 sm:px-6 lg:px-8">
-      <div className="mx-auto max-w-6xl">
-        <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.4em] text-neutral-500">
-            Nos Services
+    <section ref={sectionRef} className="relative isolate overflow-hidden bg-lightOrange-500 px-4 py-24 sm:px-6 lg:px-8">
+      {/* Background */}
+      <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_rgba(201,169,98,0.08),_transparent_60%)]" />
+      </div>
+
+      <div className="mx-auto max-w-7xl">
+        {/* Header */}
+        <div className={`text-center transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="text-xs uppercase tracking-[0.4em] text-[#c9a962]">
+            Nos Offres
           </p>
-          <h2 className="mt-5 text-4xl font-elegant font-semibold text-neutral-900 sm:text-5xl">
-            Des solutions web adaptees a chaque entreprise
+          <h2 className="mt-4 font-elegant text-4xl font-semibold text-neutral-900 sm:text-5xl">
+            Choisissez la solution
+            <span className="block text-[#c9a962]">qui vous convient</span>
           </h2>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-neutral-600">
-            Nous creons des sites web performants et modernes qui donnent vie a votre presence en ligne
-            et assurent une experience optimale pour vos visiteurs.
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-neutral-600">
+            Des solutions web professionnelles adaptees a chaque budget et chaque objectif.
+            Livraison rapide et garantie satisfaction.
           </p>
         </div>
 
-        <div className="mt-16 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
+        {/* Services Grid */}
+        <div className="mt-16 grid gap-8 lg:grid-cols-3">
+          {services.map((service, index) => (
             <Link
               key={service.id}
               href={service.href}
-              className="group relative block overflow-hidden rounded-3xl border border-neutral-200 bg-lightOrange-500/90 shadow-sm transition-all duration-500 hover:-translate-y-2 hover:shadow-xl"
+              onClick={() => handleServiceClick(service.id)}
+              className={`group relative flex flex-col rounded-3xl border transition-all duration-500 ${
+                service.popular
+                  ? 'border-[#c9a962]/50 bg-white shadow-xl scale-105'
+                  : 'border-neutral-200 bg-white/80 hover:border-[#c9a962]/30 hover:shadow-lg'
+              } ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}
+              style={{ transitionDelay: `${index * 150}ms` }}
             >
-              <div className="relative aspect-[4/3] overflow-hidden">
-                <Image
-                  src={service.image}
-                  alt={service.title}
-                  fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-105"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-neutral-900/20 via-transparent to-transparent" />
-              </div>
+              {/* Popular Badge */}
+              {service.popular && (
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2">
+                  <div className="rounded-full bg-[#c9a962] px-6 py-2 text-xs font-bold uppercase tracking-wider text-[#1a1a1a] shadow-lg">
+                    Le plus choisi
+                  </div>
+                </div>
+              )}
 
-              <div className="flex h-full flex-col gap-5 p-6">
-                <span className="text-xs uppercase tracking-[0.35em] text-neutral-500">
-                  {service.highlight}
-                </span>
-                <h3 className="text-2xl font-elegant font-semibold text-neutral-900">
-                  {service.title}
-                </h3>
-                <p className="text-sm leading-relaxed text-neutral-600">
+              <div className="flex flex-1 flex-col p-8">
+                {/* Header */}
+                <div className="mb-6">
+                  <p className="text-xs uppercase tracking-[0.3em] text-[#c9a962]">
+                    {service.highlight}
+                  </p>
+                  <h3 className="mt-2 font-elegant text-2xl font-semibold text-neutral-900">
+                    {service.title}
+                  </h3>
+                </div>
+
+                {/* Price */}
+                <div className="mb-6 border-b border-neutral-100 pb-6">
+                  <div className="flex items-baseline gap-2">
+                    <span className="text-3xl font-bold text-neutral-900">{service.price}</span>
+                    {service.price !== 'Sur devis' && (
+                      <span className="text-sm text-neutral-500">paiement unique</span>
+                    )}
+                  </div>
+                  <div className="mt-2 inline-flex items-center gap-2 rounded-full border border-emerald-200 bg-emerald-50 px-3 py-1">
+                    <svg className="h-4 w-4 text-emerald-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                    <span className="text-xs font-medium text-emerald-700">Livraison en {service.delivery}</span>
+                  </div>
+                </div>
+
+                {/* Description */}
+                <p className="mb-6 text-sm text-neutral-600">
                   {service.description}
                 </p>
-                <span className="text-sm font-semibold uppercase tracking-[0.25em] text-amber-700">
-                  Decouvrir le service
-                </span>
+
+                {/* Features */}
+                <ul className="mb-8 flex-1 space-y-3">
+                  {service.features.map((feature, i) => (
+                    <li key={i} className="flex items-center gap-3">
+                      <div className="flex h-5 w-5 items-center justify-center rounded-full bg-[#c9a962]/20">
+                        <svg className="h-3 w-3 text-[#c9a962]" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                        </svg>
+                      </div>
+                      <span className="text-sm text-neutral-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                {/* CTA */}
+                <div className={`rounded-full py-4 text-center text-sm font-semibold uppercase tracking-wider transition-all ${
+                  service.popular
+                    ? 'bg-[#c9a962] text-[#1a1a1a] group-hover:bg-[#d4b673]'
+                    : 'bg-neutral-900 text-white group-hover:bg-neutral-800'
+                }`}>
+                  {service.price === 'Sur devis' ? 'Demander un devis' : 'Choisir cette offre'}
+                </div>
               </div>
             </Link>
           ))}
         </div>
 
-        <div className="mt-12 flex justify-center">
+        {/* Bottom CTA */}
+        <div className={`mt-16 text-center transition-all duration-1000 delay-500 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}>
+          <p className="mb-4 text-neutral-600">Besoin d aide pour choisir?</p>
           <Link
-            href="/services"
-            className="inline-flex rounded-full border border-neutral-400 px-8 py-3 text-xs font-semibold uppercase tracking-[0.35em] text-neutral-700 transition-colors duration-200 hover:border-neutral-700 hover:text-neutral-900"
+            href="/pricing"
+            className="inline-flex items-center gap-3 rounded-full border-2 border-neutral-900 px-8 py-4 text-sm font-semibold uppercase tracking-wider text-neutral-900 transition-all hover:bg-neutral-900 hover:text-white"
           >
-            Voir tous les services
+            <span>Comparer toutes les offres</span>
+            <svg className="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+            </svg>
           </Link>
+        </div>
+
+        {/* Trust Bar */}
+        <div className={`mt-16 flex flex-wrap items-center justify-center gap-8 border-t border-neutral-200 pt-10 transition-all duration-1000 delay-700 ${isVisible ? 'opacity-100' : 'opacity-0'}`}>
+          <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <svg className="h-5 w-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span>50+ projets livres</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <svg className="h-5 w-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span>Livraison garantie</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <svg className="h-5 w-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span>Paiement securise</span>
+          </div>
+          <div className="flex items-center gap-2 text-sm text-neutral-500">
+            <svg className="h-5 w-5 text-emerald-500" fill="currentColor" viewBox="0 0 20 20">
+              <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+            </svg>
+            <span>Support 24/7</span>
+          </div>
         </div>
       </div>
     </section>

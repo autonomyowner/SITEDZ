@@ -52,7 +52,7 @@ export const Navbar = (): JSX.Element => {
         <div className="flex h-16 items-center justify-between md:h-20">
           <Link
             href="/"
-            className="flex flex-col leading-tight text-neutral-900 transition-colors duration-200 hover:text-amber-700"
+            className="flex flex-col leading-tight text-neutral-900 transition-colors duration-200 hover:text-[#c9a962]"
           >
             <span className="text-xl font-semibold tracking-wide uppercase">
               SiteDZ Store
@@ -71,7 +71,7 @@ export const Navbar = (): JSX.Element => {
                   href={item.href}
                   className={`text-sm font-medium uppercase tracking-[0.18em] transition-colors duration-200 ${
                     isActive
-                      ? 'text-amber-700'
+                      ? 'text-[#c9a962]'
                       : 'text-neutral-500 hover:text-neutral-900'
                   }`}
                 >
@@ -107,7 +107,7 @@ export const Navbar = (): JSX.Element => {
                     href={item.href}
                     className={`rounded-full px-4 py-3 text-sm font-medium uppercase tracking-[0.2em] transition-colors duration-200 ${
                       isActive
-                        ? 'bg-amber-100 text-amber-800'
+                        ? 'bg-[#c9a962]/10 text-[#c9a962]'
                         : 'text-neutral-600 hover:bg-neutral-100 hover:text-neutral-900'
                     }`}
                   >

@@ -1,13 +1,14 @@
 import type { Metadata } from 'next'
-import { Inter, Playfair_Display } from 'next/font/google'
+import { DM_Sans, Playfair_Display } from 'next/font/google'
 import './globals.css'
 import { Navbar } from '@/components/Navbar'
 import { WhatsAppButton } from '@/components/WhatsAppButton'
 import { MetaPixel } from '@/components/MetaPixel'
+import { ExitIntentPopup } from '@/components/ExitIntentPopup'
 
-const inter = Inter({
+const dmSans = DM_Sans({
   subsets: ['latin'],
-  variable: '--font-inter',
+  variable: '--font-dm-sans',
   display: 'swap',
 })
 
@@ -81,13 +82,14 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="fr" className={`${inter.variable} ${playfair.variable}`}>
+    <html lang="fr" className={`${dmSans.variable} ${playfair.variable}`}>
       <body
-        className={`${inter.className} bg-gradient-elegant min-h-screen text-slate-900`}
+        className={`${dmSans.className} bg-gradient-elegant min-h-screen text-slate-900`}
       >
         <MetaPixel />
         <Navbar />
         <main className="pt-20 md:pt-24 pb-20">{children}</main>
+        <ExitIntentPopup />
         <footer className="bg-slate-900 text-white py-8">
           <div className="container mx-auto px-4">
             <div className="flex flex-col md:flex-row items-center justify-between gap-4">
@@ -97,7 +99,7 @@ export default function RootLayout({
                 </p>
                 <a
                   href="/privacy"
-                  className="text-sm text-gray-400 hover:text-white transition-colors underline"
+                  className="text-sm text-gray-400 hover:text-[#c9a962] transition-colors underline"
                 >
                   Privacy Policy
                 </a>
@@ -107,7 +109,7 @@ export default function RootLayout({
                   href="https://www.instagram.com/site.dz.store/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                  className="text-white hover:text-[#c9a962] transition-colors text-sm"
                   aria-label="Instagram"
                 >
                   Instagram
@@ -116,7 +118,7 @@ export default function RootLayout({
                   href="https://www.facebook.com/sitedz.store/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                  className="text-white hover:text-[#c9a962] transition-colors text-sm"
                   aria-label="Facebook"
                 >
                   Facebook
@@ -125,7 +127,7 @@ export default function RootLayout({
                   href="https://www.sitedz.store/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-white hover:text-primary-400 transition-colors text-sm"
+                  className="text-white hover:text-[#c9a962] transition-colors text-sm"
                 >
                   www.sitedz.store
                 </a>
