@@ -1,0 +1,35 @@
+/* App-level styles */
+main {
+  position: relative;
+  z-index: 1;
+}
+
+/* Smooth scroll offset for fixed navbar */
+html {
+  scroll-padding-top: 5rem;
+}
+
+/* Page transitions */
+main > section {
+  position: relative;
+}
+
+/* Ensure proper stacking */
+.hero {
+  z-index: 1;
+}
+
+.services,
+.about,
+.contact {
+  z-index: 2;
+  background: var(--bg-primary);
+}
+
+.services {
+  background: var(--bg-secondary);
+}
+
+.contact {
+  background: var(--bg-secondary);
+}
