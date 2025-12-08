@@ -6,7 +6,6 @@ import './About.css';
 
 const stats = [
   { number: 50, suffix: '+', label: 'Projects Delivered' },
-  { number: 30, suffix: '+', label: 'Happy Clients' },
 ];
 
 const Counter = ({ target, suffix }) => {
