@@ -1,3 +1,5 @@
+'use client';
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import './Contact.css';
@@ -61,8 +63,8 @@ const Contact = () => {
               </div>
               <div className="contact__detail">
                 <span className="contact__detail-label">Phone</span>
-                <a href="tel:+213555123456" className="contact__detail-value">
-                  +213 555 123 456
+                <a href="tel:+213797339451" className="contact__detail-value">
+                  +213 797 339 451
                 </a>
               </div>
               <div className="contact__detail">
