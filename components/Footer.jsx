@@ -10,17 +10,18 @@ const Footer = () => {
     {
       title: 'Navigation',
       links: [
-        { name: 'Services', href: '#services' },
-        { name: 'About', href: '#about' },
-        { name: 'Contact', href: '#contact' },
+        { name: 'Services', href: '/#services' },
+        { name: 'About', href: '/#about' },
+        { name: 'Blog', href: '/blog' },
+        { name: 'Contact', href: '/#contact' },
       ],
     },
     {
       title: 'Services',
       links: [
-        { name: 'Web Development', href: '#services' },
-        { name: 'Mobile Apps', href: '#services' },
-        { name: 'UI/UX Design', href: '#services' },
+        { name: 'Web Development', href: '/#services' },
+        { name: 'Mobile Apps', href: '/#services' },
+        { name: 'UI/UX Design', href: '/#services' },
       ],
     },
     {
