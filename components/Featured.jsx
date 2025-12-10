@@ -8,6 +8,39 @@ const Featured = () => {
   const videoRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
 
+  const projects = [
+    {
+      name: 'Cuisine Alger',
+      url: 'www.cuisinealger.com',
+      industry: 'Kitchen & Interior Design',
+    },
+    {
+      name: 'Walid Fermeture',
+      url: 'www.walidfermeture.com',
+      industry: 'Construction & Doors',
+    },
+    {
+      name: 'Allouani',
+      url: 'www.allouani.com',
+      industry: 'Business Services',
+    },
+    {
+      name: 'Biogre Nagold',
+      url: 'www.biogrenagold.com',
+      industry: 'Organic Products',
+    },
+    {
+      name: 'Mind Shift Arabia',
+      url: 'www.mindshiftarabia.com',
+      industry: 'Consulting & Training',
+    },
+    {
+      name: 'ZSST',
+      url: 'www.zsst.xyz',
+      industry: 'Technology',
+    },
+  ];
+
   const handlePlayPause = () => {
     if (videoRef.current) {
       if (isPlaying) {
@@ -113,6 +146,38 @@ const Featured = () => {
                 First Agriculture Marketplace Platform in Algeria
               </span>
             </div>
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="projects__section"
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.8, delay: 0.3 }}
+        >
+          <h3 className="projects__title">More Projects We've Delivered</h3>
+          <div className="projects__grid">
+            {projects.map((project, index) => (
+              <motion.a
+                key={index}
+                href={`https://${project.url}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="project__card"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: index * 0.1 }}
+                whileHover={{ y: -5, transition: { duration: 0.2 } }}
+              >
+                <div className="project__card-content">
+                  <h4 className="project__name">{project.name}</h4>
+                  <p className="project__url">{project.url}</p>
+                  <span className="project__industry">{project.industry}</span>
+                </div>
+              </motion.a>
+            ))}
           </div>
         </motion.div>
       </div>
