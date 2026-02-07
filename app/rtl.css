@@ -1,0 +1,45 @@
+/* RTL Layout Fixes */
+[dir="rtl"] {
+  text-align: right;
+}
+
+[dir="rtl"] .hero__content {
+  text-align: center;
+}
+
+[dir="rtl"] .navbar__links {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .service-card__header {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .contact__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .footer__top {
+  direction: rtl;
+}
+
+[dir="rtl"] .about__grid {
+  direction: rtl;
+}
+
+[dir="rtl"] .section-label {
+  text-align: inherit;
+}
+
+[dir="rtl"] .pricing__header,
+[dir="rtl"] .faq__header {
+  text-align: center;
+}
+
+[dir="rtl"] .featured__header {
+  text-align: center;
+}
+
+[dir="rtl"] .services__header {
+  text-align: center;
+}

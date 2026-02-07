@@ -1,31 +1,34 @@
 'use client';
 
 import { motion } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 import './Footer.css';
 
 const Footer = () => {
+  const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
 
   const footerLinks = [
     {
-      title: 'Navigation',
+      title: t.footer.navigation,
       links: [
-        { name: 'Services', href: '/#services' },
-        { name: 'About', href: '/#about' },
-        { name: 'Blog', href: '/blog' },
-        { name: 'Contact', href: '/#contact' },
+        { name: t.nav.services, href: '/#services' },
+        { name: t.nav.pricing, href: '/#pricing' },
+        { name: t.nav.about, href: '/#about' },
+        { name: t.nav.blog, href: '/blog' },
+        { name: t.nav.contact, href: '/#contact' },
       ],
     },
     {
-      title: 'Services',
+      title: t.footer.services,
       links: [
-        { name: 'Web Development', href: '/#services' },
-        { name: 'Mobile Apps', href: '/#services' },
-        { name: 'UI/UX Design', href: '/#services' },
+        { name: t.footer.webDev, href: '/#services' },
+        { name: t.footer.mobileApps, href: '/#services' },
+        { name: t.footer.uiux, href: '/#services' },
       ],
     },
     {
-      title: 'Connect',
+      title: t.footer.connect,
       links: [
         { name: 'Instagram', href: 'https://instagram.com' },
         { name: 'LinkedIn', href: 'https://linkedin.com' },
@@ -49,9 +52,7 @@ const Footer = () => {
               <span className="footer__logo-text">Site</span>
               <span className="footer__logo-accent">DZ</span>
             </a>
-            <p className="footer__tagline">
-              Crafting exceptional digital experiences from Algeria to the world.
-            </p>
+            <p className="footer__tagline">{t.footer.tagline}</p>
           </motion.div>
 
           <div className="footer__links">
@@ -92,11 +93,9 @@ const Footer = () => {
           transition={{ duration: 0.6, delay: 0.3 }}
         >
           <p className="footer__copyright">
-            © {currentYear} SiteDZ. All rights reserved.
+            &copy; {currentYear} {t.footer.copyright}
           </p>
-          <p className="footer__made">
-            Made with precision in Algeria
-          </p>
+          <p className="footer__made">{t.footer.madeIn}</p>
         </motion.div>
       </div>
     </footer>

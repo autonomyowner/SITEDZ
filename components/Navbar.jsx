@@ -2,16 +2,17 @@
 
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 import './Navbar.css';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { language, toggleLanguage, t } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
-      // Close mobile menu on scroll
       if (isMobileMenuOpen) {
         setIsMobileMenuOpen(false);
       }
@@ -20,7 +21,6 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isMobileMenuOpen]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = 'hidden';
@@ -33,10 +33,11 @@ const Navbar = () => {
   }, [isMobileMenuOpen]);
 
   const navLinks = [
-    { name: 'Services', href: '/#services' },
-    { name: 'About', href: '/#about' },
-    { name: 'Blog', href: '/blog' },
-    { name: 'Contact', href: '/#contact' },
+    { name: t.nav.services, href: '/#services' },
+    { name: t.nav.pricing, href: '/#pricing' },
+    { name: t.nav.about, href: '/#about' },
+    { name: t.nav.blog, href: '/blog' },
+    { name: t.nav.contact, href: '/#contact' },
   ];
 
   const handleLinkClick = () => {
@@ -57,19 +58,20 @@ const Navbar = () => {
             <span className="navbar__logo-accent">DZ</span>
           </a>
 
-          {/* Desktop Navigation */}
           <div className="navbar__links">
             {navLinks.map((link) => (
               <a key={link.name} href={link.href} className="navbar__link">
                 {link.name}
               </a>
             ))}
+            <button onClick={toggleLanguage} className="navbar__lang-btn">
+              {language === 'ar' ? 'EN' : 'العربية'}
+            </button>
             <a href="/#contact" className="btn btn-primary navbar__cta">
-              Start Project
+              {t.nav.startProject}
             </a>
           </div>
 
-          {/* Mobile Menu Toggle */}
           <button
             className={`navbar__mobile-toggle ${isMobileMenuOpen ? 'active' : ''}`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -83,7 +85,6 @@ const Navbar = () => {
         </div>
       </motion.nav>
 
-      {/* Mobile Menu - Outside navbar for proper positioning */}
       <AnimatePresence>
         {isMobileMenuOpen && (
           <motion.div
@@ -108,16 +109,26 @@ const Navbar = () => {
                   {link.name}
                 </motion.a>
               ))}
+              <motion.button
+                className="mobile-menu__lang-btn"
+                onClick={toggleLanguage}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: 10 }}
+                transition={{ delay: 0.4, duration: 0.3 }}
+              >
+                {language === 'ar' ? 'EN' : 'العربية'}
+              </motion.button>
               <motion.a
                 href="/#contact"
                 className="btn btn-primary mobile-menu__cta"
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 10 }}
-                transition={{ delay: 0.4, duration: 0.3 }}
+                transition={{ delay: 0.5, duration: 0.3 }}
                 onClick={handleLinkClick}
               >
-                Start Project
+                {t.nav.startProject}
               </motion.a>
             </div>
           </motion.div>

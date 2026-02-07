@@ -1,5 +1,7 @@
 import { Playfair_Display, Inter, JetBrains_Mono } from 'next/font/google';
 import './globals.css';
+import './rtl.css';
+import { LanguageProvider } from '@/context/LanguageContext';
 
 const playfair = Playfair_Display({
   subsets: ['latin'],
@@ -8,7 +10,7 @@ const playfair = Playfair_Display({
 });
 
 const inter = Inter({
-  subsets: ['latin'],
+  subsets: ['latin', 'latin-ext'],
   variable: '--font-body',
   display: 'swap',
 });
@@ -38,6 +40,8 @@ export const metadata = {
     'app development Algeria',
     'تطوير المواقع الجزائر',
     'وكالة رقمية',
+    'إنشاء موقع إلكتروني',
+    'تصميم مواقع الجزائر',
   ],
   authors: [{ name: 'SiteDZ' }],
   creator: 'SiteDZ',
@@ -80,10 +84,7 @@ export const metadata = {
       'max-snippet': -1,
     },
   },
-  verification: {
-    // Add your verification codes here when ready
-    // google: 'your-google-verification-code',
-  },
+  verification: {},
   alternates: {
     canonical: 'https://sitedz.com',
   },
@@ -97,12 +98,14 @@ export const viewport = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
+    <html lang="ar" dir="rtl" className={`${playfair.variable} ${inter.variable} ${jetbrainsMono.variable}`}>
       <head>
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         <link rel="apple-touch-icon" href="/favicon.svg" />
       </head>
-      <body>{children}</body>
+      <body>
+        <LanguageProvider>{children}</LanguageProvider>
+      </body>
     </html>
   );
 }

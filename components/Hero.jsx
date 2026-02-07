@@ -2,9 +2,11 @@
 
 import { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { useLanguage } from '@/context/LanguageContext';
 import './Hero.css';
 
 const Hero = () => {
+  const { t } = useLanguage();
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -13,47 +15,14 @@ const Hero = () => {
 
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
+  const whatsappLink = 'https://wa.me/213797339451?text=' + encodeURIComponent('مرحبا، أريد إنشاء موقع إلكتروني لعملي');
 
   return (
     <section className="hero" ref={containerRef}>
-      {/* Animated Background Elements */}
       <div className="hero__bg">
-        <motion.div
-          className="hero__orb hero__orb--1"
-          animate={{
-            x: [0, 50, 0],
-            y: [0, -30, 0],
-          }}
-          transition={{
-            duration: 15,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="hero__orb hero__orb--2"
-          animate={{
-            x: [0, -40, 0],
-            y: [0, 40, 0],
-          }}
-          transition={{
-            duration: 18,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        <motion.div
-          className="hero__orb hero__orb--3"
-          animate={{
-            x: [0, 30, 0],
-            y: [0, 50, 0],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
+        <div className="hero__orb hero__orb--1" />
+        <div className="hero__orb hero__orb--2" />
+        <div className="hero__orb hero__orb--3" />
         <div className="hero__grid" />
       </div>
 
@@ -64,7 +33,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          Digital Agency
+          {t.hero.label}
         </motion.span>
 
         <motion.h1
@@ -73,9 +42,9 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          Your Vision,
+          {t.hero.title1}
           <br />
-          <span className="text-gradient">Our Code</span>
+          <span className="text-gradient">{t.hero.title2}</span>
         </motion.h1>
 
         <motion.p
@@ -84,8 +53,7 @@ const Hero = () => {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.5 }}
         >
-          We craft exceptional digital experiences through innovative web development,
-          mobile applications, and cutting-edge technology solutions.
+          {t.hero.subtitle}
         </motion.p>
 
         <motion.div
@@ -95,10 +63,10 @@ const Hero = () => {
           transition={{ duration: 0.8, delay: 0.7 }}
         >
           <a href="#contact" className="btn btn-primary">
-            Start Your Project
+            {t.hero.cta1}
           </a>
-          <a href="#services" className="btn btn-secondary">
-            Our Services
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-secondary">
+            {t.hero.cta2}
           </a>
         </motion.div>
 
@@ -108,7 +76,7 @@ const Hero = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
         >
-          <span>Scroll to explore</span>
+          <span>{t.hero.scroll}</span>
           <div className="hero__scroll-line">
             <motion.div
               className="hero__scroll-dot"

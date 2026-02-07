@@ -1,0 +1,128 @@
+.pricing {
+  background: var(--bg-secondary);
+}
+
+.pricing__header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.pricing__header .section-subtitle {
+  margin: 0 auto;
+}
+
+.pricing__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: stretch;
+}
+
+.pricing-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: all var(--transition-medium);
+}
+
+.pricing-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-4px);
+}
+
+.pricing-card--popular {
+  border-color: var(--accent-gold);
+  background: var(--bg-tertiary);
+}
+
+.pricing-card__badge {
+  position: absolute;
+  top: -1px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  background: var(--accent-gold);
+  color: var(--bg-primary);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  padding: 0.375rem 1rem;
+  white-space: nowrap;
+}
+
+.pricing-card__name {
+  font-family: var(--font-body);
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  margin-bottom: 1rem;
+}
+
+.pricing-card__price {
+  margin-bottom: 0.75rem;
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.pricing-card__amount {
+  font-family: var(--font-display);
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 500;
+  color: var(--text-primary);
+}
+
+.pricing-card__currency {
+  font-family: var(--font-mono);
+  font-size: 0.875rem;
+  color: var(--accent-gold);
+}
+
+.pricing-card__description {
+  font-size: 0.9375rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  max-width: none;
+}
+
+.pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.pricing-card__feature {
+  font-size: 0.9375rem;
+  color: var(--text-secondary);
+  padding-inline-start: 1.25rem;
+  position: relative;
+}
+
+.pricing-card__feature::before {
+  content: '—';
+  position: absolute;
+  inset-inline-start: 0;
+  color: var(--accent-gold);
+  font-weight: 700;
+}
+
+.pricing-card__cta {
+  width: 100%;
+  text-align: center;
+}
+
+@media (max-width: 968px) {
+  .pricing__grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+}

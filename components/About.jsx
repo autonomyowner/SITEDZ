@@ -2,11 +2,8 @@
 
 import { motion, useInView } from 'framer-motion';
 import { useRef, useEffect, useState } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import './About.css';
-
-const stats = [
-  { number: 50, suffix: '+', label: 'Projects Delivered' },
-];
 
 const Counter = ({ target, suffix }) => {
   const [count, setCount] = useState(0);
@@ -42,6 +39,8 @@ const Counter = ({ target, suffix }) => {
 };
 
 const About = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="about" id="about">
       <div className="container">
@@ -53,28 +52,15 @@ const About = () => {
             viewport={{ once: true, margin: '-100px' }}
             transition={{ duration: 0.6 }}
           >
-            <span className="section-label">About Us</span>
+            <span className="section-label">{t.about.label}</span>
             <h2 className="section-title">
-              Crafting digital excellence{' '}
-              <span className="text-gradient">from Algeria</span>
+              {t.about.title}{' '}
+              <span className="text-gradient">{t.about.titleAccent}</span>
             </h2>
             <div className="about__text">
-              <p>
-                SiteDZ is a digital agency born from a passion for technology and
-                innovation. Based in Algeria, we combine local expertise with
-                global standards to deliver exceptional digital solutions.
-              </p>
-              <p>
-                Our team of dedicated developers, designers, and strategists
-                work together to transform your ideas into powerful digital
-                products. We believe in quality over quantity, crafting each
-                project with meticulous attention to detail.
-              </p>
-              <p>
-                From startups to established businesses, we partner with clients
-                who share our vision for digital excellence. Your success is our
-                measure of achievement.
-              </p>
+              {t.about.text.map((paragraph, i) => (
+                <p key={i}>{paragraph}</p>
+              ))}
             </div>
           </motion.div>
 
@@ -87,10 +73,9 @@ const About = () => {
           >
             <div className="about__quote-box">
               <blockquote className="about__quote">
-                "We don't just build websites and apps. We build digital
-                experiences that connect, engage, and inspire."
+                "{t.about.quote}"
               </blockquote>
-              <cite className="about__cite">— The SiteDZ Team</cite>
+              <cite className="about__cite">{t.about.quoteCite}</cite>
             </div>
           </motion.div>
         </div>
@@ -102,7 +87,7 @@ const About = () => {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
         >
-          {stats.map((stat, index) => (
+          {t.about.stats.map((stat, index) => (
             <div key={index} className="stat">
               <span className="stat__number">
                 <Counter target={stat.number} suffix={stat.suffix} />

@@ -80,6 +80,23 @@
   width: 100%;
 }
 
+.navbar__lang-btn {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.navbar__lang-btn:hover {
+  color: var(--accent-gold);
+  border-color: var(--accent-gold);
+}
+
 .navbar__cta {
   padding: 0.75rem 1.5rem;
 }
@@ -154,6 +171,23 @@
 .mobile-menu__link:hover,
 .mobile-menu__link:active {
   color: var(--accent-gold);
+}
+
+.mobile-menu__lang-btn {
+  font-family: var(--font-body);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--accent-gold);
+  background: transparent;
+  border: 1px solid var(--border-gold);
+  padding: 0.5rem 1.5rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.mobile-menu__lang-btn:hover {
+  background: var(--accent-gold);
+  color: var(--bg-primary);
 }
 
 .mobile-menu__cta {

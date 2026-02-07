@@ -1,45 +1,41 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { useRef, useState } from 'react';
+import { useRef, useState, useEffect } from 'react';
+import { useLanguage } from '@/context/LanguageContext';
 import './Featured.css';
 
 const Featured = () => {
+  const { t } = useLanguage();
   const videoRef = useRef(null);
+  const videoContainerRef = useRef(null);
   const [isPlaying, setIsPlaying] = useState(false);
+  const [isVisible, setIsVisible] = useState(false);
 
   const projects = [
-    {
-      name: 'Cuisine Alger',
-      url: 'www.cuisinealger.com',
-      industry: 'Kitchen & Interior Design',
-    },
-    {
-      name: 'Walid Fermeture',
-      url: 'www.walidfermeture.com',
-      industry: 'Construction & Doors',
-    },
-    {
-      name: 'Allouani',
-      url: 'www.allouani.com',
-      industry: 'Business Services',
-    },
-    {
-      name: 'Biogre Nagold',
-      url: 'www.biogrenagold.com',
-      industry: 'Organic Products',
-    },
-    {
-      name: 'Mind Shift Arabia',
-      url: 'www.mindshiftarabia.com',
-      industry: 'Consulting & Training',
-    },
-    {
-      name: 'ZSST',
-      url: 'www.zsst.xyz',
-      industry: 'Technology',
-    },
+    { name: 'Cuisine Alger', url: 'www.cuisinealger.com', industry: 'Kitchen & Interior Design' },
+    { name: 'Walid Fermeture', url: 'www.walidfermeture.com', industry: 'Construction & Doors' },
+    { name: 'Allouani', url: 'www.allouani.com', industry: 'Business Services' },
+    { name: 'Biogre Nagold', url: 'www.biogrenagold.com', industry: 'Organic Products' },
+    { name: 'Mind Shift Arabia', url: 'www.mindshiftarabia.com', industry: 'Consulting & Training' },
+    { name: 'ZSST', url: 'www.zsst.xyz', industry: 'Technology' },
   ];
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsVisible(true);
+          observer.disconnect();
+        }
+      },
+      { rootMargin: '200px' }
+    );
+    if (videoContainerRef.current) {
+      observer.observe(videoContainerRef.current);
+    }
+    return () => observer.disconnect();
+  }, []);
 
   const handlePlayPause = () => {
     if (videoRef.current) {
@@ -66,14 +62,11 @@ const Featured = () => {
           viewport={{ once: true, margin: '-100px' }}
           transition={{ duration: 0.6 }}
         >
-          <span className="section-label">Featured Project</span>
+          <span className="section-label">{t.featured.label}</span>
           <h2 className="section-title">
-            Our work on <span className="text-gradient">national television</span>
+            {t.featured.title} <span className="text-gradient">{t.featured.titleAccent}</span>
           </h2>
-          <p className="section-subtitle">
-            ElGhella.com — Algeria's first digital agriculture marketplace platform,
-            featured on N1 Algeria channel.
-          </p>
+          <p className="section-subtitle">{t.featured.subtitle}</p>
         </motion.div>
 
         <motion.div
@@ -83,28 +76,28 @@ const Featured = () => {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="featured__video-wrapper">
+          <div className="featured__video-wrapper" ref={videoContainerRef}>
             <div className="featured__video-container">
-              <video
-                ref={videoRef}
-                className="featured__video"
-                poster=""
-                preload="metadata"
-                playsInline
-                onEnded={handleVideoEnd}
-                onClick={handlePlayPause}
-              >
-                <source src="/elghella-tv-feature.mp4" type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
+              {isVisible && (
+                <video
+                  ref={videoRef}
+                  className="featured__video"
+                  preload="none"
+                  playsInline
+                  onEnded={handleVideoEnd}
+                  onClick={handlePlayPause}
+                >
+                  <source src="/elghella-tv-feature.mp4" type="video/mp4" />
+                </video>
+              )}
 
               <button
                 className={`featured__play-btn ${isPlaying ? 'playing' : ''}`}
                 onClick={handlePlayPause}
-                aria-label={isPlaying ? 'Pause video' : 'Play video'}
+                aria-label={isPlaying ? t.featured.pause : t.featured.play}
               >
                 <span className="featured__play-icon">
-                  {isPlaying ? 'Pause' : 'Play'}
+                  {isPlaying ? t.featured.pause : t.featured.play}
                 </span>
               </button>
             </div>
@@ -115,36 +108,27 @@ const Featured = () => {
           <div className="featured__info">
             <div className="featured__info-grid">
               <div className="featured__info-item">
-                <span className="featured__info-label">Project</span>
+                <span className="featured__info-label">{t.featured.project}</span>
                 <span className="featured__info-value">ElGhella.com</span>
               </div>
               <div className="featured__info-item">
-                <span className="featured__info-label">Industry</span>
-                <span className="featured__info-value">Agriculture Marketplace</span>
+                <span className="featured__info-label">{t.featured.industry}</span>
+                <span className="featured__info-value">{t.featured.industryValue}</span>
               </div>
               <div className="featured__info-item">
-                <span className="featured__info-label">Featured On</span>
+                <span className="featured__info-label">{t.featured.featuredOn}</span>
                 <span className="featured__info-value">N1 Algeria</span>
               </div>
               <div className="featured__info-item">
-                <span className="featured__info-label">Featuring</span>
-                <span className="featured__info-value">Islam Zellag & Issam Douada</span>
+                <span className="featured__info-label">{t.featured.featuring}</span>
+                <span className="featured__info-value">{t.featured.featuringValue}</span>
               </div>
             </div>
 
-            <p className="featured__description">
-              We developed ElGhella.com, pioneering Algeria's first digital agriculture
-              marketplace. This groundbreaking platform connects farmers directly with
-              buyers, revolutionizing how agricultural products are traded in Algeria.
-              Our work gained national recognition, being featured on N1 Algeria channel
-              with Islam Zellag and Issam Douada discussing the platform's impact on
-              the agricultural sector.
-            </p>
+            <p className="featured__description">{t.featured.description}</p>
 
             <div className="featured__achievement">
-              <span className="featured__achievement-text">
-                First Agriculture Marketplace Platform in Algeria
-              </span>
+              <span className="featured__achievement-text">{t.featured.achievement}</span>
             </div>
           </div>
         </motion.div>
@@ -156,7 +140,7 @@ const Featured = () => {
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <h3 className="projects__title">More Projects We've Delivered</h3>
+          <h3 className="projects__title">{t.featured.moreProjects}</h3>
           <div className="projects__grid">
             {projects.map((project, index) => (
               <motion.a
