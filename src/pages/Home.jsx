@@ -284,6 +284,141 @@ function Pricing() {
   )
 }
 
+const PROJECTS = [
+  {
+    name: 'ElGhella',
+    url: 'elghella.com',
+    href: 'https://elghella.com',
+    tag: 'AgriTech',
+    desc: 'Integrated marketplace for Algerian farmers to trade agricultural products, equipment, and advisory services.',
+    award: true,
+  },
+  {
+    name: 'AItraid',
+    url: 'aitridi.com',
+    href: 'https://aitridi.com',
+    tag: 'Marketplace',
+    desc: 'B2B, B2C, and freelancer marketplace connecting buyers and sellers across Algeria.',
+    award: true,
+  },
+  {
+    name: 'Ma5zani',
+    url: 'ma5zani.com',
+    href: 'https://ma5zani.com',
+    tag: 'E-Commerce SaaS',
+    desc: 'The Shopify alternative for Algerian sellers — launch your online store in minutes.',
+  },
+  {
+    name: 'Postaify',
+    url: 'postaify.com',
+    href: 'https://postaify.com',
+    tag: 'AI SaaS',
+    desc: 'Generate 30 days of content for 5 platforms in under 15 minutes with AI automation.',
+  },
+  {
+    name: 'Tabra',
+    url: 'tabra.space',
+    href: 'https://tabra.space',
+    tag: 'HealthTech',
+    desc: 'Algerian healthcare platform making medical services easier to access nationwide.',
+  },
+  {
+    name: 'Hasio',
+    url: 'hasio.xyz',
+    href: 'https://hasio.xyz',
+    tag: 'Travel',
+    desc: 'Travel guide and booking platform — your journey made easier.',
+  },
+  {
+    name: 'TRAVoices',
+    url: 'travoices.xyz',
+    href: 'https://travoices.xyz',
+    tag: 'AI / Voice',
+    desc: 'Real-time AI voice translation breaking language barriers across the globe.',
+  },
+  {
+    name: 'BioGrenaGold',
+    url: 'biogrenagold.com',
+    href: 'https://www.biogrenagold.com',
+    tag: 'Health & Wellness',
+    desc: 'Natural pomegranate-based health supplements — la puissance de la grenade.',
+  },
+  {
+    name: 'Cuisine Alger',
+    url: 'cuisinealger.com',
+    href: 'https://www.cuisinealger.com',
+    tag: 'Interior Design',
+    desc: 'Modern kitchen design and manufacturing crafted for Algerian homes.',
+  },
+  {
+    name: 'ReachFood',
+    url: 'reachfood.co',
+    href: 'https://reachfood.co',
+    tag: 'Food',
+    desc: 'Platform connecting food producers and consumers for smarter distribution.',
+  },
+  {
+    name: 'MBSx',
+    url: 'mbsx.org',
+    href: 'http://mbsx.org',
+    tag: 'Media',
+    desc: 'Data journalism institution advancing data-driven reporting in Algeria.',
+  },
+]
+
+function Projects() {
+  return (
+    <section className="projects" id="projects">
+      <div className="projects__inner">
+        <div className="projects__header">
+          <p className="section-label">Our Projects</p>
+          <h2 className="projects__headline">
+            Built for<br /><em>Algeria</em>
+          </h2>
+        </div>
+
+        {/* Award Banner */}
+        <div className="projects__award-banner">
+          <div className="projects__award-icon">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+            </svg>
+          </div>
+          <div>
+            <p className="projects__award-title">Proud developers of 2 Label Projet Innovants</p>
+            <p className="projects__award-sub">ElGhella &amp; AItraid — awarded by Algeria's innovation programme</p>
+          </div>
+        </div>
+
+        {/* Grid */}
+        <div className="projects__grid">
+          {PROJECTS.map((p) => (
+            <a key={p.name} href={p.href} target="_blank" rel="noopener noreferrer" className="project-card">
+              {p.award && (
+                <span className="project-card__award">
+                  <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                  </svg>
+                  Projet Innovant
+                </span>
+              )}
+              <div className="project-card__top">
+                <h3 className="project-card__name">{p.name}</h3>
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="project-card__arrow" aria-hidden="true">
+                  <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                </svg>
+              </div>
+              <span className="project-card__tag">{p.tag}</span>
+              <p className="project-card__desc">{p.desc}</p>
+              <span className="project-card__url">{p.url}</span>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )
+}
+
 function Contact() {
   return (
     <section className="commission" id="contact">
@@ -322,6 +457,7 @@ export default function HomePage() {
       <Services />
       <Process />
       <Pricing />
+      <Projects />
       <Contact />
     </>
   )

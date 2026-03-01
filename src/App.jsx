@@ -16,6 +16,7 @@ function Nav() {
           <a href="/#services">Services</a>
           <a href="/#process">Process</a>
           <a href="/#pricing">Pricing</a>
+          <a href="/#projects">Projects</a>
           <a href="/#contact">Contact</a>
         </div>
 
