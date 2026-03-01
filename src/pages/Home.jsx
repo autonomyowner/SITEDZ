@@ -433,8 +433,8 @@ function Contact() {
           and we'll get back to you within 24 hours.
         </p>
         <div className="commission__actions">
-          <a href="mailto:hello@sitedz.com" className="btn-light">
-            Email Us
+          <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer" className="btn-light">
+            WhatsApp
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
               <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>

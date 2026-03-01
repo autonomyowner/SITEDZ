@@ -40,8 +40,8 @@ function Nav() {
           <Link to={isAr ? '/' : '/ar'} className="nav__lang-toggle">
             {isAr ? 'EN' : 'ع'}
           </Link>
-          <a href={isAr ? '/ar#contact' : '/#contact'} className="nav__cta">
-            {isAr ? 'احصل على عرض' : 'Get a Quote'}
+          <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer" className="nav__cta">
+            {isAr ? 'تواصل معنا' : 'WhatsApp'}
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
               <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
