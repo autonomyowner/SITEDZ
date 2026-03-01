@@ -426,7 +426,7 @@ function Contact() {
               <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-          <a href="tel:+213697339450" className="commission__phone">06 97 33 94 50</a>
+          <a href="tel:+213697339450" className="commission__phone" dir="ltr">06 97 33 94 50</a>
         </div>
       </div>
     </section>
