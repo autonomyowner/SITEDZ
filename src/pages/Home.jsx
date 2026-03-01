@@ -1,72 +1,126 @@
 /* ─── Data ─────────────────────────────────────────────────── */
 
-const PRODUCTS = [
+const SERVICES = [
   {
     id: 1,
-    name: 'Stellar Mandala',
-    desc: 'Six-pointed star with warm amber LED halo',
-    img: '/products/p1.jpg',
+    num: '01',
+    tag: 'Core Service',
+    name: 'Web Development',
+    desc: 'Custom websites, dynamic platforms with control panels, landing pages, and complex systems built with modern technology.',
   },
   {
     id: 2,
-    name: 'Chromatic Octagon',
-    desc: 'Eight-sided panel with programmable RGB glow',
-    img: '/products/p3.jpg',
+    num: '02',
+    tag: 'Core Service',
+    name: 'Mobile Applications',
+    desc: 'Native and cross-platform apps for iOS and Android — delivery systems, booking platforms, and e-commerce.',
   },
   {
     id: 3,
-    name: 'Terrain Canvas',
-    desc: 'Landscape panel with flowing golden illumination',
-    img: '/products/p4.jpg',
+    num: '03',
+    tag: 'Design',
+    name: 'UI/UX Design',
+    desc: 'User-focused design combining aesthetics with functionality for memorable digital experiences.',
   },
   {
     id: 4,
-    name: 'Ocean Mandala',
-    desc: 'Circular mandala in deep teal ambient light',
-    img: '/products/p7.jpg',
+    num: '04',
+    tag: 'Automation',
+    name: 'Bot Integration',
+    desc: 'Telegram bots, WhatsApp automation, and intelligent chatbot solutions tailored to your business.',
   },
 ]
 
-const GALLERY = [
-  { src: '/products/p4.jpg', wide: true },
-  { src: '/products/p15.jpg' },
-  { src: '/products/p11.jpg' },
-  { src: '/products/p1.jpg' },
-  { src: '/products/p3.jpg' },
-]
+/* ─── Logo icons (monochrome) ───────────────────────────────── */
 
-const MARQUEE_ITEMS = [
-  'Walnut', 'Oak', 'Maple', 'Cherry',
-  'LED Backlit', 'Laser Engraved', 'Hand Finished',
-  'Custom Commission', 'Heirloom Quality',
-  'Walnut', 'Oak', 'Maple', 'Cherry',
-  'LED Backlit', 'Laser Engraved', 'Hand Finished',
-  'Custom Commission', 'Heirloom Quality',
-]
+function IcoCloudflare() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M16.5088 16.8447c.1475-.5068.0908-.9707-.1553-1.3154-.2246-.3164-.6045-.499-1.0615-.5205l-8.6592-.1123a.1559.1559 0 0 1-.1333-.0713c-.0283-.042-.0351-.0986-.021-.1553.0278-.084.1123-.1484.2036-.1562l8.7359-.1123c1.0351-.0489 2.1601-.8868 2.5537-1.9136l.499-1.3013c.0215-.0561.0293-.1128.0147-.168-.5625-2.5463-2.835-4.4453-5.5499-4.4453-2.5039 0-4.6284 1.6177-5.3876 3.8614-.4927-.3658-1.1187-.5625-1.794-.499-1.2026.119-2.1665 1.083-2.2861 2.2856-.0283.31-.0069.6128.0635.894C1.5683 13.171 0 14.7754 0 16.752c0 .1748.0142.3515.0352.5273.0141.083.0844.1475.1689.1475h15.9814c.0909 0 .1758-.0645.2032-.1553l.12-.4268zm2.7568-5.5634c-.0771 0-.1611 0-.2383.0112-.0566 0-.1054.0415-.127.0976l-.3378 1.1744c-.1475.5068-.0918.9707.1543 1.3164.2256.3164.6055.498 1.0625.5195l1.8437.1133c.0557 0 .1055.0263.1329.0703.0283.043.0351.1074.0214.1562-.0283.084-.1132.1485-.204.1553l-1.921.1123c-1.041.0488-2.1582.8867-2.5527 1.914l-.1406.3585c-.0283.0713.0215.1416.0986.1416h6.5977c.0771 0 .1474-.0489.169-.126.1122-.4082.1757-.837.1757-1.2803 0-2.6025-2.125-4.727-4.7344-4.727" />
+    </svg>
+  )
+}
 
-const MATERIALS = [
+function IcoConvex() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M15.09 18.916c3.488-.387 6.776-2.246 8.586-5.348-.857 7.673-9.247 12.522-16.095 9.545a3.47 3.47 0 0 1-1.547-1.314c-1.539-2.417-2.044-5.492-1.318-8.282 2.077 3.584 6.3 5.78 10.374 5.399m-10.501-7.65c-1.414 3.266-1.475 7.092.258 10.24-6.1-4.59-6.033-14.41-.074-18.953a3.44 3.44 0 0 1 1.893-.707c2.825-.15 5.695.942 7.708 2.977-4.09.04-8.073 2.66-9.785 6.442m11.757-5.437C14.283 2.951 11.053.992 7.515.933c6.84-3.105 15.253 1.929 16.17 9.37a3.6 3.6 0 0 1-.334 2.02c-1.278 2.594-3.647 4.607-6.416 5.352 2.029-3.763 1.778-8.36-.589-11.847" />
+    </svg>
+  )
+}
+
+function IcoWhatsApp() {
+  return (
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413Z" />
+    </svg>
+  )
+}
+
+const LOGOS = [
   {
-    tag: 'Hardwood',
-    name: 'American Walnut',
-    desc: 'Rich, dark grain with warm chocolate tones. Our most popular choice for dramatic illumination contrast.',
+    key: 'ma5zani',
+    el: <><span className="wm wm--bold">ma5zani</span></>,
   },
   {
-    tag: 'Hardwood',
-    name: 'White Oak',
-    desc: 'Open grain with silvery undertones. Exceptional at diffusing warm LED light into subtle gradients.',
+    key: 'djezzy',
+    el: <><span className="wm wm--bold">Djezzy</span></>,
   },
   {
-    tag: 'Softwood',
-    name: 'Hard Maple',
-    desc: 'Fine-grained and pale. Ideal for intricate engravings where detail resolution is paramount.',
+    key: 'mobilis',
+    el: <><span className="wm-dot" aria-hidden="true" /><span className="wm">mobilis</span></>,
+  },
+  {
+    key: 'at',
+    el: <><span className="wm-badge">AT</span><span className="wm wm--sm">Algérie Télécom</span></>,
+  },
+  {
+    key: 'ooredoo',
+    el: <><span className="wm wm--track">ooredoo</span></>,
+  },
+  {
+    key: 'convex',
+    el: <><IcoConvex /><span className="wm">Convex</span></>,
+  },
+  {
+    key: 'cloudflare',
+    el: <><IcoCloudflare /><span className="wm">Cloudflare</span></>,
+  },
+  {
+    key: 'whatsapp',
+    el: <><IcoWhatsApp /><span className="wm">WhatsApp</span></>,
   },
 ]
 
 const STEPS = [
-  { num: '01', title: 'Design Consultation', desc: 'We discuss your space, vision, and the story you want the piece to tell.' },
-  { num: '02', title: 'Wood Selection', desc: 'We hand-select boards for grain character and suitability to your design.' },
-  { num: '03', title: 'Carving & Engraving', desc: 'Precision laser engraving combined with hand-finishing brings the pattern to life.' },
-  { num: '04', title: 'LED Integration', desc: 'Custom-wired LED system is built in — warm white, colour-changing, or smart-controlled.' },
+  { num: '01', title: 'Discovery', desc: 'We learn your business goals, target audience, and the problem you need solved.' },
+  { num: '02', title: 'Design', desc: 'We craft wireframes and UI prototypes aligned with your brand and user expectations.' },
+  { num: '03', title: 'Development', desc: 'Built with modern technology — clean, fast, scalable, and maintainable code.' },
+  { num: '04', title: 'Launch & Support', desc: 'Deployment, rigorous testing, and ongoing maintenance to keep you running smoothly.' },
+]
+
+const PRICING = [
+  {
+    tag: 'Basic',
+    name: '50,000 – 80,000 DA',
+    desc: 'Static 1–3 page sites. Perfect for small businesses, professionals, and landing pages.',
+  },
+  {
+    tag: 'Professional',
+    name: '120,000 – 180,000 DA',
+    desc: 'Dynamic sites with dashboard, up to 10 pages. Ideal for growing Algerian businesses.',
+  },
+  {
+    tag: 'Enterprise',
+    name: 'Custom Pricing',
+    desc: 'E-commerce platforms, bot integration, mobile apps, API development, and complex systems.',
+  },
+]
+
+const STATS = [
+  { num: '30+', label: 'Projects Delivered' },
+  { num: '24h', label: 'Response Time' },
+  { num: '2025', label: 'Founded' },
 ]
 
 /* ─── Sections ──────────────────────────────────────────────── */
@@ -78,26 +132,28 @@ function Hero() {
         <div>
           <h1 className="hero__headline">
             <span className="hero__line" style={{ '--d': '0ms' }}>
-              Custom <span className="hero__underline">crafted</span> and
+              Your <span className="hero__underline">vision</span>,
             </span>
             <span className="hero__line" style={{ '--d': '120ms' }}>
-              <span className="hero__underline">hand-carved</span> wood
-            </span>
-            <span className="hero__line" style={{ '--d': '240ms' }}>
-              that puts artistry
-            </span>
-            <span className="hero__line" style={{ '--d': '360ms' }}>
-              at the frontier
+              our <span className="hero__underline">code</span>.
             </span>
           </h1>
         </div>
         <div className="hero__tagline-col">
           <p className="hero__tagline">
-            Wood has a profound impact on space and memory.
-            Origawood is a workshop dedicated to creating
-            heirloom pieces that honour the grain, texture, and
-            soul of natural materials.
+            SiteDZ is Algeria's premier digital agency — building exceptional
+            web and mobile experiences that combine local expertise with
+            international standards.
           </p>
+          <div className="hero__actions">
+            <a href="#contact" className="hero__btn-primary">
+              Start a Project
+              <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+                <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </a>
+            <a href="#services" className="hero__btn-ghost">See Services</a>
+          </div>
         </div>
       </div>
     </section>
@@ -107,15 +163,20 @@ function Hero() {
 function Featured() {
   return (
     <section className="featured-wrap">
-      <div className="featured__card">
-        <span className="featured__label">FEATURED</span>
+      <div className="featured__card featured__card--stats">
+        <span className="featured__label">ALGERIA'S PREMIER DIGITAL AGENCY</span>
         <h2 className="featured__title">
-          HAND CARVED
+          BUILDING THE
           <br />
-          IN SOLID <em>wood</em>
+          DIGITAL <em>future</em>
         </h2>
-        <div className="featured__image-wrap">
-          <img src="/products/p4.jpg" alt="Hand-carved illuminated wood panel" className="featured__image" loading="eager" />
+        <div className="featured__stats">
+          {STATS.map((s, i) => (
+            <div key={i} className="featured__stat">
+              <span className="featured__stat-num">{s.num}</span>
+              <span className="featured__stat-label">{s.label}</span>
+            </div>
+          ))}
         </div>
       </div>
     </section>
@@ -123,29 +184,31 @@ function Featured() {
 }
 
 function Marquee() {
+  const doubled = [...LOGOS, ...LOGOS]
   return (
-    <div className="marquee-strip" aria-hidden="true">
+    <div className="marquee-strip" aria-label="Our partners and technologies">
       <div className="marquee-track">
-        {MARQUEE_ITEMS.map((item, i) => (
-          <span key={i} className="marquee-item">{item}</span>
+        {doubled.map((logo, i) => (
+          <div key={i} className="marquee-logo">
+            {logo.el}
+          </div>
         ))}
       </div>
     </div>
   )
 }
 
-function Collection() {
+function Services() {
   return (
-    <section className="collection" id="collection">
-      <p className="section-label">Our Collection</p>
-      <div className="collection__grid">
-        {PRODUCTS.map((p) => (
-          <a key={p.id} href="#commission" className="product-card">
-            <div className="product-card__img-wrap">
-              <img src={p.img} alt={p.name} className="product-card__img" loading="lazy" />
-            </div>
-            <h3 className="product-card__name">{p.name}</h3>
-            <p className="product-card__desc">{p.desc}</p>
+    <section className="collection" id="services">
+      <p className="section-label">Our Services</p>
+      <div className="services__grid">
+        {SERVICES.map((s) => (
+          <a key={s.id} href="#contact" className="service-card">
+            <span className="service-card__num">{s.num}</span>
+            <span className="service-card__tag">{s.tag}</span>
+            <h3 className="service-card__name">{s.name}</h3>
+            <p className="service-card__desc">{s.desc}</p>
           </a>
         ))}
       </div>
@@ -153,32 +216,30 @@ function Collection() {
   )
 }
 
-function Craft() {
+function Process() {
   return (
-    <section className="craft" id="craft">
+    <section className="craft" id="process">
       <div className="craft__inner">
         <div>
           <p className="craft__section-label">The Process</p>
           <h2 className="craft__headline">
-            Each piece born
+            Built with
             <br />
-            from <em>patience</em>,
+            <em>clarity</em>,
             <br />
-            wood, and light
+            code, and care
           </h2>
         </div>
         <div>
           <div className="craft__text">
             <p>
-              We begin with premium hardwoods — walnut, oak, and maple —
-              selected for their grain character and structural integrity.
-              Every line you see is cut by precision laser and hand-finished
-              to perfection.
+              Every project starts with a deep understanding of your business —
+              who your customers are, what they need, and how your digital
+              product fits into their lives.
             </p>
             <p>
-              LED backlighting is integrated during construction, casting
-              warm or chromatic light through the carved relief. The result
-              is not furniture — it is sculpture that breathes on your wall.
+              We combine clean architecture with pixel-perfect design to deliver
+              solutions that are fast, reliable, and built to grow with you.
             </p>
           </div>
           <div className="craft__steps">
@@ -198,38 +259,23 @@ function Craft() {
   )
 }
 
-function Gallery() {
+function Pricing() {
   return (
-    <section className="gallery" id="gallery">
-      <p className="section-label">The Work</p>
-      <div className="gallery__grid">
-        {GALLERY.map((item, i) => (
-          <div key={i} className={`gallery__item${item.wide ? ' gallery__item--wide' : ''}`}>
-            <img src={item.src} alt={`Origawood wood art panel ${i + 1}`} className="gallery__img" loading="lazy" />
-          </div>
-        ))}
-      </div>
-    </section>
-  )
-}
-
-function Materials() {
-  return (
-    <section className="materials" id="materials">
+    <section className="materials" id="pricing">
       <div className="materials__inner">
         <div className="materials__header">
-          <h2 className="materials__headline">The finest<br />natural wood</h2>
+          <h2 className="materials__headline">Clear,<br />honest pricing</h2>
           <p className="materials__sub">
-            We work exclusively with premium North American hardwoods,
-            sourced from sustainable mills and aged for stability.
+            Transparent plans in Algerian Dinars. No hidden fees —
+            just quality work at fair prices for Algerian businesses.
           </p>
         </div>
         <div className="materials__grid">
-          {MATERIALS.map((m, i) => (
+          {PRICING.map((p, i) => (
             <div key={i} className="material-card">
-              <span className="material-card__tag">{m.tag}</span>
-              <h3 className="material-card__name">{m.name}</h3>
-              <p className="material-card__desc">{m.desc}</p>
+              <span className="material-card__tag">{p.tag}</span>
+              <h3 className="material-card__name">{p.name}</h3>
+              <p className="material-card__desc">{p.desc}</p>
             </div>
           ))}
         </div>
@@ -238,25 +284,28 @@ function Materials() {
   )
 }
 
-function Commission() {
+function Contact() {
   return (
-    <section className="commission" id="commission">
+    <section className="commission" id="contact">
       <div className="commission__inner">
         <h2 className="commission__title">
-          Your vision,
+          Your project,
           <br />
-          <em>carved in wood</em>
+          <em>our expertise</em>
         </h2>
         <p className="commission__sub">
-          Every Origawood piece is fully custom. Tell us your idea —
-          size, style, light colour, meaning — and we will bring it to life in wood.
+          Ready to build something great? Tell us about your idea
+          and we'll get back to you within 24 hours.
         </p>
-        <a href="mailto:hello@origawood.com" className="btn-light">
-          Start a Commission
-          <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
-            <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
-        </a>
+        <div className="commission__actions">
+          <a href="mailto:hello@sitedz.com" className="btn-light">
+            Email Us
+            <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
+              <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+          <a href="tel:+213697339450" className="commission__phone">06 97 33 94 50</a>
+        </div>
       </div>
     </section>
   )
@@ -270,11 +319,10 @@ export default function HomePage() {
       <Hero />
       <Featured />
       <Marquee />
-      <Collection />
-      <Craft />
-      <Gallery />
-      <Materials />
-      <Commission />
+      <Services />
+      <Process />
+      <Pricing />
+      <Contact />
     </>
   )
 }

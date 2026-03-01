@@ -614,6 +614,248 @@ a {
   opacity: 0.85;
 }
 
+/* ===== MARQUEE LOGOS ===== */
+.marquee-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 2.75rem;
+  flex-shrink: 0;
+  color: var(--muted);
+  position: relative;
+}
+
+.marquee-logo::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 1.125rem;
+  background: var(--border);
+}
+
+/* wordmark text */
+.wm {
+  font-size: 0.9375rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.wm--bold {
+  font-weight: 800;
+}
+
+.wm--sm {
+  font-size: 0.8125rem;
+}
+
+.wm--track {
+  letter-spacing: 0.04em;
+  font-weight: 700;
+}
+
+/* mobilis dot prefix */
+.wm-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: currentColor;
+  flex-shrink: 0;
+}
+
+/* Algérie Télécom AT badge */
+.wm-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  font-size: 0.5rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* ===== LOGO TEXT ===== */
+.nav__logo-text {
+  font-size: 1.25rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+.footer__logo-text {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+}
+
+/* ===== HERO ACTIONS ===== */
+.hero__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.hero__btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1.75rem;
+  background: var(--dark);
+  color: #fff;
+  border-radius: 100px;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  transition: opacity 0.2s;
+}
+
+.hero__btn-primary:hover {
+  opacity: 0.78;
+}
+
+.hero__btn-ghost {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.hero__btn-ghost:hover {
+  color: var(--text);
+}
+
+/* ===== FEATURED STATS ===== */
+.featured__card--stats {
+  padding-bottom: clamp(2.5rem, 5vw, 5rem);
+}
+
+.featured__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(240, 237, 229, 0.08);
+  border: 1px solid rgba(240, 237, 229, 0.1);
+  border-radius: 1rem;
+  overflow: hidden;
+  margin-top: clamp(2rem, 4vw, 4rem);
+}
+
+.featured__stat {
+  background: rgba(240, 237, 229, 0.03);
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.featured__stat-num {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3.5vw, 3rem);
+  font-weight: 700;
+  color: #f0ede5;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.featured__stat-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(240, 237, 229, 0.4);
+  text-align: center;
+}
+
+/* ===== SERVICES GRID ===== */
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.25rem;
+}
+
+.service-card {
+  display: block;
+  padding: 2.25rem 2rem;
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  transition: background 0.25s, box-shadow 0.25s;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  background: rgba(26, 25, 24, 0.04);
+  box-shadow: 0 4px 24px rgba(26, 25, 24, 0.07);
+}
+
+.service-card__num {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: var(--accent);
+  margin-bottom: 0.75rem;
+}
+
+.service-card__tag {
+  display: inline-block;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 1rem;
+  padding: 0.25rem 0.625rem;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+}
+
+.service-card__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.625rem;
+  color: var(--text);
+}
+
+.service-card__desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+/* ===== CONTACT CTA ===== */
+.commission__actions {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.commission__phone {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(240, 237, 229, 0.55);
+  transition: color 0.2s;
+}
+
+.commission__phone:hover {
+  color: rgba(240, 237, 229, 0.9);
+}
+
 /* ===== FOOTER ===== */
 .footer {
   padding: 2.5rem var(--pad);
@@ -1025,6 +1267,12 @@ a {
 }
 
 @media (max-width: 768px) {
+  .featured__stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
   .hero__inner {
     grid-template-columns: 1fr;
     gap: 2rem;
