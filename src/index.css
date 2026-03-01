@@ -16,6 +16,7 @@
 
   --font-sans: 'Figtree', sans-serif;
   --font-serif:'Cormorant', serif;
+  --font-arabic: 'Cairo', sans-serif;
 
   --nav-h:     4.25rem;
   --pad:       clamp(1.25rem, 4vw, 3rem);
@@ -1491,4 +1492,58 @@ a {
   .puzzle-card--featured {
     grid-column: span 1;
   }
+}
+
+/* ===== RTL (ARABIC) OVERRIDES ===== */
+[dir="rtl"] body {
+  font-family: var(--font-arabic);
+}
+
+[dir="rtl"] h1,
+[dir="rtl"] h2,
+[dir="rtl"] h3,
+[dir="rtl"] h4,
+[dir="rtl"] p,
+[dir="rtl"] span,
+[dir="rtl"] a {
+  letter-spacing: 0;
+}
+
+[dir="rtl"] .hero__tagline,
+[dir="rtl"] .craft__text p,
+[dir="rtl"] .commission__sub,
+[dir="rtl"] .projects__award-sub,
+[dir="rtl"] .service-card__desc,
+[dir="rtl"] .project-card__desc,
+[dir="rtl"] .material-card__desc {
+  line-height: 1.9;
+}
+
+/* flip CTAs arrows */
+[dir="rtl"] .nav__cta svg,
+[dir="rtl"] .hero__btn-primary svg,
+[dir="rtl"] .btn-light svg {
+  transform: scaleX(-1);
+}
+
+/* project card arrow hover */
+[dir="rtl"] .project-card:hover .project-card__arrow {
+  transform: translate(-2px, -2px);
+}
+
+/* nav language toggle */
+.nav__lang-toggle {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  padding: 0.35rem 0.875rem;
+  border: 1.5px solid var(--border);
+  border-radius: 100px;
+  color: var(--text);
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+  letter-spacing: 0.02em;
+}
+
+.nav__lang-toggle:hover {
+  opacity: 0.5;
 }
