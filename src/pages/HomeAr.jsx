@@ -208,7 +208,7 @@ function Hero() {
               رؤيتك،
             </span>
             <span className="hero__line" style={{ '--d': '120ms' }}>
-              <span className="hero__underline">كودنا</span>.
+              <span className="hero__underline">مهمتنا</span>.
             </span>
           </h1>
         </div>
