@@ -21,7 +21,6 @@ function Nav() {
             <>
               <a href="/en#services">Services</a>
               <a href="/en#process">Process</a>
-              <a href="/en#pricing">Pricing</a>
               <a href="/en#projects">Projects</a>
               <a href="/en#contact">Contact</a>
             </>
@@ -29,7 +28,6 @@ function Nav() {
             <>
               <a href="/#services">الخدمات</a>
               <a href="/#process">المنهجية</a>
-              <a href="/#pricing">الأسعار</a>
               <a href="/#projects">المشاريع</a>
               <a href="/#contact">تواصل معنا</a>
             </>
