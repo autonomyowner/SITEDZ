@@ -53,23 +53,6 @@ const STEPS = [
   { num: '04', title: 'الإطلاق والدعم', desc: 'نشر، اختبار دقيق، وصيانة مستمرة للحفاظ على استمرارية عملك.' },
 ]
 
-const PRICING = [
-  {
-    tag: 'أساسي',
-    name: '50,000 – 80,000 دج',
-    desc: 'مواقع ثابتة من 1 إلى 3 صفحات. مثالية للشركات الصغيرة والمهنيين وصفحات الهبوط.',
-  },
-  {
-    tag: 'احترافي',
-    name: '120,000 – 180,000 دج',
-    desc: 'مواقع ديناميكية مع لوحة تحكم، حتى 10 صفحات. مثالية للشركات الجزائرية النامية.',
-  },
-  {
-    tag: 'مؤسسي',
-    name: 'سعر مخصص',
-    desc: 'منصات التجارة الإلكترونية، تكامل البوتات، تطبيقات الجوال، تطوير API، والأنظمة المعقدة.',
-  },
-]
 
 const STATS = [
   { num: '+30', label: 'مشروع منجز' },
@@ -330,30 +313,6 @@ function Process() {
   )
 }
 
-function Pricing() {
-  return (
-    <section className="materials" id="pricing">
-      <div className="materials__inner">
-        <div className="materials__header">
-          <h2 className="materials__headline">أسعار واضحة<br />وصادقة</h2>
-          <p className="materials__sub">
-            خطط شفافة بالدينار الجزائري. لا رسوم مخفية —
-            فقط عمل جيد بأسعار عادلة للمؤسسات الجزائرية.
-          </p>
-        </div>
-        <div className="materials__grid">
-          {PRICING.map((p, i) => (
-            <div key={i} className="material-card">
-              <span className="material-card__tag">{p.tag}</span>
-              <h3 className="material-card__name">{p.name}</h3>
-              <p className="material-card__desc">{p.desc}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
-}
 
 function Projects() {
   return (
@@ -445,7 +404,6 @@ export default function HomeArPage() {
       <Marquee />
       <Services />
       <Process />
-      <Pricing />
       <Projects />
       <Contact />
     </>
