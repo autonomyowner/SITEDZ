@@ -245,3 +245,54 @@
 
   /* focus */
   :focus-visible { outline: 2px solid var(--orange); outline-offset: 2px; border-radius: 4px; }
+
+  /* ==========================================================
+     MOBILE REFINEMENTS (phones, ≤ 640px)
+     Uses !important to override component-level inline styles.
+     ========================================================== */
+  @media (max-width: 640px) {
+    /* Tighter horizontal padding */
+    .container { padding: 0 18px !important; }
+
+    /* Hero: less top space, smaller headline, tighter min-height */
+    .hero-title { font-size: clamp(40px, 11.5vw, 64px) !important; line-height: 0.95 !important; }
+    section[class*="grain"],
+    section.grain { min-height: auto !important; padding-top: 92px !important; padding-bottom: 48px !important; }
+    .hero-visual { margin-top: 40px !important; height: 240px !important; }
+    /* Dashboard mock becomes hard to parse on small screens — fade/hide */
+    .hero-visual > div:nth-child(2) { opacity: 0.85; width: 95% !important; height: 240px !important; }
+
+    /* Stats row in hero */
+    .stat-num { font-size: clamp(30px, 11vw, 48px) !important; }
+
+    /* Marquee — smaller logo text, less gap */
+    .marquee-track { gap: 28px !important; }
+    .marquee-track > span { font-size: 22px !important; padding: 0 12px !important; }
+    .marquee-track > span > span { margin-left: 24px !important; }
+
+    /* Buttons — compact tappable size */
+    .btn { padding: 12px 18px !important; font-size: 13px !important; }
+
+    /* Generic section padding clamp (doesn't affect hero since it's handled above) */
+    section { padding-left: 0 !important; padding-right: 0 !important; }
+
+    /* CTA section big paddings */
+    section#contact { padding: 72px 0 !important; }
+
+    /* Cards: softer padding */
+    .card { padding: 20px !important; border-radius: 12px !important; }
+
+    /* Section labels / eyebrows don't grow */
+    .section-label { font-size: 10px !important; padding: 5px 10px !important; }
+  }
+
+  /* Very small phones (≤ 420px): hide dashboard mock entirely, keep hero light */
+  @media (max-width: 420px) {
+    .hero-visual { display: none !important; }
+    .hero-title { font-size: clamp(36px, 12vw, 52px) !important; }
+  }
+
+  /* Mid-range tablets / big phones (641–900px): trim hero padding */
+  @media (min-width: 641px) and (max-width: 900px) {
+    .hero-visual { height: 360px !important; }
+  }
