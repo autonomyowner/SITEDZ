@@ -43,7 +43,7 @@ const SiteDZLogo = ({ light = true }) => {
             textTransform: "uppercase",
           }}
         >
-          Your vision · Our code
+          رؤيتك · برمجتنا
         </span>
       </div>
     </div>
@@ -127,16 +127,16 @@ export const Nav = () => {
           <SiteDZLogo />
         </a>
         <nav style={{ display: "flex", gap: 32 }} className="hide-mobile">
-          <a href="#services" className="nav-link">Services</a>
-          <a href="#process" className="nav-link">Process</a>
-          <a href="#pricing" className="nav-link">Pricing</a>
-          <a href="#work" className="nav-link">Work</a>
+          <a href="#services" className="nav-link">خدماتنا</a>
+          <a href="#process" className="nav-link">منهجيتنا</a>
+          <a href="#pricing" className="nav-link">الأسعار</a>
+          <a href="#work" className="nav-link">أعمالنا</a>
         </nav>
         <div style={{ display: "flex", gap: 10, alignItems: "center" }}>
-          <a href="#contact" className="nav-link hide-mobile">Contact</a>
-          <a href="/ar" className="nav-link" style={{ fontFamily: "'Cairo', 'Archivo', sans-serif", fontSize: 14 }} aria-label="العربية">ع</a>
+          <a href="#contact" className="nav-link hide-mobile">تواصل معنا</a>
+          <a href="/" className="nav-link" style={{ fontSize: 13, fontFamily: "'JetBrains Mono', monospace" }} aria-label="English">EN</a>
           <a href="#contact" className="btn btn-primary" style={{ padding: "10px 18px", fontSize: 13 }}>
-            Start a Project <ArrowRight size={14} />
+            ابدأ مشروعك <ArrowRight size={14} />
           </a>
         </div>
       </div>
@@ -150,7 +150,7 @@ export const Nav = () => {
 // ============================================================
 // HERO
 // ============================================================
-export const Hero = ({ headline = "Your vision, our code.", brush = true, grain = true } = {}) => {
+export const Hero = ({ headline = "رؤيتك، برمجتنا.", brush = true, grain = true } = {}) => {
   // split headline at comma for two-line effect
   const parts = headline.split(/,\s*/);
   const line1 = parts[0] + (parts.length > 1 ? "," : "");
@@ -180,9 +180,9 @@ export const Hero = ({ headline = "Your vision, our code.", brush = true, grain 
             flexWrap: "wrap",
           }}
         >
-          <span className="section-label">Algeria's Premier Digital Agency</span>
+          <span className="section-label">الوكالة الرقمية الرائدة في الجزائر</span>
           <span className="eyebrow" style={{ color: "#6F6D68" }}>
-            EST · 2025 · ALGIERS
+            تأسست · 2025 · الجزائر العاصمة
           </span>
         </div>
 
@@ -214,15 +214,15 @@ export const Hero = ({ headline = "Your vision, our code.", brush = true, grain 
                 margin: 0,
               }}
             >
-              We build exceptional web and mobile experiences that combine local
-              expertise with international standards. Built in Algeria. Built to last.
+              نبني تجارب ويب وتطبيقات استثنائية تجمع بين الخبرة المحلية
+              والمعايير العالمية. صُنع في الجزائر. صُنع ليدوم.
             </p>
             <div style={{ display: "flex", gap: 12, marginTop: 32, flexWrap: "wrap" }}>
               <a href="#contact" className="btn btn-primary" style={{ padding: "16px 24px", fontSize: 15 }}>
-                Start a Project <ArrowRight />
+                ابدأ مشروعك <ArrowRight />
               </a>
               <a href="#services" className="btn btn-ghost" style={{ padding: "16px 24px", fontSize: 15 }}>
-                See Services
+                اكتشف خدماتنا
               </a>
             </div>
           </div>
@@ -238,9 +238,9 @@ export const Hero = ({ headline = "Your vision, our code.", brush = true, grain 
             }}
           >
             {[
-              { n: "30+", l: "Projects Delivered" },
-              { n: "24h", l: "Response Time" },
-              { n: "2025", l: "Founded" },
+              { n: "30+", l: "مشروع منجز" },
+              { n: "24h", l: "زمن الاستجابة" },
+              { n: "2025", l: "سنة التأسيس" },
             ].map((s, i) => (
               <div key={i}>
                 <div className="stat-num">{s.n}</div>
@@ -345,7 +345,7 @@ const HeroVisual = () => (
             <SiteDZMark size={20} color="#F3F1EC" />
             <span className="font-display" style={{ fontSize: 13 }}>SiteDZ</span>
           </div>
-          {["Overview", "Projects", "Clients", "Messages", "Billing"].map((i, k) => (
+          {["نظرة عامة", "المشاريع", "العملاء", "الرسائل", "الفواتير"].map((i, k) => (
             <div
               key={i}
               style={{
@@ -367,9 +367,9 @@ const HeroVisual = () => (
           {/* row of stat cards */}
           <div style={{ display: "grid", gridTemplateColumns: "repeat(3,1fr)", gap: 12, marginBottom: 20 }}>
             {[
-              { l: "Active Projects", v: "12", d: "+3 this month", c: "#FF6A1A" },
-              { l: "Clients Served", v: "30+", d: "Across Algeria", c: "#2D55E0" },
-              { l: "Avg Response", v: "24h", d: "Guaranteed", c: "#F3F1EC" },
+              { l: "مشاريع نشطة", v: "12", d: "+3 هذا الشهر", c: "#FF6A1A" },
+              { l: "عملاء خدمناهم", v: "30+", d: "عبر الجزائر", c: "#2D55E0" },
+              { l: "متوسط الاستجابة", v: "24h", d: "مضمون", c: "#F3F1EC" },
             ].map((s, i) => (
               <div key={i} style={{ padding: 14, background: "#16161B", borderRadius: 8, border: "1px solid var(--border)" }}>
                 <div style={{ fontSize: 10, color: "var(--text-mute)", textTransform: "uppercase", letterSpacing: "0.1em" }}>{s.l}</div>
@@ -382,8 +382,8 @@ const HeroVisual = () => (
           {/* fake chart */}
           <div style={{ padding: 14, background: "#16161B", borderRadius: 8, border: "1px solid var(--border)", height: 180 }}>
             <div style={{ display: "flex", justifyContent: "space-between", marginBottom: 10 }}>
-              <div style={{ fontSize: 11, color: "var(--text-dim)" }}>Project Velocity</div>
-              <div style={{ fontSize: 10, color: "var(--text-mute)", fontFamily: "JetBrains Mono" }}>LAST 30 DAYS</div>
+              <div style={{ fontSize: 11, color: "var(--text-dim)" }}>وتيرة المشاريع</div>
+              <div style={{ fontSize: 10, color: "var(--text-mute)", fontFamily: "JetBrains Mono" }}>آخر ٣٠ يوم</div>
             </div>
             <svg width="100%" height="120" viewBox="0 0 400 120" preserveAspectRatio="none">
               <defs>
@@ -422,7 +422,7 @@ const HeroVisual = () => (
         <span>9:41</span><span>●●●●●</span>
       </div>
       <div style={{ padding: "0 12px" }}>
-        <div className="font-display" style={{ fontSize: 18, lineHeight: 1 }}>Your<br/>projects</div>
+        <div className="font-display" style={{ fontSize: 18, lineHeight: 1 }}>مشاريعك</div>
         <div style={{ marginTop: 14, display: "flex", flexDirection: "column", gap: 8 }}>
           {[
             { n: "ElGhella", c: "#8aa74a" },
@@ -434,7 +434,7 @@ const HeroVisual = () => (
               <div style={{ width: 24, height: 24, borderRadius: 6, background: p.c }} />
               <div>
                 <div style={{ fontSize: 10, fontWeight: 600 }}>{p.n}</div>
-                <div style={{ fontSize: 8, color: "var(--text-mute)" }}>Active</div>
+                <div style={{ fontSize: 8, color: "var(--text-mute)" }}>نشط</div>
               </div>
             </div>
           ))}
@@ -471,7 +471,7 @@ export const LogoMarquee = () => {
     >
       <div className="container" style={{ marginBottom: 24 }}>
         <div className="eyebrow" style={{ textAlign: "center" }}>
-          Trusted by businesses across Algeria & beyond
+          موثوق به من طرف شركات عبر الجزائر وخارجها
         </div>
       </div>
       <div style={{ overflow: "hidden", width: "100%" }}>
@@ -505,9 +505,9 @@ export const Services = () => {
   const services = [
     {
       num: "01",
-      tag: "Core Service",
-      title: "Web Development",
-      desc: "Custom websites, dynamic platforms with control panels, landing pages, and complex systems built with modern technology.",
+      tag: "خدمة أساسية",
+      title: "تطوير المواقع",
+      desc: "مواقع مخصصة، منصات ديناميكية بلوحات تحكم، صفحات هبوط، وأنظمة معقدة مبنية بأحدث التقنيات.",
       accent: "var(--orange)",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -521,9 +521,9 @@ export const Services = () => {
     },
     {
       num: "02",
-      tag: "Core Service",
-      title: "Mobile Applications",
-      desc: "Native and cross-platform apps for iOS and Android — delivery systems, booking platforms, and e-commerce.",
+      tag: "خدمة أساسية",
+      title: "تطبيقات الهاتف",
+      desc: "تطبيقات أصلية ومتعددة المنصات لأنظمة iOS و Android — أنظمة توصيل، منصات حجز، وتجارة إلكترونية.",
       accent: "var(--blue-2)",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -538,9 +538,9 @@ export const Services = () => {
     },
     {
       num: "03",
-      tag: "Design",
-      title: "UI/UX Design",
-      desc: "User-focused design combining aesthetics with functionality for memorable digital experiences.",
+      tag: "تصميم",
+      title: "تصميم واجهات وتجربة المستخدم",
+      desc: "تصميم يركز على المستخدم يجمع بين الجمالية والوظيفة ليمنح تجارب رقمية لا تُنسى.",
       accent: "var(--orange)",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -552,9 +552,9 @@ export const Services = () => {
     },
     {
       num: "04",
-      tag: "Automation",
-      title: "Bot Integration",
-      desc: "Telegram bots, WhatsApp automation, and intelligent chatbot solutions tailored to your business.",
+      tag: "أتمتة",
+      title: "دمج الروبوتات",
+      desc: "روبوتات تيليغرام، أتمتة واتساب، وحلول محادثة ذكية مصممة خصيصًا لأعمالك.",
       accent: "var(--blue-2)",
       icon: (
         <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
@@ -573,14 +573,14 @@ export const Services = () => {
       <div className="container">
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 64, flexWrap: "wrap", gap: 24 }}>
           <div>
-            <span className="section-label">Our Services</span>
+            <span className="section-label">خدماتنا</span>
             <h2 className="font-display" style={{ fontSize: "clamp(40px, 6vw, 80px)", letterSpacing: "-0.03em", lineHeight: 1, marginTop: 20, marginBottom: 0, textTransform: "uppercase" }}>
-              Building the<br />
-              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", display: "inline-block", transform: "skewX(-6deg)" }}>digital future.</span>
+              نبني<br />
+              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", display: "inline-block", transform: "skewX(-6deg)" }}>المستقبل الرقمي.</span>
             </h2>
           </div>
           <p style={{ maxWidth: 360, color: "var(--text-dim)", fontSize: 16, lineHeight: 1.5, margin: 0 }}>
-            Four capabilities, one studio. Each one delivered end-to-end — from discovery and design through to deployment and support.
+            أربع قدرات، استوديو واحد. كل خدمة ننجزها من الألف إلى الياء — من الاستكشاف والتصميم حتى الإطلاق والدعم.
           </p>
         </div>
 
@@ -616,10 +616,10 @@ export const Services = () => {
 // ============================================================
 export const Process = () => {
   const steps = [
-    { n: "01", t: "Discovery", d: "We learn your business goals, target audience, and the problem you need solved." },
-    { n: "02", t: "Design",    d: "We craft wireframes and UI prototypes aligned with your brand and user expectations." },
-    { n: "03", t: "Development", d: "Built with modern technology — clean, fast, scalable, and maintainable code." },
-    { n: "04", t: "Launch & Support", d: "Deployment, rigorous testing, and ongoing maintenance to keep you running smoothly." },
+    { n: "01", t: "الاستكشاف", d: "نتعرف على أهداف عملك، جمهورك المستهدف، والمشكلة التي تحتاج إلى حل." },
+    { n: "02", t: "التصميم",    d: "نصمم مخططات أولية ونماذج واجهات تتماشى مع علامتك التجارية وتوقعات مستخدميك." },
+    { n: "03", t: "التطوير", d: "مبني بتقنيات حديثة — شيفرة نظيفة، سريعة، قابلة للتوسع وسهلة الصيانة." },
+    { n: "04", t: "الإطلاق والدعم", d: "النشر، اختبارات صارمة، وصيانة مستمرة لضمان عمل منصتك بسلاسة." },
   ];
 
   return (
@@ -627,19 +627,19 @@ export const Process = () => {
       <div className="container">
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1.4fr", gap: 80, marginBottom: 72 }} className="process-header">
           <div>
-            <span className="section-label">The Process</span>
+            <span className="section-label">منهجيتنا</span>
             <h2 className="font-display" style={{ fontSize: "clamp(40px, 6vw, 80px)", letterSpacing: "-0.03em", lineHeight: 0.95, marginTop: 20, marginBottom: 0, textTransform: "uppercase" }}>
-              Built with<br />
-              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block", marginRight: "0.3em" }}>clarity,</span>
-              code, and care
+              نصنع<br />
+              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block", marginRight: "0.3em" }}>بوضوح،</span>
+              بشيفرة وعناية
             </h2>
           </div>
           <div style={{ paddingTop: 40 }}>
             <p style={{ color: "var(--text-dim)", fontSize: 18, lineHeight: 1.6, margin: 0, marginBottom: 20 }}>
-              Every project starts with a deep understanding of your business — who your customers are, what they need, and how your digital product fits into their lives.
+              كل مشروع يبدأ بفهم عميق لعملك — من هم عملاؤك، ما الذي يحتاجونه، وكيف يندمج منتجك الرقمي في حياتهم.
             </p>
             <p style={{ color: "var(--text-dim)", fontSize: 18, lineHeight: 1.6, margin: 0 }}>
-              We combine clean architecture with pixel-perfect design to deliver solutions that are fast, reliable, and built to grow with you.
+              نجمع بين البنية التقنية النظيفة والتصميم الدقيق لتقديم حلول سريعة، موثوقة، ومبنية لتنمو معك.
             </p>
           </div>
         </div>
@@ -677,31 +677,31 @@ export const Process = () => {
 export const Pricing = () => {
   const plans = [
     {
-      name: "Basic",
+      name: "الباقة الأساسية",
       price: "50,000 – 80,000",
-      unit: "DA",
-      desc: "Static 1–3 page sites. Perfect for small businesses, professionals, and landing pages.",
-      features: ["1–3 pages", "Responsive design", "Contact form", "Domain & hosting setup", "30 days support"],
+      unit: "د.ج",
+      desc: "مواقع ثابتة من 1 إلى 3 صفحات. مثالية للمؤسسات الصغيرة، المهنيين، وصفحات الهبوط.",
+      features: ["من 1 إلى 3 صفحات", "تصميم متجاوب", "استمارة تواصل", "إعداد النطاق والاستضافة", "دعم لمدة 30 يوم"],
       featured: false,
-      cta: "Start Basic",
+      cta: "ابدأ بالباقة الأساسية",
     },
     {
-      name: "Professional",
+      name: "الباقة الاحترافية",
       price: "120,000 – 180,000",
-      unit: "DA",
-      desc: "Dynamic sites with dashboard, up to 10 pages. Ideal for growing Algerian businesses.",
-      features: ["Up to 10 pages", "Admin dashboard", "CMS / content panel", "SEO optimization", "Analytics setup", "90 days support"],
+      unit: "د.ج",
+      desc: "مواقع ديناميكية بلوحة تحكم، حتى 10 صفحات. مثالية للشركات الجزائرية النامية.",
+      features: ["حتى 10 صفحات", "لوحة تحكم للمسؤول", "نظام إدارة المحتوى", "تحسين محركات البحث", "إعداد التحليلات", "دعم لمدة 90 يوم"],
       featured: true,
-      cta: "Start Professional",
+      cta: "ابدأ بالباقة الاحترافية",
     },
     {
-      name: "Enterprise",
-      price: "Custom",
-      unit: "Pricing",
-      desc: "E-commerce platforms, bot integration, mobile apps, API development, and complex systems.",
-      features: ["E-commerce platforms", "Mobile apps (iOS/Android)", "Bot & API integration", "Custom systems", "Dedicated team", "Ongoing maintenance"],
+      name: "باقة المؤسسات",
+      price: "حسب الطلب",
+      unit: "تسعير",
+      desc: "منصات تجارة إلكترونية، دمج روبوتات، تطبيقات هاتف، تطوير واجهات برمجية، وأنظمة معقدة.",
+      features: ["منصات تجارة إلكترونية", "تطبيقات هاتف (iOS/Android)", "دمج الروبوتات والواجهات البرمجية", "أنظمة مخصصة", "فريق متخصص", "صيانة مستمرة"],
       featured: false,
-      cta: "Get a Quote",
+      cta: "اطلب عرض سعر",
     },
   ];
 
@@ -709,13 +709,13 @@ export const Pricing = () => {
     <section id="pricing" style={{ padding: "140px 0" }}>
       <div className="container">
         <div style={{ textAlign: "center", marginBottom: 64 }}>
-          <span className="section-label">Pricing</span>
+          <span className="section-label">الأسعار</span>
           <h2 className="font-display" style={{ fontSize: "clamp(40px, 6vw, 80px)", letterSpacing: "-0.03em", lineHeight: 1, marginTop: 20, marginBottom: 20, textTransform: "uppercase" }}>
-            Clear,<br />
-            <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>honest pricing</span>
+            أسعار واضحة،<br />
+            <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>وشفّافة</span>
           </h2>
           <p style={{ color: "var(--text-dim)", fontSize: 17, maxWidth: 560, margin: "0 auto", lineHeight: 1.5 }}>
-            Transparent plans in Algerian Dinars. No hidden fees — just quality work at fair prices for Algerian businesses.
+            باقات شفّافة بالدينار الجزائري. لا رسوم خفيّة — فقط عمل بجودة عالية بأسعار عادلة للشركات الجزائرية.
           </p>
         </div>
 
@@ -724,7 +724,7 @@ export const Pricing = () => {
             <div key={p.name} className={"card pricing-card " + (p.featured ? "featured" : "")} style={{ padding: 36, display: "flex", flexDirection: "column", position: "relative" }}>
               {p.featured && (
                 <span style={{ position: "absolute", top: -12, left: 24, background: "var(--orange)", color: "#0B0B0D", padding: "5px 12px", borderRadius: 999, fontFamily: "JetBrains Mono", fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", fontWeight: 600 }}>
-                  Most popular
+                  الأكثر طلبًا
                 </span>
               )}
               <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 24 }}>
@@ -768,28 +768,28 @@ export const Pricing = () => {
 export const Projects = () => {
   // shaped data — each project picks its own display type for visual rhythm
   const projects = [
-    { tag: "Projet Innovant", name: "ElGhella",      cat: "AgriTech",          d: "Integrated marketplace for Algerian farmers to trade agricultural products, equipment, and advisory services.", url: "elghella.com",    bg: "proj-bg-1",  accent: "#8aa74a", year: "2024", role: "Full build · Marketplace · Mobile" },
-    { tag: "Projet Innovant", name: "AItraid",       cat: "Marketplace",       d: "B2B, B2C, and freelancer marketplace connecting buyers and sellers across Algeria.",                                url: "aitridi.com",     bg: "proj-bg-2",  accent: "#2D55E0", year: "2024", role: "Platform · Web · Dashboard"  },
-    { tag: "Client Work",     name: "Ma5zani",       cat: "E-Commerce SaaS",   d: "The Shopify alternative for Algerian sellers — launch your online store in minutes.",                              url: "ma5zani.com",     bg: "proj-bg-3",  accent: "#FF6A1A", year: "2025", role: "SaaS · Web"                  },
-    { tag: "Client Work",     name: "Postaify",      cat: "AI SaaS",           d: "Generate 30 days of content for 5 platforms in under 15 minutes with AI automation.",                              url: "postaify.com",    bg: "proj-bg-4",  accent: "#f72585", year: "2025", role: "AI · SaaS"                   },
-    { tag: "Client Work",     name: "Tabra",         cat: "HealthTech",        d: "Algerian healthcare platform making medical services easier to access nationwide.",                                url: "tabra.space",     bg: "proj-bg-5",  accent: "#06d6a0", year: "2025", role: "Platform · Mobile"           },
-    { tag: "Client Work",     name: "Hasio",         cat: "Travel",            d: "Travel guide and booking platform — your journey made easier.",                                                   url: "hasio.xyz",       bg: "proj-bg-6",  accent: "#f4a261", year: "2024", role: "Booking · Web"               },
-    { tag: "Client Work",     name: "TRAVoices",     cat: "AI / Voice",        d: "Real-time AI voice translation breaking language barriers across the globe.",                                     url: "travoices.xyz",   bg: "proj-bg-7",  accent: "#4361ee", year: "2025", role: "AI · Voice"                  },
-    { tag: "Client Work",     name: "BioGrenaGold",  cat: "Health & Wellness", d: "Natural pomegranate-based health supplements — la puissance de la grenade.",                                       url: "biogrenagold.com",bg: "proj-bg-8",  accent: "#ff6b35", year: "2024", role: "E-commerce"                  },
-    { tag: "Client Work",     name: "Cuisine Alger", cat: "Interior Design",   d: "Modern kitchen design and manufacturing crafted for Algerian homes.",                                               url: "cuisinealger.com",bg: "proj-bg-9",  accent: "#8d99ae", year: "2024", role: "Brand · Web"                 },
-    { tag: "Client Work",     name: "ReachFood",     cat: "Food",              d: "Platform connecting food producers and consumers for smarter distribution.",                                        url: "reachfood.co",    bg: "proj-bg-10", accent: "#fca311", year: "2025", role: "Platform"                   },
-    { tag: "Client Work",     name: "MBSx",          cat: "Media",             d: "Data journalism institution advancing data-driven reporting in Algeria.",                                           url: "mbsx.org",        bg: "proj-bg-11", accent: "#415a77", year: "2024", role: "Media · Web"                 },
-    { tag: "Client Work",     name: "Zed Informatique", cat: "IT Services",    d: "IT services and software solutions — hardware, networks, and business software tailored to Algerian companies.",   url: "zed-informatique.com", bg: "proj-bg-7", accent: "#4361ee", year: "2024", role: "Web · E-commerce"            },
+    { tag: "مشروع مبتكر", name: "ElGhella",      cat: "تكنولوجيا زراعية",     d: "منصة متكاملة للفلاحين الجزائريين لتبادل المنتجات الزراعية والمعدات والخدمات الاستشارية.", url: "elghella.com",    bg: "proj-bg-1",  accent: "#8aa74a", year: "2024", role: "بناء شامل · منصة تجارية · تطبيق" },
+    { tag: "مشروع مبتكر", name: "AItraid",       cat: "منصة تجارية",          d: "منصة تجارية B2B و B2C وللمستقلين تربط بين البائعين والمشترين عبر الجزائر.",                                url: "aitridi.com",     bg: "proj-bg-2",  accent: "#2D55E0", year: "2024", role: "منصة · ويب · لوحة تحكم"  },
+    { tag: "عمل عملاء",   name: "Ma5zani",       cat: "منصة تجارة إلكترونية", d: "البديل الجزائري لـ Shopify — أطلق متجرك الإلكتروني في دقائق.",                              url: "ma5zani.com",     bg: "proj-bg-3",  accent: "#FF6A1A", year: "2025", role: "منصة · ويب"                  },
+    { tag: "عمل عملاء",   name: "Postaify",      cat: "منصة ذكاء اصطناعي",    d: "أنشئ محتوى 30 يومًا لـ 5 منصات في أقل من 15 دقيقة باستخدام أتمتة الذكاء الاصطناعي.",                              url: "postaify.com",    bg: "proj-bg-4",  accent: "#f72585", year: "2025", role: "ذكاء اصطناعي · منصة"                   },
+    { tag: "عمل عملاء",   name: "Tabra",         cat: "تكنولوجيا صحية",       d: "منصة جزائرية للرعاية الصحية تسهّل الوصول إلى الخدمات الطبية عبر كامل التراب الوطني.",                                url: "tabra.space",     bg: "proj-bg-5",  accent: "#06d6a0", year: "2025", role: "منصة · تطبيق"           },
+    { tag: "عمل عملاء",   name: "Hasio",         cat: "سفر وسياحة",           d: "منصة دليل سفر وحجوزات — رحلتك أصبحت أسهل.",                                                   url: "hasio.xyz",       bg: "proj-bg-6",  accent: "#f4a261", year: "2024", role: "حجوزات · ويب"               },
+    { tag: "عمل عملاء",   name: "TRAVoices",     cat: "ذكاء اصطناعي / صوت",   d: "ترجمة صوتية فورية بالذكاء الاصطناعي تكسر حواجز اللغة حول العالم.",                                     url: "travoices.xyz",   bg: "proj-bg-7",  accent: "#4361ee", year: "2025", role: "ذكاء اصطناعي · صوت"                  },
+    { tag: "عمل عملاء",   name: "BioGrenaGold",  cat: "صحة وعافية",           d: "مكمّلات غذائية طبيعية مستخلصة من الرمان — قوة الرمّان.",                                       url: "biogrenagold.com",bg: "proj-bg-8",  accent: "#ff6b35", year: "2024", role: "تجارة إلكترونية"                  },
+    { tag: "عمل عملاء",   name: "Cuisine Alger", cat: "تصميم داخلي",          d: "تصميم وتصنيع مطابخ عصرية مصممة خصيصًا للبيوت الجزائرية.",                                               url: "cuisinealger.com",bg: "proj-bg-9",  accent: "#8d99ae", year: "2024", role: "علامة تجارية · ويب"                 },
+    { tag: "عمل عملاء",   name: "ReachFood",     cat: "غذاء",                 d: "منصة تربط بين منتجي الأغذية والمستهلكين لتوزيع أذكى.",                                        url: "reachfood.co",    bg: "proj-bg-10", accent: "#fca311", year: "2025", role: "منصة"                   },
+    { tag: "عمل عملاء",   name: "MBSx",          cat: "إعلام",                d: "مؤسسة صحافة البيانات الرائدة في تطوير التقارير المبنية على البيانات في الجزائر.",                                           url: "mbsx.org",        bg: "proj-bg-11", accent: "#415a77", year: "2024", role: "إعلام · ويب"                 },
+    { tag: "عمل عملاء",   name: "Zed Informatique", cat: "خدمات معلوماتية",   d: "خدمات معلوماتية وحلول برمجية — عتاد، شبكات، وبرامج أعمال مصممة للشركات الجزائرية.",   url: "zed-informatique.com", bg: "proj-bg-7", accent: "#4361ee", year: "2024", role: "ويب · تجارة إلكترونية"            },
   ];
 
-  const [filter, setFilter] = useState("All");
-  const cats = ["All", "Projet Innovant", "SaaS", "AI", "E-commerce"];
+  const [filter, setFilter] = useState("الكل");
+  const cats = ["الكل", "مشروع مبتكر", "منصات", "ذكاء اصطناعي", "تجارة إلكترونية"];
   const matches = (p) => {
-    if (filter === "All") return true;
-    if (filter === "Projet Innovant") return p.tag === "Projet Innovant";
-    if (filter === "SaaS") return p.cat.includes("SaaS");
-    if (filter === "AI") return p.cat.includes("AI");
-    if (filter === "E-commerce") return p.cat.includes("E-Commerce");
+    if (filter === "الكل") return true;
+    if (filter === "مشروع مبتكر") return p.tag === "مشروع مبتكر";
+    if (filter === "منصات") return p.cat.includes("منصة");
+    if (filter === "ذكاء اصطناعي") return p.cat.includes("ذكاء اصطناعي");
+    if (filter === "تجارة إلكترونية") return p.cat.includes("تجارة إلكترونية");
     return true;
   };
 
@@ -805,19 +805,19 @@ export const Projects = () => {
         {/* header */}
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 48, flexWrap: "wrap", gap: 24 }}>
           <div>
-            <span className="section-label">Our Projects · 30+ Delivered</span>
+            <span className="section-label">مشاريعنا · أكثر من 30 مشروع منجز</span>
             <h2 className="font-display" style={{ fontSize: "clamp(40px, 6vw, 80px)", letterSpacing: "-0.03em", lineHeight: 1, marginTop: 20, marginBottom: 0, textTransform: "uppercase" }}>
-              Built for<br />
-              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>Algeria.</span>
+              صُنع لأجل<br />
+              <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>الجزائر.</span>
             </h2>
           </div>
           <div style={{ maxWidth: 380 }}>
             <div style={{ display: "inline-flex", alignItems: "center", gap: 8, padding: "6px 12px", border: "1px solid rgba(255,106,26,0.4)", borderRadius: 999, background: "rgba(255,106,26,0.08)", marginBottom: 12 }}>
               <span style={{ width: 6, height: 6, borderRadius: "50%", background: "var(--orange)" }} />
-              <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--orange)" }}>2× Label Projet Innovant</span>
+              <span className="font-mono" style={{ fontSize: 10, letterSpacing: "0.15em", textTransform: "uppercase", color: "var(--orange)" }}>2× علامة مشروع مبتكر</span>
             </div>
             <p style={{ color: "var(--text-dim)", fontSize: 15, lineHeight: 1.5, margin: 0 }}>
-              ElGhella &amp; AItraid — awarded by Algeria's innovation programme.
+              ElGhella &amp; AItraid — حاصلان على تكريم برنامج الابتكار الجزائري.
             </p>
           </div>
         </div>
@@ -872,8 +872,8 @@ export const Projects = () => {
         {listRow.filter(matches).length > 0 && (
           <div style={{ marginTop: 40, borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", padding: "16px 4px" }}>
-              <span className="eyebrow">More Work · Index</span>
-              <span className="font-mono" style={{ fontSize: 10, color: "var(--text-mute)", letterSpacing: "0.15em" }}>ROLE · YEAR · LINK</span>
+              <span className="eyebrow">أعمال إضافية · الفهرس</span>
+              <span className="font-mono" style={{ fontSize: 10, color: "var(--text-mute)", letterSpacing: "0.15em" }}>الدور · السنة · رابط</span>
             </div>
             {listRow.filter(matches).map((p, i) => (
               <ListRowCard key={p.name} p={p} last={i === listRow.length - 1} />
@@ -891,10 +891,10 @@ export const Projects = () => {
         {/* bottom closer */}
         <div style={{ marginTop: 60, padding: 32, background: "linear-gradient(135deg, rgba(255,106,26,0.08) 0%, rgba(45,85,224,0.06) 100%)", border: "1px solid var(--border-2)", borderRadius: 16, display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 20 }}>
           <div>
-            <div className="font-display" style={{ fontSize: 28, letterSpacing: "-0.02em", marginBottom: 4 }}>+ 18 more projects in the archive</div>
-            <div style={{ color: "var(--text-dim)", fontSize: 14 }}>Ask us for case studies, credentials, or NDA'd work.</div>
+            <div className="font-display" style={{ fontSize: 28, letterSpacing: "-0.02em", marginBottom: 4 }}>+ 18 مشروعًا إضافيًا في الأرشيف</div>
+            <div style={{ color: "var(--text-dim)", fontSize: 14 }}>اطلب منا دراسات حالة، مراجع، أو أعمال خاضعة لاتفاقيات عدم إفصاح.</div>
           </div>
-          <a href="#contact" className="btn btn-ghost" style={{ padding: "14px 22px" }}>Request portfolio <ArrowRight /></a>
+          <a href="#contact" className="btn btn-ghost" style={{ padding: "14px 22px" }}>اطلب ملف الأعمال <ArrowRight /></a>
         </div>
       </div>
       <style>{`
@@ -921,7 +921,7 @@ const FeaturedHero = ({ p }) => (
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 30% 70%, rgba(255,255,255,0.2) 0%, transparent 60%)" }} />
         {/* award ribbon */}
         <div style={{ position: "absolute", top: 20, left: 20, display: "flex", alignItems: "center", gap: 8, padding: "8px 14px", background: "var(--orange)", color: "#0B0B0D", borderRadius: 999, fontFamily: "Archivo Black", fontSize: 11, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-          ★ Projet Innovant 2024
+          ★ مشروع مبتكر 2024
         </div>
         {/* giant initial */}
         <div style={{ position: "absolute", bottom: -30, right: -20, fontFamily: "Archivo Black", fontSize: 320, lineHeight: 0.8, color: "rgba(255,255,255,0.12)", letterSpacing: "-0.08em" }}>
@@ -932,7 +932,7 @@ const FeaturedHero = ({ p }) => (
       <div style={{ padding: 40, display: "flex", flexDirection: "column", justifyContent: "space-between" }}>
         <div>
           <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", marginBottom: 24 }}>
-            <span className="font-mono" style={{ fontSize: 11, color: "var(--text-mute)", letterSpacing: "0.15em" }}>CASE · 01 / FEATURED</span>
+            <span className="font-mono" style={{ fontSize: 11, color: "var(--text-mute)", letterSpacing: "0.15em" }}>حالة · 01 / مميز</span>
             <span className="eyebrow">{p.cat}</span>
           </div>
           <h3 className="font-display" style={{ fontSize: "clamp(40px, 5vw, 64px)", letterSpacing: "-0.03em", lineHeight: 0.95, margin: 0, marginBottom: 16, textTransform: "uppercase" }}>
@@ -944,11 +944,11 @@ const FeaturedHero = ({ p }) => (
         {/* meta grid */}
         <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 16, marginTop: 20, paddingTop: 20, borderTop: "1px solid var(--border)" }}>
           <div>
-            <div className="eyebrow" style={{ marginBottom: 4 }}>Role</div>
+            <div className="eyebrow" style={{ marginBottom: 4 }}>الدور</div>
             <div style={{ fontSize: 13, color: "var(--text)" }}>{p.role}</div>
           </div>
           <div>
-            <div className="eyebrow" style={{ marginBottom: 4 }}>Year</div>
+            <div className="eyebrow" style={{ marginBottom: 4 }}>السنة</div>
             <div style={{ fontSize: 13, color: "var(--text)" }}>{p.year}</div>
           </div>
           <div style={{ gridColumn: "1 / -1", display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
@@ -976,17 +976,17 @@ const AitraidCard = ({ p }) => (
       <div style={{ position: "absolute", inset: 0, background: "linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.75) 100%)" }} />
       {/* award badge */}
       <div style={{ position: "absolute", top: 20, left: 20, padding: "6px 12px", background: "rgba(255,106,26,0.95)", color: "#0B0B0D", borderRadius: 6, fontFamily: "Archivo Black", fontSize: 10, letterSpacing: "0.08em", textTransform: "uppercase" }}>
-        ★ Projet Innovant
+        ★ مشروع مبتكر
       </div>
       {/* type indicator top-right */}
       <div style={{ position: "absolute", top: 20, right: 20, display: "flex", gap: 6 }}>
-        {["B2B", "B2C", "Freelance"].map(x => (
+        {["B2B", "B2C", "مستقلون"].map(x => (
           <span key={x} style={{ padding: "4px 8px", background: "rgba(0,0,0,0.5)", backdropFilter: "blur(8px)", color: "#fff", borderRadius: 4, fontSize: 9, fontFamily: "JetBrains Mono", letterSpacing: "0.1em", border: "1px solid rgba(255,255,255,0.2)" }}>{x}</span>
         ))}
       </div>
       {/* content overlay */}
       <div style={{ position: "absolute", left: 28, right: 28, bottom: 24 }}>
-        <div className="font-mono" style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", letterSpacing: "0.15em", marginBottom: 8 }}>CASE · 02 / MARKETPLACE</div>
+        <div className="font-mono" style={{ fontSize: 11, color: "rgba(255,255,255,0.6)", letterSpacing: "0.15em", marginBottom: 8 }}>حالة · 02 / منصة</div>
         <h3 className="font-display" style={{ fontSize: 40, letterSpacing: "-0.02em", margin: 0, marginBottom: 10, color: "#fff", textTransform: "uppercase" }}>{p.name}</h3>
         <p style={{ color: "rgba(255,255,255,0.75)", fontSize: 14, lineHeight: 1.5, margin: 0, marginBottom: 16 }}>{p.d}</p>
         <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}>
@@ -1003,16 +1003,16 @@ const QuoteCard = () => (
   <div style={{ borderRadius: 16, border: "1px solid var(--border)", background: "linear-gradient(180deg, #111115 0%, #0B0B0D 100%)", padding: 36, minHeight: 380, display: "flex", flexDirection: "column", justifyContent: "space-between", position: "relative", overflow: "hidden" }}>
     <div style={{ position: "absolute", top: -40, right: -40, fontFamily: "Archivo Black", fontSize: 260, color: "rgba(255,106,26,0.08)", lineHeight: 0.7 }}>"</div>
     <div style={{ position: "relative", zIndex: 2 }}>
-      <div className="eyebrow" style={{ marginBottom: 16 }}>From a founder we worked with</div>
+      <div className="eyebrow" style={{ marginBottom: 16 }}>من أحد الشركاء المؤسسين الذين عملنا معهم</div>
       <p className="font-display" style={{ fontSize: 26, lineHeight: 1.25, letterSpacing: "-0.02em", margin: 0, color: "var(--text)" }}>
-        "SiteDZ shipped in weeks what other agencies quoted in months. Clean code, real support — they get how Algerian businesses actually work."
+        "أنجزت SiteDZ في أسابيع ما قدّرت وكالات أخرى إنجازه في أشهر. شيفرة نظيفة، دعم حقيقي — يفهمون كيف تعمل الشركات الجزائرية فعلًا."
       </p>
     </div>
     <div style={{ position: "relative", zIndex: 2, display: "flex", alignItems: "center", gap: 12, marginTop: 24, paddingTop: 24, borderTop: "1px solid var(--border)" }}>
       <div style={{ width: 40, height: 40, borderRadius: "50%", background: "linear-gradient(135deg, var(--orange), var(--blue-2))", display: "flex", alignItems: "center", justifyContent: "center", fontFamily: "Archivo Black", color: "#fff" }}>M</div>
       <div>
-        <div style={{ fontSize: 14, fontWeight: 600 }}>Founder, Ma5zani</div>
-        <div style={{ fontSize: 12, color: "var(--text-dim)" }}>E-Commerce SaaS</div>
+        <div style={{ fontSize: 14, fontWeight: 600 }}>مؤسس Ma5zani</div>
+        <div style={{ fontSize: 12, color: "var(--text-dim)" }}>منصة تجارة إلكترونية</div>
       </div>
     </div>
   </div>
@@ -1028,7 +1028,7 @@ const PortraitCard = ({ p, index }) => {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse at 50% 50%, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%)" }} />
         {/* rotating vertical index label */}
         <div style={{ position: "absolute", top: 20, left: 20, fontFamily: "JetBrains Mono", fontSize: 10, letterSpacing: "0.2em", color: "#fff", opacity: 0.9 }}>
-          0{index + 3} / CASE
+          0{index + 3} / حالة
         </div>
         <div style={{ position: "absolute", top: 20, right: 20, padding: "4px 10px", background: "rgba(255,255,255,0.15)", backdropFilter: "blur(8px)", borderRadius: 999, fontSize: 10, color: "#fff", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", border: "1px solid rgba(255,255,255,0.2)" }}>
           {p.cat}
@@ -1116,18 +1116,18 @@ export const CTA = () => (
     <div className="container" style={{ position: "relative", zIndex: 2 }}>
       <div style={{ display: "grid", gridTemplateColumns: "1.2fr 1fr", gap: 64, alignItems: "center" }} className="cta-grid">
         <div>
-          <span className="section-label">Let's Build</span>
+          <span className="section-label">لنبدأ البناء</span>
           <h2 className="font-display" style={{ fontSize: "clamp(44px, 7vw, 96px)", letterSpacing: "-0.03em", lineHeight: 0.95, marginTop: 20, marginBottom: 24, textTransform: "uppercase" }}>
-            Your project,<br />
-            <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>our expertise.</span>
+            مشروعك،<br />
+            <span style={{ color: "var(--orange)", fontStyle: "italic", fontFamily: "Archivo Black", transform: "skewX(-6deg)", display: "inline-block" }}>بخبرتنا.</span>
           </h2>
           <p style={{ color: "var(--text-dim)", fontSize: 18, lineHeight: 1.6, margin: 0, marginBottom: 32, maxWidth: 520 }}>
-            Ready to build something great? Tell us about your idea and we'll get back to you within 24 hours.
+            مستعد لبناء شيء رائع؟ أخبرنا عن فكرتك وسنعاود التواصل معك خلال 24 ساعة.
           </p>
           <div style={{ display: "flex", gap: 16, flexWrap: "wrap", alignItems: "center" }}>
             <a href="https://wa.me/213697339450" target="_blank" rel="noopener" className="btn btn-primary" style={{ padding: "18px 28px", fontSize: 16 }}>
               <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.6 6.3A7.9 7.9 0 0012 4a8 8 0 00-6.8 12.2L4 20l3.9-1.1A8 8 0 0020 12a7.9 7.9 0 00-2.4-5.7zM12 18.5a6.5 6.5 0 01-3.3-.9l-.2-.1-2.3.6.6-2.2-.2-.2A6.5 6.5 0 1112 18.5zm3.6-4.9c-.2-.1-1.2-.6-1.4-.6s-.3-.1-.4.1-.5.6-.6.8-.2.1-.4 0a5.2 5.2 0 01-1.5-.9 5.7 5.7 0 01-1.1-1.3c-.1-.2 0-.3.1-.4l.3-.4.2-.3v-.3c0-.1-.4-1-.5-1.3s-.3-.3-.4-.3h-.4a.7.7 0 00-.5.2 2 2 0 00-.7 1.5 3.6 3.6 0 00.7 1.9 7.9 7.9 0 003 2.7c1.3.5 1.8.5 2.4.4a2 2 0 001.3-.9 1.6 1.6 0 00.1-.9c0-.1-.2-.1-.4-.2z"/></svg>
-              WhatsApp Us
+              راسلنا عبر واتساب
             </a>
             <a href="mailto:hello@sitedz.com" className="btn btn-ghost" style={{ padding: "18px 28px", fontSize: 16 }}>
               hello@sitedz.com
@@ -1135,20 +1135,20 @@ export const CTA = () => (
           </div>
           <div style={{ marginTop: 40, display: "flex", gap: 32, flexWrap: "wrap" }}>
             <div>
-              <div className="eyebrow">WhatsApp</div>
+              <div className="eyebrow">واتساب</div>
               <div className="font-display" style={{ fontSize: 22, marginTop: 6 }}>06 97 33 94 50</div>
             </div>
             <div>
-              <div className="eyebrow">Response Time</div>
-              <div className="font-display" style={{ fontSize: 22, marginTop: 6 }}>&lt; 24 hours</div>
+              <div className="eyebrow">زمن الاستجابة</div>
+              <div className="font-display" style={{ fontSize: 22, marginTop: 6 }}>&lt; 24 ساعة</div>
             </div>
           </div>
         </div>
 
         {/* form card */}
         <div className="card" style={{ padding: 32 }}>
-          <div className="eyebrow" style={{ marginBottom: 4 }}>Step 01 / Discovery</div>
-          <h3 className="font-display" style={{ fontSize: 22, margin: 0, marginBottom: 20, letterSpacing: "-0.02em" }}>Start your project</h3>
+          <div className="eyebrow" style={{ marginBottom: 4 }}>الخطوة 01 / الاستكشاف</div>
+          <h3 className="font-display" style={{ fontSize: 22, margin: 0, marginBottom: 20, letterSpacing: "-0.02em" }}>ابدأ مشروعك</h3>
 
           <FormFields />
         </div>
@@ -1161,7 +1161,7 @@ export const CTA = () => (
 );
 
 const FormFields = () => {
-  const [data, setData] = useState({ name: "", email: "", project: "Web Development", msg: "" });
+  const [data, setData] = useState({ name: "", email: "", project: "تطوير المواقع", msg: "" });
   const [submitted, setSubmitted] = useState(false);
 
   const onSubmit = (e) => {
@@ -1173,8 +1173,8 @@ const FormFields = () => {
     return (
       <div style={{ textAlign: "center", padding: "32px 0" }}>
         <div style={{ fontSize: 44, marginBottom: 8 }}>✦</div>
-        <div className="font-display" style={{ fontSize: 22, marginBottom: 8 }}>Message received.</div>
-        <p style={{ color: "var(--text-dim)", fontSize: 14, margin: 0 }}>We'll get back to you within 24 hours. Typically much sooner.</p>
+        <div className="font-display" style={{ fontSize: 22, marginBottom: 8 }}>تم استلام رسالتك.</div>
+        <p style={{ color: "var(--text-dim)", fontSize: 14, margin: 0 }}>سنعاود التواصل معك خلال 24 ساعة. غالبًا في وقت أسرع.</p>
       </div>
     );
   }
@@ -1187,15 +1187,15 @@ const FormFields = () => {
 
   return (
     <form onSubmit={onSubmit}>
-      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>Name</label>
-      <input required value={data.name} onChange={e => setData({...data, name: e.target.value})} placeholder="Your name" style={{ ...input, marginBottom: 14 }} />
+      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>الاسم</label>
+      <input required value={data.name} onChange={e => setData({...data, name: e.target.value})} placeholder="اسمك" style={{ ...input, marginBottom: 14 }} />
 
-      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>Email</label>
+      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>البريد الإلكتروني</label>
       <input required type="email" value={data.email} onChange={e => setData({...data, email: e.target.value})} placeholder="you@company.com" style={{ ...input, marginBottom: 14 }} />
 
-      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>Service needed</label>
+      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>الخدمة المطلوبة</label>
       <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 14 }}>
-        {["Web Development", "Mobile App", "UI/UX", "Bot / Automation"].map(s => (
+        {["تطوير المواقع", "تطبيق هاتف", "واجهات وتجربة المستخدم", "روبوت / أتمتة"].map(s => (
           <button
             type="button"
             key={s}
@@ -1215,11 +1215,11 @@ const FormFields = () => {
         ))}
       </div>
 
-      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>Tell us about your project</label>
-      <textarea value={data.msg} onChange={e => setData({...data, msg: e.target.value})} placeholder="A few sentences about what you want to build..." rows={4} style={{ ...input, marginBottom: 20, resize: "vertical" }} />
+      <label style={{ fontSize: 11, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em", textTransform: "uppercase", display: "block", marginBottom: 6 }}>أخبرنا عن مشروعك</label>
+      <textarea value={data.msg} onChange={e => setData({...data, msg: e.target.value})} placeholder="بضع جمل عمّا ترغب ببنائه..." rows={4} style={{ ...input, marginBottom: 20, resize: "vertical" }} />
 
       <button type="submit" className="btn btn-primary" style={{ width: "100%", justifyContent: "center", padding: "14px 20px", fontSize: 14 }}>
-        Send it over <ArrowRight />
+        إرسال <ArrowRight />
       </button>
     </form>
   );
@@ -1235,24 +1235,24 @@ export const Footer = () => (
         <div>
           <SiteDZLogo />
           <p style={{ color: "var(--text-dim)", fontSize: 14, lineHeight: 1.6, marginTop: 20, maxWidth: 320 }}>
-            Algeria's premier digital agency — building exceptional web and mobile experiences.
+            الوكالة الرقمية الرائدة في الجزائر — نبني تجارب ويب وتطبيقات استثنائية.
           </p>
         </div>
         <div>
-          <div className="eyebrow" style={{ marginBottom: 16 }}>Company</div>
-          <FooterLink>Services</FooterLink>
-          <FooterLink>Process</FooterLink>
-          <FooterLink>Pricing</FooterLink>
-          <FooterLink>Our Work</FooterLink>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>الشركة</div>
+          <FooterLink>خدماتنا</FooterLink>
+          <FooterLink>منهجيتنا</FooterLink>
+          <FooterLink>الأسعار</FooterLink>
+          <FooterLink>أعمالنا</FooterLink>
         </div>
         <div>
-          <div className="eyebrow" style={{ marginBottom: 16 }}>Contact</div>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>تواصل معنا</div>
           <FooterLink>hello@sitedz.com</FooterLink>
-          <FooterLink>WhatsApp 06 97 33 94 50</FooterLink>
-          <FooterLink>Algiers, Algeria</FooterLink>
+          <FooterLink>واتساب 06 97 33 94 50</FooterLink>
+          <FooterLink>الجزائر العاصمة، الجزائر</FooterLink>
         </div>
         <div>
-          <div className="eyebrow" style={{ marginBottom: 16 }}>Social</div>
+          <div className="eyebrow" style={{ marginBottom: 16 }}>التواصل الاجتماعي</div>
           <FooterLink>Instagram</FooterLink>
           <FooterLink>LinkedIn</FooterLink>
           <FooterLink>X / Twitter</FooterLink>
@@ -1267,9 +1267,9 @@ export const Footer = () => (
       </div>
 
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginTop: 24, flexWrap: "wrap", gap: 12 }}>
-        <div style={{ fontSize: 12, color: "var(--text-mute)" }}>© 2025 SiteDZ. All rights reserved.</div>
+        <div style={{ fontSize: 12, color: "var(--text-mute)" }}>© 2025 SiteDZ. جميع الحقوق محفوظة.</div>
         <div style={{ fontSize: 12, color: "var(--text-mute)", fontFamily: "JetBrains Mono", letterSpacing: "0.1em" }}>
-          MADE IN ALGIERS · BUILT FOR THE WORLD
+          صُنع في الجزائر · مبني للعالم
         </div>
       </div>
     </div>

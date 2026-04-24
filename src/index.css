@@ -296,3 +296,78 @@
   @media (min-width: 641px) and (max-width: 900px) {
     .hero-visual { height: 360px !important; }
   }
+
+  /* ==========================================================
+     PROJECTS SECTION — mobile card sizing (≤ 640px)
+     Cards in the prototype use large fixed min-heights + huge
+     type sizes that overwhelm a phone viewport. Scale them down.
+     ========================================================== */
+  @media (max-width: 640px) {
+    /* Section paddings + headline */
+    section#work { padding: 72px 0 !important; }
+    section#work h2 { font-size: clamp(36px, 11vw, 56px) !important; }
+
+    /* Filter chips: compact */
+    section#work button { padding: 6px 11px !important; font-size: 10px !important; }
+
+    /* Every project card (a.proj-card) loses its tall min-height */
+    .proj-card { min-height: 0 !important; border-radius: 12px !important; }
+    .proj-card > div { min-height: 0 !important; }
+
+    /* FeaturedHero (full-bleed top card) */
+    .feat-hero-grid { min-height: 0 !important; }
+    .feat-hero-grid > div { padding: 20px !important; min-height: 0 !important; }
+    .feat-hero-grid > div:first-child { min-height: 200px !important; padding: 16px !important; }
+    /* giant initial letter (320px in desktop) overflows the panel */
+    .feat-hero-grid > div:first-child > div:last-child { font-size: 160px !important; bottom: -16px !important; right: -8px !important; }
+    .feat-hero-grid h3 { font-size: 40px !important; }
+    .feat-hero-grid p { font-size: 14px !important; }
+
+    /* AitraidCard + QuoteCard split pair */
+    .split-grid > a > div { min-height: 300px !important; }
+    .split-grid > a h3 { font-size: 32px !important; }
+    /* QuoteCard is the non-anchor div inside split-grid */
+    .split-grid > div { padding: 24px !important; min-height: 0 !important; }
+    .split-grid > div p.font-display { font-size: 20px !important; line-height: 1.3 !important; }
+
+    /* PortraitCard (tri-grid with image header) */
+    .tri-grid > a > div[class*="proj-bg-"] { height: 180px !important; }
+    .tri-grid > a > div[class*="proj-bg-"] .font-display { font-size: 30px !important; }
+    .tri-grid > a > div:last-child { padding: 16px !important; }
+
+    /* CompactTile inner paddings */
+    .tri-grid > a > div:not([class*="proj-bg-"]) { padding: 16px !important; }
+
+    /* List row: smaller leading chip and name */
+    .list-row { padding: 16px 4px !important; gap: 12px !important; }
+
+    /* Bottom "19 more projects" closer card */
+    section#work > .container > div:last-child { padding: 20px !important; gap: 14px !important; }
+    section#work > .container > div:last-child .font-display { font-size: 20px !important; }
+  }
+
+  /* ==========================================================
+     ARABIC / RTL SUPPORT (html[dir="rtl"])
+     Applied when HomeAr page sets <html dir="rtl">.
+     ========================================================== */
+  html[dir="rtl"] body {
+    font-family: 'Cairo', 'Space Grotesk', system-ui, sans-serif;
+  }
+  html[dir="rtl"] .font-display {
+    font-family: 'Cairo', 'Archivo', sans-serif;
+    font-weight: 900;
+  }
+  /* Mono stays mono for labels that work in Latin (URLs, years, CASE · 01) */
+  html[dir="rtl"] .font-mono { font-family: 'JetBrains Mono', monospace; }
+
+  /* The "brush italic" skew doesn't read well in Arabic — flatten it */
+  html[dir="rtl"] .hero-title .brush-ital,
+  html[dir="rtl"] .brush {
+    font-style: normal;
+    transform: none;
+    font-family: 'Cairo', sans-serif;
+    font-weight: 900;
+  }
+
+  /* Nudge some Latin-oriented fixed positionings */
+  html[dir="rtl"] .marquee-track { direction: ltr; }
