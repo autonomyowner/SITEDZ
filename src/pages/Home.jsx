@@ -371,6 +371,20 @@ const PROJECTS = [
     tag: 'E-Commerce / Tech',
     desc: 'Trusted partner for all your tech needs — premium components, laptops, and accessories delivered across all 69 wilayas.',
   },
+  {
+    name: 'Walid Fermeture',
+    url: 'walidfermeture.com',
+    href: 'https://walidfermeture.com',
+    tag: 'Security / Signage',
+    desc: 'Paris-based 24/7 installation and maintenance for metal shutters, reinforced doors, storefronts, and illuminated signage across Île-de-France.',
+  },
+  {
+    name: 'AcquisitionPro',
+    url: 'acquisitionpro.net',
+    href: 'https://acquisitionpro.net',
+    tag: 'Lead Generation',
+    desc: 'Lead generation platform helping businesses make customer acquisition consistent and predictable.',
+  },
 ]
 
 function Projects() {

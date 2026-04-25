@@ -1,7 +1,27 @@
-import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom'
+import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react-router-dom'
 import './index.css'
 import HomePage from './pages/Home.jsx'
 import HomeArPage from './pages/HomeAr.jsx'
+
+/* ─── Language detection ────────────────────────────────────── */
+
+const LANG_KEY = 'sitedz_lang'
+
+function detectLang() {
+  if (typeof window === 'undefined') return 'ar'
+  const saved = window.localStorage.getItem(LANG_KEY)
+  if (saved === 'ar' || saved === 'en') return saved
+  const browser = (navigator.language || navigator.userLanguage || '').toLowerCase()
+  return browser.startsWith('ar') ? 'ar' : 'en'
+}
+
+function persistLang(lang) {
+  try { window.localStorage.setItem(LANG_KEY, lang) } catch (_) {}
+}
+
+function RootRedirect() {
+  return <Navigate to={detectLang() === 'ar' ? '/ar' : '/en'} replace />
+}
 
 /* ─── Nav ───────────────────────────────────────────────────── */
 
@@ -12,7 +32,7 @@ function Nav() {
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <Link to={isEn ? '/en' : '/'} className="nav__logo">
+        <Link to={isEn ? '/en' : '/ar'} className="nav__logo">
           <span className="nav__logo-text">SiteDZ</span>
         </Link>
 
@@ -26,16 +46,20 @@ function Nav() {
             </>
           ) : (
             <>
-              <a href="/#services">الخدمات</a>
-              <a href="/#process">المنهجية</a>
-              <a href="/#projects">المشاريع</a>
-              <a href="/#contact">تواصل معنا</a>
+              <a href="/ar#services">الخدمات</a>
+              <a href="/ar#process">المنهجية</a>
+              <a href="/ar#projects">المشاريع</a>
+              <a href="/ar#contact">تواصل معنا</a>
             </>
           )}
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
-          <Link to={isEn ? '/' : '/en'} className="nav__lang-toggle">
+          <Link
+            to={isEn ? '/ar' : '/en'}
+            onClick={() => persistLang(isEn ? 'ar' : 'en')}
+            className="nav__lang-toggle"
+          >
             {isEn ? 'ع' : 'EN'}
           </Link>
           <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer" className="nav__cta">
@@ -59,7 +83,7 @@ function Footer() {
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <Link to={isEn ? '/en' : '/'} className="footer__logo">
+        <Link to={isEn ? '/en' : '/ar'} className="footer__logo">
           <span className="footer__logo-text">SiteDZ</span>
         </Link>
         <div className="footer__links">
@@ -73,9 +97,9 @@ function Footer() {
             </>
           ) : (
             <>
-              <a href="/#services">الخدمات</a>
-              <a href="/#process">المنهجية</a>
-              <a href="/#pricing">الأسعار</a>
+              <a href="/ar#services">الخدمات</a>
+              <a href="/ar#process">المنهجية</a>
+              <a href="/ar#pricing">الأسعار</a>
               <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer">واتساب</a>
               <a href="mailto:hello@sitedz.com">hello@sitedz.com</a>
             </>
@@ -97,7 +121,8 @@ export default function App() {
       <Nav />
       <main>
         <Routes>
-          <Route path="/"   element={<HomeArPage />} />
+          <Route path="/"   element={<RootRedirect />} />
+          <Route path="/ar" element={<HomeArPage />} />
           <Route path="/en" element={<HomePage />} />
         </Routes>
       </main>
