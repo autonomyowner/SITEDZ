@@ -7,12 +7,12 @@
 
 /* ===== ROOT TOKENS ===== */
 :root {
-  --bg:        #f0ede5;
-  --dark:      #131314;
-  --text:      #1a1918;
-  --muted:     #6b6860;
-  --border:    rgba(26, 25, 24, 0.1);
-  --accent:    #d97757;
+  --bg:        #0B0B0D;
+  --dark:      #0B0B0D;
+  --text:      #F3F1EC;
+  --muted:     rgba(243, 241, 236, 0.58);
+  --border:    rgba(243, 241, 236, 0.12);
+  --accent:    #FF6A1A;
 
   --font-sans: 'Figtree', sans-serif;
   --font-serif:'Cormorant', serif;
@@ -122,7 +122,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0.5rem 1.125rem;
-  background: var(--dark);
+  background: var(--accent);
   color: #fff;
   border-radius: 100px;
   font-size: 0.875rem;
@@ -205,7 +205,8 @@ a {
 }
 
 .featured__card {
-  background: radial-gradient(ellipse at 50% 30%, #0d0c0e 0%, #030203 55%, #000000 100%);
+  background: radial-gradient(ellipse at 50% 30%, #16161a 0%, #0B0B0D 60%, #050506 100%);
+  border: 1px solid var(--border);
   border-radius: 1.375rem;
   overflow: hidden;
   padding: clamp(2.5rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem) 0;
@@ -218,7 +219,7 @@ a {
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.22em;
-  color: rgba(240, 237, 229, 0.45);
+  color: rgba(243, 241, 236, 0.45);
   margin-bottom: clamp(1.5rem, 3vw, 2.5rem);
   text-align: center;
 }
@@ -228,7 +229,7 @@ a {
   font-size: clamp(2.75rem, 6vw, 7rem);
   font-weight: 700;
   line-height: 0.95;
-  color: #f0ede5;
+  color: #F3F1EC;
   letter-spacing: -0.02em;
   margin-bottom: clamp(2rem, 4vw, 4rem);
   text-align: center;
@@ -237,7 +238,7 @@ a {
 .featured__title em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(240, 237, 229, 0.55);
+  color: rgba(243, 241, 236, 0.55);
 }
 
 .featured__image-wrap {
@@ -376,13 +377,13 @@ a {
   font-weight: 700;
   line-height: 1.08;
   letter-spacing: -0.02em;
-  color: #f0ede5;
+  color: #F3F1EC;
 }
 
 .craft__headline em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(240, 237, 229, 0.5);
+  color: rgba(243, 241, 236, 0.5);
 }
 
 .craft__section-label {
@@ -390,14 +391,14 @@ a {
   font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(240, 237, 229, 0.35);
+  color: rgba(243, 241, 236, 0.35);
   margin-bottom: 2.5rem;
 }
 
 .craft__text {
   font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
   line-height: 1.72;
-  color: rgba(240, 237, 229, 0.65);
+  color: rgba(243, 241, 236, 0.65);
 }
 
 .craft__text p + p {
@@ -409,7 +410,7 @@ a {
   flex-direction: column;
   gap: 0;
   margin-top: 3rem;
-  border-top: 1px solid rgba(240, 237, 229, 0.1);
+  border-top: 1px solid rgba(243, 241, 236, 0.1);
 }
 
 .craft__step {
@@ -417,7 +418,7 @@ a {
   gap: 1.5rem;
   align-items: flex-start;
   padding: 1.5rem 0;
-  border-bottom: 1px solid rgba(240, 237, 229, 0.1);
+  border-bottom: 1px solid rgba(243, 241, 236, 0.1);
 }
 
 .craft__step-num {
@@ -433,14 +434,14 @@ a {
 .craft__step-body h4 {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #f0ede5;
+  color: #F3F1EC;
   margin-bottom: 0.3rem;
   letter-spacing: -0.01em;
 }
 
 .craft__step-body p {
   font-size: 0.8125rem;
-  color: rgba(240, 237, 229, 0.5);
+  color: rgba(243, 241, 236, 0.5);
   line-height: 1.5;
 }
 
@@ -536,7 +537,7 @@ a {
 }
 
 .material-card:hover {
-  background: rgba(26, 25, 24, 0.04);
+  background: rgba(243, 241, 236, 0.04);
 }
 
 .material-card__tag {
@@ -578,7 +579,7 @@ a {
   font-family: var(--font-serif);
   font-size: clamp(2.75rem, 6vw, 6rem);
   font-weight: 700;
-  color: #f0ede5;
+  color: #F3F1EC;
   line-height: 1.0;
   letter-spacing: -0.02em;
   margin-bottom: 1.75rem;
@@ -587,12 +588,12 @@ a {
 .commission__title em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(240, 237, 229, 0.5);
+  color: rgba(243, 241, 236, 0.5);
 }
 
 .commission__sub {
   font-size: clamp(0.9375rem, 1.3vw, 1.0625rem);
-  color: rgba(240, 237, 229, 0.55);
+  color: rgba(243, 241, 236, 0.55);
   line-height: 1.65;
   margin-bottom: 3rem;
 }
@@ -602,7 +603,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0.875rem 2.25rem;
-  background: #f0ede5;
+  background: #F3F1EC;
   color: var(--dark);
   border-radius: 100px;
   font-size: 0.9375rem;
@@ -714,7 +715,7 @@ a {
   align-items: center;
   gap: 0.5rem;
   padding: 0.75rem 1.75rem;
-  background: var(--dark);
+  background: var(--accent);
   color: #fff;
   border-radius: 100px;
   font-size: 0.9375rem;
@@ -746,15 +747,15 @@ a {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(240, 237, 229, 0.08);
-  border: 1px solid rgba(240, 237, 229, 0.1);
+  background: rgba(243, 241, 236, 0.08);
+  border: 1px solid rgba(243, 241, 236, 0.1);
   border-radius: 1rem;
   overflow: hidden;
   margin-top: clamp(2rem, 4vw, 4rem);
 }
 
 .featured__stat {
-  background: rgba(240, 237, 229, 0.03);
+  background: rgba(243, 241, 236, 0.03);
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -766,7 +767,7 @@ a {
   font-family: var(--font-serif);
   font-size: clamp(1.75rem, 3.5vw, 3rem);
   font-weight: 700;
-  color: #f0ede5;
+  color: #F3F1EC;
   letter-spacing: -0.02em;
   line-height: 1;
 }
@@ -776,7 +777,7 @@ a {
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(240, 237, 229, 0.4);
+  color: rgba(243, 241, 236, 0.4);
   text-align: center;
 }
 
@@ -797,8 +798,9 @@ a {
 }
 
 .service-card:hover {
-  background: rgba(26, 25, 24, 0.04);
-  box-shadow: 0 4px 24px rgba(26, 25, 24, 0.07);
+  background: rgba(243, 241, 236, 0.04);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  border-color: var(--accent);
 }
 
 .service-card__num {
@@ -875,6 +877,7 @@ a {
   align-items: center;
   gap: 1.25rem;
   background: var(--dark);
+  border: 1px solid var(--accent);
   border-radius: 1rem;
   padding: 1.625rem 2rem;
   margin-bottom: 1.5rem;
@@ -887,23 +890,23 @@ a {
   width: 44px;
   height: 44px;
   border-radius: 50%;
-  background: rgba(240, 237, 229, 0.07);
-  border: 1px solid rgba(240, 237, 229, 0.12);
-  color: #f0ede5;
+  background: rgba(243, 241, 236, 0.07);
+  border: 1px solid rgba(243, 241, 236, 0.12);
+  color: #F3F1EC;
   flex-shrink: 0;
 }
 
 .projects__award-title {
   font-size: 0.9375rem;
   font-weight: 700;
-  color: #f0ede5;
+  color: #F3F1EC;
   letter-spacing: -0.01em;
   margin-bottom: 0.25rem;
 }
 
 .projects__award-sub {
   font-size: 0.8125rem;
-  color: rgba(240, 237, 229, 0.45);
+  color: rgba(243, 241, 236, 0.45);
   line-height: 1.5;
 }
 
@@ -929,7 +932,7 @@ a {
 }
 
 .project-card:hover {
-  background: rgba(26, 25, 24, 0.04);
+  background: rgba(243, 241, 236, 0.04);
 }
 
 .project-card__award {
@@ -988,7 +991,7 @@ a {
 .project-card__url {
   font-size: 0.6875rem;
   font-weight: 500;
-  color: rgba(26, 25, 24, 0.35);
+  color: rgba(243, 241, 236, 0.35);
   margin-top: 0.25rem;
 }
 
@@ -1004,12 +1007,12 @@ a {
 .commission__phone {
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgba(240, 237, 229, 0.55);
+  color: rgba(243, 241, 236, 0.55);
   transition: color 0.2s;
 }
 
 .commission__phone:hover {
-  color: rgba(240, 237, 229, 0.9);
+  color: rgba(243, 241, 236, 0.9);
 }
 
 /* ===== FOOTER ===== */
@@ -1130,14 +1133,14 @@ a {
 
 .ar-note {
   font-size: 0.8125rem;
-  color: rgba(240, 237, 229, 0.45);
+  color: rgba(243, 241, 236, 0.45);
   text-align: center;
   white-space: nowrap;
 }
 
 .three-drag-note {
   font-size: 0.75rem;
-  color: rgba(240, 237, 229, 0.28);
+  color: rgba(243, 241, 236, 0.28);
   letter-spacing: 0.04em;
 }
 
@@ -1227,7 +1230,7 @@ a {
 .ar-picker__label {
   font-size: 0.9375rem;
   font-weight: 600;
-  color: rgba(240, 237, 229, 0.65);
+  color: rgba(243, 241, 236, 0.65);
   letter-spacing: -0.01em;
 }
 
@@ -1262,7 +1265,7 @@ a {
 }
 
 .puzzle-card:hover {
-  box-shadow: 0 8px 32px rgba(26,25,24,0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
   transform: translateY(-2px);
 }
 
@@ -1299,7 +1302,7 @@ a {
   left: 1rem;
   padding: 0.3rem 0.75rem;
   background: var(--dark);
-  color: #f0ede5;
+  color: #F3F1EC;
   border-radius: 100px;
   font-size: 0.6875rem;
   font-weight: 700;
@@ -1355,22 +1358,22 @@ a {
   font-weight: 700;
   line-height: 1.05;
   letter-spacing: -0.02em;
-  color: #f0ede5;
+  color: #F3F1EC;
   max-width: 520px;
 }
 
 .how-it-works__title em {
   font-style: italic;
   font-weight: 300;
-  color: rgba(240, 237, 229, 0.5);
+  color: rgba(243, 241, 236, 0.5);
 }
 
 .how-it-works__steps {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1px;
-  background: rgba(240, 237, 229, 0.1);
-  border: 1px solid rgba(240, 237, 229, 0.1);
+  background: rgba(243, 241, 236, 0.1);
+  border: 1px solid rgba(243, 241, 236, 0.1);
   border-radius: 1rem;
   overflow: hidden;
 }
@@ -1392,14 +1395,14 @@ a {
 .how-step__title {
   font-size: 1rem;
   font-weight: 700;
-  color: #f0ede5;
+  color: #F3F1EC;
   margin-bottom: 0.6rem;
   letter-spacing: -0.01em;
 }
 
 .how-step__desc {
   font-size: 0.875rem;
-  color: rgba(240, 237, 229, 0.55);
+  color: rgba(243, 241, 236, 0.55);
   line-height: 1.6;
 }
 
