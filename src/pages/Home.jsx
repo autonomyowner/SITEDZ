@@ -287,8 +287,6 @@ function Pricing() {
 const PROJECTS = [
   {
     name: 'ElGhella',
-    url: 'elghella.com',
-    href: 'https://elghella.com',
     tag: 'AgriTech',
     desc: 'Integrated marketplace for Algerian farmers to trade agricultural products, equipment, and advisory services.',
     award: true,
@@ -413,27 +411,35 @@ function Projects() {
 
         {/* Grid */}
         <div className="projects__grid">
-          {PROJECTS.map((p) => (
-            <a key={p.name} href={p.href} target="_blank" rel="noopener noreferrer" className="project-card">
-              {p.award && (
-                <span className="project-card__award">
-                  <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
-                  </svg>
-                  Projet Innovant
-                </span>
-              )}
-              <div className="project-card__top">
-                <h3 className="project-card__name">{p.name}</h3>
-                <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="project-card__arrow" aria-hidden="true">
-                  <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-                </svg>
-              </div>
-              <span className="project-card__tag">{p.tag}</span>
-              <p className="project-card__desc">{p.desc}</p>
-              <span className="project-card__url">{p.url}</span>
-            </a>
-          ))}
+          {PROJECTS.map((p) => {
+            const Wrapper = p.href ? 'a' : 'div'
+            const wrapperProps = p.href
+              ? { href: p.href, target: '_blank', rel: 'noopener noreferrer' }
+              : {}
+            return (
+              <Wrapper key={p.name} {...wrapperProps} className="project-card">
+                {p.award && (
+                  <span className="project-card__award">
+                    <svg width="9" height="9" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                      <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" />
+                    </svg>
+                    Projet Innovant
+                  </span>
+                )}
+                <div className="project-card__top">
+                  <h3 className="project-card__name">{p.name}</h3>
+                  {p.href && (
+                    <svg width="13" height="13" viewBox="0 0 13 13" fill="none" className="project-card__arrow" aria-hidden="true">
+                      <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  )}
+                </div>
+                <span className="project-card__tag">{p.tag}</span>
+                <p className="project-card__desc">{p.desc}</p>
+                {p.url && <span className="project-card__url">{p.url}</span>}
+              </Wrapper>
+            )
+          })}
         </div>
       </div>
     </section>
