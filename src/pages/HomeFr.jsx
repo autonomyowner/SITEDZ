@@ -101,19 +101,19 @@ const STEPS = [
 
 const PRICING = [
   {
-    tag: 'Basic',
-    name: '50 000 – 80 000 DA',
-    desc: "Sites statiques de 1 à 3 pages. Parfait pour PME, professionnels et landing pages.",
+    tag: 'Starter',
+    name: '1 400 € – 2 300 €',
+    desc: "Sites statiques de 1 à 3 pages avec identité soignée. Parfait pour fondateurs, indépendants et landing pages à forte conversion.",
   },
   {
-    tag: 'Professionnel',
-    name: '120 000 – 180 000 DA',
-    desc: "Sites dynamiques avec tableau de bord, jusqu'à 10 pages. Idéal pour les entreprises algériennes en croissance.",
+    tag: 'Croissance',
+    name: '3 200 € – 5 500 €',
+    desc: "Sites dynamiques avec tableau de bord, jusqu'à 10 pages. Conçus pour les entreprises qui dépassent le site vitrine.",
   },
   {
-    tag: 'Entreprise',
-    name: 'Tarif sur mesure',
-    desc: "Plateformes e-commerce, intégration de bots, applications mobiles, APIs et systèmes complexes.",
+    tag: 'Scale',
+    name: '7 500 €+',
+    desc: "Plateformes e-commerce, intégrations IA, applications mobiles et systèmes sur mesure. Devis selon le périmètre.",
   },
 ]
 
@@ -267,8 +267,8 @@ function Pricing() {
         <div className="materials__header">
           <h2 className="materials__headline">Tarifs clairs<br />et honnêtes</h2>
           <p className="materials__sub">
-            Des forfaits transparents en dinars algériens. Aucun frais caché —
-            juste du travail de qualité à des prix justes pour les entreprises algériennes.
+            Des forfaits transparents en euros pour clients internationaux. Aucun frais caché —
+            livraison premium à des tarifs compétitifs.
           </p>
         </div>
         <div className="materials__grid">
