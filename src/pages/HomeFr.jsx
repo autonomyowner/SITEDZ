@@ -4,30 +4,30 @@ const SERVICES = [
   {
     id: 1,
     num: '01',
-    tag: 'Core Service',
-    name: 'Web Development',
-    desc: 'Custom websites, dynamic platforms with control panels, landing pages, and complex systems built with modern technology.',
+    tag: 'Service principal',
+    name: 'Développement Web',
+    desc: "Sites sur mesure, plateformes dynamiques avec tableaux de bord, landing pages et systèmes complexes bâtis avec des technologies modernes.",
   },
   {
     id: 2,
     num: '02',
-    tag: 'Core Service',
-    name: 'Mobile Applications',
-    desc: 'Native and cross-platform apps for iOS and Android — delivery systems, booking platforms, and e-commerce.',
+    tag: 'Service principal',
+    name: 'Applications Mobiles',
+    desc: "Applications natives et multiplateformes iOS et Android — livraison, réservation et e-commerce.",
   },
   {
     id: 3,
     num: '03',
     tag: 'Design',
-    name: 'UI/UX Design',
-    desc: 'User-focused design combining aesthetics with functionality for memorable digital experiences.',
+    name: 'Design UI/UX',
+    desc: "Un design centré utilisateur qui allie esthétique et fonctionnalité pour des expériences digitales mémorables.",
   },
   {
     id: 4,
     num: '04',
-    tag: 'Automation',
-    name: 'Bot Integration',
-    desc: 'Telegram bots, WhatsApp automation, and intelligent chatbot solutions tailored to your business.',
+    tag: 'Automatisation',
+    name: 'Intégration de Bots',
+    desc: "Bots Telegram, automatisation WhatsApp et chatbots intelligents adaptés à votre activité.",
   },
 ]
 
@@ -93,34 +93,34 @@ const LOGOS = [
 ]
 
 const STEPS = [
-  { num: '01', title: 'Discovery', desc: 'We learn your business goals, target audience, and the problem you need solved.' },
-  { num: '02', title: 'Design', desc: 'We craft wireframes and UI prototypes aligned with your brand and user expectations.' },
-  { num: '03', title: 'Development', desc: 'Built with modern technology — clean, fast, scalable, and maintainable code.' },
-  { num: '04', title: 'Launch & Support', desc: 'Deployment, rigorous testing, and ongoing maintenance to keep you running smoothly.' },
+  { num: '01', title: 'Découverte', desc: "Nous comprenons vos objectifs, votre audience cible et le problème à résoudre." },
+  { num: '02', title: 'Design', desc: "Wireframes et prototypes UI alignés avec votre marque et les attentes utilisateurs." },
+  { num: '03', title: 'Développement', desc: "Construit avec des technologies modernes — du code propre, rapide, scalable et maintenable." },
+  { num: '04', title: 'Lancement & Support', desc: "Déploiement, tests rigoureux et maintenance continue pour une activité fluide." },
 ]
 
 const PRICING = [
   {
     tag: 'Basic',
-    name: '50,000 – 80,000 DA',
-    desc: 'Static 1–3 page sites. Perfect for small businesses, professionals, and landing pages.',
+    name: '50 000 – 80 000 DA',
+    desc: "Sites statiques de 1 à 3 pages. Parfait pour PME, professionnels et landing pages.",
   },
   {
-    tag: 'Professional',
-    name: '120,000 – 180,000 DA',
-    desc: 'Dynamic sites with dashboard, up to 10 pages. Ideal for growing Algerian businesses.',
+    tag: 'Professionnel',
+    name: '120 000 – 180 000 DA',
+    desc: "Sites dynamiques avec tableau de bord, jusqu'à 10 pages. Idéal pour les entreprises algériennes en croissance.",
   },
   {
-    tag: 'Enterprise',
-    name: 'Custom Pricing',
-    desc: 'E-commerce platforms, bot integration, mobile apps, API development, and complex systems.',
+    tag: 'Entreprise',
+    name: 'Tarif sur mesure',
+    desc: "Plateformes e-commerce, intégration de bots, applications mobiles, APIs et systèmes complexes.",
   },
 ]
 
 const STATS = [
-  { num: '30+', label: 'Projects Delivered' },
-  { num: '24h', label: 'Response Time' },
-  { num: '2025', label: 'Founded' },
+  { num: '30+', label: 'Projets livrés' },
+  { num: '24h', label: 'Temps de réponse' },
+  { num: '2025', label: 'Fondée en' },
 ]
 
 /* ─── Sections ──────────────────────────────────────────────── */
@@ -132,27 +132,27 @@ function Hero() {
         <div>
           <h1 className="hero__headline">
             <span className="hero__line" style={{ '--d': '0ms' }}>
-              Your <span className="hero__underline">vision</span>,
+              Votre <span className="hero__underline">vision</span>,
             </span>
             <span className="hero__line" style={{ '--d': '120ms' }}>
-              our <span className="hero__underline">code</span>.
+              notre <span className="hero__underline">code</span>.
             </span>
           </h1>
         </div>
         <div className="hero__tagline-col">
           <p className="hero__tagline">
-            SiteDZ is a premier digital agency — building exceptional
-            web and mobile experiences that combine local expertise with
-            international standards.
+            SiteDZ est une agence digitale de référence — nous créons
+            des expériences web et mobiles d'exception, alliant expertise locale
+            et standards internationaux.
           </p>
           <div className="hero__actions">
             <a href="#contact" className="hero__btn-primary">
-              Start a Project
+              Démarrer un projet
               <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
                 <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
             </a>
-            <a href="#services" className="hero__btn-ghost">See Services</a>
+            <a href="#services" className="hero__btn-ghost">Voir les services</a>
           </div>
         </div>
       </div>
@@ -164,11 +164,11 @@ function Featured() {
   return (
     <section className="featured-wrap">
       <div className="featured__card featured__card--stats">
-        <span className="featured__label">PREMIER DIGITAL AGENCY</span>
+        <span className="featured__label">L'AGENCE DIGITALE DE RÉFÉRENCE</span>
         <h2 className="featured__title">
-          BUILDING THE
+          BÂTIR LE
           <br />
-          DIGITAL <em>future</em>
+          <em>futur</em> DIGITAL
         </h2>
         <div className="featured__stats">
           {STATS.map((s, i) => (
@@ -186,7 +186,7 @@ function Featured() {
 function Marquee() {
   const doubled = [...LOGOS, ...LOGOS]
   return (
-    <div className="marquee-strip" aria-label="Our partners and technologies">
+    <div className="marquee-strip" aria-label="Nos partenaires et technologies">
       <div className="marquee-track">
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-logo">
@@ -201,7 +201,7 @@ function Marquee() {
 function Services() {
   return (
     <section className="collection" id="services">
-      <p className="section-label">Our Services</p>
+      <p className="section-label">Nos Services</p>
       <div className="services__grid">
         {SERVICES.map((s) => (
           <a key={s.id} href="#contact" className="service-card">
@@ -221,25 +221,26 @@ function Process() {
     <section className="craft" id="process">
       <div className="craft__inner">
         <div>
-          <p className="craft__section-label">The Process</p>
+          <p className="craft__section-label">La Méthode</p>
           <h2 className="craft__headline">
-            Built with
+            Conçu avec
             <br />
-            <em>clarity</em>,
+            <em>clarté</em>,
             <br />
-            code, and care
+            code et soin
           </h2>
         </div>
         <div>
           <div className="craft__text">
             <p>
-              Every project starts with a deep understanding of your business —
-              who your customers are, what they need, and how your digital
-              product fits into their lives.
+              Chaque projet commence par une compréhension profonde de votre
+              activité — qui sont vos clients, ce dont ils ont besoin, et
+              comment votre produit digital s'inscrit dans leur quotidien.
             </p>
             <p>
-              We combine clean architecture with pixel-perfect design to deliver
-              solutions that are fast, reliable, and built to grow with you.
+              Nous combinons une architecture propre avec un design pixel-perfect
+              pour livrer des solutions rapides, fiables et conçues pour évoluer
+              avec vous.
             </p>
           </div>
           <div className="craft__steps">
@@ -264,10 +265,10 @@ function Pricing() {
     <section className="materials" id="pricing">
       <div className="materials__inner">
         <div className="materials__header">
-          <h2 className="materials__headline">Clear,<br />honest pricing</h2>
+          <h2 className="materials__headline">Tarifs clairs<br />et honnêtes</h2>
           <p className="materials__sub">
-            Transparent plans in Algerian Dinars. No hidden fees —
-            just quality work at fair prices for Algerian businesses.
+            Des forfaits transparents en dinars algériens. Aucun frais caché —
+            juste du travail de qualité à des prix justes pour les entreprises algériennes.
           </p>
         </div>
         <div className="materials__grid">
@@ -288,7 +289,7 @@ const PROJECTS = [
   {
     name: 'ElGhella',
     tag: 'AgriTech',
-    desc: 'Integrated marketplace for Algerian farmers to trade agricultural products, equipment, and advisory services.',
+    desc: "Marketplace intégrée pour les agriculteurs algériens : produits, équipements et services agricoles.",
     award: true,
   },
   {
@@ -296,92 +297,92 @@ const PROJECTS = [
     url: 'aitridi.com',
     href: 'https://aitridi.com',
     tag: 'Marketplace',
-    desc: 'B2B, B2C, and freelancer marketplace connecting buyers and sellers across Algeria.',
+    desc: "Marketplace B2B, B2C et freelance reliant acheteurs et vendeurs à travers l'Algérie.",
     award: true,
   },
   {
     name: 'Ma5zani',
     url: 'ma5zani.com',
     href: 'https://ma5zani.com',
-    tag: 'E-Commerce SaaS',
-    desc: 'The Shopify alternative for Algerian sellers — launch your online store in minutes.',
+    tag: 'SaaS E-Commerce',
+    desc: "L'alternative Shopify pour les vendeurs algériens — lancez votre boutique en quelques minutes.",
   },
   {
     name: 'Postaify',
     url: 'postaify.com',
     href: 'https://postaify.com',
-    tag: 'AI SaaS',
-    desc: 'Generate 30 days of content for 5 platforms in under 15 minutes with AI automation.',
+    tag: 'SaaS IA',
+    desc: "Générez 30 jours de contenu pour 5 plateformes en moins de 15 minutes grâce à l'IA.",
   },
   {
     name: 'Tabra',
     url: 'tabra.space',
     href: 'https://tabra.space',
     tag: 'HealthTech',
-    desc: 'Algerian healthcare platform making medical services easier to access nationwide.',
+    desc: "Plateforme de santé algérienne facilitant l'accès aux services médicaux dans tout le pays.",
   },
   {
     name: 'Hasio',
     url: 'hasio.xyz',
     href: 'https://hasio.xyz',
-    tag: 'Travel',
-    desc: 'Travel guide and booking platform — your journey made easier.',
+    tag: 'Voyage',
+    desc: "Guide de voyage et plateforme de réservation — votre voyage simplifié.",
   },
   {
     name: 'TRAVoices',
     url: 'travoices.xyz',
     href: 'https://travoices.xyz',
-    tag: 'AI / Voice',
-    desc: 'Real-time AI voice translation breaking language barriers across the globe.',
+    tag: 'IA / Voix',
+    desc: "Traduction vocale par IA en temps réel pour briser les barrières linguistiques.",
   },
   {
     name: 'BioGrenaGold',
     url: 'biogrenagold.com',
     href: 'https://www.biogrenagold.com',
-    tag: 'Health & Wellness',
-    desc: 'Natural pomegranate-based health supplements — la puissance de la grenade.',
+    tag: 'Santé & Bien-être',
+    desc: "Compléments naturels à base de grenade — la puissance de la grenade.",
   },
   {
     name: 'Cuisine Alger',
     url: 'cuisinealger.com',
     href: 'https://www.cuisinealger.com',
-    tag: 'Interior Design',
-    desc: 'Modern kitchen design and manufacturing crafted for Algerian homes.',
+    tag: 'Design d\'intérieur',
+    desc: "Design et fabrication de cuisines modernes pensées pour les foyers algériens.",
   },
   {
     name: 'ReachFood',
     url: 'reachfood.co',
     href: 'https://reachfood.co',
     tag: 'Food',
-    desc: 'Platform connecting food producers and consumers for smarter distribution.',
+    desc: "Plateforme reliant producteurs et consommateurs pour une distribution plus intelligente.",
   },
   {
     name: 'MBSx',
     url: 'mbsx.org',
     href: 'http://mbsx.org',
-    tag: 'Media',
-    desc: 'Data journalism institution advancing data-driven reporting in Algeria.',
+    tag: 'Médias',
+    desc: "Institution de journalisme de données portant le reportage data-driven en Algérie.",
   },
   {
     name: 'Zed Informatique',
     url: 'zed-informatique.com',
     href: 'https://zed-informatique.com',
     tag: 'E-Commerce / Tech',
-    desc: 'Trusted partner for all your tech needs — premium components, laptops, and accessories delivered across all 69 wilayas.',
+    desc: "Partenaire de confiance pour vos besoins tech — composants premium, laptops et accessoires livrés dans les 58 wilayas.",
   },
   {
     name: 'Walid Fermeture',
     url: 'walidfermeture.com',
     href: 'https://walidfermeture.com',
-    tag: 'Security / Signage',
-    desc: 'Paris-based 24/7 installation and maintenance for metal shutters, reinforced doors, storefronts, and illuminated signage across Île-de-France.',
+    tag: 'Sécurité / Enseignes',
+    desc: "Installation et maintenance 24/7 à Paris pour rideaux métalliques, portes blindées, vitrines et enseignes lumineuses en Île-de-France.",
   },
   {
     name: 'AcquisitionPro',
     url: 'acquisitionpro.net',
     href: 'https://acquisitionpro.net',
-    tag: 'Lead Generation',
-    desc: 'Lead generation platform helping businesses make customer acquisition consistent and predictable.',
+    tag: 'Génération de leads',
+    desc: "Plateforme de génération de leads rendant l'acquisition client constante et prévisible.",
   },
 ]
 
@@ -390,9 +391,9 @@ function Projects() {
     <section className="projects" id="projects">
       <div className="projects__inner">
         <div className="projects__header">
-          <p className="section-label">Our Projects</p>
+          <p className="section-label">Nos Projets</p>
           <h2 className="projects__headline">
-            Built for<br /><em>Algeria</em>
+            Construits pour<br /><em>l'Algérie</em>
           </h2>
         </div>
 
@@ -404,8 +405,8 @@ function Projects() {
             </svg>
           </div>
           <div>
-            <p className="projects__award-title">Proud developers of 2 Label Projet Innovants</p>
-            <p className="projects__award-sub">ElGhella &amp; AItraid — awarded by Algeria's innovation programme</p>
+            <p className="projects__award-title">Fiers développeurs de 2 Labels Projet Innovant</p>
+            <p className="projects__award-sub">ElGhella &amp; AItraid — distingués par le programme d'innovation algérien</p>
           </div>
         </div>
 
@@ -451,13 +452,13 @@ function Contact() {
     <section className="commission" id="contact">
       <div className="commission__inner">
         <h2 className="commission__title">
-          Your project,
+          Votre projet,
           <br />
-          <em>our expertise</em>
+          <em>notre expertise</em>
         </h2>
         <p className="commission__sub">
-          Ready to build something great? Tell us about your idea
-          and we'll get back to you within 24 hours.
+          Prêt à bâtir quelque chose de grand ? Parlez-nous de votre idée
+          et nous reviendrons vers vous sous 24 heures.
         </p>
         <div className="commission__actions">
           <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer" className="btn-light">
@@ -475,7 +476,7 @@ function Contact() {
 
 /* ─── Page ──────────────────────────────────────────────────── */
 
-export default function HomePage() {
+export default function HomeFrPage() {
   return (
     <>
       <Hero />

@@ -216,7 +216,7 @@ function Hero() {
         </div>
         <div className="hero__tagline-col">
           <p className="hero__tagline">
-            SiteDZ هي الوكالة الرقمية الرائدة في الجزائر — نبني تجارب ويب
+            SiteDZ هي الوكالة الرقمية الرائدة — نبني تجارب ويب
             وتطبيقات موبايل استثنائية تجمع بين الخبرة المحلية والمعايير الدولية.
           </p>
           <div className="hero__actions">
@@ -238,7 +238,7 @@ function Featured() {
   return (
     <section className="featured-wrap">
       <div className="featured__card featured__card--stats">
-        <span className="featured__label">الوكالة الرقمية الرائدة في الجزائر</span>
+        <span className="featured__label">الوكالة الرقمية الرائدة</span>
         <h2 className="featured__title">
           نبني المستقبل
           <br />

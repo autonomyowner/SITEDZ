@@ -2,68 +2,85 @@ import { BrowserRouter, Routes, Route, Link, useLocation, Navigate } from 'react
 import './index.css'
 import HomePage from './pages/Home.jsx'
 import HomeArPage from './pages/HomeAr.jsx'
+import HomeFrPage from './pages/HomeFr.jsx'
 
 /* ─── Language detection ────────────────────────────────────── */
 
 const LANG_KEY = 'sitedz_lang'
+const LANGS = ['en', 'ar', 'fr']
 
 function detectLang() {
   if (typeof window === 'undefined') return 'ar'
   const saved = window.localStorage.getItem(LANG_KEY)
-  if (saved === 'ar' || saved === 'en') return saved
+  if (LANGS.includes(saved)) return saved
   const browser = (navigator.language || navigator.userLanguage || '').toLowerCase()
-  return browser.startsWith('ar') ? 'ar' : 'en'
+  if (browser.startsWith('ar')) return 'ar'
+  if (browser.startsWith('fr')) return 'fr'
+  return 'en'
 }
 
 function persistLang(lang) {
   try { window.localStorage.setItem(LANG_KEY, lang) } catch (_) {}
 }
 
+function currentLang(pathname) {
+  if (pathname.startsWith('/ar')) return 'ar'
+  if (pathname.startsWith('/fr')) return 'fr'
+  return 'en'
+}
+
+function nextLang(lang) {
+  const i = LANGS.indexOf(lang)
+  return LANGS[(i + 1) % LANGS.length]
+}
+
+const LANG_LABELS = { en: 'EN', ar: 'ع', fr: 'FR' }
+
 function RootRedirect() {
-  return <Navigate to={detectLang() === 'ar' ? '/ar' : '/en'} replace />
+  const l = detectLang()
+  return <Navigate to={`/${l}`} replace />
 }
 
 /* ─── Nav ───────────────────────────────────────────────────── */
 
+const NAV_STRINGS = {
+  en: { services: 'Services', process: 'Process', projects: 'Projects', contact: 'Contact', cta: 'WhatsApp' },
+  ar: { services: 'الخدمات', process: 'المنهجية', projects: 'المشاريع', contact: 'تواصل معنا', cta: 'تواصل معنا' },
+  fr: { services: 'Services', process: 'Méthode', projects: 'Projets', contact: 'Contact', cta: 'WhatsApp' },
+}
+
 function Nav() {
   const { pathname } = useLocation()
-  const isEn = pathname.startsWith('/en')
+  const lang = currentLang(pathname)
+  const t = NAV_STRINGS[lang]
+  const base = `/${lang}`
+  const next = nextLang(lang)
 
   return (
     <nav className="nav">
       <div className="nav__inner">
-        <Link to={isEn ? '/en' : '/ar'} className="nav__logo">
+        <Link to={base} className="nav__logo">
           <span className="nav__logo-text">SiteDZ</span>
         </Link>
 
         <div className="nav__links">
-          {isEn ? (
-            <>
-              <a href="/en#services">Services</a>
-              <a href="/en#process">Process</a>
-              <a href="/en#projects">Projects</a>
-              <a href="/en#contact">Contact</a>
-            </>
-          ) : (
-            <>
-              <a href="/ar#services">الخدمات</a>
-              <a href="/ar#process">المنهجية</a>
-              <a href="/ar#projects">المشاريع</a>
-              <a href="/ar#contact">تواصل معنا</a>
-            </>
-          )}
+          <a href={`${base}#services`}>{t.services}</a>
+          <a href={`${base}#process`}>{t.process}</a>
+          <a href={`${base}#projects`}>{t.projects}</a>
+          <a href={`${base}#contact`}>{t.contact}</a>
         </div>
 
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
           <Link
-            to={isEn ? '/ar' : '/en'}
-            onClick={() => persistLang(isEn ? 'ar' : 'en')}
+            to={`/${next}`}
+            onClick={() => persistLang(next)}
             className="nav__lang-toggle"
+            title={`Switch to ${next.toUpperCase()}`}
           >
-            {isEn ? 'ع' : 'EN'}
+            {LANG_LABELS[next]}
           </Link>
           <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer" className="nav__cta">
-            {isEn ? 'WhatsApp' : 'تواصل معنا'}
+            {t.cta}
             <svg width="13" height="13" viewBox="0 0 13 13" fill="none" aria-hidden="true">
               <path d="M2 11L11 2M11 2H5M11 2V8" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
@@ -76,38 +93,41 @@ function Nav() {
 
 /* ─── Footer ────────────────────────────────────────────────── */
 
+const FOOTER_STRINGS = {
+  en: {
+    services: 'Services', process: 'Process', pricing: 'Pricing', whatsapp: 'WhatsApp',
+    copy: '© 2025 SiteDZ. All rights reserved.',
+  },
+  ar: {
+    services: 'الخدمات', process: 'المنهجية', pricing: 'الأسعار', whatsapp: 'واتساب',
+    copy: '© 2025 SiteDZ. جميع الحقوق محفوظة.',
+  },
+  fr: {
+    services: 'Services', process: 'Méthode', pricing: 'Tarifs', whatsapp: 'WhatsApp',
+    copy: '© 2025 SiteDZ. Tous droits réservés.',
+  },
+}
+
 function Footer() {
   const { pathname } = useLocation()
-  const isEn = pathname.startsWith('/en')
+  const lang = currentLang(pathname)
+  const t = FOOTER_STRINGS[lang]
+  const base = `/${lang}`
 
   return (
     <footer className="footer">
       <div className="footer__inner">
-        <Link to={isEn ? '/en' : '/ar'} className="footer__logo">
+        <Link to={base} className="footer__logo">
           <span className="footer__logo-text">SiteDZ</span>
         </Link>
         <div className="footer__links">
-          {isEn ? (
-            <>
-              <a href="/en#services">Services</a>
-              <a href="/en#process">Process</a>
-              <a href="/en#pricing">Pricing</a>
-              <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-              <a href="mailto:hello@sitedz.com">hello@sitedz.com</a>
-            </>
-          ) : (
-            <>
-              <a href="/ar#services">الخدمات</a>
-              <a href="/ar#process">المنهجية</a>
-              <a href="/ar#pricing">الأسعار</a>
-              <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer">واتساب</a>
-              <a href="mailto:hello@sitedz.com">hello@sitedz.com</a>
-            </>
-          )}
+          <a href={`${base}#services`}>{t.services}</a>
+          <a href={`${base}#process`}>{t.process}</a>
+          <a href={`${base}#pricing`}>{t.pricing}</a>
+          <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer">{t.whatsapp}</a>
+          <a href="mailto:hello@sitedz.com">hello@sitedz.com</a>
         </div>
-        <p className="footer__copy">
-          {isEn ? '© 2025 SiteDZ. All rights reserved.' : '© 2025 SiteDZ. جميع الحقوق محفوظة.'}
-        </p>
+        <p className="footer__copy">{t.copy}</p>
       </div>
     </footer>
   )
@@ -124,6 +144,7 @@ export default function App() {
           <Route path="/"   element={<RootRedirect />} />
           <Route path="/ar" element={<HomeArPage />} />
           <Route path="/en" element={<HomePage />} />
+          <Route path="/fr" element={<HomeFrPage />} />
         </Routes>
       </main>
       <Footer />
