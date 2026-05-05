@@ -101,19 +101,19 @@ const STEPS = [
 
 const PRICING = [
   {
-    tag: 'Basic',
-    name: '50,000 – 80,000 DA',
-    desc: 'Static 1–3 page sites. Perfect for small businesses, professionals, and landing pages.',
+    tag: 'Starter',
+    name: '$1,500 – $2,500',
+    desc: 'Static 1–3 page sites with brand polish. Perfect for founders, professionals, and high-converting landing pages.',
   },
   {
-    tag: 'Professional',
-    name: '120,000 – 180,000 DA',
-    desc: 'Dynamic sites with dashboard, up to 10 pages. Ideal for growing Algerian businesses.',
+    tag: 'Growth',
+    name: '$3,500 – $6,000',
+    desc: 'Dynamic sites with dashboards, up to 10 pages. Built for businesses scaling beyond a brochure site.',
   },
   {
-    tag: 'Enterprise',
-    name: 'Custom Pricing',
-    desc: 'E-commerce platforms, bot integration, mobile apps, API development, and complex systems.',
+    tag: 'Scale',
+    name: '$8,000+',
+    desc: 'E-commerce platforms, AI integrations, mobile apps, and custom systems. Quoted per scope.',
   },
 ]
 
@@ -266,8 +266,8 @@ function Pricing() {
         <div className="materials__header">
           <h2 className="materials__headline">Clear,<br />honest pricing</h2>
           <p className="materials__sub">
-            Transparent plans in Algerian Dinars. No hidden fees —
-            just quality work at fair prices for Algerian businesses.
+            Transparent plans in USD for international clients. No hidden fees —
+            premium delivery at competitive global rates.
           </p>
         </div>
         <div className="materials__grid">
