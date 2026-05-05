@@ -393,7 +393,7 @@ function Projects() {
         <div className="projects__header">
           <p className="section-label">Nos Projets</p>
           <h2 className="projects__headline">
-            Construits pour<br /><em>l'Algérie</em>
+            Conçus pour<br /><em>évoluer</em>
           </h2>
         </div>
 

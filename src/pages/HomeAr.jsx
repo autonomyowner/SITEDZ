@@ -340,7 +340,7 @@ function Projects() {
         <div className="projects__header">
           <p className="section-label">مشاريعنا</p>
           <h2 className="projects__headline">
-            مبني لأجل<br /><em>الجزائر</em>
+            مبني لأجل<br /><em>النمو</em>
           </h2>
         </div>
 
