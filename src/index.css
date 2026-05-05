@@ -212,6 +212,35 @@ a {
   padding: clamp(2.5rem, 5vw, 5rem) clamp(2rem, 5vw, 5rem) 0;
   max-width: var(--max-w);
   margin: 0 auto;
+  position: relative;
+}
+
+.featured__card::before,
+.featured__card::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  width: 45%;
+  height: 45%;
+  max-width: 360px;
+  max-height: 360px;
+  z-index: 1;
+}
+
+.featured__card::before {
+  top: 0;
+  right: 0;
+  background:
+    linear-gradient(to left, transparent, var(--accent) 30%, transparent) top right / 100% 1.5px no-repeat,
+    linear-gradient(to bottom, transparent, var(--accent) 30%, transparent) top right / 1.5px 100% no-repeat;
+}
+
+.featured__card::after {
+  bottom: 0;
+  left: 0;
+  background:
+    linear-gradient(to right, transparent, var(--accent) 30%, transparent) bottom left / 100% 1.5px no-repeat,
+    linear-gradient(to top, transparent, var(--accent) 30%, transparent) bottom left / 1.5px 100% no-repeat;
 }
 
 .featured__label {
