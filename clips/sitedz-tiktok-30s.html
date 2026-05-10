@@ -1,0 +1,1162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sitedz — TikTok 30s</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&family=Cormorant:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+      --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
+
+      --bg:        #0B0B0D;
+      --bg-2:      #16161a;
+      --bg-3:      #050506;
+      --text:      #F3F1EC;
+      --muted:     rgba(243, 241, 236, 0.58);
+      --faded:     rgba(243, 241, 236, 0.45);
+      --dim:       rgba(243, 241, 236, 0.30);
+      --soft:      rgba(243, 241, 236, 0.18);
+      --border:    rgba(243, 241, 236, 0.12);
+      --border-strong: rgba(243, 241, 236, 0.20);
+      --accent:    #FF6A1A;
+      --accent-soft: rgba(255, 106, 26, 0.16);
+
+      --font-sans:  'Figtree', sans-serif;
+      --font-serif: 'Cormorant', serif;
+    }
+
+    html, body {
+      width: 100%; min-height: 100%;
+      background: #050505;
+      font-family: var(--font-sans);
+      overflow-y: auto; overflow-x: hidden;
+      color: var(--text);
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    .page-wrapper {
+      width: 100%; min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      flex-direction: column; gap: 20px;
+      padding: 40px 20px;
+    }
+
+    .capture-frame {
+      position: relative;
+      border: 2px dashed var(--accent);
+      box-shadow: 0 0 0 8px rgba(255, 106, 26, 0.06);
+      overflow: visible;
+      border-radius: 12px;
+    }
+
+    .capture-label {
+      position: absolute; top: -34px; left: 50%;
+      transform: translateX(-50%);
+      background: var(--accent); color: #0B0B0D;
+      padding: 6px 16px;
+      font-size: 11px; font-weight: 700; white-space: nowrap;
+      font-family: var(--font-sans);
+      letter-spacing: 2px; text-transform: uppercase;
+      border-radius: 999px;
+    }
+
+    .capture-dimensions {
+      position: absolute; bottom: -34px; left: 50%;
+      transform: translateX(-50%);
+      color: #888; font-size: 11px; font-weight: 500;
+      font-family: var(--font-sans);
+      letter-spacing: 1.5px; text-transform: uppercase;
+    }
+
+    #video-canvas {
+      width: 1080px; height: 1920px;
+      background: var(--bg);
+      position: relative; overflow: hidden;
+      color: var(--text);
+      transform-origin: top left;
+      border-radius: 10px;
+    }
+
+    /* ambient ambient: subtle static radial gradient (no dots) */
+    #video-canvas::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 70% 55% at 50% 22%, rgba(255, 106, 26, 0.10) 0%, rgba(255, 106, 26, 0.04) 35%, transparent 70%),
+        radial-gradient(ellipse 90% 60% at 50% 100%, rgba(22, 22, 26, 0.85) 0%, transparent 60%);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    #video-canvas, #video-canvas * { cursor: none !important; }
+
+    #viewport {
+      width: 100%; height: 100%;
+      position: relative; z-index: 2;
+    }
+
+    /* === SCENES === */
+    .scene {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center; flex-direction: column;
+      opacity: 0; transform: translateY(20px);
+      pointer-events: none;
+      transition: opacity 0.55s var(--ease-out), transform 0.55s var(--ease-out);
+      padding: 110px 80px;
+      z-index: 3;
+    }
+    .scene.active { opacity: 1; transform: translateY(0); pointer-events: auto; }
+    .scene.exit { opacity: 0; transform: translateY(-20px); }
+
+    /* === SHARED PRIMITIVES === */
+    .eyebrow {
+      font-family: var(--font-sans);
+      font-size: 22px; font-weight: 700;
+      letter-spacing: 5px; text-transform: uppercase;
+      color: var(--faded);
+      opacity: 0; transform: translateY(20px);
+    }
+    .eyebrow.animate { animation: slideUp 600ms var(--ease-out) forwards; }
+    .eyebrow .accent { color: var(--accent); }
+
+    .reveal-line {
+      display: block;
+      opacity: 0;
+      transform: translateY(36px);
+    }
+    .reveal-line.animate { animation: lineReveal 750ms var(--ease-out) forwards; }
+
+    .h-sans {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      letter-spacing: -0.025em;
+      line-height: 1.02;
+      color: var(--text);
+    }
+    .h-serif {
+      font-family: var(--font-serif);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: -0.02em;
+      line-height: 0.92;
+      color: var(--muted);
+    }
+    .h-serif-strong {
+      font-family: var(--font-serif);
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: -0.015em;
+      color: var(--text);
+    }
+
+    /* === HOOK === */
+    .hook-eyebrow { margin-top: 0; }
+    .hook-title {
+      margin-top: 80px;
+      font-size: 132px;
+      text-align: center;
+      max-width: 100%;
+    }
+    .hook-title .accent {
+      color: var(--text);
+      position: relative;
+    }
+    .hook-title .accent::after {
+      content: '';
+      position: absolute;
+      left: 0; right: 0; bottom: -10px;
+      height: 6px;
+      background: var(--accent);
+      border-radius: 999px;
+      transform-origin: left center;
+      transform: scaleX(0);
+      animation: underlineGrow 700ms var(--ease-out) 1800ms forwards;
+    }
+    .hook-italic {
+      margin-top: 36px;
+      font-size: 168px;
+      text-align: center;
+    }
+    .hook-sub {
+      margin-top: 64px;
+      font-family: var(--font-sans);
+      font-size: 28px; font-weight: 400;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+      text-align: center;
+      opacity: 0; transform: translateY(20px);
+    }
+    .hook-sub.animate { animation: slideUp 700ms var(--ease-out) forwards; }
+
+    /* === PROBLEM === */
+    .problem-stack {
+      margin-top: 70px;
+      display: flex; flex-direction: column; align-items: center;
+      gap: 24px;
+    }
+    .problem-word {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 156px;
+      letter-spacing: -0.04em;
+      line-height: 0.92;
+      color: var(--text);
+      opacity: 0; transform: translateY(50px);
+    }
+    .problem-word.animate { animation: lineReveal 600ms var(--ease-out) forwards; }
+    .problem-word.italic {
+      font-family: var(--font-serif);
+      font-style: italic; font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.02em;
+      font-size: 200px;
+    }
+    .problem-sub {
+      margin-top: 80px;
+      font-family: var(--font-sans);
+      font-size: 28px; font-weight: 400;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.4px;
+      max-width: 760px;
+      opacity: 0; transform: translateY(20px);
+    }
+    .problem-sub.animate { animation: slideUp 700ms var(--ease-out) forwards; }
+
+    /* === REVEAL === */
+    .reveal-wordmark {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 196px;
+      letter-spacing: -0.04em;
+      color: var(--text);
+      opacity: 0; transform: translateY(30px);
+      line-height: 1;
+    }
+    .reveal-wordmark.animate { animation: lineReveal 700ms var(--ease-out) forwards; }
+    .reveal-wordmark .dot {
+      color: var(--accent);
+    }
+
+    .reveal-tagline {
+      margin-top: 40px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      font-size: 56px;
+      letter-spacing: -0.02em;
+      color: var(--text);
+      text-align: center;
+      line-height: 1.1;
+      opacity: 0; transform: translateY(30px);
+    }
+    .reveal-tagline.animate { animation: lineReveal 700ms var(--ease-out) forwards; }
+    .reveal-tagline .em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--muted);
+    }
+
+    .reveal-services {
+      margin-top: 72px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 16px;
+      width: 100%;
+      max-width: 880px;
+    }
+    .service-card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.025) 0%, rgba(255,255,255,0.01) 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 28px 26px;
+      display: flex; flex-direction: column; gap: 10px;
+      opacity: 0; transform: translateY(30px);
+    }
+    .service-card.animate { animation: lineReveal 600ms var(--ease-out) forwards; }
+    .service-card:nth-child(1).animate { animation-delay: 0ms; }
+    .service-card:nth-child(2).animate { animation-delay: 100ms; }
+    .service-card:nth-child(3).animate { animation-delay: 200ms; }
+    .service-card:nth-child(4).animate { animation-delay: 300ms; }
+
+    .service-num {
+      font-family: var(--font-sans);
+      font-size: 13px; font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 4px;
+    }
+    .service-name {
+      font-family: var(--font-sans);
+      font-size: 30px; font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.015em;
+      line-height: 1.1;
+    }
+
+    /* === BUILD DEMO === */
+    .build-eyebrow {}
+    .build-title {
+      margin-top: 24px;
+      font-size: 96px;
+      text-align: center;
+    }
+    .build-title .em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .browser-frame {
+      margin-top: 56px;
+      width: 100%;
+      max-width: 880px;
+      background: radial-gradient(ellipse at 50% 20%, #16161a 0%, #0B0B0D 60%, #050506 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      opacity: 0; transform: translateY(40px);
+    }
+    .browser-frame.animate { animation: lineReveal 700ms var(--ease-out) forwards; animation-delay: 200ms; }
+
+    .browser-bar {
+      display: flex; align-items: center;
+      padding: 16px 20px;
+      background: rgba(0,0,0,0.30);
+      border-bottom: 1px solid var(--border);
+      gap: 8px;
+    }
+    .browser-dot {
+      width: 11px; height: 11px; border-radius: 50%;
+      background: var(--soft);
+    }
+    .browser-url {
+      flex: 1; margin-left: 18px;
+      background: rgba(255,255,255,0.04);
+      padding: 8px 16px; border-radius: 999px;
+      font-family: var(--font-sans);
+      font-size: 14px; font-weight: 500;
+      color: var(--muted);
+      letter-spacing: 0.5px;
+    }
+    .browser-url .lock {
+      color: var(--accent);
+      margin-right: 8px;
+      font-weight: 700;
+    }
+
+    .browser-content {
+      position: relative;
+      height: 600px;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    /* Stage 1: Wireframe */
+    .stage-wireframe {
+      position: absolute; inset: 0;
+      padding: 32px;
+      display: flex; flex-direction: column; gap: 16px;
+      opacity: 0;
+      transition: opacity 350ms var(--ease-out);
+    }
+    .stage-wireframe.show { opacity: 1; }
+    .wf-block {
+      background: var(--soft);
+      border-radius: 8px;
+      animation: wfPulse 1.6s ease-in-out infinite;
+    }
+    .wf-block.h-nav { height: 52px; width: 100%; }
+    .wf-block.h-hero { height: 200px; width: 100%; }
+    .wf-row { display: flex; gap: 16px; }
+    .wf-block.h-card { height: 120px; flex: 1; }
+    .wf-block.h-foot { height: 56px; width: 70%; margin-top: auto; }
+
+    /* Stage 2: Design */
+    .stage-design {
+      position: absolute; inset: 0;
+      padding: 32px;
+      display: flex; flex-direction: column; gap: 16px;
+      opacity: 0;
+      transition: opacity 350ms var(--ease-out);
+    }
+    .stage-design.show { opacity: 1; }
+    .ds-nav {
+      height: 52px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex; align-items: center; padding: 0 18px; gap: 14px;
+    }
+    .ds-nav .swatch { width: 14px; height: 14px; background: var(--accent); border-radius: 4px; }
+    .ds-nav .ln { height: 8px; background: var(--soft); border-radius: 3px; flex: 1; max-width: 120px; }
+    .ds-nav .ln.short { max-width: 70px; }
+    .ds-nav .pill { margin-left: auto; padding: 6px 14px; background: var(--accent); border-radius: 999px; font-family: var(--font-sans); font-size: 11px; font-weight: 700; color: #0B0B0D; letter-spacing: 1px; }
+    .ds-hero {
+      height: 200px;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,106,26,0.18) 0%, rgba(22,22,26,0.6) 70%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 30px;
+      display: flex; flex-direction: column; gap: 12px; justify-content: center;
+    }
+    .ds-hero .big {
+      height: 28px; width: 60%;
+      background: var(--text); border-radius: 6px;
+    }
+    .ds-hero .med {
+      height: 16px; width: 75%;
+      background: var(--soft); border-radius: 4px;
+    }
+    .ds-hero .pill {
+      margin-top: 8px; padding: 8px 18px;
+      background: var(--accent); border-radius: 999px;
+      width: 130px; height: 30px;
+    }
+    .ds-row { display: flex; gap: 16px; }
+    .ds-card {
+      flex: 1; height: 130px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex; flex-direction: column; gap: 10px;
+    }
+    .ds-card .dot {
+      width: 32px; height: 32px;
+      background: var(--accent);
+      border-radius: 8px;
+    }
+    .ds-card .ln {
+      height: 7px; background: var(--soft); border-radius: 3px;
+    }
+    .ds-card .ln.short { width: 60%; }
+
+    /* Stage 3: Code */
+    .stage-code {
+      position: absolute; inset: 0;
+      padding: 32px;
+      background: rgba(5,5,8,0.95);
+      font-family: 'Figtree', monospace;
+      font-size: 17px; line-height: 1.55;
+      color: var(--muted);
+      overflow: hidden;
+      opacity: 0;
+      transition: opacity 350ms var(--ease-out);
+    }
+    .stage-code.show { opacity: 1; }
+    .code-line {
+      white-space: pre; opacity: 0;
+      transform: translateX(-12px);
+      font-feature-settings: "calt" 0;
+    }
+    .code-line.show { animation: codeIn 220ms var(--ease-out) forwards; }
+    .code-line .kw { color: var(--accent); font-weight: 600; }
+    .code-line .str { color: #b8e0a0; }
+    .code-line .com { color: var(--dim); font-style: italic; }
+    .code-line .tag { color: #d8b3f5; }
+    .code-line .ident { color: var(--text); }
+
+    /* Stage 4: Live */
+    .stage-live {
+      position: absolute; inset: 0;
+      padding: 32px;
+      display: flex; flex-direction: column; gap: 16px;
+      opacity: 0;
+      transition: opacity 350ms var(--ease-out);
+    }
+    .stage-live.show { opacity: 1; }
+    .live-nav {
+      height: 52px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      display: flex; align-items: center; padding: 0 20px;
+      justify-content: space-between;
+    }
+    .live-nav .brand {
+      font-family: var(--font-sans);
+      font-weight: 800; font-size: 19px;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+    .live-nav .brand .dot { color: var(--accent); }
+    .live-nav .menu {
+      display: flex; gap: 22px;
+      font-family: var(--font-sans);
+      font-size: 12px; color: var(--muted);
+      font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase;
+    }
+    .live-nav .cta {
+      padding: 8px 18px;
+      background: var(--accent);
+      color: #0B0B0D;
+      font-family: var(--font-sans);
+      font-weight: 700; font-size: 12px;
+      letter-spacing: 1.2px; text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .live-hero {
+      height: 200px;
+      background: radial-gradient(ellipse at 30% 50%, rgba(255,106,26,0.18) 0%, rgba(22,22,26,0.7) 70%);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      display: flex; flex-direction: column; justify-content: center;
+      gap: 10px;
+    }
+    .live-hero h2 {
+      font-family: var(--font-sans);
+      font-weight: 800; font-size: 30px;
+      color: var(--text); letter-spacing: -0.025em;
+      line-height: 1.05;
+    }
+    .live-hero h2 em {
+      font-family: var(--font-serif);
+      font-style: italic; font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.01em;
+    }
+    .live-hero p {
+      font-family: var(--font-sans);
+      font-size: 14px; color: var(--muted);
+      max-width: 380px; line-height: 1.45;
+      font-weight: 500;
+    }
+    .live-hero .cta {
+      margin-top: 6px;
+      align-self: flex-start;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: #0B0B0D;
+      font-family: var(--font-sans);
+      font-weight: 700; font-size: 12px;
+      letter-spacing: 1.5px; text-transform: uppercase;
+      border-radius: 999px;
+    }
+    .live-row { display: flex; gap: 16px; }
+    .live-card {
+      flex: 1; height: 130px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .live-card .num {
+      font-family: var(--font-sans);
+      font-size: 11px; font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 3px;
+    }
+    .live-card .ttl {
+      font-family: var(--font-sans);
+      font-weight: 700; font-size: 18px; color: var(--text);
+      letter-spacing: -0.015em;
+    }
+    .live-card .desc {
+      font-family: var(--font-sans);
+      font-size: 12px; color: var(--muted); line-height: 1.45;
+      font-weight: 400;
+    }
+
+    .build-progress {
+      margin-top: 36px;
+      width: 100%; max-width: 880px;
+      display: flex; flex-direction: column; gap: 14px;
+      opacity: 0; transform: translateY(20px);
+    }
+    .build-progress.animate { animation: slideUp 600ms var(--ease-out) forwards; animation-delay: 400ms; }
+
+    .build-progress .stages {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      font-family: var(--font-sans);
+      font-size: 13px; font-weight: 700;
+      letter-spacing: 1.8px; text-transform: uppercase;
+      text-align: center;
+    }
+    .build-progress .stage {
+      padding: 12px 8px;
+      color: var(--dim);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      transition: all 300ms var(--ease-out);
+    }
+    .build-progress .stage.active {
+      color: var(--accent);
+      border-color: var(--accent);
+      background: var(--accent-soft);
+    }
+    .build-progress .stage.done {
+      color: var(--muted);
+      border-color: var(--soft);
+    }
+
+    .build-progress .bar {
+      height: 5px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 999px;
+      overflow: hidden;
+      position: relative;
+    }
+    .build-progress .bar-fill {
+      position: absolute; inset: 0;
+      width: 0%;
+      background: var(--accent);
+      transition: width 800ms var(--ease-out);
+      border-radius: 999px;
+    }
+
+    /* === STATS === */
+    .stats-eyebrow {}
+    .stats-title {
+      margin-top: 24px;
+      font-size: 96px;
+      text-align: center;
+      max-width: 100%;
+    }
+    .stats-title .em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+    }
+
+    .stats-card {
+      margin-top: 56px;
+      width: 100%; max-width: 880px;
+      background: radial-gradient(ellipse at 50% 30%, #16161a 0%, #0B0B0D 60%, #050506 100%);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 48px 36px;
+      opacity: 0; transform: translateY(40px);
+    }
+    .stats-card.animate { animation: lineReveal 700ms var(--ease-out) forwards; animation-delay: 300ms; }
+
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 36px 24px;
+    }
+    .stat-item {
+      display: flex; flex-direction: column;
+      gap: 12px;
+      align-items: flex-start;
+    }
+    .stat-num {
+      font-family: var(--font-sans);
+      font-size: 96px; font-weight: 800;
+      color: var(--text);
+      line-height: 1;
+      letter-spacing: -0.04em;
+    }
+    .stat-num.compact { font-size: 60px; letter-spacing: -0.02em; }
+    .stat-num .small { color: var(--accent); font-size: 0.6em; vertical-align: 0.18em; margin-left: 2px; }
+    .stat-label {
+      font-family: var(--font-sans);
+      font-size: 14px; font-weight: 700;
+      color: var(--faded);
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      line-height: 1.4;
+    }
+
+    /* === CTA === */
+    .cta-wordmark {
+      font-family: var(--font-sans);
+      font-weight: 800;
+      font-size: 64px;
+      letter-spacing: -0.04em;
+      color: var(--faded);
+      opacity: 0; transform: translateY(20px);
+      line-height: 1;
+    }
+    .cta-wordmark.animate { animation: lineReveal 600ms var(--ease-out) forwards; }
+    .cta-wordmark .dot { color: var(--accent); }
+
+    .cta-headline {
+      margin-top: 56px;
+      font-size: 152px;
+      text-align: center;
+      line-height: 0.96;
+    }
+    .cta-headline .em {
+      font-family: var(--font-serif);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--accent);
+      letter-spacing: -0.025em;
+    }
+
+    .cta-sub {
+      margin-top: 48px;
+      font-family: var(--font-sans);
+      font-size: 30px; font-weight: 400;
+      color: var(--muted);
+      text-align: center;
+      letter-spacing: 0.4px;
+      line-height: 1.4;
+      max-width: 720px;
+      opacity: 0; transform: translateY(20px);
+    }
+    .cta-sub.animate { animation: slideUp 700ms var(--ease-out) forwards; }
+
+    .cta-button {
+      margin-top: 72px;
+      padding: 26px 64px;
+      background: var(--accent); color: #0B0B0D;
+      font-family: var(--font-sans);
+      font-size: 24px; font-weight: 700;
+      border: none; letter-spacing: 1.5px;
+      border-radius: 999px;
+      opacity: 0; transform: translateY(30px);
+      cursor: none;
+    }
+    .cta-button.animate { animation: ctaPop 700ms var(--ease-out-back) forwards, accentGlow 2.4s ease-in-out infinite 700ms; }
+
+    .cta-url {
+      margin-top: 36px;
+      font-family: var(--font-sans);
+      font-size: 22px; font-weight: 600;
+      color: var(--faded); letter-spacing: 5px;
+      text-transform: uppercase;
+      opacity: 0;
+    }
+    .cta-url.animate { animation: fadeIn 800ms var(--ease-out) forwards; }
+
+    /* === CONTROLS === */
+    #controls { display: flex; gap: 15px; margin-top: 10px; }
+    .control-btn {
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f3f1ec; padding: 11px 26px;
+      cursor: pointer; font-size: 12px;
+      font-family: var(--font-sans);
+      font-weight: 700;
+      letter-spacing: 2px; text-transform: uppercase;
+      transition: all 0.2s;
+      border-radius: 999px;
+    }
+    .control-btn:hover { background: rgba(255,255,255,0.10); }
+    .control-btn.primary { background: var(--accent); border-color: var(--accent); color: #0B0B0D; font-weight: 700; }
+
+    /* === ANIMATIONS === */
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes lineReveal {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes slideUp {
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes underlineGrow {
+      to { transform: scaleX(1); }
+    }
+    @keyframes ctaPop {
+      0% { opacity: 0; transform: translateY(30px) scale(0.9); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    @keyframes wfPulse {
+      0%, 100% { opacity: 0.45; }
+      50% { opacity: 0.85; }
+    }
+    @keyframes codeIn {
+      to { opacity: 1; transform: translateX(0); }
+    }
+    @keyframes accentGlow {
+      0%, 100% { box-shadow: 0 8px 36px rgba(255, 106, 26, 0.30); }
+      50% { box-shadow: 0 8px 70px rgba(255, 106, 26, 0.55), 0 0 110px rgba(255, 106, 26, 0.18); }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrapper">
+    <div class="capture-frame">
+      <div class="capture-label">CAPTURE THIS AREA — 1080 × 1920</div>
+
+      <div id="video-canvas">
+        <div id="viewport">
+
+          <!-- SCENE 1: HOOK -->
+          <div class="scene" id="scene-hook">
+            <div class="eyebrow hook-eyebrow">ALGERIA'S <span class="accent">PREMIER</span> DIGITAL AGENCY</div>
+            <div class="h-sans hook-title">
+              <span class="reveal-line">Your site is your</span><br>
+              <span class="reveal-line"><span class="accent">first impression.</span></span>
+            </div>
+            <div class="hook-italic h-serif">
+              <span class="reveal-line">make it count.</span>
+            </div>
+          </div>
+
+          <!-- SCENE 2: PROBLEM -->
+          <div class="scene" id="scene-problem">
+            <div class="eyebrow">RIGHT NOW IT MIGHT BE</div>
+            <div class="problem-stack">
+              <div class="problem-word">Outdated.</div>
+              <div class="problem-word">Slow.</div>
+              <div class="problem-word italic">invisible.</div>
+            </div>
+            <div class="problem-sub">And it's quietly costing you customers.</div>
+          </div>
+
+          <!-- SCENE 3: REVEAL -->
+          <div class="scene" id="scene-reveal">
+            <div class="eyebrow">INTRODUCING</div>
+            <div class="reveal-wordmark">site<span class="dot">.</span>dz</div>
+            <div class="reveal-tagline">Your <span class="em">vision</span>, our code.</div>
+            <div class="reveal-services">
+              <div class="service-card">
+                <span class="service-num">01 — CORE</span>
+                <span class="service-name">Web Development</span>
+              </div>
+              <div class="service-card">
+                <span class="service-num">02 — CORE</span>
+                <span class="service-name">Mobile Apps</span>
+              </div>
+              <div class="service-card">
+                <span class="service-num">03 — DESIGN</span>
+                <span class="service-name">UI / UX Design</span>
+              </div>
+              <div class="service-card">
+                <span class="service-num">04 — AUTOMATION</span>
+                <span class="service-name">Bot Integration</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE 4: BUILD DEMO -->
+          <div class="scene" id="scene-build">
+            <div class="eyebrow build-eyebrow">HOW WE BUILD</div>
+            <div class="h-sans build-title">From idea to <span class="em">live.</span></div>
+
+            <div class="browser-frame">
+              <div class="browser-bar">
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-dot"></div>
+                <div class="browser-url"><span class="lock">●</span>yourbrand.dz</div>
+              </div>
+              <div class="browser-content">
+                <!-- Stage 1: Wireframe -->
+                <div class="stage-wireframe" id="stage-wireframe">
+                  <div class="wf-block h-nav"></div>
+                  <div class="wf-block h-hero"></div>
+                  <div class="wf-row">
+                    <div class="wf-block h-card"></div>
+                    <div class="wf-block h-card"></div>
+                    <div class="wf-block h-card"></div>
+                  </div>
+                  <div class="wf-block h-foot"></div>
+                </div>
+
+                <!-- Stage 2: Design -->
+                <div class="stage-design" id="stage-design">
+                  <div class="ds-nav">
+                    <div class="swatch"></div>
+                    <div class="ln"></div>
+                    <div class="ln short"></div>
+                    <div class="ln short"></div>
+                    <div class="pill"></div>
+                  </div>
+                  <div class="ds-hero">
+                    <div class="big"></div>
+                    <div class="med"></div>
+                    <div class="pill"></div>
+                  </div>
+                  <div class="ds-row">
+                    <div class="ds-card"><div class="dot"></div><div class="ln"></div><div class="ln short"></div></div>
+                    <div class="ds-card"><div class="dot"></div><div class="ln"></div><div class="ln short"></div></div>
+                    <div class="ds-card"><div class="dot"></div><div class="ln"></div><div class="ln short"></div></div>
+                  </div>
+                </div>
+
+                <!-- Stage 3: Code -->
+                <div class="stage-code" id="stage-code">
+                  <div class="code-line"><span class="com">// sitedz.com — built fast, built right</span></div>
+                  <div class="code-line"><span class="kw">import</span> { Hero, Services, CTA } <span class="kw">from</span> <span class="str">'./blocks'</span>;</div>
+                  <div class="code-line"></div>
+                  <div class="code-line"><span class="kw">export default function</span> <span class="ident">Site</span>() {</div>
+                  <div class="code-line">  <span class="kw">return</span> (</div>
+                  <div class="code-line">    <span class="tag">&lt;main</span> lang=<span class="str">"en"</span><span class="tag">&gt;</span></div>
+                  <div class="code-line">      <span class="tag">&lt;Hero</span> headline=<span class="str">"Your Vision"</span> <span class="tag">/&gt;</span></div>
+                  <div class="code-line">      <span class="tag">&lt;Services</span> i18n=<span class="str">"en|ar|fr"</span> <span class="tag">/&gt;</span></div>
+                  <div class="code-line">      <span class="tag">&lt;CTA</span> action=<span class="str">"convert"</span> <span class="tag">/&gt;</span></div>
+                  <div class="code-line">    <span class="tag">&lt;/main&gt;</span></div>
+                  <div class="code-line">  );</div>
+                  <div class="code-line">}</div>
+                  <div class="code-line"></div>
+                  <div class="code-line"><span class="com">// $ deploy → live in days</span></div>
+                </div>
+
+                <!-- Stage 4: Live -->
+                <div class="stage-live" id="stage-live">
+                  <div class="live-nav">
+                    <div class="brand">your<span class="dot">.</span>brand</div>
+                    <div class="menu"><span>Work</span><span>Services</span><span>About</span></div>
+                    <div class="cta">Contact</div>
+                  </div>
+                  <div class="live-hero">
+                    <h2>Built for Algeria.<br>Built to <em>convert.</em></h2>
+                    <p>Premium web design that turns visitors into customers.</p>
+                    <div class="cta">Get Started →</div>
+                  </div>
+                  <div class="live-row">
+                    <div class="live-card"><div class="num">01</div><div class="ttl">Fast</div><div class="desc">90+ Lighthouse on every build.</div></div>
+                    <div class="live-card"><div class="num">02</div><div class="ttl">Bilingual</div><div class="desc">EN · AR · FR by default.</div></div>
+                    <div class="live-card"><div class="num">03</div><div class="ttl">Yours</div><div class="desc">Custom code. No templates.</div></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="build-progress">
+              <div class="stages">
+                <div class="stage" id="bs-1">Wireframe</div>
+                <div class="stage" id="bs-2">Design</div>
+                <div class="stage" id="bs-3">Code</div>
+                <div class="stage" id="bs-4">Deploy</div>
+              </div>
+              <div class="bar"><div class="bar-fill" id="build-bar"></div></div>
+            </div>
+          </div>
+
+          <!-- SCENE 5: STATS -->
+          <div class="scene" id="scene-stats">
+            <div class="eyebrow stats-eyebrow">WHAT YOU GET</div>
+            <div class="h-sans stats-title">Built right, <span class="em">every time.</span></div>
+
+            <div class="stats-card">
+              <div class="stats-grid">
+                <div class="stat-item">
+                  <div class="stat-num" data-target="30" data-suffix="+">0</div>
+                  <div class="stat-label">Sites<br>Shipped</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num compact">EN · AR · FR</div>
+                  <div class="stat-label">Trilingual<br>By Default</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num" data-target="7" data-suffix="d">0</div>
+                  <div class="stat-label">Average<br>Delivery</div>
+                </div>
+                <div class="stat-item">
+                  <div class="stat-num" data-target="100" data-suffix="%">0</div>
+                  <div class="stat-label">Custom<br>Code</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SCENE 6: CTA -->
+          <div class="scene" id="scene-cta">
+            <div class="cta-wordmark">site<span class="dot">.</span>dz</div>
+            <div class="h-sans cta-headline">
+              <span class="reveal-line">Build with</span><br>
+              <span class="reveal-line"><span class="em">the best.</span></span>
+            </div>
+            <div class="cta-sub">Your vision. Our code. Live in days.</div>
+            <button class="cta-button">Start Your Project →</button>
+            <div class="cta-url">SITEDZ.COM</div>
+          </div>
+
+        </div>
+      </div>
+
+      <div class="capture-dimensions">1080 × 1920 · 30s · 9:16 vertical</div>
+    </div>
+
+    <div id="controls">
+      <button class="control-btn primary" onclick="playVideo()">PLAY</button>
+      <button class="control-btn" onclick="location.reload()">RESTART</button>
+    </div>
+  </div>
+
+  <script>
+    const wait = ms => new Promise(r => setTimeout(r, ms));
+
+    // 6 scenes × 5000ms = 30000ms total
+    const SCENES = [
+      { id: 'scene-hook', duration: 5000, animations: [
+        { selector: '.hook-eyebrow', delay: 200 },
+        { selector: '.hook-title .reveal-line:nth-child(1)', delay: 700 },
+        { selector: '.hook-title .reveal-line:nth-child(3)', delay: 1100 },
+        { selector: '.hook-italic .reveal-line', delay: 2400 },
+      ]},
+      { id: 'scene-problem', duration: 5000, animations: [
+        { selector: '.scene#scene-problem .eyebrow', delay: 200 },
+        { selector: '.problem-word:nth-child(1)', delay: 700 },
+        { selector: '.problem-word:nth-child(2)', delay: 1300 },
+        { selector: '.problem-word:nth-child(3)', delay: 1900 },
+        { selector: '.problem-sub', delay: 2900 },
+      ]},
+      { id: 'scene-reveal', duration: 5000, animations: [
+        { selector: '.scene#scene-reveal .eyebrow', delay: 200 },
+        { selector: '.reveal-wordmark', delay: 600 },
+        { selector: '.reveal-tagline', delay: 1300 },
+        { selector: '.service-card', delay: 1900 },
+      ]},
+      { id: 'scene-build', duration: 5000, animations: [
+        { selector: '.build-eyebrow', delay: 100 },
+        { selector: '.build-title', delay: 300 },
+        { selector: '.browser-frame', delay: 600 },
+        { selector: '.build-progress', delay: 1000 },
+      ]},
+      { id: 'scene-stats', duration: 5000, animations: [
+        { selector: '.stats-eyebrow', delay: 200 },
+        { selector: '.stats-title', delay: 500 },
+        { selector: '.stats-card', delay: 900 },
+      ]},
+      { id: 'scene-cta', duration: 5000, animations: [
+        { selector: '.cta-wordmark', delay: 200 },
+        { selector: '.cta-headline .reveal-line:nth-child(1)', delay: 600 },
+        { selector: '.cta-headline .reveal-line:nth-child(3)', delay: 1100 },
+        { selector: '.cta-sub', delay: 2000 },
+        { selector: '.cta-button', delay: 2700 },
+        { selector: '.cta-url', delay: 3400 },
+      ]},
+    ];
+
+    let timeouts = [];
+    let isPlaying = false;
+
+    function clearAll() {
+      timeouts.forEach(t => clearTimeout(t));
+      timeouts = [];
+      document.querySelectorAll('.animate').forEach(el => el.classList.remove('animate'));
+      document.querySelectorAll('.scene').forEach(s => { s.classList.remove('active', 'exit'); });
+      document.querySelectorAll('.code-line').forEach(el => el.classList.remove('show'));
+      ['stage-wireframe','stage-design','stage-code','stage-live'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.classList.remove('show');
+      });
+      ['bs-1','bs-2','bs-3','bs-4'].forEach(id => {
+        const el = document.getElementById(id); if (el) el.classList.remove('active','done');
+      });
+      const bf = document.getElementById('build-bar'); if (bf) bf.style.width = '0%';
+      isPlaying = false;
+    }
+
+    async function switchScene(sceneId) {
+      const current = document.querySelector('.scene.active');
+      const next = document.getElementById(sceneId);
+      if (current) {
+        current.classList.add('exit');
+        current.classList.remove('active');
+        await wait(450);
+        current.classList.remove('exit');
+      }
+      next.classList.add('active');
+      await wait(80);
+    }
+
+    function playScene(index) {
+      if (index >= SCENES.length) { isPlaying = false; return; }
+      const config = SCENES[index];
+      switchScene(config.id);
+
+      config.animations.forEach(anim => {
+        const t = setTimeout(() => {
+          document.querySelectorAll(anim.selector).forEach(el => el.classList.add('animate'));
+        }, anim.delay);
+        timeouts.push(t);
+      });
+
+      const t = setTimeout(() => playScene(index + 1), config.duration);
+      timeouts.push(t);
+    }
+
+    function playVideo() {
+      if (isPlaying) return;
+      clearAll();
+      isPlaying = true;
+      setTimeout(() => playScene(0), 300);
+    }
+
+    // === Stat counters on enter ===
+    function animateCounters() {
+      document.querySelectorAll('.stat-num[data-target]').forEach(el => {
+        const target = parseInt(el.dataset.target);
+        const suffix = el.dataset.suffix || '';
+        let current = 0;
+        const increment = Math.max(1, Math.ceil(target / 24));
+        const timer = setInterval(() => {
+          current += increment;
+          if (current >= target) { current = target; clearInterval(timer); }
+          el.innerHTML = current + (suffix ? `<span class="small">${suffix}</span>` : '');
+        }, 50);
+      });
+    }
+    new MutationObserver(() => {
+      const s = document.getElementById('scene-stats');
+      if (s.classList.contains('active')) setTimeout(animateCounters, 1200);
+    }).observe(document.getElementById('scene-stats'), { attributes: true, attributeFilter: ['class'] });
+
+    // === Build demo driver ===
+    function runBuildDemo() {
+      const stages = ['stage-wireframe','stage-design','stage-code','stage-live'];
+      const pills = ['bs-1','bs-2','bs-3','bs-4'];
+      const bar = document.getElementById('build-bar');
+      const codeLines = document.querySelectorAll('#stage-code .code-line');
+
+      const showStage = (i) => {
+        stages.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          if (idx === i) el.classList.add('show');
+          else el.classList.remove('show');
+        });
+        pills.forEach((id, idx) => {
+          const el = document.getElementById(id);
+          el.classList.remove('active','done');
+          if (idx < i) el.classList.add('done');
+          if (idx === i) el.classList.add('active');
+        });
+        bar.style.width = ((i + 1) * 25) + '%';
+      };
+
+      setTimeout(() => showStage(0), 1100);
+      setTimeout(() => showStage(1), 2000);
+      setTimeout(() => {
+        showStage(2);
+        codeLines.forEach((line, idx) => {
+          setTimeout(() => line.classList.add('show'), idx * 50);
+        });
+      }, 2900);
+      setTimeout(() => showStage(3), 3900);
+    }
+    new MutationObserver(() => {
+      const s = document.getElementById('scene-build');
+      if (s.classList.contains('active')) {
+        document.querySelectorAll('#stage-code .code-line').forEach(el => el.classList.remove('show'));
+        ['stage-wireframe','stage-design','stage-code','stage-live'].forEach(id => {
+          document.getElementById(id).classList.remove('show');
+        });
+        ['bs-1','bs-2','bs-3','bs-4'].forEach(id => document.getElementById(id).classList.remove('active','done'));
+        document.getElementById('build-bar').style.width = '0%';
+        setTimeout(runBuildDemo, 200);
+      }
+    }).observe(document.getElementById('scene-build'), { attributes: true, attributeFilter: ['class'] });
+
+    function scaleToFit() {
+      const canvas = document.getElementById('video-canvas');
+      const frame = document.querySelector('.capture-frame');
+      const vw = window.innerWidth;
+      const vh = window.innerHeight;
+      const padding = 140;
+      const scaleX = (vw - 60) / 1080;
+      const scaleY = (vh - padding) / 1920;
+      const scale = Math.min(scaleX, scaleY, 1);
+      canvas.style.transform = `scale(${scale})`;
+      frame.style.width = (1080 * scale) + 'px';
+      frame.style.height = (1920 * scale) + 'px';
+    }
+    scaleToFit();
+    window.addEventListener('resize', scaleToFit);
+  </script>
+</body>
+</html>
