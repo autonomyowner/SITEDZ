@@ -74,6 +74,7 @@ const PROJECTS = [
     tag: 'منصة تجارية',
     desc: 'منصة B2B وB2C والمستقلين لربط المشترين والبائعين في جميع أنحاء الجزائر.',
     award: true,
+    playstore: true,
   },
   {
     name: 'مخزني',
@@ -102,6 +103,7 @@ const PROJECTS = [
     href: 'https://hasio.xyz',
     tag: 'سفر',
     desc: 'دليل سفر وحجز ذكي — رحلتك أسهل.',
+    playstore: true,
   },
   {
     name: 'TRAVoices',
@@ -383,6 +385,7 @@ function Projects() {
                 <span className="project-card__tag">{p.tag}</span>
                 <p className="project-card__desc">{p.desc}</p>
                 {p.url && <span className="project-card__url">{p.url}</span>}
+                {p.playstore && <span className="project-card__playstore">متوفر على Play Store</span>}
               </Wrapper>
             )
           })}
