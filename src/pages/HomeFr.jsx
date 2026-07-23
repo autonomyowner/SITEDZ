@@ -287,6 +287,13 @@ function Pricing() {
 
 const PROJECTS = [
   {
+    name: 'Zed Informatique',
+    url: 'zed-informatique.com',
+    href: 'https://zed-informatique.com',
+    tag: 'E-Commerce / Tech',
+    desc: "Partenaire de confiance pour vos besoins tech — composants premium, laptops et accessoires livrés dans les 58 wilayas.",
+  },
+  {
     name: 'ElGhella',
     tag: 'AgriTech',
     desc: "Marketplace intégrée pour les agriculteurs algériens : produits, équipements et services agricoles.",
@@ -364,13 +371,6 @@ const PROJECTS = [
     href: 'http://mbsx.org',
     tag: 'Médias',
     desc: "Institution de journalisme de données portant le reportage data-driven en Algérie.",
-  },
-  {
-    name: 'Zed Informatique',
-    url: 'zed-informatique.com',
-    href: 'https://zed-informatique.com',
-    tag: 'E-Commerce / Tech',
-    desc: "Partenaire de confiance pour vos besoins tech — composants premium, laptops et accessoires livrés dans les 58 wilayas.",
   },
   {
     name: 'Walid Fermeture',

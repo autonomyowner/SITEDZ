@@ -62,6 +62,13 @@ const STATS = [
 
 const PROJECTS = [
   {
+    name: 'Zed Informatique',
+    url: 'zed-informatique.com',
+    href: 'https://zed-informatique.com',
+    tag: 'تجارة إلكترونية / تقنية',
+    desc: 'شريكك الموثوق لجميع احتياجاتك التقنية — مكونات وحواسيب محمولة وملحقات بجودة عالية مع توصيل لجميع 69 ولاية.',
+  },
+  {
     name: 'الغلة',
     tag: 'تقنية زراعية',
     desc: 'منصة متكاملة للمزارعين الجزائريين لتداول المنتجات الزراعية والمعدات والخدمات الاستشارية.',
@@ -139,13 +146,6 @@ const PROJECTS = [
     href: 'http://mbsx.org',
     tag: 'إعلام',
     desc: 'مؤسسة الصحافة البيانية لتعزيز الصحافة القائمة على البيانات في الجزائر.',
-  },
-  {
-    name: 'Zed Informatique',
-    url: 'zed-informatique.com',
-    href: 'https://zed-informatique.com',
-    tag: 'تجارة إلكترونية / تقنية',
-    desc: 'شريكك الموثوق لجميع احتياجاتك التقنية — مكونات وحواسيب محمولة وملحقات بجودة عالية مع توصيل لجميع 69 ولاية.',
   },
   {
     name: 'Walid Fermeture',
