@@ -13,7 +13,7 @@ export function Footer({ d, lang }: { d: Dictionary['footer']; lang: Locale }) {
           <span className="footer__logo-text">SiteDZ</span>
         </Link>
         <div className="footer__links">
-          <a href={`${base}#services`}>{d.services}</a>
+          <Link href={localePath(lang, 'services')}>{d.services}</Link>
           <a href={`${base}#tech-offer`}>{d.offer}</a>
           <a href={`${base}#process`}>{d.process}</a>
           {/* Previously a dead anchor on /ar — that locale now has a pricing

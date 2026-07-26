@@ -22,7 +22,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const out: MetadataRoute.Sitemap = []
 
   // Routes that share the same path across locales.
-  const shared: { path: string; priority: number }[] = [{ path: '', priority: 1 }]
+  const shared: { path: string; priority: number }[] = [
+    { path: '', priority: 1 },
+    { path: 'services', priority: 0.8 },
+  ]
 
   for (const { path, priority } of shared) {
     const paths = Object.fromEntries(LOCALES.map((l) => [l, path]))

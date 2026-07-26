@@ -24,7 +24,7 @@ export function Nav({ d, lang }: { d: Dictionary['nav']; lang: Locale }) {
         </Link>
 
         <div className="nav__links">
-          <a href={`${base}#services`}>{d.services}</a>
+          <Link href={localePath(lang, 'services')}>{d.services}</Link>
           <a href={`${base}#tech-offer`} className="nav__link-accent">{d.offer}</a>
           <a href={`${base}#process`}>{d.process}</a>
           <a href={`${base}#projects`}>{d.projects}</a>

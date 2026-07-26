@@ -1,5 +1,7 @@
 import type { Dictionary } from '../types'
 import { WILAYA_COUNT } from '../data/site'
+import { frServicePages } from './fr-services'
+import { frServicePages2 } from './fr-services-2'
 
 export const fr: Dictionary = {
   meta: {
@@ -163,5 +165,5 @@ export const fr: Dictionary = {
     whatsapp: 'WhatsApp',
   },
 
-  servicePages: {},
+  servicePages: { ...frServicePages, ...frServicePages2 },
 }

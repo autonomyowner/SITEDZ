@@ -1802,3 +1802,183 @@ a {
 .nav__links a.nav__link-accent:hover {
   opacity: 0.75;
 }
+
+/* ===== SERVICE LANDING PAGES ===== */
+.svc {
+  background: var(--bg);
+  padding: calc(var(--nav-h) + clamp(4rem, 7vw, 7rem)) var(--pad) clamp(4rem, 7vw, 7rem);
+}
+
+.svc__inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.svc__crumbs {
+  font-size: 0.75rem;
+  letter-spacing: 0.06em;
+  color: rgba(243, 241, 236, 0.4);
+  margin-bottom: 2rem;
+}
+
+.svc__crumbs a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.svc__crumbs a:hover {
+  color: var(--accent);
+}
+
+.svc__crumbs span {
+  margin: 0 0.5rem;
+  opacity: 0.4;
+}
+
+.svc__headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.25rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  max-width: 18ch;
+}
+
+.svc__headline em {
+  font-style: italic;
+  font-weight: 300;
+  color: rgba(243, 241, 236, 0.5);
+}
+
+.svc__intro {
+  margin-top: 1.75rem;
+  max-width: 62ch;
+  font-size: clamp(1.0625rem, 1.5vw, 1.25rem);
+  line-height: 1.65;
+  color: rgba(243, 241, 236, 0.72);
+}
+
+.svc__body {
+  margin-top: clamp(2.5rem, 4vw, 4rem);
+  max-width: 68ch;
+  font-size: clamp(0.9375rem, 1.2vw, 1.0625rem);
+  line-height: 1.75;
+  color: rgba(243, 241, 236, 0.65);
+}
+
+.svc__body p + p {
+  margin-top: 1.5rem;
+}
+
+.svc__block {
+  margin-top: clamp(3.5rem, 6vw, 6rem);
+}
+
+.svc__block-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 3vw, 2.75rem);
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--text);
+  margin-bottom: 2.5rem;
+}
+
+.svc__price {
+  margin-top: clamp(3rem, 5vw, 5rem);
+  padding: clamp(1.75rem, 3vw, 2.5rem);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.5rem 1.25rem;
+}
+
+.svc__price-label {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(243, 241, 236, 0.4);
+  width: 100%;
+}
+
+.svc__price-amount {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--text);
+}
+
+.svc__price-note {
+  font-size: 0.9375rem;
+  color: rgba(243, 241, 236, 0.55);
+}
+
+.svc__faq {
+  border-top: 1px solid var(--border);
+}
+
+.svc__faq-item {
+  border-bottom: 1px solid var(--border);
+  padding: 1.75rem 0;
+}
+
+.svc__faq-q {
+  font-size: clamp(1rem, 1.4vw, 1.1875rem);
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+  margin-bottom: 0.75rem;
+}
+
+.svc__faq-a {
+  font-size: clamp(0.9375rem, 1.1vw, 1rem);
+  line-height: 1.7;
+  color: rgba(243, 241, 236, 0.62);
+  max-width: 72ch;
+}
+
+/* Service index */
+.svc-index__grid {
+  margin-top: clamp(2.5rem, 4vw, 4rem);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1px;
+  background: var(--hairline, rgba(243, 241, 236, 0.08));
+  border: 1px solid var(--border);
+}
+
+.svc-index__card {
+  background: var(--bg);
+  padding: clamp(1.5rem, 2.5vw, 2.25rem);
+  text-decoration: none;
+  display: block;
+  transition: background 0.35s var(--ease-out);
+}
+
+.svc-index__card:hover {
+  background: rgba(243, 241, 236, 0.03);
+}
+
+.svc-index__name {
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+}
+
+.svc-index__desc {
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: rgba(243, 241, 236, 0.55);
+}
+
+@media (max-width: 768px) {
+  .svc__price {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
