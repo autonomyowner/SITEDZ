@@ -592,6 +592,177 @@ a {
   line-height: 1.55;
 }
 
+/* ===== TECH SELLER OFFER ===== */
+.techoffer {
+  position: relative;
+  padding: clamp(5rem, 8vw, 9rem) var(--pad);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.techoffer::before {
+  content: '';
+  position: absolute;
+  top: -14rem;
+  left: 50%;
+  width: min(1000px, 110vw);
+  height: 34rem;
+  transform: translateX(-50%);
+  background: radial-gradient(ellipse at center, rgba(255, 106, 26, 0.14), transparent 68%);
+  pointer-events: none;
+}
+
+.techoffer__inner {
+  position: relative;
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.techoffer__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.875rem;
+  margin-bottom: 1.75rem;
+  border: 1px solid rgba(255, 106, 26, 0.38);
+  border-radius: 100px;
+  background: rgba(255, 106, 26, 0.07);
+  color: var(--accent);
+  font-size: 0.6875rem;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.techoffer__badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+
+.techoffer__header {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  align-items: end;
+  gap: 2.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.techoffer__headline {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 800;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+}
+
+.techoffer__headline em {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent);
+}
+
+.techoffer__sub {
+  font-size: 0.9375rem;
+  color: var(--muted);
+  line-height: 1.7;
+  max-width: 460px;
+}
+
+.techoffer__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+  border-radius: 0.875rem;
+  overflow: hidden;
+}
+
+.offer-card {
+  background: var(--bg);
+  padding: 2.125rem 1.875rem;
+  transition: background 0.25s;
+}
+
+.offer-card:hover {
+  background: rgba(243, 241, 236, 0.04);
+}
+
+.offer-card__icon {
+  display: grid;
+  place-items: center;
+  width: 2.375rem;
+  height: 2.375rem;
+  margin-bottom: 1.125rem;
+  border: 1px solid var(--border);
+  border-radius: 0.6875rem;
+  background: rgba(255, 106, 26, 0.07);
+  color: var(--accent);
+}
+
+.offer-card__name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  margin-bottom: 0.55rem;
+}
+
+.offer-card__desc {
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
+.techoffer__cta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-top: 1.75rem;
+  padding: 1.625rem 1.875rem;
+  border: 1px solid rgba(255, 106, 26, 0.28);
+  border-radius: 0.875rem;
+  background: rgba(255, 106, 26, 0.05);
+}
+
+.techoffer__cta-text {
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+}
+
+.techoffer__cta-text span {
+  display: block;
+  margin-top: 0.3rem;
+  font-size: 0.875rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: var(--muted);
+}
+
+.btn-accent {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+  padding: 0.8125rem 1.875rem;
+  background: var(--accent);
+  color: #0B0B0D;
+  border-radius: 100px;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  transition: opacity 0.2s;
+}
+
+.btn-accent:hover {
+  opacity: 0.85;
+}
+
 /* ===== COMMISSION CTA ===== */
 .commission {
   background: var(--dark);
@@ -1470,6 +1641,9 @@ a {
   .how-it-works__steps {
     grid-template-columns: 1fr;
   }
+  .techoffer__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
 
 @media (max-width: 768px) {
@@ -1514,6 +1688,22 @@ a {
     align-items: flex-start;
     gap: 1.25rem;
   }
+  .techoffer__header {
+    grid-template-columns: 1fr;
+    align-items: start;
+    gap: 1.5rem;
+  }
+  .techoffer__sub {
+    max-width: 100%;
+  }
+  .techoffer__cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .btn-accent {
+    width: 100%;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 540px) {
@@ -1539,6 +1729,9 @@ a {
   .puzzle-card--featured {
     grid-column: span 1;
   }
+  .techoffer__grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ===== RTL (ARABIC) OVERRIDES ===== */
@@ -1562,14 +1755,18 @@ a {
 [dir="rtl"] .projects__award-sub,
 [dir="rtl"] .service-card__desc,
 [dir="rtl"] .project-card__desc,
-[dir="rtl"] .material-card__desc {
+[dir="rtl"] .material-card__desc,
+[dir="rtl"] .techoffer__sub,
+[dir="rtl"] .offer-card__desc,
+[dir="rtl"] .techoffer__cta-text span {
   line-height: 1.9;
 }
 
 /* flip CTAs arrows */
 [dir="rtl"] .nav__cta svg,
 [dir="rtl"] .hero__btn-primary svg,
-[dir="rtl"] .btn-light svg {
+[dir="rtl"] .btn-light svg,
+[dir="rtl"] .btn-accent svg {
   transform: scaleX(-1);
 }
 
@@ -1593,4 +1790,14 @@ a {
 
 .nav__lang-toggle:hover {
   opacity: 0.5;
+}
+
+/* nav highlight for the tech-seller offer */
+.nav__links a.nav__link-accent {
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.nav__links a.nav__link-accent:hover {
+  opacity: 0.75;
 }

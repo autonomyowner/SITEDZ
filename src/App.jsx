@@ -44,9 +44,9 @@ function RootRedirect() {
 /* ─── Nav ───────────────────────────────────────────────────── */
 
 const NAV_STRINGS = {
-  en: { services: 'Services', process: 'Process', projects: 'Projects', contact: 'Contact', cta: 'WhatsApp' },
-  ar: { services: 'الخدمات', process: 'المنهجية', projects: 'المشاريع', contact: 'تواصل معنا', cta: 'تواصل معنا' },
-  fr: { services: 'Services', process: 'Méthode', projects: 'Projets', contact: 'Contact', cta: 'WhatsApp' },
+  en: { services: 'Services', offer: 'Tech Offer', process: 'Process', projects: 'Projects', contact: 'Contact', cta: 'WhatsApp' },
+  ar: { services: 'الخدمات', offer: 'عرض التجار', process: 'المنهجية', projects: 'المشاريع', contact: 'تواصل معنا', cta: 'تواصل معنا' },
+  fr: { services: 'Services', offer: 'Offre Tech', process: 'Méthode', projects: 'Projets', contact: 'Contact', cta: 'WhatsApp' },
 }
 
 function Nav() {
@@ -65,6 +65,7 @@ function Nav() {
 
         <div className="nav__links">
           <a href={`${base}#services`}>{t.services}</a>
+          <a href={`${base}#tech-offer`} className="nav__link-accent">{t.offer}</a>
           <a href={`${base}#process`}>{t.process}</a>
           <a href={`${base}#projects`}>{t.projects}</a>
           <a href={`${base}#contact`}>{t.contact}</a>
@@ -95,15 +96,15 @@ function Nav() {
 
 const FOOTER_STRINGS = {
   en: {
-    services: 'Services', process: 'Process', pricing: 'Pricing', whatsapp: 'WhatsApp',
+    services: 'Services', offer: 'Tech Offer', process: 'Process', pricing: 'Pricing', whatsapp: 'WhatsApp',
     copy: '© 2025 SiteDZ. All rights reserved.',
   },
   ar: {
-    services: 'الخدمات', process: 'المنهجية', pricing: 'الأسعار', whatsapp: 'واتساب',
+    services: 'الخدمات', offer: 'عرض التجار', process: 'المنهجية', pricing: 'الأسعار', whatsapp: 'واتساب',
     copy: '© 2025 SiteDZ. جميع الحقوق محفوظة.',
   },
   fr: {
-    services: 'Services', process: 'Méthode', pricing: 'Tarifs', whatsapp: 'WhatsApp',
+    services: 'Services', offer: 'Offre Tech', process: 'Méthode', pricing: 'Tarifs', whatsapp: 'WhatsApp',
     copy: '© 2025 SiteDZ. Tous droits réservés.',
   },
 }
@@ -122,6 +123,7 @@ function Footer() {
         </Link>
         <div className="footer__links">
           <a href={`${base}#services`}>{t.services}</a>
+          <a href={`${base}#tech-offer`}>{t.offer}</a>
           <a href={`${base}#process`}>{t.process}</a>
           <a href={`${base}#pricing`}>{t.pricing}</a>
           <a href="https://wa.me/213697339450" target="_blank" rel="noopener noreferrer">{t.whatsapp}</a>

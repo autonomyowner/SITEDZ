@@ -1,3 +1,5 @@
+import TechOffer from '../sections/TechOffer.jsx'
+
 /* ─── Data ─────────────────────────────────────────────────── */
 
 const SERVICES = [
@@ -486,6 +488,7 @@ export default function HomeFrPage() {
       <Featured />
       <Marquee />
       <Services />
+      <TechOffer lang="fr" />
       <Process />
       <Pricing />
       <Projects />

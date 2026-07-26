@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import TechOffer from '../sections/TechOffer.jsx'
 
 /* ─── Set document direction ────────────────────────────────── */
 
@@ -433,6 +434,7 @@ export default function HomeArPage() {
       <Featured />
       <Marquee />
       <Services />
+      <TechOffer lang="ar" />
       <Process />
       <Projects />
       <Contact />
