@@ -1,3 +1,6 @@
+'use client'
+
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import { ArrowUpRight } from '@/components/icons'
 import { whatsappHref } from '@/content/data/site'
@@ -16,13 +19,19 @@ export function Nav({ d, lang }: { d: Dictionary['nav']; lang: Locale }) {
   const base = localePath(lang)
   const next = nextLang(lang)
 
-  return (
-    <nav className="nav">
-      <div className="nav__inner">
-        <Link href={base} className="nav__logo">
-          <span className="nav__logo-text">SiteDZ</span>
-        </Link>
+  // Transparent while the hero artwork is behind the bar; solid once the page
+  // scrolls, so the links never sit on top of moving content.
+  const [solid, setSolid] = useState(false)
+  useEffect(() => {
+    const onScroll = () => setSolid(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
+  return (
+    <nav className={`nav${solid ? ' nav--solid' : ''}`}>
+      <div className="nav__inner">
         <div className="nav__links">
           <Link href={localePath(lang, 'services')}>{d.services}</Link>
           <a href={`${base}#tech-offer`} className="nav__link-accent">{d.offer}</a>
@@ -31,7 +40,11 @@ export function Nav({ d, lang }: { d: Dictionary['nav']; lang: Locale }) {
           <a href={`${base}#contact`}>{d.contact}</a>
         </div>
 
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+        <Link href={base} className="nav__logo">
+          <span className="nav__logo-text">SiteDZ</span>
+        </Link>
+
+        <div className="nav__end">
           <Link
             href={localePath(next)}
             className="nav__lang-toggle"
