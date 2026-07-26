@@ -1,6 +1,6 @@
 import type { CSSProperties } from 'react'
 import Image from 'next/image'
-import heroImage from '@/public/hero.png'
+import heroImage from '@/public/hero.webp'
 import { Rich } from '@/components/Rich'
 import { ArrowUpRight } from '@/components/icons'
 import type { Dictionary } from '@/content/types'
