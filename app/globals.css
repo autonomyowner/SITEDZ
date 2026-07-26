@@ -14,9 +14,10 @@
   --border:    rgba(243, 241, 236, 0.12);
   --accent:    #FF6A1A;
 
-  --font-sans: 'Figtree', sans-serif;
-  --font-serif:'Cormorant', serif;
-  --font-arabic: 'Cairo', sans-serif;
+  /* Self-hosted via next/font (lib/fonts.ts). Cairo is only attached on /ar. */
+  --font-sans:   var(--font-figtree), system-ui, sans-serif;
+  --font-serif:  var(--font-cormorant), Georgia, serif;
+  --font-arabic: var(--font-cairo), system-ui, sans-serif;
 
   --nav-h:     4.25rem;
   --pad:       clamp(1.25rem, 4vw, 3rem);
