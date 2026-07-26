@@ -1,5 +1,5 @@
 {
-  "name": "origawood",
+  "name": "sitedz",
   "private": true,
   "version": "0.1.0",
   "type": "module",
@@ -11,8 +11,7 @@
   "dependencies": {
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.13.1",
-    "three": "^0.183.2"
+    "react-router-dom": "^7.13.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.3.1",

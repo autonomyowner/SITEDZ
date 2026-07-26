@@ -1,0 +1,27 @@
+# Nothing below is part of the site build. Excluding it keeps deployment
+# uploads small — sipsa-directory.pdf alone is 26 MB.
+
+# Sales collateral / proposals (standalone HTML, opened locally)
+business-card-print.html
+flyer.html
+offre-sitedz-fr.html
+offre-sitedz-simple-fr.html
+outreach-playbook.html
+proposal-*.html
+sitedz-design-starter.html
+emails-sipsa-*.html
+
+# Source data and generators
+sipsa-directory.pdf
+gen-emails.mjs
+.lockin_seed.py
+anthropic home  page.jpg
+
+# TikTok/explainer clip series
+clips/
+
+# Internal planning docs
+docs/
+mythos_journal.md
+partner.md
+soul.md

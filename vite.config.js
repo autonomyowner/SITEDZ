@@ -7,7 +7,6 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          three: ['three'],
           react:  ['react', 'react-dom'],
           router: ['react-router-dom'],
         },
