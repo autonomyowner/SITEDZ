@@ -4,9 +4,16 @@
  */
 
 export const PROJECTS = [
+  /**
+   * Two similarly-named, entirely separate products. `aitraid` is the AI agent
+   * marketplace at aitraid.com — the one currently for sale, see the ForSale
+   * section. `aitridi` is the Algerian B2B/B2C marketplace at aitridi.com and
+   * is the one that carries the Projet Innovant award. Do not merge them.
+   */
+  { id: 'aitraid', name: 'AiTraid', url: 'aitraid.com', href: 'https://aitraid.com' },
   { id: 'zed', name: 'Zed Informatique', url: 'zed-informatique.com', href: 'https://zed-informatique.com' },
   { id: 'elghella', name: 'ElGhella', award: true },
-  { id: 'aitraid', name: 'AItraid', url: 'aitridi.com', href: 'https://aitridi.com', award: true, playstore: true },
+  { id: 'aitridi', name: 'AItridi', url: 'aitridi.com', href: 'https://aitridi.com', award: true, playstore: true },
   { id: 'ma5zani', name: 'Ma5zani', url: 'ma5zani.com', href: 'https://ma5zani.com' },
   { id: 'postaify', name: 'Postaify', url: 'postaify.com', href: 'https://postaify.com' },
   { id: 'tabra', name: 'Tabra', url: 'tabra.space', href: 'https://tabra.space' },
