@@ -1,3 +1,4 @@
+import type { AitraidStatId, StackLayerId } from './data/aitraid'
 import type { ProjectId } from './data/projects'
 import type { HomeServiceId, ServiceId } from './data/services'
 import type { PlanId } from './data/pricing'
@@ -21,6 +22,27 @@ export interface TechOfferCopy {
   headline: Rich
   sub: string
   items: { icon: OfferIconId; name: string; desc: string }[]
+  ctaTitle: string
+  ctaSub: string
+  ctaBtn: string
+  /** Prefilled WhatsApp message. */
+  wa: string
+}
+
+export interface ForSaleCopy {
+  label: string
+  badge: string
+  headline: Rich
+  sub: string
+  /** Sits above the domain wordmark, e.g. "Domain included". */
+  domainLabel: string
+  domainNote: string
+  /** Bullet list of what the buyer receives. */
+  includes: string[]
+  stackTitle: string
+  /** Every layer must be covered — adding one breaks all three locales. */
+  stack: Record<StackLayerId, string>
+  stats: Record<AitraidStatId, string>
   ctaTitle: string
   ctaSub: string
   ctaBtn: string
@@ -119,6 +141,7 @@ export interface Dictionary {
     /** Every project must be covered — adding one breaks all three locales. */
     items: Record<ProjectId, { tag: string; desc: string }>
   }
+  forSale: ForSaleCopy
   contact: {
     title: Rich
     sub: string

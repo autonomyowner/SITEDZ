@@ -8,6 +8,7 @@ import { TechOffer } from '@/components/sections/TechOffer'
 import { Process } from '@/components/sections/Process'
 import { Pricing } from '@/components/sections/Pricing'
 import { Projects } from '@/components/sections/Projects'
+import { ForSale } from '@/components/sections/ForSale'
 import { Contact } from '@/components/sections/Contact'
 import { getDictionary } from '@/content/locales'
 import { buildMetadata } from '@/lib/seo'
@@ -53,6 +54,7 @@ export default async function HomePage({
       <Process d={d.process} />
       <Pricing d={d.pricing} lang={lang} />
       <Projects d={d.projects} lang={lang} />
+      <ForSale d={d.forSale} />
       <Contact d={d.contact} />
     </>
   )
