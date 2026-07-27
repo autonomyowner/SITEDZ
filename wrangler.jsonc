@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "sitedz",
+  "main": ".open-next/worker.js",
+  "compatibility_date": "2026-07-27",
+  // Required by the OpenNext adapter — the Next.js server needs Node built-ins.
+  "compatibility_flags": ["nodejs_compat"],
+  "assets": {
+    "directory": ".open-next/assets",
+    "binding": "ASSETS"
+  },
+  // next/image does NOT work on Workers with the default Next.js loader. This
+  // binding routes it through Cloudflare Images instead. Only the hero uses
+  // <Image>, so the billable volume here is one asset.
+  "images": {
+    "binding": "IMAGES"
+  },
+  "observability": {
+    "enabled": true
+  }
+}

@@ -7,9 +7,15 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "//": "deploy:build is the command Cloudflare Workers Builds runs in CI; wrangler deploy then ships .open-next/worker.js. populateCache is NOT part of `build` - without it the prerendered pages never reach .open-next/assets/cdn-cgi/_next_cache and every route 404s. For the static-assets cache it is a plain local file copy, so `local` needs no API credentials in CI.",
+    "deploy:build": "opennextjs-cloudflare build && opennextjs-cloudflare populateCache local",
+    "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
+    "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
+    "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
   },
   "dependencies": {
+    "@opennextjs/cloudflare": "^1.20.2",
     "gray-matter": "^4.0.3",
     "next": "^16.2.12",
     "next-mdx-remote": "^6.0.0",
@@ -20,6 +26,7 @@
     "@types/node": "^26.1.1",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "wrangler": "^4.114.0"
   }
 }

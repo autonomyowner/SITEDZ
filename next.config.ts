@@ -1,4 +1,5 @@
 import type { NextConfig } from 'next'
+import { initOpenNextCloudflareForDev } from '@opennextjs/cloudflare'
 
 /**
  * French route prefixes served un-prefixed at the root. Add a segment here when
@@ -41,3 +42,7 @@ const nextConfig: NextConfig = {
 }
 
 export default nextConfig
+
+// Makes the Cloudflare bindings in wrangler.jsonc (notably IMAGES) available to
+// `next dev`, so local dev matches what the Worker actually runs.
+initOpenNextCloudflareForDev()
