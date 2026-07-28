@@ -5,6 +5,16 @@
   "compatibility_date": "2026-07-27",
   // Required by the OpenNext adapter — the Next.js server needs Node built-ins.
   "compatibility_flags": ["nodejs_compat"],
+  // Explicit: declaring `routes` otherwise turns workers.dev off by default,
+  // which would leave no reachable URL if a custom domain is ever misconfigured.
+  "workers_dev": true,
+  // Custom domains, declared here rather than clicked in the dashboard so a
+  // fresh deploy reproduces them. Cloudflare manages the DNS records for these
+  // itself — they replaced the records that used to point at Vercel.
+  "routes": [
+    { "pattern": "sitedz.com", "custom_domain": true },
+    { "pattern": "www.sitedz.com", "custom_domain": true }
+  ],
   "assets": {
     "directory": ".open-next/assets",
     "binding": "ASSETS"
