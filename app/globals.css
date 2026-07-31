@@ -2008,10 +2008,14 @@ a {
   .hero__frame {
     min-height: calc(100svh - 1.5rem);
     border-radius: 1.125rem;
+    /* Lift the copy off the bottom edge so it reads as a block, not a caption. */
+    padding-bottom: clamp(3.5rem, 11vw, 5.5rem);
   }
-  /* Portrait crop: pull focus to the sky, away from the tree line. */
+  /* Portrait crop: a phone only ever sees ~a quarter of this landscape frame,
+     and the artwork bakes "SITEDZ" across its middle. Sit on the green panel so
+     that painted wordmark never collides with the headline. */
   .hero__bg {
-    object-position: 62% 30%;
+    object-position: 15% 50%;
   }
   .hero__actions {
     gap: 0.75rem;
@@ -2087,6 +2091,25 @@ a {
   }
   .nav__links {
     display: none;
+  }
+  /* With the links gone the three-track grid still reserves an empty 1fr on the
+     left, which squeezes the wordmark and pushes the CTA off the edge. Drop to
+     two tracks: wordmark left, lang + WhatsApp right. */
+  .nav__inner {
+    grid-template-columns: auto 1fr;
+    gap: 0.75rem;
+  }
+  .nav__logo {
+    justify-content: flex-start;
+  }
+  .nav__logo-text {
+    font-size: 0.875rem;
+    letter-spacing: 0.22em;
+    text-indent: 0.22em;
+  }
+  .nav__cta {
+    padding: 0.5rem 0.875rem;
+    font-size: 0.8125rem;
   }
   .collection__grid {
     grid-template-columns: 1fr;
