@@ -76,6 +76,48 @@ export const fr: Dictionary = {
     },
   },
 
+  capabilities: {
+    label: 'Nos services',
+    headline: 'Nos *services*',
+    sub: 'Un écosystème complet de services numériques et techniques.',
+    items: {
+      web: {
+        name: 'Sites web et plateformes',
+        desc: 'Sites et plateformes professionnels, rapides et sécurisés, conçus pour atteindre vos objectifs.',
+      },
+      systems: {
+        name: 'Systèmes d’information',
+        desc: 'Systèmes de gestion sur mesure qui automatisent vos opérations et augmentent votre efficacité.',
+      },
+      ai: {
+        name: 'Solutions d’intelligence artificielle',
+        desc: 'L’IA au service de votre activité : assistants intelligents, analyse de données et automatisation.',
+      },
+      brand: {
+        name: 'Identité visuelle et design',
+        desc: 'Des identités visuelles complètes qui reflètent votre marque et la distinguent sur le marché.',
+      },
+      mobile: {
+        name: 'Applications mobiles',
+        desc: 'Des applications mobiles modernes et fluides sur Android et iOS.',
+      },
+      marketing: {
+        name: 'Marketing digital',
+        desc: 'Stratégies digitales et gestion de campagnes pour amener votre marque jusqu’à son public.',
+      },
+      training: {
+        name: 'Formation',
+        desc: 'Formations en présentiel et à distance, et supports pédagogiques via l’académie SiteDZ.',
+      },
+      consulting: {
+        name: 'Conseil technique',
+        desc: 'Accompagnement et conseil technique pour choisir les solutions les plus adaptées à vos projets.',
+      },
+    },
+    cta: 'Contactez-nous',
+    wa: 'Bonjour, je souhaite un devis pour : {service}',
+  },
+
   techOffer: {
     label: 'Offre Spéciale',
     badge: 'Pour les vendeurs tech',

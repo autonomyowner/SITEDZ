@@ -98,3 +98,70 @@ export const OFFER_ICONS = {
 } as const
 
 export type OfferIconId = keyof typeof OFFER_ICONS
+
+/* ─── Capability grid icons (/services) ─────────────────────── */
+
+/** Larger than <Ico> — these head a card rather than sitting inline. */
+function CapIco({ d, children }: { d?: string; children?: React.ReactNode }) {
+  return (
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      {d ? <path d={d} /> : children}
+    </svg>
+  )
+}
+
+export const CAPABILITY_ICONS = {
+  web: (
+    <CapIco>
+      <rect x="2.5" y="4" width="19" height="15" rx="2" />
+      <path d="M2.5 8.5h19M5.5 6.25h.01M8 6.25h.01M9.5 15l-2-2.5 2-2.5M14.5 10l2 2.5-2 2.5" />
+    </CapIco>
+  ),
+  systems: (
+    <CapIco>
+      <ellipse cx="12" cy="5.5" rx="7.5" ry="3" />
+      <path d="M4.5 5.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6M4.5 11.5v6c0 1.66 3.36 3 7.5 3s7.5-1.34 7.5-3v-6" />
+    </CapIco>
+  ),
+  ai: (
+    <CapIco>
+      <rect x="7" y="7" width="10" height="10" rx="2.5" />
+      <path d="M10.5 2.5v4.5M13.5 2.5v4.5M10.5 17v4.5M13.5 17v4.5M2.5 10.5H7M2.5 13.5H7M17 10.5h4.5M17 13.5h4.5" />
+    </CapIco>
+  ),
+  brand: (
+    <CapIco>
+      <circle cx="12" cy="12" r="9" />
+      <circle cx="12" cy="12" r="3.25" />
+      <path d="M12 3v5.75M12 15.25V21M3 12h5.75M15.25 12H21" />
+    </CapIco>
+  ),
+  mobile: (
+    <CapIco>
+      <rect x="6.5" y="2" width="11" height="20" rx="2.5" />
+      <path d="M10.5 5h3M12 18.5h.01" />
+    </CapIco>
+  ),
+  marketing: (
+    <CapIco>
+      <path d="M3 9.5v5a1.5 1.5 0 0 0 1.5 1.5H7l6.5 4.5V5L7 9.5H4.5A1.5 1.5 0 0 0 3 11z" />
+      <path d="M17.5 8.5a5 5 0 0 1 0 7" />
+      <path d="M20 5.5a9 9 0 0 1 0 13" />
+    </CapIco>
+  ),
+  training: (
+    <CapIco>
+      <path d="M12 3.5 22 8.5l-10 5-10-5 10-5z" />
+      <path d="M6 11v5.5c0 1.4 2.7 2.75 6 2.75s6-1.35 6-2.75V11" />
+      <path d="M22 8.5v5.5" />
+    </CapIco>
+  ),
+  consulting: (
+    <CapIco>
+      <path d="M9.5 18.5h5M10 21.5h4" />
+      <path d="M12 2.5a6.5 6.5 0 0 0-3.75 11.8c.5.36.75.87.75 1.4v.3h6v-.3c0-.53.25-1.04.75-1.4A6.5 6.5 0 0 0 12 2.5z" />
+    </CapIco>
+  ),
+} as const
+
+export type CapabilityIconId = keyof typeof CAPABILITY_ICONS

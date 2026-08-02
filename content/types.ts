@@ -1,5 +1,6 @@
 import type { AitraidStatId, StackLayerId } from './data/aitraid'
 import type { ProjectId } from './data/projects'
+import type { CapabilityId } from './data/capabilities'
 import type { HomeServiceId, ServiceId } from './data/services'
 import type { PlanId } from './data/pricing'
 import type { OfferIconId } from '@/components/icons'
@@ -111,6 +112,21 @@ export interface Dictionary {
   services: {
     label: string
     items: Record<HomeServiceId, { tag: string; name: string; desc: string }>
+  }
+  /**
+   * The capability grid on /services. Required in every locale — a half
+   * translated grid on /ar is worse than none, so this cannot compile without
+   * all eight disciplines.
+   */
+  capabilities: {
+    label: string
+    headline: Rich
+    sub: string
+    items: Record<CapabilityId, { name: string; desc: string }>
+    /** Repeated on every card, e.g. "اتصل بنا". */
+    cta: string
+    /** Prefilled WhatsApp message; `{service}` is replaced with the card name. */
+    wa: string
   }
   techOffer: TechOfferCopy
   process: {

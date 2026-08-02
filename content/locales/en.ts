@@ -74,6 +74,48 @@ export const en: Dictionary = {
     },
   },
 
+  capabilities: {
+    label: 'Our services',
+    headline: 'Our *services*',
+    sub: 'A complete ecosystem of digital and technical services.',
+    items: {
+      web: {
+        name: 'Websites and platforms',
+        desc: 'Professional websites and platforms — fast, secure, and built around your objectives.',
+      },
+      systems: {
+        name: 'Information systems',
+        desc: 'Custom management systems that automate your operations and raise your efficiency.',
+      },
+      ai: {
+        name: 'Artificial intelligence',
+        desc: 'AI inside your business: smart assistants, data analysis, and automation.',
+      },
+      brand: {
+        name: 'Brand identity and design',
+        desc: 'Complete visual identities that carry your brand’s character and set it apart.',
+      },
+      mobile: {
+        name: 'Mobile applications',
+        desc: 'Modern, fluid mobile apps on Android and iOS.',
+      },
+      marketing: {
+        name: 'Digital marketing',
+        desc: 'Digital strategy and campaign management that put your brand in front of its audience.',
+      },
+      training: {
+        name: 'Training',
+        desc: 'On-site and remote training courses and learning material through the SiteDZ academy.',
+      },
+      consulting: {
+        name: 'Technical consulting',
+        desc: 'Guidance and technical advice on choosing the right solutions for your projects.',
+      },
+    },
+    cta: 'Contact us',
+    wa: 'Hello, I would like a quote for: {service}',
+  },
+
   techOffer: {
     label: 'Special Offer',
     badge: 'For tech sellers',

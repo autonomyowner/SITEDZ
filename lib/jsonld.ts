@@ -92,6 +92,33 @@ export function service({
   }
 }
 
+/**
+ * The capability grid on /services as an ItemList of Services. These are
+ * disciplines with no page of their own, so each item carries the /services
+ * URL rather than a dead link.
+ */
+export function serviceList(
+  lang: Locale,
+  items: { name: string; desc: string }[],
+) {
+  return {
+    '@type': 'ItemList',
+    url: absUrl(lang, 'services'),
+    itemListElement: items.map((item, i) => ({
+      '@type': 'ListItem',
+      position: i + 1,
+      item: {
+        '@type': 'Service',
+        name: item.name,
+        description: item.desc,
+        provider: { '@id': ORG_ID },
+        areaServed: { '@type': 'Country', name: 'Algeria' },
+        inLanguage: HTML_LANG[lang],
+      },
+    })),
+  }
+}
+
 export function faqPage(faq: { q: string; a: string }[]) {
   return {
     '@type': 'FAQPage',
