@@ -5,7 +5,13 @@
 
 export const PHONE_E164 = '+213697339450'
 export const PHONE_DISPLAY = '06 97 33 94 50'
-export const WHATSAPP_NUMBER = '213697339450'
+
+/**
+ * Deliberately NOT the same line as PHONE_E164 — WhatsApp moved to 07 97 33 94
+ * 51 while calls still land on 06 97 33 94 50. Deriving one from the other
+ * would silently route every wa.me link back to the wrong number.
+ */
+export const WHATSAPP_NUMBER = '213797339451'
 export const EMAIL = 'hello@sitedz.com'
 
 export const LEGAL_NAME = 'SiteDZ'
