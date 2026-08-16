@@ -1,10 +1,11 @@
-import type { CSSProperties } from 'react'
 import Image from 'next/image'
 import heroImage from '@/public/hero.webp'
-import { Rich } from '@/components/Rich'
 import { ArrowUpRight } from '@/components/icons'
 import type { Dictionary } from '@/content/types'
 import { localePath, type Locale } from '@/lib/i18n'
+
+/** Drops the *em* / _underline_ mini-markup so the copy reads clean to a screen reader. */
+const stripMarks = (line: string) => line.replace(/[*_\n]/g, ' ').replace(/\s+/g, ' ').trim()
 
 export function Hero({ d, lang }: { d: Dictionary['hero']; lang: Locale }) {
   const base = localePath(lang)
@@ -23,31 +24,18 @@ export function Hero({ d, lang }: { d: Dictionary['hero']; lang: Locale }) {
           className="hero__bg"
         />
         <div className="hero__scrim" aria-hidden="true" />
+        {/* The artwork carries the wordmark and tagline, so the only visible copy
+            here is the CTA pair. The h1 stays for a11y/SEO, visually hidden. */}
+        <h1 className="sr-only">{d.lines.map((line) => stripMarks(line)).join(' ')}</h1>
         <div className="hero__inner">
-          <div>
-            <h1 className="hero__headline">
-              {d.lines.map((line, i) => (
-                <span
-                  key={i}
-                  className="hero__line"
-                  style={{ '--d': `${i * 120}ms` } as CSSProperties}
-                >
-                  <Rich text={line} />
-                </span>
-              ))}
-            </h1>
-          </div>
-          <div className="hero__tagline-col">
-            <p className="hero__tagline">{d.tagline}</p>
-            <div className="hero__actions">
-              <a href={`${base}#contact`} className="hero__btn-primary">
-                {d.ctaPrimary}
-                <ArrowUpRight />
-              </a>
-              <a href={`${base}#services`} className="hero__btn-ghost">
-                {d.ctaGhost}
-              </a>
-            </div>
+          <div className="hero__actions">
+            <a href={`${base}#contact`} className="hero__btn-primary">
+              {d.ctaPrimary}
+              <ArrowUpRight />
+            </a>
+            <a href={`${base}#services`} className="hero__btn-ghost">
+              {d.ctaGhost}
+            </a>
           </div>
         </div>
       </div>

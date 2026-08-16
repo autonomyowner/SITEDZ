@@ -44,7 +44,7 @@ export function Marquee({ d }: { d: Dictionary['marquee'] }) {
   // Doubled so the CSS keyframe loop is seamless.
   const doubled = [...LOGOS, ...LOGOS]
   return (
-    <div className="marquee-strip" aria-label={d.ariaLabel}>
+    <div className="marquee-strip seam-y" aria-label={d.ariaLabel}>
       <div className="marquee-track">
         {doubled.map((logo, i) => (
           <div key={i} className="marquee-logo">

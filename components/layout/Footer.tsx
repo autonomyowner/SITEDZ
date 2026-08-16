@@ -16,9 +16,8 @@ export function Footer({ d, lang }: { d: Dictionary['footer']; lang: Locale }) {
           <Link href={localePath(lang, 'services')}>{d.services}</Link>
           <a href={`${base}#tech-offer`}>{d.offer}</a>
           <a href={`${base}#process`}>{d.process}</a>
-          {/* Previously a dead anchor on /ar — that locale now has a pricing
-              section, enforced by the Dictionary type. */}
-          <a href={`${base}#pricing`}>{d.pricing}</a>
+          {/* No pricing link: the homepage section is gone and plans now live
+              on the per-service pages, already reachable via "Services". */}
           <a href={whatsappHref()} target="_blank" rel="noopener noreferrer">
             {d.whatsapp}
           </a>

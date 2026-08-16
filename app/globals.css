@@ -26,6 +26,33 @@
   --ease-out:  cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+/* ===== SECTION SEAMS =====
+   Sections used to butt up against each other with a full-bleed 1px rule, which
+   chopped the page into stacked boxes. A hairline that fades out towards both
+   edges keeps just enough separation without reading as a divider. */
+.seam-top,
+.seam-y {
+  background-image: linear-gradient(
+    to right,
+    transparent,
+    var(--border) 18%,
+    var(--border) 82%,
+    transparent
+  );
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  background-position: top center;
+}
+
+/* Same hairline on both edges (the marquee strip). */
+.seam-y {
+  background-image:
+    linear-gradient(to right, transparent, var(--border) 18%, var(--border) 82%, transparent),
+    linear-gradient(to right, transparent, var(--border) 18%, var(--border) 82%, transparent);
+  background-size: 100% 1px, 100% 1px;
+  background-position: top center, bottom center;
+}
+
 /* ===== BASE ===== */
 html {
   scroll-behavior: smooth;
@@ -165,98 +192,73 @@ a {
   flex-shrink: 0;
 }
 
+/* Visually hidden, still read by screen readers and crawlers. */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /* ===== HERO ===== */
 /* No top offset: the nav is transparent and floats over the artwork. */
 .hero {
   padding: 0.75rem;
 }
 
-/* The painting is the hero. Everything inside sits on top of it, so the frame
-   owns the rounding, the clipping and the stacking context. */
+/* The painting is the hero, and it carries its own wordmark and tagline, so the
+   frame follows the artwork's 1672x941 ratio instead of cropping it to a tall box. */
 .hero__frame {
   position: relative;
   isolation: isolate;
   border-radius: 1.5rem;
   overflow: hidden;
-  min-height: min(52rem, calc(100svh - 1.5rem));
+  aspect-ratio: 1672 / 941;
+  /* Cap the WIDTH, not the height. Capping height would clamp the box wider than
+     the artwork's ratio and make object-fit crop the top and bottom off-centre;
+     capping width keeps the ratio exact, so the painting is never cropped and the
+     frame just narrows and centres itself on short viewports. */
+  width: 100%;
+  max-width: calc((100svh - 1.5rem) * 1672 / 941);
+  margin-inline: auto;
   display: flex;
   align-items: flex-end;
-  padding: clamp(2.5rem, 6vw, 5rem) clamp(1.5rem, 4vw, 4rem);
+  padding: clamp(1.5rem, 4vw, 3.5rem) clamp(1.5rem, 4vw, 4rem);
 }
 
 .hero__bg {
   object-fit: cover;
-  object-position: center 35%;
+  object-position: center;
   z-index: -2;
 }
 
-/* Three gradients: a bottom wash for the headline, a left tint for the same,
-   and a top wash so the transparent nav stays legible over the bright clouds. */
+/* One faint top wash, so the transparent nav stays legible over the light peach.
+   No bottom or left tint any more: there is no copy down there to protect. */
 .hero__scrim {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background:
-    linear-gradient(to top, rgba(11, 11, 13, 0.88) 0%, rgba(11, 11, 13, 0.45) 32%, transparent 62%),
-    linear-gradient(to right, rgba(11, 11, 13, 0.5) 0%, transparent 45%),
-    linear-gradient(to bottom, rgba(11, 11, 13, 0.55) 0%, transparent 100%) top / 100% 9rem no-repeat;
+  background: linear-gradient(to bottom, rgba(11, 11, 13, 0.16) 0%, transparent 100%) top / 100% 7rem
+    no-repeat;
 }
 
 .hero__inner {
   width: 100%;
   max-width: var(--max-w);
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1.05fr 0.95fr;
-  align-items: flex-end;
-  gap: clamp(2rem, 4vw, 5rem);
-}
-
-.hero__headline {
-  font-family: var(--font-serif);
-  font-size: clamp(3rem, 7.5vw, 7rem);
-  font-weight: 600;
-  line-height: 0.98;
-  letter-spacing: -0.02em;
-  color: #FFFDF7;
-  text-shadow: 0 2px 40px rgba(11, 11, 13, 0.45);
   display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.hero__line {
-  display: block;
-  opacity: 0;
-  transform: translateY(28px);
-  animation: lineReveal 0.75s var(--ease-out) var(--d, 0ms) forwards;
-}
-
-@keyframes lineReveal {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  justify-content: center;
 }
 
 .hero__underline {
   text-decoration: underline;
   text-underline-offset: 0.14em;
   text-decoration-thickness: 0.055em;
-}
-
-.hero__tagline-col {
-  padding-bottom: 0.35rem;
-  animation: fadeUp 0.75s var(--ease-out) 0.55s both;
-}
-
-.hero__tagline {
-  font-size: clamp(1rem, 1.4vw, 1.175rem);
-  line-height: 1.65;
-  /* Brighter than --muted: this sits on a painting, not on the flat page bg. */
-  color: rgba(255, 253, 247, 0.88);
-  text-shadow: 0 1px 24px rgba(11, 11, 13, 0.6);
-  max-width: 460px;
 }
 
 /* ===== FEATURED CARD ===== */
@@ -355,8 +357,6 @@ a {
 
 /* ===== MARQUEE STRIP ===== */
 .marquee-strip {
-  border-top: 1px solid var(--border);
-  border-bottom: 1px solid var(--border);
   padding: 1.5rem 0;
   overflow: hidden;
   white-space: nowrap;
@@ -447,7 +447,9 @@ a {
 
 /* ===== CRAFT SECTION (dark) ===== */
 .craft {
-  background: var(--dark);
+  /* background-color, not the `background` shorthand: the shorthand would wipe
+     the seam hairline that .seam-top paints as a background-image. */
+  background-color: var(--dark);
   padding: clamp(5rem, 8vw, 9rem) var(--pad);
 }
 
@@ -656,7 +658,6 @@ a {
 .techoffer {
   position: relative;
   padding: clamp(5rem, 8vw, 9rem) var(--pad);
-  border-top: 1px solid var(--border);
   overflow: hidden;
 }
 
@@ -976,9 +977,10 @@ a {
 .hero__actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 1.25rem;
-  margin-top: 2rem;
   flex-wrap: wrap;
+  animation: fadeUp 0.75s var(--ease-out) 0.35s both;
 }
 
 .hero__btn-primary {
@@ -998,24 +1000,26 @@ a {
   opacity: 0.78;
 }
 
+/* Dark-on-light: the artwork is a pale peach, so the old white ghost button
+   would have all but disappeared against it. */
 .hero__btn-ghost {
   display: inline-flex;
   align-items: center;
   padding: 0.75rem 1.5rem;
-  border: 1px solid rgba(255, 253, 247, 0.35);
+  border: 1px solid rgba(11, 11, 13, 0.35);
   border-radius: 100px;
   backdrop-filter: blur(6px);
-  background: rgba(11, 11, 13, 0.2);
+  background: rgba(255, 253, 247, 0.4);
   font-size: 0.9375rem;
   font-weight: 500;
-  color: rgba(255, 253, 247, 0.9);
+  color: rgba(11, 11, 13, 0.85);
   transition: background 0.2s, border-color 0.2s, color 0.2s;
 }
 
 .hero__btn-ghost:hover {
-  background: rgba(255, 253, 247, 0.12);
-  border-color: rgba(255, 253, 247, 0.6);
-  color: #FFFDF7;
+  background: rgba(255, 253, 247, 0.85);
+  border-color: rgba(11, 11, 13, 0.6);
+  color: #0B0B0D;
 }
 
 /* ===== FEATURED STATS ===== */
@@ -1122,7 +1126,6 @@ a {
 /* ===== PROJECTS ===== */
 .projects {
   padding: clamp(5rem, 8vw, 9rem) var(--pad);
-  border-top: 1px solid var(--border);
 }
 
 .projects__inner {
@@ -1705,7 +1708,6 @@ a {
 .forsale {
   position: relative;
   padding: clamp(5rem, 8vw, 9rem) var(--pad);
-  border-top: 1px solid var(--border);
   overflow: hidden;
 }
 
@@ -1998,24 +2000,17 @@ a {
   .services__grid {
     grid-template-columns: 1fr;
   }
-  .hero__inner {
-    grid-template-columns: 1fr;
-    gap: 1.75rem;
-  }
-  .hero__tagline {
-    max-width: 100%;
-  }
+  /* Phones keep the artwork's own ratio too — the baked-in wordmark and sloth are
+     the whole point, so nothing gets cropped away. Slightly taller than the source
+     so the CTA pair has room under the painting. */
   .hero__frame {
-    min-height: calc(100svh - 1.5rem);
+    aspect-ratio: 4 / 3;
+    max-width: 100%;
     border-radius: 1.125rem;
-    /* Lift the copy off the bottom edge so it reads as a block, not a caption. */
-    padding-bottom: clamp(3.5rem, 11vw, 5.5rem);
+    padding-bottom: clamp(1.75rem, 6vw, 2.5rem);
   }
-  /* Portrait crop: a phone only ever sees ~a quarter of this landscape frame,
-     and the artwork bakes "SITEDZ" across its middle. Sit on the green panel so
-     that painted wordmark never collides with the headline. */
   .hero__bg {
-    object-position: 15% 50%;
+    object-position: center 40%;
   }
   .hero__actions {
     gap: 0.75rem;
@@ -2152,7 +2147,6 @@ a {
   letter-spacing: 0;
 }
 
-[dir="rtl"] .hero__tagline,
 [dir="rtl"] .craft__text p,
 [dir="rtl"] .commission__sub,
 [dir="rtl"] .projects__award-sub,

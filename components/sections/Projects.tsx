@@ -6,7 +6,7 @@ import type { Locale } from '@/lib/i18n'
 
 export function Projects({ d, lang }: { d: Dictionary['projects']; lang: Locale }) {
   return (
-    <section className="projects" id="projects">
+    <section className="projects seam-top" id="projects">
       <div className="projects__inner">
         <div className="projects__header">
           <p className="section-label">{d.label}</p>

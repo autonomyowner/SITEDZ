@@ -5,7 +5,7 @@ import type { Dictionary } from '@/content/types'
 
 export function TechOffer({ d }: { d: Dictionary['techOffer'] }) {
   return (
-    <section className="techoffer" id="tech-offer">
+    <section className="techoffer seam-top" id="tech-offer">
       <div className="techoffer__inner">
         <span className="techoffer__badge">
           <span className="techoffer__badge-dot" aria-hidden="true" />

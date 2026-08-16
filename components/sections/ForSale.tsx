@@ -11,7 +11,7 @@ import type { Dictionary } from '@/content/types'
 
 export function ForSale({ d }: { d: Dictionary['forSale'] }) {
   return (
-    <section className="forsale" id="for-sale">
+    <section className="forsale seam-top" id="for-sale">
       <div className="forsale__inner">
         <span className="forsale__badge">
           <span className="forsale__badge-dot" aria-hidden="true" />

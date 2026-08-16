@@ -3,7 +3,7 @@ import type { Dictionary } from '@/content/types'
 
 export function Process({ d }: { d: Dictionary['process'] }) {
   return (
-    <section className="craft" id="process">
+    <section className="craft seam-top" id="process">
       <div className="craft__inner">
         <div>
           <p className="craft__section-label">{d.label}</p>
